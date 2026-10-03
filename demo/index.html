@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>منصة التأهيلات التجريبية</title>
 <script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
 
@@ -259,7 +254,7 @@ tbody tr:hover td{background:#F8F9F6}tr.click{cursor:pointer}
 </style>
 <style>.demo-bar{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:50%;transform:translateX(50%);z-index:90;background:#B08D3C;color:#1E2B2A;font:600 13px/1.4 "IBM Plex Sans Arabic",Tahoma,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px);text-align:center}</style>
 
-<div class="demo-bar" dir="rtl">نسخة تجريبية ببيانات افتراضية — الدخول: demo / demo1234 — التعديلات لا تُحفظ بعد إعادة التحميل</div>
+<div class="demo-bar" dir="rtl">نسخة تجريبية ببيانات افتراضية — الدخول: demo / demo1234 — لتجربة أول دخول: new بدون كلمة مرور — التعديلات لا تُحفظ بعد إعادة التحميل</div>
 <div id="root"><div class="splash"><svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 <div id="modals"></div>
 <div id="loading" class="loading hidden"><div class="spin"></div></div>
@@ -437,7 +432,7 @@ function contactAdmin(p) {
   const s = settings_(), admins = splitEmails_(s.adminEmails);
   const u = un ? readAll_('Users').find(x => x.username === un.toLowerCase()) : null;
   const lines = [kind, '', 'اسم المستخدم: ' + (un || '—') + (un ? (u ? ' (حساب موجود: ' + u.name + ')' : ' (غير موجود في المنصة)') : ''), 'الاسم: ' + (nm || '—'), msg ? 'الرسالة: ' + msg : '', '',
-    p.kind === 'reset' ? 'لإعادة التعيين: ادخل المنصة ← المستخدمون والصلاحيات ← اضغط على المستخدم ← اكتب كلمة مرور جديدة ← حفظ.' : '', s.appUrl ? 'رابط المنصة: ' + s.appUrl : ''].filter(String);
+    p.kind === 'reset' ? 'لإعادة التعيين: ادخل المنصة ← المستخدمون والصلاحيات ← تعديل المستخدم ← فعّل «إعادة تعيين» ← حفظ، ثم أبلغه أن يدخل باسم المستخدم فقط ليختار كلمة مرور جديدة.' : '', s.appUrl ? 'رابط المنصة: ' + s.appUrl : ''].filter(String);
   if (admins.length) MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] ' + kind + (un ? ': ' + un : ''), body: lines.join('\n') });
   log_(un || nm, kind, msg.slice(0, 120));
   return true;
@@ -461,6 +456,7 @@ function login(username, password) {
   const fails = Number(cache.get(fk) || 0);
   if (fails >= 5) throw new Error('تم إيقاف الدخول مؤقتاً لكثرة المحاولات. حاول بعد 15 دقيقة');
   const u = readAll_('Users').find(x => x.username === username);
+  if (u && u.active === 'نعم' && !u.hash) throw new Error('NEED_SETUP');
   if (!u || u.active !== 'نعم' || hash_(u.salt, password) !== u.hash) {
     cache.put(fk, String(fails + 1), 900);
     throw new Error('اسم المستخدم أو كلمة المرور غير صحيحة');
@@ -473,6 +469,19 @@ function login(username, password) {
   let data = null;
   try { seed_(); data = ACTIONS.bootstrap(auth_(token), {}); } catch (e) { data = null; }
   return { token: token, data: data };
+}
+function firstLogin(username, password) {
+  username = String(username || '').trim().toLowerCase();
+  validatePw_(password);
+  const lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    const u = readAll_('Users').find(x => x.username === username);
+    if (!u || u.active !== 'نعم' || u.hash) throw new Error('هذا الحساب مُفعَّل مسبقاً — ادخل بكلمة المرور');
+    u.salt = uid_() + uid_(); u.hash = hash_(u.salt, password);
+    writeRow_('Users', u._row, u);
+    log_(u.username, 'تفعيل الحساب وتعيين كلمة المرور', '');
+  } finally { lock.releaseLock(); }
+  return login(username, password);
 }
 function auth_(token) {
   const cache = CacheService.getScriptCache();
@@ -490,7 +499,7 @@ function need_(u, role) {
   if (lv[u.role] < lv[role]) throw new Error('ليست لديك صلاحية لهذا الإجراء');
 }
 function canSection_(u, section) { if (u.sectionList.indexOf(section) < 0) throw new Error('ليست لديك صلاحية على قسم: ' + section); }
-function publicUser_(u) { return { username: u.username, name: u.name, email: u.email, phone: u.phone, role: u.role, sections: u.sections, active: u.active, lastLogin: u.lastLogin, createdAt: u.createdAt, canSecrets: u.role === 'admin' || u.canSecrets === 'نعم' }; }
+function publicUser_(u) { return { username: u.username, name: u.name, email: u.email, phone: u.phone, role: u.role, sections: u.sections, active: u.active, lastLogin: u.lastLogin, createdAt: u.createdAt, canSecrets: u.role === 'admin' || u.canSecrets === 'نعم', pending: !u.hash }; }
 function canSecrets_(u) { return u.role === 'admin' || u.canSecrets === 'نعم'; }
 function secretKey_() {
   const pr = PropertiesService.getScriptProperties();
@@ -706,13 +715,14 @@ const ACTIONS = {
       if (ex.username === u.username && (x.role !== 'admin' || x.active !== 'نعم')) throw new Error('لا يمكنك إلغاء صلاحية المدير عن حسابك');
       Object.assign(ex, { name: x.name, email: x.email || '', phone: normPhone_(x.phone), role: x.role, sections: x.sections || 'الكل', active: x.active || 'نعم', canSecrets: x.canSecrets ? 'نعم' : '' });
       if (x.password) { validatePw_(x.password); ex.salt = uid_() + uid_(); ex.hash = hash_(ex.salt, x.password); }
+      else if (x.resetPw) { if (ex.username === u.username) throw new Error('لا يمكنك إعادة تعيين كلمة مرور حسابك من هنا'); ex.salt = ''; ex.hash = ''; }
       writeRow_('Users', ex._row, ex);
       log_(u.username, 'تعديل مستخدم', un);
     } else {
-      validatePw_(x.password);
-      const salt = uid_() + uid_();
+      if (x.password) validatePw_(x.password);
+      const salt = x.password ? uid_() + uid_() : '';
       appendRows_('Users', [{ username: un, name: x.name || un, email: x.email || '', phone: normPhone_(x.phone), role: x.role, sections: x.sections || 'الكل',
-        salt: salt, hash: hash_(salt, x.password), active: x.active || 'نعم', createdAt: now_(), lastLogin: '', canSecrets: x.canSecrets ? 'نعم' : '' }]);
+        salt: salt, hash: x.password ? hash_(salt, x.password) : '', active: x.active || 'نعم', createdAt: now_(), lastLogin: '', canSecrets: x.canSecrets ? 'نعم' : '' }]);
       log_(u.username, 'إضافة مستخدم', un);
     }
     return true;
@@ -1081,7 +1091,7 @@ function hash_(salt, pw) { return salt + '|' + pw; }
 function stream_(salt, n) { return new Array(n).fill(7); }
 function backupNow() { throw new Error('النسخ الاحتياطي غير متاح في النسخة التجريبية'); }
 
-window.__A = { isFirstRun, setupAdmin, login, logout, api, contactAdmin }; window.D = D;
+window.__A = { isFirstRun, setupAdmin, login, firstLogin, logout, api, contactAdmin }; window.D = D;
 })();
 
 (function () {
@@ -1089,7 +1099,7 @@ window.__A = { isFirstRun, setupAdmin, login, logout, api, contactAdmin }; windo
   try { sessionStorage.removeItem('dm_token'); sessionStorage.removeItem('dm_cache'); localStorage.setItem('dm_inited', '1'); localStorage.setItem('dm_user', 'demo'); } catch (e) { }
   const t = A.setupAdmin({ name: 'مستخدم تجريبي', username: 'demo', email: 'demo@example.com', password: 'demo1234' }).token;
   const add = (u, n, s, r, sec) => A.api(t, 'saveUser', { user: { username: u, name: n, email: u + '@example.com', role: r, sections: sec, password: 'demo1234', active: 'نعم' } });
-  try { add('sara', 'سارة محمد', 'editor', 'editor', 'التأهيلات والتراخيص,مستندات المكتب'); add('khaled', 'خالد عمر', 'viewer', 'viewer', 'الكل'); } catch (e) { }
+  try { add('sara', 'سارة محمد', 'editor', 'editor', 'التأهيلات والتراخيص,مستندات المكتب'); add('khaled', 'خالد عمر', 'viewer', 'viewer', 'الكل'); A.api(t, 'saveUser', { user: { username: 'new', name: 'موظف جديد', email: '', role: 'editor', sections: 'الكل', password: '', active: 'نعم' } }); } catch (e) { }
   try { const its = A.api(t, 'bootstrap', {}).items.filter(i => i.section === 'التأهيلات والتراخيص' && i.expiryDate).slice(0, 3);
     its.forEach((i, k) => A.api(t, 'renewItem', { id: i.id, newIssue: D(-400 + k * 10), newExpiry: i.expiryDate, cost: '3500', notes: 'تجديد سابق (بيانات تجريبية)' })); } catch (e) { }
   const mk = (s, f) => new Proxy({}, { get: (o, k) => {
@@ -1265,15 +1275,40 @@ function renderAuth(forceFirst) {
       return;
     }
     const un = $('#l_user').value.trim();
-    if (!un || !$('#l_pw').value) return err('أدخل اسم المستخدم وكلمة المرور');
+    if (!un) return err('أدخل اسم المستخدم');
     const keep = $('#l_rem').checked;
     try { if (keep) localStorage.setItem('dm_user', un); else localStorage.removeItem('dm_user'); } catch (x) { }
     try { window.top.postMessage({ type: 'dm-user', user: keep ? un : '' }, '*'); } catch (x) { }
     try { busy(true); const r = await gs('login', un, $('#l_pw').value); await done(r); }
-    catch (x) { err((x.message || x).toString().replace(/^Error:\s{0,}/, '')); busy(false); }
+    catch (x) {
+      const msg = (x.message || x).toString().replace(/^Error:\s{0,}/, ''); busy(false);
+      if (msg.indexOf('NEED_SETUP') >= 0) return setupPanel(un);
+      err(!$('#l_pw').value && msg.indexOf('غير صحيحة') >= 0 ? 'أدخل كلمة المرور' : msg);
+    }
   };
   setTimeout(() => { const f = $(first ? '#a_name' : (rem ? '#l_pw' : '#l_user')); if (f) f.focus(); }, 60);
   if (!first && known !== '1') gs('isFirstRun').then(v => { if (v) renderAuth(true); else { try { localStorage.setItem('dm_inited', '1'); } catch (e) { } } }).catch(() => { });
+}
+function setupPanel(un) {
+  $('#root').innerHTML = authShell(`<h2>أهلاً بك 👋</h2><div class="sub">هذا أول دخول لحساب <b dir="ltr">${esc(un)}</b>. اختر كلمة مرور خاصة بك — ستدخل بها في كل مرة بعد ذلك.</div>
+    ${fld('s_pw', 'كلمة المرور الجديدة — 8 أحرف على الأقل', 'lock', 'password', 'new-password')}${fld('s_pw2', 'تأكيد كلمة المرور', 'lock', 'password', 'new-password')}
+    <div class="caps" id="caps">زر الأحرف الكبيرة (Caps Lock) مفعّل</div>
+    <button class="btn go" id="s_go" type="submit"><span class="spin-s"></span><span>حفظ كلمة المرور والدخول</span></button>
+    <div class="auth-alt"><button type="button" class="lnk" id="s_back">رجوع لتسجيل الدخول</button></div>`);
+  startScenes();
+  const err = m => { const a = $('#a_err'); a.querySelector('span').textContent = m; a.classList.toggle('on', !!m); };
+  document.querySelectorAll('[data-eye]').forEach(b => b.onclick = () => { const i = $('#' + b.dataset.eye), sh = i.type === 'password'; i.type = sh ? 'text' : 'password'; b.innerHTML = ic(sh ? 'eyeoff' : 'eye'); });
+  const btn = $('#s_go');
+  $('#s_back').onclick = () => renderAuth();
+  $('#af').onsubmit = async e => {
+    e.preventDefault(); err('');
+    const a = $('#s_pw').value, b = $('#s_pw2').value;
+    if (a.length < 8) return err('كلمة المرور يجب ألا تقل عن 8 أحرف');
+    if (a !== b) return err('كلمتا المرور غير متطابقتين');
+    try { btn.classList.add('busy'); const r = await gs('firstLogin', un, a); try { localStorage.setItem('dm_inited', '1'); } catch (x) { } setTok(r.token); if (r.data) useData(r.data); else await load(); toast('تم تفعيل حسابك بنجاح'); }
+    catch (x) { err((x.message || x).toString().replace(/^Error:\s{0,}/, '')); btn.classList.remove('busy'); }
+  };
+  setTimeout(() => { const f = $('#s_pw'); if (f) f.focus(); }, 60);
 }
 function requestPanel(kind) {
   const isR = kind === 'reset', un = ($('#l_user') && $('#l_user').value) || '';
@@ -1756,7 +1791,7 @@ function contactModal(name) {
 }
 function usersView() {
   return topbar('المستخدمون والصلاحيات', 'المدير يدير كل شيء، والمحرِّر يضيف ويجدّد ويرفع الملفات، والمشاهِد يطّلع فقط', '<button class="btn" id="uAdd">' + ic('plus') + ' مستخدم جديد</button>') +
-    simpleTable(['الاسم', 'اسم المستخدم', 'الصلاحية', 'الأقسام', 'كلمات المرور', 'الحالة', 'آخر دخول', ''], (S.d.users || []).map(u => `<tr><td class="t-title">${esc(u.name)}</td><td dir="ltr" style="text-align:right">${esc(u.username)}</td><td><span class="chip">${esc(S.d.roles[u.role])}</span></td><td>${u.sections === 'الكل' ? '<span class="chip">الكل</span>' : u.sections.split(',').map(s => '<span class="chip">' + esc(s) + '</span>').join('')}</td><td>${u.canSecrets ? 'يرى' : '—'}</td><td>${u.active === 'نعم' ? '<span class="badge b-ok">مفعّل</span>' : '<span class="badge b-off">موقوف</span>'}</td><td>${esc(u.lastLogin || '—')}</td><td><button class="btn light sm" data-u="${esc(u.username)}">تعديل</button></td></tr>`));
+    simpleTable(['الاسم', 'اسم المستخدم', 'الصلاحية', 'الأقسام', 'كلمات المرور', 'الحالة', 'آخر دخول', ''], (S.d.users || []).map(u => `<tr><td class="t-title">${esc(u.name)}</td><td dir="ltr" style="text-align:right">${esc(u.username)}</td><td><span class="chip">${esc(S.d.roles[u.role])}</span></td><td>${u.sections === 'الكل' ? '<span class="chip">الكل</span>' : u.sections.split(',').map(s => '<span class="chip">' + esc(s) + '</span>').join('')}</td><td>${u.canSecrets ? 'يرى' : '—'}</td><td>${u.pending && u.active === 'نعم' ? '<span class="badge b-soon">بانتظار أول دخول</span>' : u.active === 'نعم' ? '<span class="badge b-ok">مفعّل</span>' : '<span class="badge b-off">موقوف</span>'}</td><td>${esc(u.lastLogin || '—')}</td><td><button class="btn light sm" data-u="${esc(u.username)}">تعديل</button></td></tr>`));
 }
 function userModal(un) {
   const u = un ? S.d.users.find(x => x.username === un) : { role: 'editor', sections: 'الكل', active: 'نعم' };
@@ -1766,12 +1801,13 @@ function userModal(un) {
     <div class="row"><div><label>الصلاحية</label><select id="u_role">${Object.keys(S.d.roles).map(r => `<option value="${r}" ${r === u.role ? 'selected' : ''}>${S.d.roles[r]}</option>`).join('')}</select></div><div><label>الحالة</label><select id="u_active"><option ${u.active === 'نعم' ? 'selected' : ''}>نعم</option><option value="لا" ${u.active !== 'نعم' ? 'selected' : ''}>لا (موقوف)</option></select></div></div>
     <label>الأقسام المسموحة</label>${S.d.allSections.map(s => `<label style="display:flex;gap:8px;align-items:center;font-weight:500;margin:6px 0"><input type="checkbox" class="u_sec" value="${esc(s)}" style="width:auto" ${secs.indexOf(s) >= 0 ? 'checked' : ''}> ${SEC_ICON[s]} ${esc(s)}</label>`).join('')}
     <label style="display:flex;gap:8px;align-items:center;font-weight:500;margin-top:14px"><input type="checkbox" id="u_cs" style="width:auto" ${u.canSecrets ? 'checked' : ''}> يستطيع عرض كلمات مرور المنصات (يُسجَّل كل عرض)</label>
-    <label>${un ? 'كلمة مرور جديدة (اتركها فارغة للإبقاء)' : 'كلمة المرور (8 أحرف على الأقل)'}</label><input id="u_pw" type="password" dir="ltr" autocomplete="new-password">
-    <div class="note">أرسل اسم المستخدم وكلمة المرور للموظف بشكل خاص، واطلب منه تغييرها بعد أول دخول.</div>`, '<button class="btn" id="u_save">حفظ</button>');
+    <label>${un ? 'كلمة مرور جديدة (اتركها فارغة للإبقاء)' : 'كلمة المرور (اختياري)'}</label><input id="u_pw" type="password" dir="ltr" autocomplete="new-password" placeholder="${un ? '' : 'اتركها فارغة ليختارها الموظف بنفسه'}">
+    ${un && un !== S.d.me.username ? '<label style="display:flex;gap:8px;align-items:center;font-weight:500;margin-top:10px"><input type="checkbox" id="u_reset" style="width:auto"> إعادة تعيين: يختار الموظف كلمة مرور جديدة عند دخوله التالي</label>' : ''}
+    <div class="note">${un ? 'لإعادة التعيين اختر الخيار أعلاه، ثم أبلغ الموظف أن يدخل باسم المستخدم فقط.' : 'اترك كلمة المرور فارغة وأرسل للموظف اسم المستخدم ورابط المنصة فقط — في أول دخول يكتب اسم المستخدم ويضغط «دخول» فيُطلب منه اختيار كلمة مروره، وبعدها لا يدخل إلا بها.'}</div>`, '<button class="btn" id="u_save">حفظ</button>');
   m.q('#u_save').onclick = async () => {
     const sel = [...m.el.querySelectorAll('.u_sec:checked')].map(x => x.value);
     await call('saveUser', { user: { username: un || m.q('#u_username').value, name: m.q('#u_name').value, email: m.q('#u_email').value, phone: m.q('#u_phone').value, role: m.q('#u_role').value,
-      active: m.q('#u_active').value, canSecrets: m.q('#u_cs').checked, sections: sel.length === S.d.allSections.length ? 'الكل' : sel.join(','), password: m.q('#u_pw').value } });
+      active: m.q('#u_active').value, canSecrets: m.q('#u_cs').checked, sections: sel.length === S.d.allSections.length ? 'الكل' : sel.join(','), password: m.q('#u_pw').value, resetPw: !!(m.q('#u_reset') && m.q('#u_reset').checked) } });
     m.close(); toast('تم حفظ المستخدم'); S.view = 'users'; await load(true);
   };
 }
@@ -1833,5 +1869,3 @@ function myPwModal() {
 }
 boot();
 </script>
-
-</html>
