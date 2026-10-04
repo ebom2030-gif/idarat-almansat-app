@@ -170,6 +170,18 @@ html[data-theme=dark] :is(.ie:hover,.drop-z.on,.drop-z:hover,.sfc button){backgr
 .vg h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.vg h3 small{margin-right:auto;color:var(--muted);font-weight:500;font-size:12.5px}.vplats{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:10px 16px;border-bottom:1px solid var(--line2);font-size:12.5px}.vplats .chip{cursor:pointer;border:1px solid var(--line);background:var(--paper)}
 .vpanel{margin-bottom:20px}.vp-g{display:grid;grid-template-columns:repeat(3,auto) 1fr;gap:22px;align-items:center}.vp-g b{display:block;font-family:var(--head);font-size:26px;line-height:1.1}.vp-g span{color:var(--muted);font-size:12px}.vp-l{display:flex;flex-direction:column;gap:4px}.vp-l span{font-size:12.5px;color:var(--text)}
 @media (max-width:900px){.vp-g{grid-template-columns:repeat(3,1fr)}.vp-l{grid-column:1/-1}}
+.btabs .chipb b.hot{background:var(--red);color:#fff}.chipb.add{border-style:dashed}
+.bmx table{min-width:720px}.bmx th{vertical-align:bottom;min-width:120px}.bmx th.clk{cursor:pointer}.bmx th small{display:block;font-weight:500;font-size:11px;color:var(--muted)}.bmx td{text-align:center;padding:6px}.bmx .mx-d{text-align:right;min-width:220px;position:sticky;right:0;background:var(--paper);z-index:1}.bmx td.mx-d small{display:block;color:var(--muted);font-size:11px}
+.mx-p{height:5px;background:var(--line2);border-radius:3px;overflow:hidden;margin:6px 0 3px}.mx-p i{display:block;height:100%;background:var(--ok)}
+.mxc{display:inline-block;min-width:92px;border-radius:7px;padding:5px 8px;font-size:12px;font-weight:700;cursor:pointer;border:1px solid transparent;white-space:nowrap;font-family:inherit}
+.mxc.expired{background:var(--red-l);color:var(--red)}.mxc.critical,.mxc.urgent{background:var(--amber-l);color:var(--amber)}.mxc.soon{background:#FAF6E8;color:#7A6A22}.mxc.ok{background:var(--ok-l);color:var(--ok)}.mxc.none,.mxc.off{background:var(--none-l);color:var(--muted)}
+.mxc.miss{background:repeating-linear-gradient(45deg,transparent 0 5px,var(--line2) 5px 7px);border:1px dashed var(--line);color:var(--muted)}.mxc.miss:hover:not(:disabled){border-color:var(--brass);color:var(--text)}
+.mx-sum{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin-bottom:10px;font-size:13px;color:var(--muted)}.mx-sum b{font-size:18px;color:var(--text);font-family:var(--head)}.mx-sum .r b{color:var(--red)}.mx-sum .a b{color:var(--amber)}.mx-sum .btn{margin-right:auto}
+.bhead{margin-bottom:16px}.bhead .pb{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.bh-t{display:flex;gap:10px;align-items:center}.bh-t .av{width:36px;height:36px;font-size:15px;border-radius:10px}.bh-k{display:flex;gap:22px}.bh-k b{display:block;font-family:var(--head);font-size:22px}.bh-k span{font-size:12px;color:var(--muted)}
+.miss-card{border-style:dashed;background:repeating-linear-gradient(45deg,transparent 0 8px,var(--line2) 8px 9px)}
+.br-row{display:grid;grid-template-columns:2fr 1fr 1.2fr auto auto;gap:8px;align-items:center;margin-bottom:8px}.br-main{display:flex;gap:4px;align-items:center;font-size:12.5px;white-space:nowrap}.br-main input{width:auto}
+html[data-theme=dark] .mxc.soon{background:#2E2A16;color:#D9C46A}html[data-theme=dark] .bmx .mx-d{background:var(--paper)}
+@media (max-width:700px){.br-row{grid-template-columns:1fr 1fr}.bh-k{gap:14px}}
 .inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
@@ -359,7 +371,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
 const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/install.html';
-const APP_VER = '18 · 04/10/2026';
+const APP_VER = '19 · 04/10/2026';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
 const IN_GAS = !!(window.google && google.script && google.script.run);
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
@@ -924,6 +936,84 @@ function violPanel() {
   const soon = op.filter(v => { const d = vDays(v); return d && d[0] <= 7; }).sort((a, b) => vDays(a)[0] - vDays(b)[0]);
   return `<section class="panel vpanel" data-nav="viol" style="cursor:pointer"><h3>${ic('viol')} المخالفات <small>اضغط لفتح صفحة المخالفات</small></h3><div class="pb vp-g"><div><b style="color:var(--red)">${op.length}</b><span>مفتوحة</span></div><div><b style="color:var(--amber)">${money(op.reduce((a, v) => a + (Number(v.amount) || 0), 0))}</b><span>ر.س مستحقة</span></div><div><b style="color:var(--gold)">${soon.length}</b><span>مواعيد خلال 7 أيام</span></div><div class="vp-l">${soon.slice(0, 3).map(v => `<span>${vBadge(v)} ${esc(v.title || v.violationNo)} — ${esc(crLabel(v.crNo))}</span>`).join('') || '<span style="color:var(--muted)">لا توجد مواعيد قريبة</span>'}</div></div></section>`;
 }
+const DOCSEC = 'مستندات المكتب', COMPANY = '__co';
+function branches() { try { return JSON.parse((S.d.settings || {}).branches || '[]') || []; } catch (e) { return []; } }
+function docTpl() { try { return JSON.parse((S.d.settings || {}).docTemplate || '[]') || []; } catch (e) { return []; } }
+const brName = id => id === COMPANY ? 'المنشأة (مستندات عامة)' : (branches().find(b => b.id === id) || {}).name || '';
+const normT = t => String(t || '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/\s+/g, ' ').trim();
+function cellOf(i) { if (!i) return ''; const d = i._days, st = i._st; const t = st === 'expired' ? 'منتهي ' + (-d) + 'ي' : st === 'none' ? 'بلا تاريخ' : st === 'off' ? 'غير مطلوب' : d === 0 ? 'اليوم' : d + ' يوم'; return `<span class="mxc ${st}" data-id="${i.id}" title="${esc(i.title)}">${({ expired: '✕', critical: '⏱', urgent: '⏱', soon: '◷', ok: '✓', none: '–', off: '–' })[st] || ''} ${t}</span>`; }
+function branchStats(bid, it) { const T = docTpl(), mine = it.filter(i => i.branch === bid && i.docKey), have = T.filter(t => mine.some(i => i.docKey === t.k && i._st !== 'off')), ok = T.filter(t => mine.some(i => i.docKey === t.k && ['ok', 'soon', 'urgent', 'critical'].indexOf(i._st) >= 0)), bad = mine.filter(i => i._st === 'expired').length;
+  return { total: T.length, have: have.length, ok: ok.length, bad: bad, missing: T.length - have.length, pct: T.length ? Math.round(ok.length / T.length * 100) : 0 }; }
+function branchBody(sec, base, f) {
+  const B = branches(), T = docTpl(), tab = f.btab || (B.length ? 'mx' : 'setup');
+  const un = base.filter(i => !i.branch), co = base.filter(i => i.branch === COMPANY);
+  const tabs = `<div class="chips btabs" role="tablist"><button class="chipb ${tab === 'mx' ? 'on' : ''}" data-btab="mx">${ic('table')} مصفوفة كل الفروع</button>${B.map(b => { const st = branchStats(b.id, base); return `<button class="chipb ${tab === b.id ? 'on' : ''}" data-btab="${esc(b.id)}">${av(b.name)}${esc(b.name)} <b class="${st.bad ? 'hot' : ''}">${st.pct}%</b></button>`; }).join('')}<button class="chipb ${tab === COMPANY ? 'on' : ''}" data-btab="${COMPANY}">مستندات المنشأة <b>${co.length}</b></button>${un.length ? `<button class="chipb ${tab === 'un' ? 'on' : ''}" data-btab="un">غير مرتبطة بفرع <b class="hot">${un.length}</b></button>` : ''}${can('admin') ? `<button class="chipb add" id="brMgr">${ic('settings')} إدارة الفروع</button>` : ''}</div>`;
+  if (!B.length) return tabs + `<div class="empty big">${ic('dash')}<h3>أضف فروع المكتب</h3><p>لكل فرع قائمة مستندات ثابتة حسب المتعارف عليه للمكاتب الهندسية (${T.length} مستنداً): السجل التجاري، ورخصة البلدية، وترخيص المكتب الهندسي، والدفاع المدني، وعقد الإيجار، والعنوان الوطني… وتظهر لك مصفوفة توضّح الناقص والمنتهي في كل فرع.</p>${can('admin') ? `<button class="btn" id="brMgr2">${ic('plus')} إضافة الفروع</button>` : '<p>اطلب من مدير المنصة إضافة الفروع.</p>'}</div>`;
+  if (tab === 'mx') {
+    const find = (bid, k) => base.filter(i => i.branch === bid && i.docKey === k).sort((a, b) => RANK[a._st] - RANK[b._st])[0];
+    const head = `<tr><th class="mx-d">المستند</th>${B.map(b => { const st = branchStats(b.id, base); return `<th data-btab="${esc(b.id)}" class="clk">${esc(b.name)}<div class="mx-p"><i style="width:${st.pct}%"></i></div><small>${st.ok}/${st.total} ساري${st.missing ? ' · ' + st.missing + ' ناقص' : ''}</small></th>`; }).join('')}</tr>`;
+    const rows = T.map(t => `<tr><td class="mx-d"><b>${esc(t.name)}</b><small>${esc(t.issuer || '')}</small></td>${B.map(b => { const i = find(b.id, t.k); return `<td>${i ? cellOf(i) : `<button class="mxc miss" data-addoc="${esc(b.id)}|${esc(t.k)}" ${can('editor') ? '' : 'disabled'}>＋ ناقص</button>`}</td>`; }).join('')}</tr>`).join('');
+    const tot = B.map(b => branchStats(b.id, base)), gm = tot.reduce((a, x) => a + x.missing, 0), gb = tot.reduce((a, x) => a + x.bad, 0);
+    return tabs + `<div class="mx-sum"><span><b>${B.length}</b> فروع</span><span><b>${T.length}</b> مستنداً ثابتاً لكل فرع</span><span class="r"><b>${gb}</b> منتهٍ</span><span class="a"><b>${gm}</b> ناقص غير مسجّل</span><button class="btn light sm" id="brPrint">${ic('file')} طباعة المصفوفة</button></div><div class="tbl-wrap bmx"><table>${head}${rows}</table></div><div class="legend" style="margin-top:10px"><span><i style="background:var(--red)"></i>منتهي</span><span><i style="background:var(--amber)"></i>خلال 30 يوماً</span><span><i style="background:#C9B66A"></i>خلال 90 يوماً</span><span><i style="background:var(--ok)"></i>ساري</span><span><i style="background:var(--none-l);border:1px dashed var(--line)"></i>ناقص — اضغط للإضافة</span></div>`;
+  }
+  if (tab === COMPANY || tab === 'un') {
+    const L = (tab === 'un' ? un : co).slice().sort(byPriDays);
+    return tabs + (tab === 'un' ? `<div class="note" style="margin-bottom:12px">هذه المستندات غير مرتبطة بفرع. ${can('editor') ? '<button class="btn light sm" id="brAssign">ربطها تلقائياً بالفروع</button> أو افتح المستند واختر الفرع من «تعديل».' : ''}</div>` : `<div class="note" style="margin-bottom:12px">مستندات تخص المنشأة كلها وليست لفرع بعينه (عقد التأسيس، ضريبة القيمة المضافة، شهادات التصنيف، الآيزو…).</div>`) +
+      (L.length ? `<div class="cards">${L.map((i, n) => card(i, false, n)).join('')}</div>` : `<div class="empty">لا توجد مستندات هنا</div>`);
+  }
+  const b = B.find(x => x.id === tab); if (!b) { f.btab = 'mx'; return branchBody(sec, base, f); }
+  const st = branchStats(b.id, base), mine = base.filter(i => i.branch === b.id);
+  const extra = mine.filter(i => !i.docKey || !T.some(t => t.k === i.docKey));
+  const cards = T.map((t, n) => { const arr = mine.filter(i => i.docKey === t.k); return arr.length ? arr.map(i => card(i, false, n)).join('') : `<article class="card miss-card" style="--c:var(--line)"><div class="card-t">${esc(t.name)}</div><div class="card-s"><span class="badge b-none">غير مسجّل</span></div><div style="color:var(--muted);font-size:12.5px;margin:8px 0">${esc(t.issuer || '')}</div>${can('editor') ? `<button class="btn light sm" data-addoc="${esc(b.id)}|${esc(t.k)}">${ic('plus')} إضافة المستند</button>` : ''}</article>`; }).join('');
+  return tabs + `<section class="panel bhead"><div class="pb"><div class="bh-t">${av(b.name)}<div><h3 style="margin:0">${esc(b.name)}${b.main ? ' <span class="pri p2">الرئيسي</span>' : ''}</h3><small>${esc(b.city || '')}${b.crNo ? ' · سجل تجاري <span dir="ltr">' + esc(b.crNo) + '</span>' : ''}</small></div></div>
+    <div class="bh-k"><div><b style="color:var(--ok)">${st.pct}%</b><span>اكتمال ساري</span></div><div><b>${st.ok}/${st.total}</b><span>مستند ساري</span></div><div><b style="color:var(--red)">${st.bad}</b><span>منتهٍ</span></div><div><b style="color:var(--amber)">${st.missing}</b><span>ناقص</span></div></div></div></section>
+    <div class="cards">${cards}</div>${extra.length ? `<h4 style="margin:18px 0 8px">مستندات إضافية للفرع</h4><div class="cards">${extra.map((i, n) => card(i, false, n)).join('')}</div>` : ''}`;
+}
+function bindBranches(sec, re) {
+  const f = S.filters;
+  document.querySelectorAll('[data-btab]').forEach(b => b.onclick = e => { e.stopPropagation(); f.btab = b.dataset.btab; re(); });
+  document.querySelectorAll('.mxc[data-id]').forEach(c => c.onclick = () => itemModal(c.dataset.id));
+  document.querySelectorAll('[data-addoc]').forEach(b => b.onclick = e => { e.stopPropagation(); const [bid, k] = b.dataset.addoc.split('|'), t = docTpl().find(x => x.k === k) || {}, br = branches().find(x => x.id === bid) || {};
+    editModal(null, DOCSEC, { branch: bid, docKey: k, title: t.name + ' — ' + br.name, platform: t.issuer || '', type: 'مستند رسمي', crNo: br.crNo || '' }); });
+  ['brMgr', 'brMgr2'].forEach(id => { if ($('#' + id)) $('#' + id).onclick = branchManager; });
+  if ($('#brAssign')) $('#brAssign').onclick = assignModal;
+  if ($('#brPrint')) $('#brPrint').onclick = printBranchMatrix;
+}
+function branchManager() {
+  let B = branches().map(b => Object.assign({}, b)); const T = docTpl();
+  const rowH = (b, n) => `<div class="br-row" data-n="${n}"><input class="br-name" value="${esc(b.name || '')}" placeholder="اسم الفرع — مثال: فرع جدة"><input class="br-city" value="${esc(b.city || '')}" placeholder="المدينة"><input class="br-cr" dir="ltr" value="${esc(b.crNo || '')}" placeholder="رقم السجل التجاري"><label class="br-main"><input type="radio" name="br_main" ${b.main ? 'checked' : ''}> رئيسي</label><button class="btn light sm br-del" aria-label="حذف">✕</button></div>`;
+  const m = modal('إدارة الفروع', `<p style="margin-top:0">أضف فروع المكتب. لكل فرع تُطبَّق قائمة المستندات الثابتة تلقائياً، ورقم السجل يربط مستنداته ومخالفاته.</p><div id="br_list">${B.map(rowH).join('')}</div><button class="btn light sm" id="br_add" style="margin-top:8px">${ic('plus')} إضافة فرع</button>
+    <details style="margin-top:18px"><summary style="cursor:pointer;font-weight:700">قائمة المستندات الثابتة لكل فرع (${T.length})</summary><div class="note" style="margin:8px 0">سطر لكل مستند بالشكل: اسم المستند — الجهة المصدرة. التعديل هنا يغيّر القائمة لكل الفروع.</div><textarea id="br_tpl" rows="10">${esc(T.map(t => t.name + ' — ' + (t.issuer || '')).join('\n'))}</textarea></details>`, '<button class="btn" id="br_save">حفظ</button>', 'lg');
+  const list = m.q('#br_list');
+  const bindDel = () => list.querySelectorAll('.br-del').forEach(b => b.onclick = () => b.closest('.br-row').remove());
+  bindDel(); m.q('#br_add').onclick = () => { list.insertAdjacentHTML('beforeend', rowH({}, list.children.length)); bindDel(); list.lastElementChild.querySelector('.br-name').focus(); };
+  m.q('#br_save').onclick = async () => {
+    const rows = [...list.querySelectorAll('.br-row')], out = rows.map(r => { const n = +r.dataset.n, old = B[n] || {}; return { id: old.id || ('b' + Date.now().toString(36) + Math.random().toString(36).slice(2, 5)), name: r.querySelector('.br-name').value.trim(), city: r.querySelector('.br-city').value.trim(), crNo: r.querySelector('.br-cr').value.trim(), main: r.querySelector('input[type=radio]').checked }; }).filter(x => x.name);
+    const lines = m.q('#br_tpl').value.split('\n').map(l => l.trim()).filter(Boolean), tpl = lines.map((l, n) => { const p = l.split(/\s{0,}[—–]\s{0,}/), nm = (p[0] || '').trim(), ex = T.find(t => t.name === nm); return { k: ex ? ex.k : 'd' + n + Date.now().toString(36).slice(-3), name: nm, issuer: (p[1] || '').trim() }; });
+    await call('saveBranches', { branches: out, docTemplate: tpl }); m.close(); toast('تم حفظ الفروع'); S.filters.btab = 'mx'; await load(true);
+  };
+}
+function assignModal() {
+  const B = branches(), T = docTpl(), un = S.d.items.filter(i => i.section === DOCSEC && !i.branch);
+  const guess = i => { const n = normT(i.title); let best = null; T.forEach(t => { const tn = normT(t.name).replace(/ للفرع| مقر الفرع/g, ''); const core = tn.split(' (')[0].replace('شهاده ', '').replace('عقد ', ''); if (n.indexOf(core) >= 0 || core.indexOf(n.replace(' للمقر', '')) >= 0) best = best || t; }); return best; };
+  const main = (B.find(b => b.main) || B[0] || {}).id || '';
+  const rows = un.map(i => { const g = guess(i); return `<tr data-aid="${i.id}"><td><b>${esc(i.title)}</b><div class="t-sub">${esc(i.platform || '')}</div></td><td><select class="as-b"><option value="${COMPANY}" ${g ? '' : 'selected'}>المنشأة (عام)</option>${B.map(b => `<option value="${esc(b.id)}" ${g && b.id === main ? 'selected' : ''}>${esc(b.name)}</option>`).join('')}</select></td><td><select class="as-k"><option value="">مستند آخر</option>${T.map(t => `<option value="${esc(t.k)}" ${g && g.k === t.k ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></td></tr>`; }).join('');
+  const m = modal('ربط المستندات الحالية بالفروع', `<p style="margin-top:0">اقترحت المنصة الربط تلقائياً حسب اسم كل مستند: مستندات الفرع للفرع الرئيسي، والباقي للمنشأة. راجع وعدّل ثم احفظ.</p><div class="tbl-wrap"><table><thead><tr><th>المستند</th><th>الفرع</th><th>نوع المستند</th></tr></thead><tbody>${rows}</tbody></table></div>`, '<button class="btn" id="as_go">حفظ الربط</button>', 'lg');
+  m.q('#as_go').onclick = async () => { const list = [...m.el.querySelectorAll('[data-aid]')].map(r => { const b = r.querySelector('.as-b').value, br = B.find(x => x.id === b); const o = { id: r.dataset.aid, branch: b, docKey: r.querySelector('.as-k').value }; if (br && br.crNo) o.crNo = br.crNo; return o; });
+    const r = await call('assignDocs', { list }); replaceItems(r); m.close(); toast('تم ربط ' + r.length + ' مستند'); S.filters.btab = 'mx'; renderView(); };
+}
+function printBranchMatrix() {
+  const B = branches(), T = docTpl(), base = S.d.items.filter(i => i.section === DOCSEC), today = new Date();
+  const find = (bid, k) => base.filter(i => i.branch === bid && i.docKey === k).sort((a, b) => RANK[a._st] - RANK[b._st])[0];
+  const col = { expired: ['#F6E3E1', '#9E2119'], critical: ['#FBEED8', '#8A5300'], urgent: ['#F7F0D6', '#7A5F0A'], soon: ['#FAF6E8', '#6B5B1E'], ok: ['#E1F0EA', '#0B6E4F'], none: ['#EFF1EE', '#5F6B68'], off: ['#EFF1EE', '#5F6B68'] };
+  const cell = i => { if (!i) return '<td class="ms">ناقص</td>'; const c = col[i._st] || col.none; return `<td style="background:${c[0]};color:${c[1]}"><b>${i._st === 'expired' ? 'منتهي' : i._st === 'none' ? 'بلا تاريخ' : i._days + ' يوم'}</b><small>${i._due ? fmtD(i._due.date) : ''}</small></td>`; };
+  const css = `@page{size:A4 landscape;margin:10mm;@bottom-left{content:'صفحة ' counter(page) ' من ' counter(pages);font-size:8.5px;color:#8A9491}}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;margin:0;font-size:10px}
+  .hd{display:flex;align-items:center;gap:12px;background:#1E2B2A;color:#fff;padding:10px 14px;border-radius:8px;border-bottom:3px solid #B08D3C;margin-bottom:10px}.hd .logo{width:40px;height:40px}.hd h1{margin:0;font-size:18px;font-family:'Noto Kufi Arabic',Tahoma}.hd p{margin:0;color:#C9C2AE}.hd .m{margin-right:auto;text-align:left;color:#B9C3BF;line-height:1.6}.qr{width:52px;height:52px;background:#fff;padding:3px;border-radius:5px}.qr svg{width:100%;height:100%}
+  table{width:100%;border-collapse:collapse}th{background:#1E2B2A;color:#fff;padding:6px 4px;font-size:9.5px}th small{display:block;color:#E9DDBF;font-weight:400}td{border:1px solid #E3E6E0;padding:4px;text-align:center;font-size:9px}td small{display:block;opacity:.8}td.d{text-align:right;font-weight:700;background:#F7F8F5}td.d small{font-weight:400;color:#8A9491}td.ms{background:repeating-linear-gradient(45deg,#fff 0 5px,#F1F3EE 5px 7px);color:#8A9491;font-weight:700}tr{page-break-inside:avoid}`;
+  const doc = `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>مصفوفة مستندات الفروع — ${fmtD(S.d.today)}</title><style>${css}</style></head><body><div class="hd">${LOGO}<div><h1>مصفوفة مستندات الفروع</h1><p>${esc(S.d.settings.orgName)} — ${B.length} فروع × ${T.length} مستنداً</p></div><div class="m">${hijri(today)}<br>${greg(today)}</div>${qrSvg(APP_HOME) ? '<div class="qr">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
+    <table><thead><tr><th>المستند</th>${B.map(b => { const s = branchStats(b.id, base); return `<th>${esc(b.name)}<small>${s.pct}% · ${s.missing} ناقص · ${s.bad} منتهٍ</small></th>`; }).join('')}</tr></thead><tbody>${T.map(t => `<tr><td class="d">${esc(t.name)}<small>${esc(t.issuer || '')}</small></td>${B.map(b => cell(find(b.id, t.k))).join('')}</tr>`).join('')}</tbody></table></body></html>`;
+  openPrint(doc);
+}
 function renderView() {
   const v = S.view, m = $('#main');
   setHash(v.indexOf('auth:') === 0 ? 'auth=' + encodeURIComponent(v.slice(5)) : 'v=' + encodeURIComponent(v));
@@ -938,7 +1028,7 @@ function renderView() {
 }
 function dashItems() {
   const f = S.dashF || {};
-  return S.d.items.filter(i => (!f.plat || (i.platform || 'بدون جهة') === f.plat) && (!f.own || (i.ownerName || 'بدون مسؤول') === f.own) &&
+  return S.d.items.filter(i => (!f.br || i.branch === f.br) && (!f.plat || (i.platform || 'بدون جهة') === f.plat) && (!f.own || (i.ownerName || 'بدون مسؤول') === f.own) &&
     (!f.per || (f.per === 'ex' ? i._st === 'expired' : i._due && i._days <= Number(f.per))));
 }
 function dashFilterBar() {
@@ -946,8 +1036,8 @@ function dashFilterBar() {
   const plats = uniq(S.d.items.map(i => i.platform || 'بدون جهة')), owns = uniq(S.d.items.map(i => i.ownerName || 'بدون مسؤول'));
   const sel = (id, lbl, arr, v) => `<select id="${id}" class="${v ? 'on' : ''}"><option value="">${lbl}</option>${arr.map(a => `<option ${a === v ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>`;
   const pers = [['', 'كل الفترات'], ['ex', 'المنتهي فقط'], ['7', 'خلال 7 أيام'], ['30', 'خلال 30 يوماً'], ['90', 'خلال 90 يوماً']];
-  const on = f.plat || f.own || f.per;
-  return `<div class="dfil" role="search"><b>${ic('search')} تصفية سريعة</b>${sel('df_plat', 'كل الجهات', plats, f.plat)}${sel('df_own', 'كل المسؤولين', owns, f.own)}<select id="df_per" class="${f.per ? 'on' : ''}">${pers.map(x => `<option value="${x[0]}" ${x[0] === (f.per || '') ? 'selected' : ''}>${x[1]}</option>`).join('')}</select>${on ? '<button class="btn light sm" id="df_save">حفظ هذه التصفية</button><button class="btn light sm clr" id="df_clr">مسح التصفية</button>' : ''}${savedFilters().map((x, n) => `<span class="sfc"><button data-sf="${n}">★ ${esc(x.n)}</button><button data-sfx="${n}" aria-label="حذف ${esc(x.n)}">✕</button></span>`).join('')}</div>`;
+  const on = f.plat || f.own || f.per || f.br, B = branches();
+  return `<div class="dfil" role="search"><b>${ic('search')} تصفية سريعة</b>${B.length ? `<select id="df_br" class="${f.br ? 'on' : ''}"><option value="">كل الفروع</option>${B.map(b => `<option value="${esc(b.id)}" ${f.br === b.id ? 'selected' : ''}>${esc(b.name)}</option>`).join('')}</select>` : ''}${sel('df_plat', 'كل الجهات', plats, f.plat)}${sel('df_own', 'كل المسؤولين', owns, f.own)}<select id="df_per" class="${f.per ? 'on' : ''}">${pers.map(x => `<option value="${x[0]}" ${x[0] === (f.per || '') ? 'selected' : ''}>${x[1]}</option>`).join('')}</select>${on ? '<button class="btn light sm" id="df_save">حفظ هذه التصفية</button><button class="btn light sm clr" id="df_clr">مسح التصفية</button>' : ''}${savedFilters().map((x, n) => `<span class="sfc"><button data-sf="${n}">★ ${esc(x.n)}</button><button data-sfx="${n}" aria-label="حذف ${esc(x.n)}">✕</button></span>`).join('')}</div>`;
 }
 function readinessPanel(it) {
   const L = it.filter(i => i._st !== 'off'), dated = L.filter(i => i._due), ex = dated.filter(i => i._days < 0).length;
@@ -1016,14 +1106,14 @@ function bindDash() {
   if ($('#impAny')) $('#impAny').onclick = () => { const m = modal('استيراد من إكسل', '<label>اختر القسم الذي تريد الاستيراد إليه</label>' + S.d.sections.map(s => `<button class="btn light block" style="margin-top:8px" data-is="${esc(s)}">${ic(s)} ${esc(s)}</button>`).join(''), '', 'sm'); m.el.querySelectorAll('[data-is]').forEach(b => b.onclick = () => { m.close(); importModal(b.dataset.is); }); };
   document.querySelectorAll('.sec-card').forEach(c => c.onclick = () => { S.view = 'sec:' + c.dataset.sec; S.filters = {}; renderApp(); });
   document.querySelectorAll('[data-mxt]').forEach(b => b.onclick = () => { S.mxSec = b.dataset.mxt; renderView(); });
-  ['df_plat', 'df_own', 'df_per'].forEach(id => { const el = $('#' + id); if (el) el.onchange = () => { S.dashF = { plat: $('#df_plat').value, own: $('#df_own').value, per: $('#df_per').value }; renderView(); }; });
+  ['df_br', 'df_plat', 'df_own', 'df_per'].forEach(id => { const el = $('#' + id); if (el) el.onchange = () => { S.dashF = { br: $('#df_br') ? $('#df_br').value : '', plat: $('#df_plat').value, own: $('#df_own').value, per: $('#df_per').value }; renderView(); }; });
   if ($('#df_clr')) $('#df_clr').onclick = () => { S.dashF = {}; renderView(); };
   if ($('#df_save')) $('#df_save').onclick = () => { const f = S.dashF || {}, def = [f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — ');
     const m = modal('حفظ التصفية', `<label>اسم مختصر يظهر كزر في أعلى اللوحة</label><input id="sf_n" value="${esc(def)}" maxlength="40">`, '<button class="btn" id="sf_go">حفظ</button>', 'sm');
     m.q('#sf_go').onclick = () => { const n = m.q('#sf_n').value.trim(); if (!n) return; setSaved(savedFilters().concat([{ n, f: Object.assign({}, f) }])); m.close(); toast('تم حفظ التصفية'); renderView(); }; };
   document.querySelectorAll('[data-sf]').forEach(b => b.onclick = () => { const x = savedFilters()[+b.dataset.sf]; if (x) { S.dashF = Object.assign({}, x.f); renderView(); } });
   document.querySelectorAll('[data-sfx]').forEach(b => b.onclick = () => { const a = savedFilters(); a.splice(+b.dataset.sfx, 1); setSaved(a); renderView(); });
-  const fsub = () => { const f = S.dashF || {}; return [f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — '); };
+  const fsub = () => { const f = S.dashF || {}; return [brName(f.br || ''), f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — '); };
   if ($('#prExec')) $('#prExec').onclick = () => printExec(dashItems(), fsub());
   if ($('#xlAll')) $('#xlAll').onclick = () => exportStyled(dashItems().filter(i => i._st !== 'off'), 'لوحة المتابعة' + (fsub() ? ' - ' + fsub() : ''));
   if ($('#prAll')) $('#prAll').onclick = () => { const rows = dashItems().filter(i => i._st !== 'off').sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)); printReport('تقرير لوحة المتابعة', fsub() ? 'تصفية: ' + fsub() + ' — كل البنود المطابقة بالكامل' : 'نسخة مطبوعة من لوحة المتابعة — كل الأقسام والجهات وكل البنود بالكامل', rows, rows, { dash: true }); };
@@ -1035,7 +1125,7 @@ const AV = ['#0B6E4F', '#6B5B2E', '#2F5D7C', '#7A3E48', '#4E5D58', '#8A6A1F'];
 const avc = n => { let h = 0; String(n).split('').forEach(c => h = (h * 31 + c.charCodeAt(0)) % 997); return AV[h % AV.length]; };
 const ini = n => { const w = String(n || '').trim().replace(/^(ال)/, ''); return w ? w.charAt(0) : '؟'; };
 const NOPLAT = 'بدون جهة';
-function getLayout(sec) { let v = ''; try { v = JSON.parse(localStorage.getItem('dm_layout') || '{}')[sec] || ''; } catch (e) { } return v || (sec === 'حسابات المنصات' ? 'table' : 'cards'); }
+function getLayout(sec) { let v = ''; try { v = JSON.parse(localStorage.getItem('dm_layout') || '{}')[sec] || ''; } catch (e) { } return v || (sec === 'حسابات المنصات' ? 'table' : sec === 'مستندات المكتب' ? 'branches' : 'cards'); }
 function setLayout(sec, v) { try { const o = JSON.parse(localStorage.getItem('dm_layout') || '{}'); o[sec] = v; localStorage.setItem('dm_layout', JSON.stringify(o)); } catch (e) { } }
 function itemActs(i) {
   return `${i.fileId ? `<button class="ico" title="فتح الملف" aria-label="فتح الملف" data-f="${i.fileId}">${ic('file')}</button>` : ''}${i.url && /^https?:/.test(i.url) ? `<a class="ico" title="فتح المنصة" aria-label="فتح المنصة" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${ic('link')}</a>` : ''}${can('editor') ? `<button class="ico" title="تجديد أو تحديث" aria-label="تجديد" data-r="${i.id}">${ic('renew')}</button>` : ''}${waLink(i) ? `<a class="ico" title="تذكير واتساب" aria-label="تذكير واتساب" href="${waLink(i)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">${ic('wa')}</a>` : ''}`;
@@ -1083,9 +1173,10 @@ function secView(sec) {
   const sel = (id, ph, arr, v) => `<select id="${id}"><option value="">${ph}</option>${arr.map(a => `<option ${a === v ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>`;
   const th = (key, t, cls) => `<th data-k="${key}" class="${cls || ''}">${t}${S.sort.k === key ? (S.sort.dir > 0 ? ' ▲' : ' ▼') : ''}</th>`;
   const title = f.all ? 'كل البنود' : sec;
-  const seg = f.all ? '' : `<div class="seg" role="group" aria-label="طريقة العرض"><button data-lay="cards" class="${lay === 'cards' ? 'on' : ''}">${ic('cards')}بطاقات حسب الجهة</button><button data-lay="table" class="${lay === 'table' ? 'on' : ''}">${ic('table')}جدول</button></div>`;
+  const seg = f.all ? '' : ` <div class="seg" role="group" aria-label="طريقة العرض">${sec === DOCSEC ? `<button data-lay="branches" class="${lay === 'branches' ? 'on' : ''}">${ic('dash')}حسب الفرع</button>` : ''}<button data-lay="cards" class="${lay === 'cards' ? 'on' : ''}">${ic('cards')}بطاقات حسب الجهة</button><button data-lay="table" class="${lay === 'table' ? 'on' : ''}">${ic('table')}جدول</button></div>`;
   let body;
-  if (lay === 'cards') {
+  if (lay === 'branches') body = branchBody(sec, beforeSt, f);
+  else if (lay === 'cards') {
     const g = {}; it.forEach(i => { const p = i.platform || NOPLAT; (g[p] = g[p] || []).push(i); });
     const keys = Object.keys(g).sort((a, b) => Math.min.apply(null, g[a].map(i => RANK[i._st])) - Math.min.apply(null, g[b].map(i => RANK[i._st])) || g[b].length - g[a].length);
     S.closed = S.closed || {}; let n = 0;
@@ -1106,7 +1197,7 @@ function secView(sec) {
   }
   return topbar(esc(title), it.length + ' بند' + (f.plat ? ' — ' + esc(f.plat) : '') + (f.st ? ' — ' + ST[f.st] : ''),
     (can('editor') && !f.all ? `<button class="btn light" id="imp">${ic('up')} استيراد من إكسل</button><button class="btn" id="add">${ic('plus')} إضافة بند</button>` : '') + `<button class="btn light" id="prSec">${ic('file')} طباعة</button><button class="btn light" id="exp">${ic('down')} تصدير إكسل</button>`) +
-    strip + chips +
+    strip + (lay === 'branches' ? '' : chips) +
     `<div class="tools"><input class="search" id="q" placeholder="بحث بالاسم أو الجهة أو اسم المستخدم أو رقم الوثيقة" aria-label="بحث" value="${esc(f.q || '')}">
       ${f.all ? sel('fst', 'كل الحالات', Object.keys(ST).map(x => ST[x]), ST[f.st]) : ''}${sel('ftype', 'كل الأنواع', types, f.type)}${sel('fown', 'كل المسؤولين', owners, f.owner)}${f.all || f.q || f.st || f.type || f.owner || f.plat ? '<button class="btn light sm" id="clr">مسح الفلاتر</button>' : ''}${seg}</div>` + body;
 }
@@ -1143,6 +1234,7 @@ function bindSec(sec) {
   if ($('#add')) $('#add').onclick = () => editModal(null, sec);
   if ($('#imp')) $('#imp').onclick = () => importModal(sec);
   $('#exp').onclick = () => exportXlsx(sec);
+  bindBranches(sec, re);
   $('#prSec').onclick = () => { const all = S.d.items.filter(i => S.filters.all || i.section === sec); const rows = [...document.querySelectorAll('[data-id]')].map(r => S.d.items.find(i => i.id === r.dataset.id)).filter(Boolean); printReport('تقرير ' + (S.filters.all ? 'كل البنود' : sec), (S.filters.plat ? 'الجهة: ' + S.filters.plat : 'كل الجهات') + (S.filters.st ? ' — ' + ST[S.filters.st] : ''), S.filters.plat ? rows : all, rows, { layout: S.filters.all ? 'table' : getLayout(sec) }); };
 }
 function waLink(i) {
@@ -1164,6 +1256,7 @@ function itemModal(id) {
   const rens = (S.d.renewals || []).filter(r => r.itemId === id);
   setHash('item=' + encodeURIComponent(id));
   const kv = [['القسم', SEC_ICON[i.section] + ' ' + esc(i.section)], ['الجهة / المنصة', i.platform ? `<a href="#" data-auth="${esc(i.platform)}">${av(i.platform)} ${esc(i.platform)} — ملف الجهة</a>` : '—'], ['النوع', esc(i.type || '—')], ['الأهمية', priChip(i) || 'عادي']];
+  if (i.branch) kv.push(['الفرع', esc(brName(i.branch) || '—') + (i.docKey && docTpl().find(t => t.k === i.docKey) ? ' — ' + esc(docTpl().find(t => t.k === i.docKey).name) : '')]);
   if (i.refNo) kv.push(['رقم الوثيقة', esc(i.refNo)]);
   if (i.crNo) { const vv = (S.d.violations || []).filter(v => String(v.crNo) === String(i.crNo)), vo = vv.filter(vOpen); kv.push(['السجل التجاري', `<span dir="ltr">${esc(i.crNo)}</span> ${esc(crLabel(i.crNo).split(' — ')[0] !== String(i.crNo) ? '(' + crLabel(i.crNo).split(' — ')[0] + ')' : '')} — <a href="#" data-vcrgo="${esc(i.crNo)}">${vo.length ? '<b style="color:var(--red)">' + vo.length + ' مخالفة مفتوحة</b> بمبلغ ' + money(vo.reduce((a, v) => a + (Number(v.amount) || 0), 0)) + ' ر.س' : vv.length ? vv.length + ' مخالفة (كلها مغلقة)' : 'لا توجد مخالفات'}</a>`]); }
   if (isAcc) kv.push(['اسم المستخدم', '<span dir="ltr">' + esc(i.username || '—') + '</span>'], ['كلمة المرور', !i.hasSecret ? 'غير مسجّلة' : S.d.me.canSecrets ? '<span id="sec_v" dir="ltr" style="font-family:monospace;letter-spacing:2px">••••••••</span> <button class="btn light sm" id="sec_show">إظهار</button> <button class="btn light sm hidden" id="sec_copy">نسخ</button>' : 'محجوبة — تحتاج صلاحية عرض كلمات المرور'], ['حالة الحساب', esc(i.accStatus || '—')], ['آخر تغيير لكلمة المرور', fmtD(i.pwLast)]);
@@ -1214,12 +1307,13 @@ function itemModal(id) {
   if (m.q('#me')) m.q('#me').onclick = () => { m.close(); editModal(id); };
   if (m.q('#ma')) m.q('#ma').onclick = async () => { if (m.q('#ma').dataset.ok !== '1') { m.q('#ma').dataset.ok = '1'; m.q('#ma').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('archiveItem', { id }); m.close(); await load(true); toastUndo('تمت أرشفة البند', async () => { await call('unarchiveItem', { id }); await load(true); toast('تمت استعادة البند'); }); };
 }
-function editModal(id, sec) {
-  const i = id ? S.d.items.find(x => x.id === id) : { section: sec || S.d.sections[0] };
+function editModal(id, sec, preset) {
+  const i = id ? S.d.items.find(x => x.id === id) : Object.assign({ section: sec || S.d.sections[0] }, preset || {});
   const opts = (arr, v) => arr.map(a => `<option ${a === v ? 'selected' : ''}>${esc(a)}</option>`).join('');
   const typesBy = { 'التأهيلات والتراخيص': ['تأهيل', 'ترخيص', 'شهادة', 'تصنيف', 'علامة تجارية', 'تدريب', 'اشتراك'], 'مستندات المكتب': ['مستند رسمي', 'شهادة', 'رخصة', 'عقد', 'عضوية', 'تأمين', 'أخرى'], 'حسابات المنصات': [...new Set(S.d.items.filter(x => x.section === 'حسابات المنصات').map(x => x.type).filter(Boolean))].concat(['منصة خاصة']) };
   const body = `<div class="row"><div><label>القسم</label><select id="e_section">${opts(S.d.sections, i.section)}</select></div><div><label>النوع</label><input id="e_type" list="dl_type" value="${esc(i.type || '')}"><datalist id="dl_type"></datalist></div></div>
     <div class="row"><div><label>اسم البند *</label><input id="e_title" value="${esc(i.title || '')}"></div><div><label>الجهة / المنصة</label><input id="e_platform" value="${esc(i.platform || '')}"></div></div>
+    <div class="row" id="brBox"><div><label>الفرع</label><select id="e_branch"><option value="">— بدون —</option><option value="${COMPANY}" ${i.branch === COMPANY ? 'selected' : ''}>المنشأة (مستند عام)</option>${branches().map(b => `<option value="${esc(b.id)}" ${i.branch === b.id ? 'selected' : ''}>${esc(b.name)}</option>`).join('')}</select></div><div><label>نوع المستند (من القائمة الثابتة)</label><select id="e_docKey"><option value="">مستند آخر</option>${docTpl().map(t => `<option value="${esc(t.k)}" ${i.docKey === t.k ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div></div>
     <div class="row"><div><label>رقم السجل التجاري (للربط بالمخالفات)</label><input id="e_crNo" dir="ltr" list="dl_crE" value="${esc(i.crNo || '')}"><datalist id="dl_crE">${crs().map(c => `<option value="${esc(c.no)}">${esc(c.name || '')}</option>`).join('')}</datalist></div><div></div></div>
     <div class="row"><div><label>المسؤول</label><select id="e_owner"><option value="">— بدون —</option>${opts((S.d.contacts || []).map(c => c.name), i.ownerName)}</select></div><div><label>رقم الوثيقة / المرجع</label><input id="e_refNo" value="${esc(i.refNo || '')}"></div></div>
     <div class="row3"><div><label>تاريخ البداية / الإصدار</label><input type="date" id="e_issueDate" value="${esc(i.issueDate || '')}"></div><div><label>تاريخ النهاية / الانتهاء</label><input type="date" id="e_expiryDate" value="${esc(i.expiryDate || '')}"></div>
@@ -1231,11 +1325,13 @@ function editModal(id, sec) {
     <div class="row"><div><label>التكلفة المتوقعة (ر.س)</label><input type="number" id="e_cost" value="${esc(i.cost || '')}"></div><div><label>الأهمية</label><select id="e_priority">${['عادي', 'مهم', 'حرج'].map(x => `<option value="${x === 'عادي' ? '' : x}" ${(i.priority || '') === (x === 'عادي' ? '' : x) ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div><div class="row"><div><label>ابدأ الإجراء قبل الموعد بـ (يوماً)</label><input type="number" id="e_leadDays" min="0" value="${esc(i.leadDays || '')}" placeholder="الافتراضي ${esc((S.d.settings || {}).leadDays || 30)}"></div></div>
     <label>ملاحظات</label><textarea id="e_notes" rows="2">${esc(i.notes || '')}</textarea>`;
   const m = modal(id ? 'تعديل: ' + esc(i.title) : 'إضافة بند جديد', body, '<button class="btn" id="e_save">حفظ</button>');
-  const sync = () => { const s = m.q('#e_section').value; m.q('#accBox').style.display = s === 'حسابات المنصات' ? '' : 'none'; m.q('#dl_type').innerHTML = (typesBy[s] || []).map(t => `<option value="${esc(t)}">`).join(''); };
+  const sync = () => { const s = m.q('#e_section').value; m.q('#accBox').style.display = s === 'حسابات المنصات' ? '' : 'none'; m.q('#brBox').style.display = s === DOCSEC ? '' : 'none'; m.q('#dl_type').innerHTML = (typesBy[s] || []).map(t => `<option value="${esc(t)}">`).join(''); };
   m.q('#e_section').onchange = sync; sync();
+  m.q('#e_branch').onchange = () => { const b = branches().find(x => x.id === m.q('#e_branch').value); if (b && b.crNo && !m.q('#e_crNo').value) m.q('#e_crNo').value = b.crNo; };
+  m.q('#e_docKey').onchange = () => { const t = docTpl().find(x => x.k === m.q('#e_docKey').value); if (t) { if (!m.q('#e_title').value.trim()) m.q('#e_title').value = t.name + (brName(m.q('#e_branch').value) ? ' — ' + brName(m.q('#e_branch').value) : ''); if (!m.q('#e_platform').value.trim()) m.q('#e_platform').value = t.issuer || ''; } };
   m.q('#e_save').onclick = async () => {
     const it = { id: id || '' };
-    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes', 'leadDays', 'priority', 'crNo'].forEach(k => it[k] = m.q('#e_' + k).value);
+    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes', 'leadDays', 'priority', 'crNo', 'branch', 'docKey'].forEach(k => it[k] = m.q('#e_' + k).value);
     it.ownerName = m.q('#e_owner').value;
     if (m.q('#e_secret') && m.q('#e_secret').value) it.secret = m.q('#e_secret').value;
     if (!it.title.trim()) return toast('اسم البند مطلوب', 1);
