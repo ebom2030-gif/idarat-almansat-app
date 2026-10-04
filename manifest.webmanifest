@@ -5,7 +5,7 @@
   "description": "متابعة التأهيلات والتراخيص ومستندات المكتب وحسابات المنصات وتنبيهات الانتهاء",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./?source=app",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "display_override": [
@@ -42,7 +42,7 @@
   "shortcuts": [
     {
       "name": "فتح المنصة",
-      "url": "./?source=app",
+      "url": "./",
       "icons": [
         {
           "src": "icons/icon-192.png",
