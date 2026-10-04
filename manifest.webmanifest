@@ -1,12 +1,12 @@
 {
-  "id": "./",
+  "id": "/idarat-almansat-app/?app=idarat-almansat",
   "name": "إدارة المنصات والتأهيلات",
-  "short_name": "المنصات والتأهيلات",
+  "short_name": "إدارة المنصات",
   "description": "متابعة التأهيلات والتراخيص ومستندات المكتب وحسابات المنصات وتنبيهات الانتهاء",
   "lang": "ar",
   "dir": "rtl",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/idarat-almansat-app/",
+  "scope": "/idarat-almansat-app/",
   "display": "standalone",
   "display_override": [
     "window-controls-overlay",
@@ -42,7 +42,7 @@
   "shortcuts": [
     {
       "name": "فتح المنصة",
-      "url": "./",
+      "url": "/idarat-almansat-app/",
       "icons": [
         {
           "src": "icons/icon-192.png",
@@ -52,7 +52,7 @@
     },
     {
       "name": "النسخة التجريبية",
-      "url": "./demo/",
+      "url": "/idarat-almansat-app/demo/",
       "icons": [
         {
           "src": "icons/icon-192.png",
