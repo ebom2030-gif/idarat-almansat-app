@@ -33,7 +33,7 @@ html,body{margin:0;height:100%;background:#1E2B2A;font-family:"Noto Kufi Arabic"
 var APP = document.getElementById('go').href;
 var q = new URLSearchParams(location.search);
 var standalone = matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: window-controls-overlay)').matches || navigator.standalone === true;
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function () { });
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function () { });
 var deferred = null;
 window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
 window.addEventListener('appinstalled', function () { document.getElementById('insDone').style.display = ''; document.getElementById('btnInstall').style.display = 'none'; });
