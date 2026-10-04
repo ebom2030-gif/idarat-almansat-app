@@ -126,7 +126,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .fu{border-right:2px solid var(--line);margin:8px 6px 0 0;padding-right:14px}.fu-i{position:relative;padding:4px 0 10px}.fu-i:before{content:"";position:absolute;right:-20px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--brass);border:2px solid var(--paper)}
 .fu-i b{font-size:13px}.fu-i span{color:var(--muted);font-size:12px;margin-right:8px}.fu-i p{margin:2px 0 0;font-size:13px}
 .fu-add{display:grid;grid-template-columns:200px 1fr auto;gap:8px;margin-top:10px}
-.tgl{display:flex;gap:6px;margin-top:8px}.tgl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#C9D2CE;border-radius:7px;padding:4px 9px;font-size:12px;cursor:pointer}.tgl button.on{background:rgba(176,141,60,.25);border-color:rgba(176,141,60,.6);color:#fff}
+.tgl{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}.tgl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#C9D2CE;border-radius:7px;padding:3px 8px;font-size:11.5px;cursor:pointer;white-space:nowrap}.tgl button.on{background:rgba(176,141,60,.25);border-color:rgba(176,141,60,.6);color:#fff}
 html[data-font=lg] body{zoom:1.14}
 html[data-theme=dark]{--stone:#0F1513;--paper:#18201E;--line:#2C3633;--line2:#232C2A;--text:#E3E8E5;--muted:#9AA7A3;--red-l:#3B1E1C;--amber-l:#3A2911;--gold-l:#332B13;--ok-l:#12302A;--none-l:#222A28;color-scheme:dark}
 html[data-theme=dark] body{background:var(--stone)}
@@ -136,6 +136,36 @@ html[data-theme=dark] th{background:#222C29;color:var(--text)}html[data-theme=da
 html[data-theme=dark] :is(.rl-col,.rl-sum span)[style*="#FAF6E8"]{--cl:#2E2A16!important;--c:#D9C46A!important}html[data-theme=dark] .strip button[style*="var(--ink)"]{--c:#E3E8E5!important}html[data-theme=dark] .strip button[style*="var(--ink)"] .n{color:#E3E8E5}
 html[data-theme=dark] .btn.light{background:var(--paper);color:var(--text);border-color:var(--line)}
 @media (max-width:900px){.rdy{grid-template-columns:1fr}.fu-add{grid-template-columns:1fr}}
+.letter{position:sticky;top:0;z-index:30;background:var(--stone);padding-top:14px;margin-top:-14px;box-shadow:0 10px 12px -12px rgba(0,0,0,.15)}
+.gs-btn kbd,kbd{font:600 10.5px/1 var(--body);background:var(--stone);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:3px 5px;color:var(--muted);margin-right:4px}
+.gs-ov{align-items:flex-start;padding-top:9vh}.gs{background:var(--paper);width:min(640px,94vw);border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45);overflow:hidden;border:1px solid var(--line)}
+.gs-in{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line2)}.gs-in svg.i{width:20px;height:20px;color:var(--muted)}.gs-in input{border:0!important;box-shadow:none!important;font-size:16px;padding:4px;background:transparent!important;flex:1}
+.gs-r{max-height:56vh;overflow:auto;padding:6px}.gs-i{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:9px 10px;border-radius:9px;cursor:pointer}.gs-i.on,.gs-i:hover{background:var(--stone)}.gs-i b{display:block;font-size:14px}.gs-i small{color:var(--muted);font-size:12px}.gs-i svg.i{width:18px;height:18px;color:var(--muted)}
+.gs-h{padding:8px 10px;color:var(--muted);font-size:12px;font-weight:700}.gs-f{display:flex;gap:16px;justify-content:center;padding:9px;border-top:1px solid var(--line2);font-size:11.5px;color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-left:6px}
+.av{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;background:var(--av);color:#fff;font-size:10.5px;font-weight:700;margin-left:6px;vertical-align:middle;flex-shrink:0}
+.pri{display:inline-block;border-radius:5px;padding:0 6px;font-size:10.5px;font-weight:800;margin-left:6px;vertical-align:1px}.pri.p0{background:var(--red);color:#fff}.pri.p1{background:var(--amber-l);color:var(--amber);border:1px solid currentColor}.pri.p2{background:var(--ok-l);color:var(--ok)}
+.mine{display:grid;grid-template-columns:1fr 1fr;gap:16px}.mine .panel{margin:0}.empty.big{padding:40px 20px;text-align:center}.empty.big svg.i{width:38px;height:38px;color:var(--brass)}.empty.big h3{margin:10px 0 4px}.empty.big p{color:var(--muted);margin:0 0 14px}.empty.big select{max-width:280px;margin:auto}
+.cal{background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}.cwd,.cgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}.cwd div{padding:9px;text-align:center;font-weight:700;font-size:12.5px;color:var(--muted);background:var(--stone);border-bottom:1px solid var(--line)}
+.cd{min-height:104px;border-left:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:6px;display:flex;flex-direction:column;gap:3px}.cd.has{cursor:pointer}.cd.has:hover{background:var(--stone)}.cd.today{box-shadow:inset 0 0 0 2px var(--brass)}.cd.empty-d{background:repeating-linear-gradient(45deg,transparent 0 6px,var(--line2) 6px 7px)}
+.cdn{display:flex;justify-content:space-between;align-items:baseline}.cdn b{font-size:13px}.cdn small{font-size:10.5px;color:var(--muted)}
+.ce{font-size:11.5px;font-weight:600;padding:2px 6px;border-radius:5px;border-right:3px solid var(--c);background:var(--stone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.cmore{font-size:11px;color:var(--muted);font-weight:700}
+.hov{position:fixed;z-index:120;width:300px;background:var(--paper);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 20px 40px -14px rgba(0,0,0,.35);font-size:12.5px;line-height:1.8;pointer-events:none;opacity:0;transform:translateY(4px);transition:opacity .15s,transform .15s}.hov.on{opacity:1;transform:none}.hov>b{display:block;font-size:14px;margin-bottom:2px}.hov-f{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);color:var(--muted)}
+.skl{display:block;border-radius:10px;background:linear-gradient(90deg,var(--line2) 0%,var(--paper) 50%,var(--line2) 100%);background-size:200% 100%;animation:skl 1.2s ease-in-out infinite}@keyframes skl{to{background-position:-200% 0}}.sk .side .skl{background:linear-gradient(90deg,rgba(255,255,255,.05),rgba(255,255,255,.12),rgba(255,255,255,.05));background-size:200% 100%}
+th.ck,td.ck{width:34px;text-align:center}td.ck input,th.ck input{width:16px;height:16px;cursor:pointer}
+.ie{background:none;border:1px dashed transparent;border-radius:6px;padding:2px 6px;cursor:pointer;font:inherit;color:inherit;text-align:right}.ie:hover,.ie:focus-visible{border-color:var(--brass);background:#FBF7EC}.ie.sm{font-size:11.5px;color:var(--muted);margin-top:4px}.ie-sel{width:auto;min-width:140px;padding:4px 6px;font-size:13px}
+.bulk{position:fixed;bottom:18px;left:50%;transform:translate(-50%,140%);z-index:70;display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--ink);color:#fff;padding:10px 14px;border-radius:14px;box-shadow:0 20px 40px -10px rgba(0,0,0,.5);transition:transform .25s;max-width:calc(100vw - 24px)}.bulk.on{transform:translate(-50%,0)}.bulk select{width:auto;padding:6px 8px;font-size:13px}.bulk b{margin-left:6px}
+.toast.undo{display:flex;align-items:center;gap:14px}.toast.undo button{background:var(--brass);color:var(--ink);border:0;border-radius:7px;padding:5px 12px;font-weight:800;cursor:pointer}
+.atts{display:flex;flex-direction:column;gap:6px}.att{display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 10px}.att.cur{border-color:var(--ok);background:var(--ok-l)}.att b{font-size:13px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.att small{color:var(--muted);font-size:11.5px}.att svg.i{color:var(--muted)}
+.drop-z{display:flex;align-items:center;gap:10px;justify-content:center;border:2px dashed var(--line);border-radius:12px;padding:16px;margin-top:10px;cursor:pointer;color:var(--muted);transition:background .15s,border-color .15s}.drop-z.on,.drop-z:hover{border-color:var(--brass);background:#FBF7EC;color:var(--text)}.dz-x{display:flex;gap:8px;align-items:center;font-size:12.5px;margin-top:6px;font-weight:500}
+.hist{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:0 12px}.hist summary{cursor:pointer;padding:10px 0;font-weight:700;display:flex;gap:8px;align-items:center}.hist summary svg.i{width:16px;height:16px}
+.hj{color:var(--muted);font-size:11px;font-weight:500}.sfc{display:inline-flex;border:1px solid var(--brass);border-radius:999px;overflow:hidden}.sfc button{background:#FBF7EC;border:0;padding:5px 10px;font-size:12.5px;cursor:pointer;color:var(--ink);font-weight:600}.sfc button+button{padding:5px 8px;color:var(--muted);border-right:1px solid var(--line)}
+.grp-a{margin-right:auto;margin-left:8px;font-size:12.5px}.grp-a svg.i{width:15px;height:15px}
+.mbar{display:none}
+.skip{position:absolute;right:12px;top:-60px;z-index:200;background:var(--brass);color:var(--ink);padding:10px 14px;border-radius:8px;font-weight:800;text-decoration:none}.skip:focus{top:12px}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+@media (max-width:900px){.mine{grid-template-columns:1fr}.mbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:65;background:var(--paper);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 20px -12px rgba(0,0,0,.3)}.mbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;font-size:11px;color:var(--muted);padding:4px 0;cursor:pointer}.mbar button svg.i{width:22px;height:22px}.mbar button.on{color:var(--green);font-weight:700}.main{padding-bottom:84px!important}.bulk{bottom:78px}.cd{min-height:70px}.ce{font-size:0;height:8px;padding:0}.gs-btn kbd{display:none}.letter{position:static;box-shadow:none}}
+html[data-theme=dark] :is(.ie:hover,.drop-z.on,.drop-z:hover,.sfc button){background:#2A2716!important;color:var(--text)}html[data-theme=dark] .letter{background:var(--stone)}html[data-theme=dark] .att.cur{background:#12302A}
 .inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
@@ -291,7 +321,7 @@ tbody tr:hover td{background:#F8F9F6}tr.click{cursor:pointer}
 .mx tr.all td{background:var(--ink2);color:#fff}.mx tr.all td.z{color:#6E7F7A}
 .mx tbody tr.clk{cursor:pointer}.mx tbody tr.clk:hover td{background:#F8F9F6}
 .dt-g td{background:#F3F5F0;font-weight:700;color:var(--ink);font-size:13.5px;border-top:1px solid var(--line)}.dt-g td span{color:var(--muted);font-weight:500;margin-right:6px}
-@media print{.side,.letter .acts,.tools,.burger,.toast{display:none!important}.main{padding:0}body{background:#fff}.panel,.strip,.tbl-wrap{border-color:#bbb}.cols{grid-template-columns:1fr}}
+@media print{.side,.letter .acts,.tools,.burger,.toast,.mbar,.bulk,.hov,.skip{display:none!important}.letter{position:static!important;box-shadow:none!important}.main{padding:0}body{background:#fff}.panel,.strip,.tbl-wrap{border-color:#bbb}.cols{grid-template-columns:1fr}}
 @media (max-width:1100px){.strip{grid-template-columns:repeat(4,minmax(0,1fr))}.strip button:nth-child(4){border-left:0}.strip button:nth-child(n+5){border-top:1px solid var(--line2)}}
 @media (max-width:900px){
  .auth{grid-template-columns:1fr}.auth-art{display:none}.auth-card .logo-m{display:flex}.auth-card{padding:28px 22px 22px}.grp-bar{display:none}
@@ -317,7 +347,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
   settings: 'M12 15a3 3 0 100-6 3 3 0 000 6zM19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z',
   file: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6', link: 'M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7',
   renew: 'M21 12a9 9 0 11-3-6.7L21 8M21 3v5h-5', wa: 'M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1121 11.5z', plus: 'M12 5v14M5 12h14', up: 'M12 19V5M5 12l7-7 7 7', down: 'M12 5v14M19 12l-7 7-7-7',
-  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-4.3-4.3', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
+  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4', link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1', hist: 'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2', search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-4.3-4.3', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
   user: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8', lock: 'M5 11h14v10H5zM8 11V7a4 4 0 018 0v4', eye: 'M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 15a3 3 0 100-6 3 3 0 000 6',
   eyeoff: 'M17.9 17.9A10 10 0 0112 20C5 20 1 12 1 12a18 18 0 015.1-5.9M9.9 4.2A9 9 0 0112 4c7 0 11 8 11 8a18 18 0 01-2.2 3.2M14.1 14.1a3 3 0 11-4.2-4.2M1 1l22 22', shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4',
   bell: 'M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0', alert: 'M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z',
@@ -325,7 +355,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
 const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/install.html';
-const APP_VER = '15 · 04/10/2026';
+const APP_VER = '16 · 04/10/2026';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
 const IN_GAS = !!(window.google && google.script && google.script.run);
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
@@ -396,7 +426,8 @@ function enrich(i) {
 const ST = { expired: 'متأخر / منتهي', critical: 'عاجل جداً', urgent: 'عاجل', soon: 'قريب', ok: 'ساري', none: 'بدون تاريخ', off: 'غير متابع' };
 function badge(i) {
   const t = i._st === 'expired' ? 'منتهي منذ ' + (-i._days) + ' يوم' : i._st === 'off' || i._st === 'none' ? ST[i._st] : i._days === 0 ? 'اليوم' : 'متبقٍ ' + i._days + ' يوم';
-  return '<span class="badge b-' + i._st + '">' + t + '</span>';
+  const sym = { expired: '✕ ', critical: '⏱ ', urgent: '⏱ ', soon: '◷ ', ok: '✓ ', none: '– ', off: '– ' }[i._st] || '';
+  return '<span class="badge b-' + i._st + '"><span aria-hidden="true">' + sym + '</span>' + t + '</span>';
 }
 const can = r => ({ viewer: 1, editor: 2, admin: 3 }[S.d.me.role] >= { viewer: 1, editor: 2, admin: 3 }[r]);
 const contact = n => (S.d.contacts || []).find(c => c.name === n) || {};
@@ -405,7 +436,7 @@ function cacheGet() { try { const v = sessionStorage.getItem('dm_cache'); return
 function useData(d, keepView) {
   cacheSave(d); S.d = d; S.d.items.forEach(enrich);
   if (!keepView) S.view = 'dash';
-  renderApp();
+  renderApp(); applyHash(); setTimeout(() => notifyDaily(), 1500);
 }
 async function boot() {
   try { google.script.url.getLocation(l => { S.urlUser = ((l && l.parameter) || {}).u || ''; const f = $('#l_user'); if (f && !f.value && S.urlUser) { f.value = S.urlUser; } }); } catch (e) { }
@@ -416,7 +447,7 @@ async function boot() {
       try { const d = await call('bootstrap', {}, true); const v = S.view, f = S.filters; useData(d, true); S.view = v; S.filters = f; renderApp(); } catch (e) { }
       return;
     }
-    try { await load(); return; } catch (e) { }
+    try { $('#root').innerHTML = skeleton(); await load(); return; } catch (e) { }
   }
   renderAuth();
 }
@@ -559,23 +590,26 @@ function counts(sec) {
   return { n: it.length, bad: it.filter(i => i._st === 'expired' || i._st === 'critical').length };
 }
 function renderApp() {
-  const me = S.d.me, nav = [['dash', 'dash', 'لوحة المتابعة']];
+  const me = S.d.me, nav = [['dash', 'dash', 'لوحة المتابعة'], ['mine', 'user', 'مهامي'], ['calendar', 'calendar', 'التقويم']];
   S.d.sections.forEach(s => nav.push(['sec:' + s, s, s]));
   const nav2 = [['reports', 'report', 'التقارير'], ['renewals', 'renewals', 'سجل التجديدات'], ['contacts', 'contacts', 'المسؤولون']];
   if (me.role === 'admin') nav2.push(['users', 'users', 'المستخدمون والصلاحيات'], ['alerts', 'alerts', 'سجل التنبيهات'], ['logs', 'logs', 'سجل النشاط'], ['settings', 'settings', 'الإعدادات']);
   const link = n => { let c = '';
     if (n[0].indexOf('sec:') === 0) { const k = counts(n[0].slice(4)); c = k.bad ? '<span class="cnt hot">' + k.bad + '</span>' : '<span class="cnt">' + k.n + '</span>'; }
     else if (n[0] === 'dash') { const k = counts(); c = k.bad ? '<span class="cnt hot">' + k.bad + '</span>' : ''; }
+    else if (n[0] === 'mine') { const mo = myOwnerName(), k = mo ? S.d.items.filter(i => i.ownerName === mo && (i._st === 'expired' || (i._due && i._days <= 7))).length : 0; c = k ? '<span class="cnt hot">' + k + '</span>' : ''; }
     return `<a data-v="${esc(n[0])}" class="${S.view === n[0] ? 'on' : ''}" href="#" ${S.view === n[0] ? 'aria-current="page"' : ''}>${ic(n[1])}<span>${esc(n[2])}</span>${c}</a>`; };
-  $('#root').innerHTML = `<div class="app"><aside class="side" id="side">
+  $('#root').innerHTML = `<a class="skip" href="#main">تخطٍّ إلى المحتوى</a><div class="app"><aside class="side" id="side" aria-label="القائمة الرئيسية">
     <div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div></div>
     <nav class="nav">${nav.map(link).join('')}<div class="grp">المتابعة والإدارة</div>${nav2.map(link).join('')}</nav>
     <a class="inst" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}<span>تثبيت التطبيق<small>على الكمبيوتر أو الجوال</small></span></a>
-    <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div><div class="tgl"><button id="tTheme" class="${document.documentElement.dataset.theme === 'dark' ? 'on' : ''}">الوضع الليلي</button><button id="tFont" class="${document.documentElement.dataset.font === 'lg' ? 'on' : ''}">خط كبير</button></div><div class="ver">الإصدار ${APP_VER}</div></div>
-  </aside><main class="main" id="main"></main><div class="tip hidden" id="tip"></div></div>`;
+    <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div><div class="tgl"><button id="tTheme" class="${document.documentElement.dataset.theme === 'dark' ? 'on' : ''}">الوضع الليلي</button><button id="tFont" class="${document.documentElement.dataset.font === 'lg' ? 'on' : ''}">خط كبير</button><button id="tNotif" class="${notifEnabled() ? 'on' : ''}">الإشعارات</button><button data-search title="بحث (Ctrl+K)">بحث</button><button id="tKeys" title="اختصارات لوحة المفاتيح">⌨</button></div><div class="ver">الإصدار ${APP_VER}</div></div>
+  </aside><main class="main" id="main" tabindex="-1"></main><div class="tip hidden" id="tip"></div></div>
+  <nav class="mbar" aria-label="تنقل سريع">${[['dash', 'dash', 'اللوحة'], ['mine', 'user', 'مهامي'], ['search', 'search', 'بحث'], ['calendar', 'calendar', 'التقويم']].concat(can('editor') ? [['add', 'plus', 'إضافة']] : []).map(b => `<button data-nav="${b[0]}" class="${S.view === b[0] ? 'on' : ''}">${ic(b[1])}<span>${b[2]}</span></button>`).join('')}</nav>`;
   document.querySelectorAll('.nav a').forEach(a => a.onclick = e => { e.preventDefault(); S.view = a.dataset.v; S.filters = {}; $('#side').classList.remove('open'); renderApp(); });
   $('#out').onclick = async () => { try { await gs('logout', S.token); } catch (e) { } logoutLocal(); };
   $('#myPw').onclick = myPwModal; loadLib(QR_LIB).catch(() => { });
+  $('#tNotif').onclick = toggleNotif; $('#tKeys').onclick = shortcutsHelp;
   $('#tTheme').onclick = () => toggleLook('dm_theme', 'dark'); $('#tFont').onclick = () => toggleLook('dm_font', 'lg');
   renderView();
 }
@@ -583,11 +617,195 @@ function topbar(title, sub, actions) {
   const now = new Date();
   return `<header class="letter"><div style="display:flex;gap:10px;align-items:flex-start"><button class="burger" aria-label="القائمة" onclick="document.getElementById('side').classList.toggle('open')">${ic('menu')}</button>
     <div><h2>${title}</h2>${sub ? '<div class="sub">' + sub + '</div>' : ''}</div></div>
-    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="dates"><b>${hijri(now)}</b><br>${greg(now)}</div><div class="acts">${actions || ''}</div></div></header>`;
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="dates"><b>${hijri(now)}</b><br>${greg(now)}</div><div class="acts"><button class="btn light gs-btn" data-search aria-label="بحث شامل">${ic('search')}<span class="hide-m">بحث</span><kbd class="hide-m">Ctrl K</kbd></button>${actions || ''}</div></div></header>`;
+}
+const PRI = { 'حرج': 0, 'مهم': 1 };
+const priRank = i => PRI[i.priority] === undefined ? 2 : PRI[i.priority];
+const priChip = i => i.priority === 'حرج' ? '<span class="pri p0">حرج</span>' : i.priority === 'مهم' ? '<span class="pri p1">مهم</span>' : '';
+const byPriDays = (a, b) => priRank(a) - priRank(b) || (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days);
+const av = n => `<span class="av" style="--av:${avc(n || '-')}" aria-hidden="true">${esc(ini(n || '؟'))}</span>`;
+function hijriS(s) { try { if (!s) return ''; const d = new Date(String(s).slice(0, 10) + 'T12:00:00'); return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'numeric', year: 'numeric' }).format(d).replace(/\s{0,}هـ/, ''); } catch (e) { return ''; } }
+const fmtDH = s => s ? fmtD(s) + ' <small class="hj">' + hijriS(s) + ' هـ</small>' : '—';
+function ownerOptions(v) { const names = [...new Set((S.d.contacts || []).map(c => c.name).concat(S.d.items.map(i => i.ownerName)).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar')); return '<option value="">بدون مسؤول</option>' + names.map(n => `<option ${n === v ? 'selected' : ''}>${esc(n)}</option>`).join(''); }
+const STATUS_LIST = ['لم يبدأ', 'تحت الدراسة', 'جاري العمل', 'جاري المتابعة', 'تم التواصل مع الجهة', 'قُدّم الطلب', 'بانتظار رد الجهة', 'بانتظار الدفع', 'تم السداد', 'بانتظار الجهة', 'تم', 'غير مطلوب'];
+function toastUndo(msg, fn) { const t = document.createElement('div'); t.className = 'toast undo'; t.innerHTML = '<span>' + esc(msg) + '</span><button>تراجع</button>'; document.body.appendChild(t); const tm = setTimeout(() => t.remove(), 7000); t.querySelector('button').onclick = async () => { clearTimeout(tm); t.remove(); await fn(); }; }
+function replaceItems(list) { (list || []).forEach(n => { const k = S.d.items.findIndex(x => x.id === n.id); if (k >= 0) S.d.items[k] = enrich(n); }); cacheSave(S.d); }
+
+function myOwnerName() { let o = ''; try { o = localStorage.getItem('dm_me_owner') || ''; } catch (e) { } if (o) return o; const me = S.d.me.name; return S.d.items.some(i => i.ownerName === me) ? me : ''; }
+function mineView() {
+  const me = myOwnerName(), owners = [...new Set(S.d.items.map(i => i.ownerName).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
+  const pick = `<select id="mine_owner" aria-label="اختر اسمك في قائمة المسؤولين"><option value="">— اختر اسمك —</option>${owners.map(o => `<option ${o === me ? 'selected' : ''}>${esc(o)}</option>`).join('')}</select>`;
+  if (!me) return topbar('مهامي', 'بنودك أنت فقط مرتّبة حسب ما يجب فعله') + `<div class="empty big">${ic('user')}<h3>اختر اسمك مرة واحدة</h3><p>اسم حسابك غير مطابق لأي مسؤول في البنود. اختر اسمك كما هو مكتوب في خانة «المسؤول»، وسيتذكره هذا الجهاز.</p>${pick}</div>`;
+  const it = S.d.items.filter(i => i.ownerName === me && i._st !== 'off');
+  const G = [['متأخر — ابدأ اليوم', 'var(--red)', it.filter(i => i._due && i._days < 0)], ['هذا الأسبوع', 'var(--amber)', it.filter(i => i._due && i._days >= 0 && i._days <= 7)],
+    ['حان وقت بدء الإجراء', 'var(--gold)', it.filter(i => i._start && i._days > 7)], ['بانتظار رد الجهة', 'var(--muted)', it.filter(i => ['بانتظار رد الجهة', 'بانتظار الجهة', 'قُدّم الطلب', 'بانتظار الدفع'].indexOf(i.status) >= 0 && !(i._due && i._days <= 7))]];
+  const done = new Set(); const groups = G.map(g => [g[0], g[1], g[2].filter(i => !done.has(i.id) && done.add(i.id)).sort(byPriDays)]);
+  const row = i => `<li data-id="${i.id}" style="--c:${STC[i._st] === 'transparent' ? 'var(--line)' : STC[i._st]}"><span class="t">${priChip(i)}${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${av(i.platform)}${esc(i.platform || i.section)} — ${i._due ? esc(i._due.kind) + ' ' + fmtD(i._due.date) : 'بلا تاريخ'}${i.status ? ' — ' + esc(i.status) : ''}</span></li>`;
+  return topbar('مهامي', esc(me) + ' — ' + it.length + ' بنداً تحت مسؤوليتك', pick) + `<div class="mine">${groups.map(g => `<section class="panel"><h3><i class="dot" style="background:${g[1]}"></i>${g[0]} <small>${g[2].length}</small></h3>${g[2].length ? `<ul class="dlist">${g[2].map(row).join('')}</ul>` : '<div class="empty" style="padding:16px">لا شيء هنا ✓</div>'}</section>`).join('')}</div>`;
+}
+function bindMine() { const s = $('#mine_owner'); if (s) s.onchange = () => { try { localStorage.setItem('dm_me_owner', s.value); } catch (e) { } renderView(); }; }
+
+function authView(name) {
+  const it = S.d.items.filter(i => (i.platform || NOPLAT) === name).sort(byPriDays), ids = new Set(it.map(i => i.id));
+  const rens = (S.d.renewals || []).filter(r => ids.has(r.itemId)), urls = [...new Set(it.map(i => i.url).filter(Boolean))], owners = [...new Set(it.map(i => i.ownerName).filter(Boolean))];
+  const dated = it.filter(i => i._due && i._st !== 'off'), ex = dated.filter(i => i._days < 0).length, rd = dated.length ? Math.round((dated.length - ex) / dated.length * 100) : 100;
+  const c = k => it.filter(i => i._st === k).length;
+  return topbar(`${av(name)} ${esc(name)}`, 'ملف الجهة — ' + it.length + ' بنداً', `<button class="btn light" id="authPr">${ic('file')} طباعة</button><button class="btn light" id="authBack">${ic('dash')} اللوحة</button>`) +
+    `<div class="strip">${[['كل البنود', it.length, 'var(--ink)'], ['منتهية', c('expired'), 'var(--red)'], ['خلال 30 يوماً', c('critical') + c('urgent'), 'var(--amber)'], ['خلال 90 يوماً', c('soon'), '#A08A2E'], ['سارية', c('ok'), 'var(--ok)'], ['مؤشر الجاهزية', rd + '%', rd >= 90 ? 'var(--ok)' : rd >= 75 ? 'var(--amber)' : 'var(--red)']].map(k => `<button style="--c:${k[2]};cursor:default"><div class="n">${k[1]}</div><div class="l">${k[0]}</div></button>`).join('')}</div>
+    <div class="cols"><section class="panel"><h3>البنود</h3><ul class="dlist">${it.map(i => `<li data-id="${i.id}" style="--c:${STC[i._st] === 'transparent' ? 'var(--line)' : STC[i._st]}"><span class="t">${priChip(i)}${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${esc(i.section)} — ${i._due ? esc(i._due.kind) + ' ' + fmtD(i._due.date) : 'بلا تاريخ'} — ${esc(i.ownerName || 'بدون مسؤول')}</span></li>`).join('')}</ul></section>
+    <div><section class="panel"><h3>روابط ومسؤولون</h3><div class="pb">${urls.length ? urls.map(u => `<a class="lnk" href="${esc(u)}" target="_blank" rel="noopener">${ic('link')} ${esc(u.replace(/^https?:[\/]{2}/, '').slice(0, 48))}</a>`).join('<br>') : '<div style="color:var(--muted)">لا توجد روابط مسجّلة</div>'}<div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">${owners.map(o => `<span class="chip">${av(o)} ${esc(o)}</span>`).join('') || '<span style="color:var(--muted)">بدون مسؤول</span>'}</div></div></section>
+    <section class="panel"><h3>سجل التجديدات <small>${rens.length}</small></h3><div class="pb">${rens.length ? rens.slice(0, 30).map(r => `<div class="secrow" style="cursor:default;grid-template-columns:1fr auto"><span>${esc(r.title)} — ${esc(r.kind)}</span><span class="v" style="font-weight:500">${esc(String(r.at).slice(0, 10))}</span></div>`).join('') : '<div class="empty" style="padding:14px">لا توجد تجديدات مسجّلة</div>'}</div></section></div></div>`;
+}
+function bindAuth(name) {
+  document.querySelectorAll('#main [data-id]').forEach(r => r.onclick = () => itemModal(r.dataset.id));
+  $('#authBack').onclick = () => { S.view = 'dash'; renderApp(); };
+  $('#authPr').onclick = () => { const rows = S.d.items.filter(i => (i.platform || NOPLAT) === name && i._st !== 'off'); printReport('ملف الجهة: ' + name, 'كل بنود الجهة وحالتها', rows, rows); };
+}
+
+function calView() {
+  const base = S.cal || S.d.today.slice(0, 7), y = +base.slice(0, 4), mo = +base.slice(5, 7) - 1, first = new Date(Date.UTC(y, mo, 1)), days = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate(), off = (first.getUTCDay() + 1) % 7;
+  const by = {}; S.d.items.forEach(i => { if (i._due && i._st !== 'off' && i._due.date.slice(0, 7) === base) (by[i._due.date] = by[i._due.date] || []).push(i); });
+  const mname = new Intl.DateTimeFormat('ar-EG', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(first), hname = (() => { try { return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(Date.UTC(y, mo, 15))); } catch (e) { return ''; } })();
+  const wd = ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة'];
+  let cells = ''; for (let k = 0; k < off; k++) cells += '<div class="cd empty-d"></div>';
+  for (let d = 1; d <= days; d++) { const key = base + '-' + String(d).padStart(2, '0'), arr = (by[key] || []).sort(byPriDays), today = key === S.d.today;
+    cells += `<div class="cd ${today ? 'today' : ''} ${arr.length ? 'has' : ''}" data-day="${key}" tabindex="${arr.length ? 0 : -1}"><div class="cdn"><b>${d}</b><small>${hijriS(key).split('/')[0] || ''}</small></div>${arr.slice(0, 3).map(i => `<div class="ce" style="--c:${STC[i._st] === 'transparent' ? 'var(--line)' : STC[i._st]}" data-id="${i.id}" title="${esc(i.title)}">${esc(i.title)}</div>`).join('')}${arr.length > 3 ? `<div class="cmore">+${arr.length - 3} أخرى</div>` : ''}</div>`; }
+  const n = Object.values(by).reduce((a, x) => a + x.length, 0);
+  return topbar('التقويم', mname + (hname ? ' — ' + hname : '') + ' — ' + n + ' موعداً', `<button class="btn light" id="calPrev">${ic('chev')} السابق</button><button class="btn light" id="calToday">الشهر الحالي</button><button class="btn light" id="calNext">التالي</button><button class="btn light" id="calIcs">${ic('down')} إضافة الكل لتقويمي</button>`) +
+    `<div class="cal"><div class="cwd">${wd.map(w => `<div>${w}</div>`).join('')}</div><div class="cgrid">${cells}</div></div><div class="legend" style="margin-top:12px"><span><i style="background:var(--red)"></i>منتهي</span><span><i style="background:var(--amber)"></i>7 أيام</span><span><i style="background:var(--gold)"></i>30 يوماً</span><span><i style="background:#C9B66A"></i>90 يوماً</span><span><i style="background:var(--ok)"></i>ساري</span></div>`;
+}
+function bindCal() {
+  const mv = n => { const b = S.cal || S.d.today.slice(0, 7), d = new Date(Date.UTC(+b.slice(0, 4), +b.slice(5, 7) - 1 + n, 1)); S.cal = d.toISOString().slice(0, 7); renderView(); };
+  $('#calPrev').onclick = () => mv(-1); $('#calNext').onclick = () => mv(1); $('#calToday').onclick = () => { S.cal = ''; renderView(); };
+  $('#calIcs').onclick = () => downloadIcs(S.d.items.filter(i => i._due && i._st !== 'off'), 'مواعيد المنصات والتأهيلات');
+  document.querySelectorAll('.ce[data-id]').forEach(e => e.onclick = ev => { ev.stopPropagation(); itemModal(e.dataset.id); });
+  document.querySelectorAll('.cd.has').forEach(c => { const open = () => { const arr = S.d.items.filter(i => i._due && i._due.date === c.dataset.day).sort(byPriDays); const m = modal('مواعيد ' + fmtD(c.dataset.day) + ' — ' + hijriS(c.dataset.day) + ' هـ', `<ul class="dlist">${arr.map(i => `<li data-id="${i.id}" style="--c:${STC[i._st]}"><span class="t">${priChip(i)}${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${esc(i.platform || i.section)} — ${esc(i._due.kind)} — ${esc(i.ownerName || 'بدون مسؤول')}</span></li>`).join('')}</ul>`, '', 'sm'); m.el.querySelectorAll('[data-id]').forEach(l => l.onclick = () => { m.close(); itemModal(l.dataset.id); }); }; c.onclick = open; c.onkeydown = e => { if (e.key === 'Enter') open(); }; });
+}
+function icsEsc(t) { return String(t || '').replace(/[\\,;]/g, m => '\\' + m).replace(/\n/g, ' '); }
+function downloadIcs(items, name) {
+  const st = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
+  const ev = items.map(i => { const d = i._due.date.replace(/-/g, ''), nx = new Date(Date.UTC(+i._due.date.slice(0, 4), +i._due.date.slice(5, 7) - 1, +i._due.date.slice(8, 10) + 1)).toISOString().slice(0, 10).replace(/-/g, '');
+    return ['BEGIN:VEVENT', 'UID:' + i.id + '-' + d + '@idarat-almansat', 'DTSTAMP:' + st, 'DTSTART;VALUE=DATE:' + d, 'DTEND;VALUE=DATE:' + nx, 'SUMMARY:' + icsEsc(i._due.kind + ': ' + i.title), 'DESCRIPTION:' + icsEsc((i.platform || '') + ' — المسؤول: ' + (i.ownerName || '—') + ' — ' + APP_HOME), 'BEGIN:VALARM', 'TRIGGER:-P' + (i._lead || 30) + 'D', 'ACTION:DISPLAY', 'DESCRIPTION:' + icsEsc('ابدأ إجراء: ' + i.title), 'END:VALARM', 'END:VEVENT'].join('\r\n'); });
+  const txt = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-' + '/' + '/Idarat Almansat' + '/' + '/AR', 'CALSCALE:GREGORIAN', 'X-WR-CALNAME:' + icsEsc(name)].concat(ev).concat(['END:VCALENDAR']).join('\r\n');
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([txt], { type: 'text/calendar' })); a.download = name + '.ics'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  toast('تم تجهيز ملف التقويم — افتحه لإضافته إلى تقويم جوجل أو Outlook');
+}
+
+function openSearch() {
+  if ($('#gs')) return;
+  $('#modals').insertAdjacentHTML('beforeend', `<div class="ov gs-ov" id="gs" role="dialog" aria-modal="true" aria-label="بحث شامل"><div class="gs"><div class="gs-in">${ic('search')}<input id="gs_q" placeholder="ابحث عن بند، جهة، رقم وثيقة، مسؤول…" autocomplete="off"><kbd>Esc</kbd></div><div class="gs-r" id="gs_r" role="listbox"></div><div class="gs-f"><span><kbd>↑</kbd><kbd>↓</kbd> للتنقل</span><span><kbd>Enter</kbd> للفتح</span><span><kbd>Ctrl</kbd>+<kbd>K</kbd> من أي مكان</span></div></div></div>`);
+  const ov = $('#gs'), q = $('#gs_q'), R = $('#gs_r'); let sel = 0, res = [];
+  const close = () => ov.remove(); ov.onclick = e => { if (e.target === ov) close(); };
+  const norm = t => String(t || '').toLowerCase().replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي');
+  const draw = () => {
+    const t = norm(q.value.trim()); res = [];
+    if (t) {
+      const plats = [...new Set(S.d.items.map(i => i.platform).filter(Boolean))].filter(p => norm(p).indexOf(t) >= 0).slice(0, 4).map(p => ({ k: 'auth', v: p }));
+      const its = S.d.items.filter(i => norm([i.title, i.platform, i.refNo, i.ownerName, i.username, i.notes, i.type, i.status].join(' ')).indexOf(t) >= 0).sort(byPriDays).slice(0, 12).map(i => ({ k: 'item', v: i }));
+      const views = [['dash', 'لوحة المتابعة'], ['mine', 'مهامي'], ['calendar', 'التقويم'], ['reports', 'التقارير'], ['renewals', 'سجل التجديدات'], ['contacts', 'المسؤولون']].filter(x => norm(x[1]).indexOf(t) >= 0).map(x => ({ k: 'view', v: x }));
+      res = views.concat(plats).concat(its);
+    } else res = S.d.items.filter(i => i._due && i._st !== 'off').sort((a, b) => a._days - b._days).slice(0, 8).map(i => ({ k: 'item', v: i }));
+    sel = Math.min(sel, Math.max(0, res.length - 1));
+    R.innerHTML = (!t ? '<div class="gs-h">الأقرب موعداً</div>' : '') + (res.map((r, n) => r.k === 'item' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option"><i class="dot" style="background:${STC[r.v._st] === 'transparent' ? 'var(--line)' : STC[r.v._st]}"></i><div><b>${priChip(r.v)}${esc(r.v.title)}</b><small>${esc(r.v.platform || r.v.section)}${r.v.refNo ? ' — رقم ' + esc(r.v.refNo) : ''} — ${esc(r.v.ownerName || 'بدون مسؤول')}</small></div>${badge(r.v)}</div>`
+      : r.k === 'auth' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${av(r.v)}<div><b>${esc(r.v)}</b><small>ملف الجهة — ${S.d.items.filter(i => i.platform === r.v).length} بند</small></div></div>`
+      : `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${ic('dash')}<div><b>${esc(r.v[1])}</b><small>انتقال للصفحة</small></div></div>`).join('') || '<div class="gs-h">لا توجد نتائج</div>');
+    R.querySelectorAll('[data-n]').forEach(e => e.onclick = () => go(+e.dataset.n));
+  };
+  const go = n => { const r = res[n]; if (!r) return; close(); if (r.k === 'item') itemModal(r.v.id); else if (r.k === 'auth') { S.view = 'auth:' + r.v; renderApp(); } else { S.view = r.v[0]; S.filters = {}; renderApp(); } };
+  q.oninput = () => { sel = 0; draw(); };
+  q.onkeydown = e => { if (e.key === 'ArrowDown') { sel = Math.min(res.length - 1, sel + 1); draw(); e.preventDefault(); } else if (e.key === 'ArrowUp') { sel = Math.max(0, sel - 1); draw(); e.preventDefault(); } else if (e.key === 'Enter') go(sel); else if (e.key === 'Escape') close(); };
+  draw(); setTimeout(() => q.focus(), 20);
+}
+function shortcutsHelp() { modal('اختصارات لوحة المفاتيح', `<div class="kv">${[['Ctrl + K أو /', 'بحث شامل'], ['N', 'إضافة بند جديد'], ['P', 'طباعة الصفحة الحالية'], ['G ثم D', 'لوحة المتابعة'], ['G ثم M', 'مهامي'], ['G ثم C', 'التقويم'], ['Esc', 'إغلاق النافذة'], ['?', 'هذه القائمة']].map(k => `<div><kbd>${k[0]}</kbd></div><div>${k[1]}</div>`).join('')}</div>`, '', 'sm'); }
+let gKey = 0;
+document.addEventListener('keydown', e => {
+  if (!S.d) return;
+  const typing = /INPUT|TEXTAREA|SELECT/.test((e.target && e.target.tagName) || '') || (e.target && e.target.isContentEditable);
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) { e.preventDefault(); openSearch(); return; }
+  if (e.key === 'Escape') { const ovs = document.querySelectorAll('#modals .ov'); if (ovs.length) { ovs[ovs.length - 1].remove(); e.preventDefault(); } return; }
+  if (typing || e.ctrlKey || e.metaKey || e.altKey || document.querySelector('#modals .ov')) return;
+  const k = e.key.toLowerCase();
+  if (gKey && Date.now() - gKey < 1200) { gKey = 0; const t = { d: 'dash', m: 'mine', c: 'calendar' }[k]; if (t) { S.view = t; S.filters = {}; renderApp(); } return; }
+  if (k === 'g') { gKey = Date.now(); return; }
+  if (k === '/') { e.preventDefault(); openSearch(); }
+  else if (k === 'n' && can('editor')) { e.preventDefault(); editModal(null, S.view.indexOf('sec:') === 0 ? S.view.slice(4) : S.d.sections[0]); }
+  else if (k === 'p') { const b = $('#prAll') || $('#prSec') || $('#authPr') || $('#rp_pr'); if (b) { e.preventDefault(); b.click(); } }
+  else if (e.key === '?') { e.preventDefault(); shortcutsHelp(); }
+});
+document.addEventListener('click', e => {
+  const s = e.target.closest('[data-search]'); if (s) { e.preventDefault(); openSearch(); return; }
+  const a = e.target.closest('[data-auth]'); if (a) { e.preventDefault(); e.stopPropagation(); document.querySelectorAll('#modals .ov').forEach(o => o.remove()); S.view = 'auth:' + a.dataset.auth; renderApp(); return; }
+  const n = e.target.closest('[data-nav]'); if (n) { e.preventDefault(); if (n.dataset.nav === 'search') return openSearch(); if (n.dataset.nav === 'add') return editModal(null, S.view.indexOf('sec:') === 0 ? S.view.slice(4) : S.d.sections[0]); S.view = n.dataset.nav; S.filters = {}; renderApp(); }
+}, true);
+
+let hovT = 0;
+function hovCard(el) {
+  const i = S.d && S.d.items.find(x => x.id === el.dataset.id); if (!i) return;
+  const lf = (S.d.followups || []).filter(f => f.itemId === i.id).pop();
+  const h = $('#hov') || (document.body.insertAdjacentHTML('beforeend', '<div id="hov" class="hov" role="tooltip"></div>'), $('#hov'));
+  h.innerHTML = `<b>${priChip(i)}${esc(i.title)}</b><div>${av(i.platform)} ${esc(i.platform || i.section)}</div><div>${i._due ? esc(i._due.kind) + ': ' + fmtDH(i._due.date) : 'بلا تاريخ'} ${badge(i)}</div><div>المسؤول: <b>${esc(i.ownerName || '—')}</b>${i.status ? ' · ' + esc(i.status) : ''}</div>${lf ? `<div class="hov-f">آخر متابعة: ${esc(lf.stage)} — ${esc(String(lf.at).slice(0, 10))}${lf.note ? '<br>' + esc(lf.note) : ''}</div>` : ''}`;
+  const r = el.getBoundingClientRect(); h.classList.add('on'); const hw = h.offsetWidth, hh = h.offsetHeight;
+  let top = r.bottom + 8; if (top + hh > innerHeight - 8) top = Math.max(8, r.top - hh - 8);
+  h.style.top = top + 'px'; h.style.left = Math.max(8, Math.min(innerWidth - hw - 8, r.left + r.width / 2 - hw / 2)) + 'px';
+}
+if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+  document.addEventListener('mouseover', e => { const el = e.target.closest && e.target.closest('#main [data-id]'); clearTimeout(hovT); if (!el) { const h = $('#hov'); if (h) h.classList.remove('on'); return; } hovT = setTimeout(() => hovCard(el), 450); });
+  document.addEventListener('mousedown', () => { clearTimeout(hovT); const h = $('#hov'); if (h) h.classList.remove('on'); }, true);
+}
+
+function setHash(h) { try { if (IN_GAS) return; history.replaceState(null, '', location.pathname + location.search + (h ? '#' + h : '')); } catch (e) { } }
+function applyHash() {
+  if (IN_GAS || S._hashDone) return; S._hashDone = true;
+  const h = decodeURIComponent((location.hash || '').slice(1)); if (!h) return;
+  const [k, ...rest] = h.split('='), v = rest.join('=');
+  if (k === 'item' && S.d.items.some(i => i.id === v)) setTimeout(() => itemModal(v), 150);
+  else if (k === 'auth' && v) { S.view = 'auth:' + v; renderApp(); }
+  else if (k === 'v' && v && (v === 'dash' || v === 'mine' || v === 'calendar' || v.indexOf('sec:') === 0)) { S.view = v; renderApp(); }
+}
+function itemLink(id) { return APP_HOME + '#item=' + encodeURIComponent(id); }
+function copyText(t) { try { navigator.clipboard.writeText(t).then(() => toast('تم نسخ الرابط')); } catch (e) { prompt('انسخ الرابط', t); } }
+
+function savedFilters() { try { return JSON.parse(localStorage.getItem('dm_saved') || '[]'); } catch (e) { return []; } }
+function setSaved(a) { try { localStorage.setItem('dm_saved', JSON.stringify(a)); } catch (e) { } }
+
+function notifEnabled() { try { return localStorage.getItem('dm_notif') === '1' && 'Notification' in window && Notification.permission === 'granted'; } catch (e) { return false; } }
+async function toggleNotif() {
+  if (!('Notification' in window)) return toast('هذا المتصفح لا يدعم الإشعارات', 1);
+  if (notifEnabled()) { try { localStorage.removeItem('dm_notif'); } catch (e) { } toast('تم إيقاف الإشعارات'); return renderApp(); }
+  const p = await Notification.requestPermission();
+  if (p === 'granted') { try { localStorage.setItem('dm_notif', '1'); localStorage.removeItem('dm_notified'); } catch (e) { } notifyDaily(true); toast('تم تفعيل الإشعارات على هذا الجهاز'); }
+  else toast('لم يُسمح بالإشعارات — فعّلها من إعدادات المتصفح', 1);
+  renderApp();
+}
+function notifyDaily(force) {
+  if (!notifEnabled() || !S.d) return;
+  let last = ''; try { last = localStorage.getItem('dm_notified') || ''; } catch (e) { }
+  if (!force && last === S.d.today) return;
+  const it = S.d.items, ex = it.filter(i => i._st === 'expired').length, wk = it.filter(i => i._due && i._days >= 0 && i._days <= 7).length, st = it.filter(i => i._start).length;
+  if (!ex && !wk && !st && !force) return;
+  const body = `${ex} منتهية · ${wk} خلال 7 أيام · ${st} حان بدء إجرائها`, opt = { body: body, icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', tag: 'dm-daily', dir: 'rtl', lang: 'ar' };
+  try { localStorage.setItem('dm_notified', S.d.today); } catch (e) { }
+  try { if (navigator.serviceWorker && navigator.serviceWorker.controller) navigator.serviceWorker.ready.then(r => r.showNotification('إدارة المنصات والتأهيلات', opt)); else new Notification('إدارة المنصات والتأهيلات', opt); } catch (e) { }
+}
+function skeleton() {
+  return `<div class="app sk"><aside class="side"><div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>جارٍ التحميل…</span></div></div><div style="padding:14px">${'<i class="skl" style="height:34px;margin:8px 0"></i>'.repeat(7)}</div></aside>
+    <main class="main"><i class="skl" style="height:46px;width:40%;margin-bottom:18px"></i><div class="sec-cards">${'<i class="skl" style="height:110px"></i>'.repeat(3)}</div><i class="skl" style="height:300px;margin-top:18px"></i><i class="skl" style="height:80px;margin-top:18px"></i></main></div>`;
+}
+async function fileToB64(f) { return new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1]); r.onerror = no; r.readAsDataURL(f); }); }
+async function previewFile(fileId, name) {
+  const r = await call('download', { fileId });
+  const bin = atob(r.data), arr = new Uint8Array(bin.length); for (let k = 0; k < bin.length; k++) arr[k] = bin.charCodeAt(k);
+  const url = URL.createObjectURL(new Blob([arr], { type: r.mime })), img = String(r.mime).indexOf('image') === 0, pdf = /pdf/.test(r.mime);
+  const m = modal(esc(name || r.name), img ? `<img src="${url}" alt="" style="max-width:100%;display:block;margin:auto;border-radius:8px">` : pdf ? `<iframe src="${url}" title="معاينة" style="width:100%;height:70vh;border:0;border-radius:8px"></iframe>` : '<div class="empty">لا تتوفر معاينة لهذا النوع — استخدم «تنزيل».</div>',
+    `<a class="btn" href="${url}" download="${esc(r.name)}">${ic('down')} تنزيل</a>`, 'lg');
 }
 function renderView() {
   const v = S.view, m = $('#main');
+  setHash(v.indexOf('auth:') === 0 ? 'auth=' + encodeURIComponent(v.slice(5)) : 'v=' + encodeURIComponent(v));
   if (v === 'dash') return m.innerHTML = dashView(), bindDash();
+  if (v === 'mine') return m.innerHTML = mineView(), bindMine(), document.querySelectorAll('#main .dlist [data-id]').forEach(r => r.onclick = () => itemModal(r.dataset.id));
+  if (v === 'calendar') return m.innerHTML = calView(), bindCal();
+  if (v.indexOf('auth:') === 0) return m.innerHTML = authView(v.slice(5)), bindAuth(v.slice(5));
   if (v.indexOf('sec:') === 0) return m.innerHTML = secView(v.slice(4)), bindSec(v.slice(4));
   const map = { reports: reportsView, renewals: renewalsView, contacts: contactsView, users: usersView, alerts: alertsView, logs: logsView, settings: settingsView };
   m.innerHTML = map[v](); (BIND[v] || (() => { }))();
@@ -603,7 +821,7 @@ function dashFilterBar() {
   const sel = (id, lbl, arr, v) => `<select id="${id}" class="${v ? 'on' : ''}"><option value="">${lbl}</option>${arr.map(a => `<option ${a === v ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>`;
   const pers = [['', 'كل الفترات'], ['ex', 'المنتهي فقط'], ['7', 'خلال 7 أيام'], ['30', 'خلال 30 يوماً'], ['90', 'خلال 90 يوماً']];
   const on = f.plat || f.own || f.per;
-  return `<div class="dfil" role="search"><b>${ic('search')} تصفية سريعة</b>${sel('df_plat', 'كل الجهات', plats, f.plat)}${sel('df_own', 'كل المسؤولين', owns, f.own)}<select id="df_per" class="${f.per ? 'on' : ''}">${pers.map(x => `<option value="${x[0]}" ${x[0] === (f.per || '') ? 'selected' : ''}>${x[1]}</option>`).join('')}</select>${on ? '<button class="btn light sm clr" id="df_clr">مسح التصفية</button>' : ''}</div>`;
+  return `<div class="dfil" role="search"><b>${ic('search')} تصفية سريعة</b>${sel('df_plat', 'كل الجهات', plats, f.plat)}${sel('df_own', 'كل المسؤولين', owns, f.own)}<select id="df_per" class="${f.per ? 'on' : ''}">${pers.map(x => `<option value="${x[0]}" ${x[0] === (f.per || '') ? 'selected' : ''}>${x[1]}</option>`).join('')}</select>${on ? '<button class="btn light sm" id="df_save">حفظ هذه التصفية</button><button class="btn light sm clr" id="df_clr">مسح التصفية</button>' : ''}${savedFilters().map((x, n) => `<span class="sfc"><button data-sf="${n}">★ ${esc(x.n)}</button><button data-sfx="${n}" aria-label="حذف ${esc(x.n)}">✕</button></span>`).join('')}</div>`;
 }
 function readinessPanel(it) {
   const L = it.filter(i => i._st !== 'off'), dated = L.filter(i => i._due), ex = dated.filter(i => i._days < 0).length;
@@ -630,7 +848,7 @@ function dashView() {
   const zones = `<span class="zone" style="right:0;width:${pos(7)}%;background:var(--amber-l)"></span><span class="zone" style="right:${pos(7)}%;width:${pos(23)}%;background:var(--gold-l)"></span><span class="zone" style="right:${pos(30)}%;width:${pos(60)}%;background:#FAF6E8"></span>`;
   const pins = placed.map(([i, lane]) => `<button class="pin ${i._st}" style="right:${pos(i._days)}%;top:${lane * 15}px" data-id="${i.id}" data-tip="${esc(i.title)}|${esc(i._due.kind + ' — ' + fmtD(i._due.date))}|${i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}" aria-label="${esc(i.title)}"></button>`).join('');
   const od = overdue.slice(0, 6).map(i => `<button class="pin expired" style="position:static;transform:none" data-id="${i.id}" data-tip="${esc(i.title)}|${esc(i._due.kind + ' — ' + fmtD(i._due.date))}|متأخر ${-i._days} يوم" aria-label="${esc(i.title)}"></button>`).join('');
-  const byD = (a, b) => a._days - b._days;
+  const byD = byPriDays;
   const RL = [
     { l: 'منتهي أو متأخر', sub: 'تجاوز موعده — يحتاج إجراء فوري', c: 'var(--red)', cl: 'var(--red-l)', st: 'expired', e: 'لا يوجد شيء منتهٍ ✓', x: overdue.slice().sort(byD) },
     { l: 'خلال 7 أيام', sub: 'هذا الأسبوع', c: 'var(--amber)', cl: 'var(--amber-l)', st: 'critical', e: 'لا شيء هذا الأسبوع', x: list.filter(i => i._days >= 0 && i._days <= 7).sort(byD) },
@@ -649,7 +867,7 @@ function dashView() {
     dashFilterBar() + `<div class="sec-cards">${secCards}</div>` +
     `<section class="ruler" aria-label="مسطرة الاستحقاقات"><div class="ruler-top"><h3>مسطرة الاستحقاقات</h3><span class="hint">الأكثر إلحاحاً في الأعلى — اضغط أي بند لفتحه</span></div>
       <div class="rl">${RL.map(b => `<div class="rl-col" style="--c:${b.c};--cl:${b.cl}"><div class="rl-h"><b>${b.x.length}</b><span>${b.l}<small>${b.sub}</small></span></div>
-        ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${i._start ? '<span class="chip-start" style="margin:0 0 0 4px">ابدأ</span>' : ''}${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
+        ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${priChip(i)}${i._start ? '<span class="chip-start" style="margin:0 0 0 4px">ابدأ</span>' : ''}${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${av(i.platform)}${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
         ${b.x.length > 6 ? `<button class="rl-more" data-rst="${b.st}">عرض الكل (+${b.x.length - 6})</button>` : ''}</div>`).join('')}</div></section>
     ${readinessPanel(it)}
     <div class="strip">${strip.map(k => `<button data-st="${k[0]}" style="--c:${k[3]}"><div class="n">${k[1]}</div><div class="l">${k[2]}</div></button>`).join('')}</div>
@@ -674,6 +892,11 @@ function bindDash() {
   document.querySelectorAll('[data-mxt]').forEach(b => b.onclick = () => { S.mxSec = b.dataset.mxt; renderView(); });
   ['df_plat', 'df_own', 'df_per'].forEach(id => { const el = $('#' + id); if (el) el.onchange = () => { S.dashF = { plat: $('#df_plat').value, own: $('#df_own').value, per: $('#df_per').value }; renderView(); }; });
   if ($('#df_clr')) $('#df_clr').onclick = () => { S.dashF = {}; renderView(); };
+  if ($('#df_save')) $('#df_save').onclick = () => { const f = S.dashF || {}, def = [f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — ');
+    const m = modal('حفظ التصفية', `<label>اسم مختصر يظهر كزر في أعلى اللوحة</label><input id="sf_n" value="${esc(def)}" maxlength="40">`, '<button class="btn" id="sf_go">حفظ</button>', 'sm');
+    m.q('#sf_go').onclick = () => { const n = m.q('#sf_n').value.trim(); if (!n) return; setSaved(savedFilters().concat([{ n, f: Object.assign({}, f) }])); m.close(); toast('تم حفظ التصفية'); renderView(); }; };
+  document.querySelectorAll('[data-sf]').forEach(b => b.onclick = () => { const x = savedFilters()[+b.dataset.sf]; if (x) { S.dashF = Object.assign({}, x.f); renderView(); } });
+  document.querySelectorAll('[data-sfx]').forEach(b => b.onclick = () => { const a = savedFilters(); a.splice(+b.dataset.sfx, 1); setSaved(a); renderView(); });
   const fsub = () => { const f = S.dashF || {}; return [f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — '); };
   if ($('#prExec')) $('#prExec').onclick = () => printExec(dashItems(), fsub());
   if ($('#xlAll')) $('#xlAll').onclick = () => exportStyled(dashItems().filter(i => i._st !== 'off'), 'لوحة المتابعة' + (fsub() ? ' - ' + fsub() : ''));
@@ -698,12 +921,16 @@ function card(i, isAcc, n) {
   if (has) { if (d < 0) pct = 100; else { const st = dn(i.issueDate), en = dn(i._due.date), t = dn(S.d.today); pct = st !== null && en > st ? Math.round(Math.min(1, Math.max(0, (t - st) / (en - st))) * 100) : Math.round((1 - Math.min(d, 365) / 365) * 100); } }
   const note = String(i.notes || '').split(' — ')[0];
   return `<article class="card" data-id="${i.id}" style="--c:${STC[i._st] === 'transparent' ? 'var(--line)' : STC[i._st]};animation-delay:${Math.min(n, 12) * 25}ms" tabindex="0">
-    <div class="card-top"><div style="min-width:0"><div class="card-t">${esc(i.title)}</div><div class="card-s">${badge(i)}${i.type ? `<span class="chip">${esc(i.type)}</span>` : ''}${!isAcc && i.status ? `<span class="chip">${esc(i.status)}</span>` : ''}</div></div>
+    <div class="card-top"><div style="min-width:0"><div class="card-t">${priChip(i)}${esc(i.title)}</div><div class="card-s">${badge(i)}${i.type ? `<span class="chip">${esc(i.type)}</span>` : ''}${!isAcc && i.status ? `<span class="chip">${esc(i.status)}</span>` : ''}</div></div>
       <div class="ring" style="--p:${pct};--rc:${RC[i._st]}"><div><b>${big}</b><small>${lbl}</small></div></div></div>
     ${isAcc ? `<div class="card-dates"><span>${ic('user')}</span><b dir="ltr" style="flex:1;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(i.username || '—')}</b>${i.accStatus ? `<span>${esc(i.accStatus)}</span>` : ''}</div>`
       : `<div class="card-dates"><span>البداية <b>${fmtD(i.issueDate)}</b></span><span>النهاية <b>${fmtD(i.expiryDate)}</b></span></div>`}
     ${note ? `<div class="card-note">${esc(note)}</div>` : ''}
     <div class="card-f"><span class="who"><i style="--av:${avc(i.ownerName || '-')}">${esc(ini(i.ownerName))}</i><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(i.ownerName || 'بدون مسؤول')}</span></span><span class="acts-i">${itemActs(i)}</span></div></article>`;
+}
+function emptyMsg(baseN, sec) {
+  if (!baseN) return `${ic('file')}<h3>لا توجد بنود في هذا القسم بعد</h3><p>ابدأ بإضافة أول بند، أو استورد قائمة جاهزة من ملف إكسل.</p>${can('editor') ? `<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><button class="btn" onclick="editModal(null, '${esc(sec)}')">${ic('plus')} إضافة أول بند</button><button class="btn light" onclick="importModal('${esc(sec)}')">${ic('up')} استيراد من إكسل</button></div>` : ''}`;
+  return `${ic('search')}<h3>لا توجد نتائج مطابقة</h3><p>جرّب كلمة بحث أقصر، أو امسح التصفية لعرض كل البنود.</p><button class="btn light" onclick="S.filters = {}; renderView();">مسح التصفية</button>`;
 }
 function secView(sec) {
   const f = S.filters, isAcc = sec === 'حسابات المنصات', lay = f.all ? 'table' : getLayout(sec);
@@ -740,14 +967,16 @@ function secView(sec) {
       return `<section class="grp ${tot <= 2 ? 'sm' : ''} ${S.closed[sec + '|' + p] ? 'closed' : ''}" data-g="${esc(p)}"><header class="grp-h" tabindex="0" aria-expanded="${!S.closed[sec + '|' + p]}"><span class="grp-ic">${esc(ini(p))}</span>
         <div class="grp-t"><h3>${esc(p)}</h3><small>${tot} بند${bad ? ` · <b style="color:var(--red)">${bad} منتهٍ</b>` : ''}${soon ? ` · <b style="color:var(--amber)">${soon} قريب</b>` : ''}${ok ? ` · <b style="color:var(--ok)">${ok} ساري</b>` : ''}</small></div>
         <span class="grp-bar"><i style="width:${bad / tot * 100}%;background:var(--red)"></i><i style="width:${soon / tot * 100}%;background:var(--amber)"></i><i style="width:${ok / tot * 100}%;background:var(--ok)"></i></span>
-        <span class="grp-tg" aria-hidden="true">${ic('chev')}</span></header><div class="cards">${x.map(i => card(i, isAcc, n++)).join('')}</div></section>`; }).join('');
-    body = body ? '<div class="grps">' + body + '</div>' : '<div class="empty">لا توجد نتائج</div>';
+        ${p !== NOPLAT ? `<button class="lnk grp-a" data-auth="${esc(p)}" title="ملف الجهة">${ic('link')}<span class="hide-m">ملف الجهة</span></button>` : ''}<span class="grp-tg" aria-hidden="true">${ic('chev')}</span></header><div class="cards">${x.map(i => card(i, isAcc, n++)).join('')}</div></section>`; }).join('');
+    body = body ? '<div class="grps">' + body + '</div>' : `<div class="empty big">${emptyMsg(base.length, sec)}</div>`;
   } else {
-    body = `<div class="tbl-wrap"><table><thead><tr>${th('title', 'البند')}${th('platform', isAcc ? 'النظام' : 'الجهة / المنصة', 'hide-m')}${isAcc ? th('username', 'اسم المستخدم', 'hide-m') : th('type', 'النوع', 'hide-m')}${th('ownerName', 'المسؤول', 'hide-m')}${th('days', 'الاستحقاق')}<th>الحالة</th><th></th></tr></thead>
-    <tbody>${it.map(i => `<tr class="click" data-id="${i.id}" style="--c:${STC[i._st]}"><td><div class="t-title">${esc(i.title)}</div><div class="t-sub">${f.all ? esc(i.section) + ' — ' : ''}${esc(isAcc ? (i.type || '') : (i.refNo ? 'رقم: ' + i.refNo : i.status || ''))}</div></td>
-      <td class="hide-m">${esc(i.platform || '—')}</td><td class="hide-m" ${isAcc ? 'dir="ltr" style="text-align:right"' : ''}>${esc(isAcc ? i.username || '—' : i.type || '—')}</td><td class="hide-m">${esc(i.ownerName || '—')}</td>
-      <td>${i._due ? fmtD(i._due.date) + '<div class="t-sub">' + esc(i._due.kind) + (i.issueDate ? ' — من ' + fmtD(i.issueDate) : '') + '</div>' : '—'}</td><td>${badge(i)}</td>
-      <td><div class="acts-i">${itemActs(i)}</div></td></tr>`).join('') || '<tr><td colspan="7" class="empty">لا توجد نتائج</td></tr>'}</tbody></table></div>`;
+    const canB = can('editor'); S.sel = S.sel || new Set();
+    body = `<div class="tbl-wrap"><table><thead><tr>${canB ? '<th class="ck"><input type="checkbox" id="ck_all" aria-label="تحديد الكل"></th>' : ''}${th('title', 'البند')}${th('platform', isAcc ? 'النظام' : 'الجهة / المنصة', 'hide-m')}${isAcc ? th('username', 'اسم المستخدم', 'hide-m') : th('type', 'النوع', 'hide-m')}${th('ownerName', 'المسؤول', 'hide-m')}${th('days', 'الاستحقاق')}<th>الحالة</th><th></th></tr></thead>
+    <tbody>${it.map(i => `<tr class="click" data-id="${i.id}" style="--c:${STC[i._st]}">${canB ? `<td class="ck"><input type="checkbox" data-ck="${i.id}" ${S.sel.has(i.id) ? 'checked' : ''} aria-label="تحديد ${esc(i.title)}"></td>` : ''}<td><div class="t-title">${priChip(i)}${esc(i.title)}</div><div class="t-sub">${f.all ? esc(i.section) + ' — ' : ''}${esc(isAcc ? (i.type || '') : (i.refNo ? 'رقم: ' + i.refNo : i.status || ''))}</div></td>
+      <td class="hide-m">${esc(i.platform || '—')}</td><td class="hide-m" ${isAcc ? 'dir="ltr" style="text-align:right"' : ''}>${esc(isAcc ? i.username || '—' : i.type || '—')}</td><td class="hide-m">${canB ? `<button class="ie" data-ie="ownerName" data-iid="${i.id}" title="تعديل سريع">${esc(i.ownerName || '—')}</button>` : esc(i.ownerName || '—')}</td>
+      <td>${i._due ? fmtD(i._due.date) + '<div class="hj">' + hijriS(i._due.date) + ' هـ</div><div class="t-sub">' + esc(i._due.kind) + (i.issueDate ? ' — من ' + fmtD(i.issueDate) : '') + '</div>' : '—'}</td><td>${badge(i)}${canB ? `<div><button class="ie sm" data-ie="status" data-iid="${i.id}" title="تعديل سريع لحالة التجديد">${esc(i.status || 'حالة التجديد…')}</button></div>` : ''}</td>
+      <td><div class="acts-i">${itemActs(i)}</div></td></tr>`).join('') || `<tr><td colspan="8" class="empty">${emptyMsg(base.length, sec)}</td></tr>`}</tbody></table></div>
+      ${canB ? `<div class="bulk ${S.sel.size ? 'on' : ''}" id="bulk" role="toolbar" aria-label="إجراءات جماعية"><b id="bk_n">${S.sel.size} محدد</b><select id="bk_own"><option value="__">تغيير المسؤول…</option>${ownerOptions('')}</select><select id="bk_st"><option value="">تغيير الحالة…</option>${STATUS_LIST.map(x => `<option>${x}</option>`).join('')}</select><select id="bk_pri"><option value="__">الأهمية…</option><option value="">عادي</option><option>مهم</option><option>حرج</option></select><button class="btn light sm" id="bk_fu">${ic('plus')} تسجيل متابعة</button><button class="btn light sm" id="bk_pr">${ic('file')} طباعة</button><button class="btn light sm" id="bk_xl">${ic('down')} إكسل</button><button class="btn light sm" id="bk_x">إلغاء التحديد</button></div>` : ''}`;
   }
   return topbar(esc(title), it.length + ' بند' + (f.plat ? ' — ' + esc(f.plat) : '') + (f.st ? ' — ' + ST[f.st] : ''),
     (can('editor') && !f.all ? `<button class="btn light" id="imp">${ic('up')} استيراد من إكسل</button><button class="btn" id="add">${ic('plus')} إضافة بند</button>` : '') + `<button class="btn light" id="prSec">${ic('file')} طباعة</button><button class="btn light" id="exp">${ic('down')} تصدير إكسل</button>`) +
@@ -766,6 +995,22 @@ function bindSec(sec) {
   document.querySelectorAll('.grp-h').forEach(h => { const t = () => { const g = h.parentElement, key = sec + '|' + g.dataset.g; S.closed[key] = !S.closed[key]; g.classList.toggle('closed', S.closed[key]); h.setAttribute('aria-expanded', !S.closed[key]); }; h.onclick = t; h.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } }; });
   if ($('#clr')) $('#clr').onclick = () => { S.filters = {}; re(); };
   document.querySelectorAll('th[data-k]').forEach(t => t.onclick = () => { S.sort = { k: t.dataset.k, dir: S.sort.k === t.dataset.k ? -S.sort.dir : 1 }; re(); });
+  const syncBulk = () => { const b = $('#bulk'); if (!b) return; b.classList.toggle('on', S.sel.size > 0); $('#bk_n').textContent = S.sel.size + ' محدد'; };
+  document.querySelectorAll('[data-ck]').forEach(c => { c.onclick = e => e.stopPropagation(); c.onchange = () => { c.checked ? S.sel.add(c.dataset.ck) : S.sel.delete(c.dataset.ck); syncBulk(); }; });
+  if ($('#ck_all')) $('#ck_all').onchange = e => { document.querySelectorAll('[data-ck]').forEach(c => { c.checked = e.target.checked; e.target.checked ? S.sel.add(c.dataset.ck) : S.sel.delete(c.dataset.ck); }); syncBulk(); };
+  const selItems = () => [...S.sel].map(id => S.d.items.find(i => i.id === id)).filter(Boolean);
+  const bulkSet = async set => { const r = await call('bulkUpdate', { ids: [...S.sel], set }); replaceItems(r); toast('تم تحديث ' + r.length + ' بند'); S.sel.clear(); re(); };
+  if ($('#bk_own')) { $('#bk_own').onchange = e => { if (e.target.value !== '__') bulkSet({ ownerName: e.target.value }); }; $('#bk_st').onchange = e => { if (e.target.value) bulkSet({ status: e.target.value }); }; $('#bk_pri').onchange = e => { if (e.target.value !== '__') bulkSet({ priority: e.target.value }); };
+    $('#bk_x').onclick = () => { S.sel.clear(); re(); };
+    $('#bk_pr').onclick = () => { const r = selItems(); printReport('بنود محددة (' + r.length + ')', 'تقرير البنود المحددة', r, r, { layout: 'table' }); };
+    $('#bk_xl').onclick = () => exportStyled(selItems(), 'بنود محددة');
+    $('#bk_fu').onclick = () => { const m = modal('تسجيل متابعة لـ ' + S.sel.size + ' بند', `<label>المرحلة</label><select id="bf_st">${(S.d.stages || []).map(x => `<option>${esc(x)}</option>`).join('')}</select><label>ملاحظة</label><input id="bf_n" placeholder="اختياري">`, '<button class="btn" id="bf_go">تسجيل</button>', 'sm');
+      m.q('#bf_go').onclick = async () => { const r = await call('bulkFollowup', { ids: [...S.sel], stage: m.q('#bf_st').value, note: m.q('#bf_n').value }); replaceItems(r.items); S.d.followups = (S.d.followups || []).concat(r.followups); cacheSave(S.d); m.close(); toast('تم تسجيل المتابعة لـ ' + r.items.length + ' بند'); S.sel.clear(); re(); }; }; }
+  document.querySelectorAll('.ie[data-ie]').forEach(b => b.onclick = e => { e.stopPropagation(); const f = b.dataset.ie, id = b.dataset.iid, it = S.d.items.find(x => x.id === id);
+    const sel = document.createElement('select'); sel.className = 'ie-sel'; sel.innerHTML = f === 'ownerName' ? ownerOptions(it.ownerName) : '<option value="">—</option>' + STATUS_LIST.map(x => `<option ${x === it.status ? 'selected' : ''}>${x}</option>`).join('');
+    sel.onclick = ev => ev.stopPropagation(); b.replaceWith(sel); sel.focus();
+    sel.onchange = async () => { const r = await call('bulkUpdate', { ids: [id], set: { [f]: sel.value } }, true); replaceItems(r); toast('تم الحفظ'); re(); };
+    sel.onblur = () => setTimeout(() => { if (document.body.contains(sel)) re(); }, 200); sel.onkeydown = ev => { if (ev.key === 'Escape') re(); }; });
   document.querySelectorAll('tr[data-id],.card[data-id]').forEach(r => { r.onclick = () => itemModal(r.dataset.id); r.onkeydown = e => { if (e.key === 'Enter' && e.target === r) itemModal(r.dataset.id); }; });
   document.querySelectorAll('[data-f]').forEach(x => x.onclick = e => { e.stopPropagation(); openFile(x.dataset.f); });
   document.querySelectorAll('[data-r]').forEach(x => x.onclick = e => { e.stopPropagation(); renewModal(x.dataset.r); });
@@ -791,26 +1036,44 @@ function itemModal(id) {
   const i = S.d.items.find(x => x.id === id); if (!i) return;
   const c = contact(i.ownerName), isAcc = i.section === 'حسابات المنصات';
   const rens = (S.d.renewals || []).filter(r => r.itemId === id);
-  const kv = [['القسم', SEC_ICON[i.section] + ' ' + esc(i.section)], ['الجهة / المنصة', esc(i.platform || '—')], ['النوع', esc(i.type || '—')]];
+  setHash('item=' + encodeURIComponent(id));
+  const kv = [['القسم', SEC_ICON[i.section] + ' ' + esc(i.section)], ['الجهة / المنصة', i.platform ? `<a href="#" data-auth="${esc(i.platform)}">${av(i.platform)} ${esc(i.platform)} — ملف الجهة</a>` : '—'], ['النوع', esc(i.type || '—')], ['الأهمية', priChip(i) || 'عادي']];
   if (i.refNo) kv.push(['رقم الوثيقة', esc(i.refNo)]);
   if (isAcc) kv.push(['اسم المستخدم', '<span dir="ltr">' + esc(i.username || '—') + '</span>'], ['كلمة المرور', !i.hasSecret ? 'غير مسجّلة' : S.d.me.canSecrets ? '<span id="sec_v" dir="ltr" style="font-family:monospace;letter-spacing:2px">••••••••</span> <button class="btn light sm" id="sec_show">إظهار</button> <button class="btn light sm hidden" id="sec_copy">نسخ</button>' : 'محجوبة — تحتاج صلاحية عرض كلمات المرور'], ['حالة الحساب', esc(i.accStatus || '—')], ['آخر تغيير لكلمة المرور', fmtD(i.pwLast)]);
   if (i.url) kv.push(['الرابط', `<a href="${esc(i.url)}" target="_blank">فتح المنصة</a>`]);
   kv.push(['المسؤول', esc(i.ownerName || '—') + (c.email ? ' · <span dir="ltr">' + esc(c.email) + '</span>' : '') + (c.phone ? ' · <span dir="ltr">+' + esc(c.phone) + '</span>' : '')]);
-  kv.push(['تاريخ البداية', fmtD(i.issueDate)], ['تاريخ النهاية', fmtD(i.expiryDate)], ['الاستحقاق القادم', i._due ? esc(i._due.kind) + ' — ' + fmtD(i._due.date) + ' ' + badge(i) : badge(i)], ['حالة التجديد', esc(i.status || '—')]);
+  kv.push(['تاريخ البداية', fmtDH(i.issueDate)], ['تاريخ النهاية', fmtDH(i.expiryDate)], ['الاستحقاق القادم', i._due ? esc(i._due.kind) + ' — ' + fmtDH(i._due.date) + ' ' + badge(i) : badge(i)], ['حالة التجديد', esc(i.status || '—')]);
   if (i._due) { const sd = new Date(Date.UTC(+i._due.date.slice(0, 4), +i._due.date.slice(5, 7) - 1, +i._due.date.slice(8, 10)) - i._lead * 864e5).toISOString().slice(0, 10);
     kv.push(['بدء الإجراء', fmtD(sd) + ' (قبل الموعد بـ ' + i._lead + ' يوماً)' + (i._start ? '<span class="chip-start">حان وقت البدء</span>' : '')]); }
   if (i.cost) kv.push(['التكلفة المتوقعة', esc(i.cost) + ' ر.س']);
   if (i.notes) kv.push(['ملاحظات', esc(i.notes)]);
-  kv.push(['الملف الحالي', i.fileId ? `<a href="#" data-f="${i.fileId}">${esc(i.fileName || 'عرض الملف')}</a>` : 'لم يُرفع']);
+
   kv.push(['آخر تعديل', esc(i.updatedAt || '') + ' — ' + esc(i.updatedBy || '')]);
   if (i.lastAlert) kv.push(['آخر تنبيه', esc(i.lastAlert)]);
   const fus = (S.d.followups || []).filter(f => f.itemId === id).slice().reverse();
   const fuHtml = `<h4 style="color:var(--navy);margin:16px 0 4px">سجل المتابعة</h4>${fus.length ? `<div class="fu">${fus.map(f => `<div class="fu-i"><b>${esc(f.stage)}</b><span>${esc(f.at)} · ${esc(f.by)}</span>${f.note ? '<p>' + esc(f.note) + '</p>' : ''}</div>`).join('')}</div>` : '<div style="color:var(--muted);font-size:13px">لم تُسجَّل أي متابعة بعد.</div>'}
     ${can('editor') ? `<div class="fu-add"><select id="fu_stage">${(S.d.stages || []).map(x => `<option>${esc(x)}</option>`).join('')}</select><input id="fu_note" placeholder="ملاحظة (اختياري) — مثال: تم الاتصال بالجهة وطلبوا خطاب تفويض"><button class="btn" id="fu_add">${ic('plus')} تسجيل</button></div>` : ''}`;
-  const body = `<div class="kv">${kv.map(k => '<div>' + k[0] + '</div><div>' + k[1] + '</div>').join('')}</div>${fuHtml}
+  const atts = [];
+  if (i.fileId) atts.push({ id: i.fileId, name: i.fileName || 'الملف الحالي', at: i.updatedAt, cur: true });
+  rens.filter(r => r.fileId && r.fileId !== i.fileId).forEach(r => atts.push({ id: r.fileId, name: r.fileName || 'ملف', at: r.at, kind: r.kind }));
+  const attHtml = `<h4 style="color:var(--navy);margin:16px 0 6px">المرفقات والإصدارات</h4>${atts.length ? `<div class="atts">${atts.map(a => `<div class="att ${a.cur ? 'cur' : ''}">${ic('file')}<div><b>${esc(a.name)}</b><small>${a.cur ? '<span class="pri p2">السارية</span> ' : esc(a.kind || '') + ' · '}${esc(String(a.at || '').slice(0, 10))}</small></div><button class="btn light sm" data-pv="${a.id}" data-pn="${esc(a.name)}">معاينة</button><button class="btn light sm" data-f="${a.id}">تنزيل</button></div>`).join('')}</div>` : '<div style="color:var(--muted);font-size:13px">لا توجد ملفات مرفوعة.</div>'}
+    ${can('editor') ? `<label class="drop-z" id="dz" tabindex="0">${ic('up')}<span><b>اسحب الملف هنا</b> أو اضغط للاختيار</span><input type="file" id="dz_f" hidden accept=".pdf,.jpg,.jpeg,.png,.webp,.doc,.docx,.xls,.xlsx"></label><label class="dz-x"><input type="checkbox" id="dz_extra" style="width:auto"> مرفق إضافي (لا يستبدل الملف الساري)</label>` : ''}`;
+  const body = `<div class="kv">${kv.map(k => '<div>' + k[0] + '</div><div>' + k[1] + '</div>').join('')}</div>${attHtml}${fuHtml}
+    <details class="hist" id="hist"><summary>${ic('hist')} سجل التغييرات على البند</summary><div id="hist_b" class="pb">جارٍ التحميل…</div></details>
     ${rens.length ? `<h4 style="color:var(--navy);margin:16px 0 6px">سجل التجديدات</h4><div class="tbl-wrap"><table><tbody>${rens.map(r => `<tr><td>${esc(r.at)}</td><td>${esc(r.kind)}</td><td>${r.newDate ? fmtD(r.oldDate) + ' ← ' + fmtD(r.newDate) : ''}</td><td>${r.fileId ? `<a href="#" data-f="${r.fileId}">الملف</a>` : ''}</td><td>${esc(r.by)}</td></tr>`).join('')}</tbody></table></div>` : ''}`;
   const foot = (can('editor') ? `<button class="btn" id="mr">${ic('renew')} تجديد أو تحديث</button><button class="btn light" id="me">${ic('edit')} تعديل</button>` : '') + (waLink(i) ? `<a class="btn wa" href="${waLink(i)}" target="_blank">${ic('wa')} تذكير واتساب</a>` : '') + (can('admin') ? `<button class="btn danger" id="ma" style="margin-right:auto">أرشفة البند</button>` : '');
-  const m = modal(esc(i.title), body, foot);
+  const foot2 = foot + `<button class="btn light" id="mcopy">${ic('link')} نسخ رابط البند</button>${i._due ? `<button class="btn light" id="mics">${ic('calendar')} إضافة للتقويم</button>` : ''}`;
+  const m = modal(priChip(i) + esc(i.title), body, foot2);
+  m.el.querySelector('.modal').setAttribute('role', 'dialog'); m.el.querySelector('.modal').setAttribute('aria-modal', 'true');
+  m.q('#mcopy').onclick = () => copyText(itemLink(id));
+  if (m.q('#mics')) m.q('#mics').onclick = () => downloadIcs([i], i.title);
+  m.el.querySelectorAll('[data-pv]').forEach(b => b.onclick = () => previewFile(b.dataset.pv, b.dataset.pn));
+  m.q('#hist').ontoggle = async () => { if (!m.q('#hist').open || m.q('#hist').dataset.ok) return; m.q('#hist').dataset.ok = '1'; try { const r = await call('itemHistory', { id }, true); const LBL = { title: 'الاسم', platform: 'الجهة', ownerName: 'المسؤول', expiryDate: 'تاريخ النهاية', issueDate: 'تاريخ البداية', status: 'حالة التجديد', priority: 'الأهمية', leadDays: 'مهلة البدء', cost: 'التكلفة', notes: 'الملاحظات', type: 'النوع', refNo: 'رقم الوثيقة', url: 'الرابط', username: 'اسم المستخدم', accStatus: 'حالة الحساب', pwLast: 'آخر تغيير كلمة مرور', pwCycle: 'دورة كلمة المرور', section: 'القسم' };
+    m.q('#hist_b').innerHTML = r.changes.length ? '<div class="tbl-wrap"><table><thead><tr><th>التاريخ</th><th>بواسطة</th><th>الحقل</th><th>من</th><th>إلى</th></tr></thead><tbody>' + r.changes.map(c => `<tr><td>${esc(c.at)}</td><td>${esc(c.user)}</td><td>${esc(LBL[c.field] || c.field)}</td><td style="color:var(--muted)">${esc(c.old || '—')}</td><td><b>${esc(c.new || '—')}</b></td></tr>`).join('') + '</tbody></table></div>' : '<div style="color:var(--muted)">لا توجد تغييرات مسجّلة بعد (يبدأ التسجيل من الإصدار 16).</div>'; } catch (e) { m.q('#hist_b').textContent = 'تعذّر التحميل'; } };
+  const dz = m.q('#dz');
+  if (dz) { const up = async f => { if (!f) return; if (f.size > 20 * 1024 * 1024) return toast('الملف أكبر من 20MB', 1); const data = await fileToB64(f); const r = await call('uploadFile', { id, file: { name: f.name, mime: f.type, data }, extra: m.q('#dz_extra').checked }); replaceItems([r]); m.close(); toast('تم رفع الملف'); await load(true); itemModal(id); };
+    dz.ondragover = e => { e.preventDefault(); dz.classList.add('on'); }; dz.ondragleave = () => dz.classList.remove('on');
+    dz.ondrop = e => { e.preventDefault(); dz.classList.remove('on'); up(e.dataTransfer.files[0]); }; m.q('#dz_f').onchange = e => up(e.target.files[0]); dz.onkeydown = e => { if (e.key === 'Enter') m.q('#dz_f').click(); }; }
   m.el.querySelectorAll('[data-f]').forEach(a => a.onclick = e => { e.preventDefault(); openFile(a.dataset.f); });
   if (m.q('#sec_show')) m.q('#sec_show').onclick = async () => { const v = await call('revealSecret', { id }); const el = m.q('#sec_v'); el.textContent = v; el.style.letterSpacing = '0'; m.q('#sec_show').classList.add('hidden'); m.q('#sec_copy').classList.remove('hidden'); m.q('#sec_copy').onclick = () => { navigator.clipboard.writeText(v).then(() => toast('تم النسخ')); }; setTimeout(() => { if (document.body.contains(el)) { el.textContent = '••••••••'; el.style.letterSpacing = '2px'; m.q('#sec_show').classList.remove('hidden'); m.q('#sec_copy').classList.add('hidden'); } }, 30000); };
   if (m.q('#fu_add')) m.q('#fu_add').onclick = async () => {
@@ -821,7 +1084,7 @@ function itemModal(id) {
   };
   if (m.q('#mr')) m.q('#mr').onclick = () => { m.close(); renewModal(id); };
   if (m.q('#me')) m.q('#me').onclick = () => { m.close(); editModal(id); };
-  if (m.q('#ma')) m.q('#ma').onclick = async () => { if (m.q('#ma').dataset.ok !== '1') { m.q('#ma').dataset.ok = '1'; m.q('#ma').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('archiveItem', { id }); m.close(); toast('تمت الأرشفة'); load(true); };
+  if (m.q('#ma')) m.q('#ma').onclick = async () => { if (m.q('#ma').dataset.ok !== '1') { m.q('#ma').dataset.ok = '1'; m.q('#ma').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('archiveItem', { id }); m.close(); await load(true); toastUndo('تمت أرشفة البند', async () => { await call('unarchiveItem', { id }); await load(true); toast('تمت استعادة البند'); }); };
 }
 function editModal(id, sec) {
   const i = id ? S.d.items.find(x => x.id === id) : { section: sec || S.d.sections[0] };
@@ -836,14 +1099,14 @@ function editModal(id, sec) {
       <div class="row3"><div><label>حالة الحساب</label><select id="e_accStatus"><option value=""></option>${opts(['نشط', 'تحت الاجراء', 'في انتظار التفعيل', 'غير نشط', 'بدون منصة', 'ملغى'], i.accStatus)}</select></div>
       <div><label>آخر تغيير لكلمة المرور</label><input type="date" id="e_pwLast" value="${esc(i.pwLast || '')}"></div><div><label>دورة التغيير (يوم)</label><input type="number" id="e_pwCycle" placeholder="${esc(S.d.settings.pwCycle)}" value="${esc(i.pwCycle || '')}"></div></div>
       ${S.d.me.canSecrets ? `<label>كلمة المرور ${i.hasSecret ? '(مسجّلة — اتركها فارغة للإبقاء عليها)' : ''}</label><input type="password" id="e_secret" dir="ltr" autocomplete="new-password"><div class="note">تُحفظ مشفّرة، ولا يراها إلا المدير ومن لديه صلاحية عرض كلمات المرور، وكل عرض لها يُسجَّل في سجل النشاط.</div>` : ''}</div>
-    <div class="row"><div><label>التكلفة المتوقعة (ر.س)</label><input type="number" id="e_cost" value="${esc(i.cost || '')}"></div><div><label>ابدأ الإجراء قبل الموعد بـ (يوماً)</label><input type="number" id="e_leadDays" min="0" value="${esc(i.leadDays || '')}" placeholder="الافتراضي ${esc((S.d.settings || {}).leadDays || 30)}"></div></div>
+    <div class="row"><div><label>التكلفة المتوقعة (ر.س)</label><input type="number" id="e_cost" value="${esc(i.cost || '')}"></div><div><label>الأهمية</label><select id="e_priority">${['عادي', 'مهم', 'حرج'].map(x => `<option value="${x === 'عادي' ? '' : x}" ${(i.priority || '') === (x === 'عادي' ? '' : x) ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div><div class="row"><div><label>ابدأ الإجراء قبل الموعد بـ (يوماً)</label><input type="number" id="e_leadDays" min="0" value="${esc(i.leadDays || '')}" placeholder="الافتراضي ${esc((S.d.settings || {}).leadDays || 30)}"></div></div>
     <label>ملاحظات</label><textarea id="e_notes" rows="2">${esc(i.notes || '')}</textarea>`;
   const m = modal(id ? 'تعديل: ' + esc(i.title) : 'إضافة بند جديد', body, '<button class="btn" id="e_save">حفظ</button>');
   const sync = () => { const s = m.q('#e_section').value; m.q('#accBox').style.display = s === 'حسابات المنصات' ? '' : 'none'; m.q('#dl_type').innerHTML = (typesBy[s] || []).map(t => `<option value="${esc(t)}">`).join(''); };
   m.q('#e_section').onchange = sync; sync();
   m.q('#e_save').onclick = async () => {
     const it = { id: id || '' };
-    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes', 'leadDays'].forEach(k => it[k] = m.q('#e_' + k).value);
+    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes', 'leadDays', 'priority'].forEach(k => it[k] = m.q('#e_' + k).value);
     it.ownerName = m.q('#e_owner').value;
     if (m.q('#e_secret') && m.q('#e_secret').value) it.secret = m.q('#e_secret').value;
     if (!it.title.trim()) return toast('اسم البند مطلوب', 1);
@@ -965,7 +1228,7 @@ function printReport(title, sub, items, rows, opts) {
   const grp = {}; R.forEach(i => { const k = i.section + '|' + (i.platform || NOPLAT); (grp[k] = grp[k] || []).push(i); });
   const det = Object.keys(grp).sort().map(k => { const [sec, pl] = k.split('|'), arr = grp[k];
     return `<tr class="g"><td colspan="6"><b>${esc(pl)}</b><span>${esc(sec)} · ${arr.length} بند${cnt(arr, 'ex') ? ' · <em style="color:#B3261E">' + cnt(arr, 'ex') + ' منتهية</em>' : ''}</span></td></tr>` +
-      arr.map(i => `<tr class="r ${g4(i)}"><td><b>${esc(i.title)}</b>${i.refNo ? '<small>رقم: ' + esc(i.refNo) + '</small>' : ''}${i.status ? '<small>' + esc(i.status) + '</small>' : ''}</td><td>${esc(i.ownerName || '—')}</td><td class="d">${fmtD(i.issueDate)}</td><td class="d">${i._due ? fmtD(i._due.date) : '—'}</td><td>${i._due ? esc(i._due.kind) : '—'}</td><td>${pill(i)}</td></tr>`).join(''); }).join('');
+      arr.map(i => `<tr class="r ${g4(i)}"><td><b>${esc(i.title)}</b>${i.refNo ? '<small>رقم: ' + esc(i.refNo) + '</small>' : ''}${i.status ? '<small>' + esc(i.status) + '</small>' : ''}</td><td>${esc(i.ownerName || '—')}</td><td class="d">${fmtD(i.issueDate)}${i.issueDate ? '<small>' + hijriS(i.issueDate) + ' هـ</small>' : ''}</td><td class="d">${i._due ? fmtD(i._due.date) + '<small>' + hijriS(i._due.date) + ' هـ</small>' : '—'}</td><td>${i._due ? esc(i._due.kind) : '—'}</td><td>${pill(i)}</td></tr>`).join(''); }).join('');
   const CARDS = opts.layout === 'cards';
   const detCards = Object.keys(grp).sort().map(k => { const [sec, pl] = k.split('|'), arr = grp[k];
     return `<div class="cg"><div class="cgh"><b>${esc(pl)}</b><span>${esc(sec)} · ${arr.length} بند${cnt(arr, 'ex') ? ' · <em style="color:#B3261E">' + cnt(arr, 'ex') + ' منتهية</em>' : ''}</span></div><div class="cgr">` +
