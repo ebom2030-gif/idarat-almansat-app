@@ -102,6 +102,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .nav a.on{background:rgba(176,141,60,.16);color:#fff}.nav a.on svg{color:var(--brass)}
 .nav a .cnt{margin-right:auto;font-size:12px;color:#98A6A1}.nav a .cnt.hot{background:var(--red);color:#fff;border-radius:4px;padding:0 6px;font-weight:600}
 .nav .grp{font-size:12px;color:#7F8E89;padding:16px 12px 6px}
+.inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
 .me b{color:#fff;display:block;font-weight:600}.me span{color:#98A6A1}.me .links{margin-top:8px;display:flex;gap:14px}.me a{color:#C9D2CE;cursor:pointer;font-size:12.5px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(201,210,206,.35)}
 .main{flex:1;min-width:0;padding:26px 32px 70px;max-width:1500px}
@@ -1142,6 +1143,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
   cards: 'M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z', table: 'M3 4h18v16H3zM3 10h18M3 15h18M9 10v10', chev: 'M6 9l6 6 6-6', cal: 'M3 5h18v16H3zM16 3v4M8 3v4M3 10h18' };
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
+const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/?install=1';
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
 const STC = { expired: 'var(--red)', critical: 'var(--amber)', urgent: 'var(--gold)', soon: '#C9B66A', ok: 'var(--ok)', none: 'transparent', off: 'transparent' };
 function hijri(d) { try { return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura', { day: 'numeric', month: 'long', year: 'numeric' }).format(d); } catch (e) { return ''; } }
@@ -1270,7 +1272,7 @@ function renderAuth(forceFirst) {
       <div class="caps" id="caps">زر الأحرف الكبيرة (Caps Lock) مفعّل</div>
       <div class="auth-row"><label class="chk"><input type="checkbox" id="l_rem" checked>تذكّر اسم المستخدم</label><button type="button" class="lnk" id="l_forgot">نسيت كلمة المرور؟</button></div>
       <button class="btn go" id="l_go" type="submit"><span class="spin-s"></span><span>دخول</span></button>
-      <div class="auth-alt"><button type="button" class="lnk" id="l_contact">${ic('alerts')}تواصل مع مدير المنصة</button><a class="lnk" href="${DEMO_URL}" target="_blank" rel="noopener">${ic('cards')}جرّب النسخة التجريبية</a></div>`);
+      <div class="auth-alt"><button type="button" class="lnk" id="l_contact">${ic('alerts')}تواصل مع مدير المنصة</button><a class="lnk" href="${DEMO_URL}" target="_blank" rel="noopener">${ic('cards')}جرّب النسخة التجريبية</a><a class="lnk" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}تثبيت التطبيق</a></div>`);
   startScenes();
   const err = m => { const a = $('#a_err'); a.querySelector('span').textContent = m; a.classList.toggle('on', !!m); };
   document.querySelectorAll('[data-eye]').forEach(b => b.onclick = () => { const i = $('#' + b.dataset.eye), sh = i.type === 'password'; i.type = sh ? 'text' : 'password'; b.innerHTML = ic(sh ? 'eyeoff' : 'eye'); b.setAttribute('aria-label', sh ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'); });
@@ -1365,6 +1367,7 @@ function renderApp() {
   $('#root').innerHTML = `<div class="app"><aside class="side" id="side">
     <div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div></div>
     <nav class="nav">${nav.map(link).join('')}<div class="grp">المتابعة والإدارة</div>${nav2.map(link).join('')}</nav>
+    <a class="inst" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}<span>تثبيت التطبيق<small>على الكمبيوتر أو الجوال</small></span></a>
     <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div></div>
   </aside><main class="main" id="main"></main><div class="tip hidden" id="tip"></div></div>`;
   document.querySelectorAll('.nav a').forEach(a => a.onclick = e => { e.preventDefault(); S.view = a.dataset.v; S.filters = {}; $('#side').classList.remove('open'); renderApp(); });
