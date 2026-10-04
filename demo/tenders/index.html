@@ -1694,8 +1694,8 @@ function authShell(inner) {
       <div class="feat" role="tablist"><button type="button" role="tab" data-sc="0">${ic('bell')}<b>تذكير قبل الانتهاء</b><span>بريد وواتساب من 90 يوماً وحتى يوم الاستحقاق</span><i></i></button>
         <button type="button" role="tab" data-sc="1">${ic('file')}<b>أرشيف الشهادات</b><span>كل تجديد بملفه وتاريخ بدايته ونهايته</span><i></i></button>
         <button type="button" role="tab" data-sc="2">${ic('shield')}<b>صلاحيات وتشفير</b><span>لكل موظف أقسامه، وكلمات المرور مشفّرة</span><i></i></button></div></div>
-    <div class="auth-foot"><span>© ${new Date().getFullYear()} — إدارة المنصات والتأهيلات</span><span>جميع الحقوق محفوظة</span></div></section>
-    <section class="auth-form"><form class="auth-card" id="af" autocomplete="on" novalidate><div class="logo-m">${LOGO}<b>إدارة المنصات والتأهيلات</b></div>${inner}
+    <div class="auth-foot"><span>© ${new Date().getFullYear()} — ${APP_TITLE}</span><span>جميع الحقوق محفوظة</span></div></section>
+    <section class="auth-form"><form class="auth-card" id="af" autocomplete="on" novalidate><div class="logo-m">${LOGO}<b>${APP_TITLE}</b></div>${inner}
       <div class="alert" id="a_err" role="alert">${ic('alert')}<span></span></div>
       <div class="secure">${ic('shield')}اتصال مشفّر — مع «تذكّرني» تبقى مسجّلاً 30 يوماً على هذا الجهاز</div><div class="ver">الإصدار ${APP_VER}</div></form></section></div>`;
 }
@@ -1795,7 +1795,7 @@ function setupPanel(un) {
 }
 function requestPanel(kind) {
   const isR = kind === 'reset', un = ($('#l_user') && $('#l_user').value) || '';
-  $('#af').innerHTML = `<div class="logo-m" style="display:flex">${LOGO}<b>إدارة المنصات والتأهيلات</b></div>
+  $('#af').innerHTML = `<div class="logo-m" style="display:flex">${LOGO}<b>${APP_TITLE}</b></div>
     <h2>${isR ? 'نسيت كلمة المرور' : 'تواصل مع مدير المنصة'}</h2><div class="sub">${isR ? 'اكتب اسم المستخدم، وسيصل طلبك لمدير المنصة بالبريد ليعيّن لك كلمة مرور جديدة.' : 'اكتب رسالتك، وستصل لمدير المنصة على بريده مباشرة.'}</div>
     ${fld('r_user', 'اسم المستخدم', 'user', 'text', 'username', 'value="' + esc(un) + '"')}
     <label for="r_name">الاسم</label><div class="field">${ic('user')}<input id="r_name" autocomplete="name"></div>
@@ -1808,7 +1808,7 @@ function requestPanel(kind) {
   $('#af').onsubmit = async e => {
     e.preventDefault(); err(''); const b = $('#r_go'); b.classList.add('busy');
     try { await gs('contactAdmin', { kind, username: $('#r_user').value, name: $('#r_name').value, msg: $('#r_msg').value });
-      $('#af').innerHTML = `<div class="logo-m" style="display:flex">${LOGO}<b>إدارة المنصات والتأهيلات</b></div><h2>تم الإرسال</h2><div class="sub">${isR ? 'وصل طلبك لمدير المنصة، وسيتواصل معك بكلمة المرور الجديدة.' : 'وصلت رسالتك لمدير المنصة.'}</div><button type="button" class="btn go" id="r_back2">العودة لتسجيل الدخول</button>`;
+      $('#af').innerHTML = `<div class="logo-m" style="display:flex">${LOGO}<b>${APP_TITLE}</b></div><h2>تم الإرسال</h2><div class="sub">${isR ? 'وصل طلبك لمدير المنصة، وسيتواصل معك بكلمة المرور الجديدة.' : 'وصلت رسالتك لمدير المنصة.'}</div><button type="button" class="btn go" id="r_back2">العودة لتسجيل الدخول</button>`;
       $('#r_back2').onclick = () => renderAuth();
     } catch (x) { err((x.message || x).toString().replace(/^Error:\s{0,}/, '')); b.classList.remove('busy'); }
   };
@@ -2030,10 +2030,10 @@ function notifyDaily(force) {
   if (!ex && !wk && !st && !force) return;
   const body = `${ex} منتهية · ${wk} خلال 7 أيام · ${st} حان بدء إجرائها`, opt = { body: body, icon: 'icons/icon-192.png', badge: 'icons/icon-192.png', tag: 'dm-daily', dir: 'rtl', lang: 'ar' };
   try { localStorage.setItem('dm_notified', S.d.today); } catch (e) { }
-  try { if (navigator.serviceWorker && navigator.serviceWorker.controller) navigator.serviceWorker.ready.then(r => r.showNotification('إدارة المنصات والتأهيلات', opt)); else new Notification('إدارة المنصات والتأهيلات', opt); } catch (e) { }
+  try { if (navigator.serviceWorker && navigator.serviceWorker.controller) navigator.serviceWorker.ready.then(r => r.showNotification(APP_TITLE, opt)); else new Notification(APP_TITLE, opt); } catch (e) { }
 }
 function skeleton() {
-  return `<div class="app sk"><aside class="side"><div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>جارٍ التحميل…</span></div></div><div style="padding:14px">${'<i class="skl" style="height:34px;margin:8px 0"></i>'.repeat(7)}</div></aside>
+  return `<div class="app sk"><aside class="side"><div class="head">${LOGO}<div><b>${APP_TITLE}</b><span>جارٍ التحميل…</span></div></div><div style="padding:14px">${'<i class="skl" style="height:34px;margin:8px 0"></i>'.repeat(7)}</div></aside>
     <main class="main"><i class="skl" style="height:46px;width:40%;margin-bottom:18px"></i><div class="sec-cards">${'<i class="skl" style="height:110px"></i>'.repeat(3)}</div><i class="skl" style="height:300px;margin-top:18px"></i><i class="skl" style="height:80px;margin-top:18px"></i></main></div>`;
 }
 async function fileToB64(f) { return new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(String(r.result).split(',')[1]); r.onerror = no; r.readAsDataURL(f); }); }
@@ -2737,7 +2737,7 @@ function bindSec(sec) {
 }
 function waLink(i) {
   const c = contact(i.ownerName); if (!c.phone || !i._due) return '';
-  const msg = 'السلام عليكم ' + (c.name || '') + '\nتذكير من ' + S.d.settings.orgName + ' — ' + 'إدارة المنصات والتأهيلات' + ':\n' + 'البند: ' + i.title + (i.platform ? ' — ' + i.platform : '') + '\nالمطلوب: ' + i._due.kind + '\nالتاريخ: ' + fmtD(i._due.date) +
+  const msg = 'السلام عليكم ' + (c.name || '') + '\nتذكير من ' + S.d.settings.orgName + ' — ' + APP_TITLE + ':\n' + 'البند: ' + i.title + (i.platform ? ' — ' + i.platform : '') + '\nالمطلوب: ' + i._due.kind + '\nالتاريخ: ' + fmtD(i._due.date) +
     (i._days < 0 ? ' (متأخر ' + (-i._days) + ' يوم)' : ' (متبقٍ ' + i._days + ' يوم)') + '\nنرجو المتابعة وتحديث المنصة بعد الإنجاز.';
   return 'https:' + '/' + '/wa.me/' + c.phone + '?text=' + encodeURIComponent(msg);
 }
@@ -3011,7 +3011,7 @@ function printReport(title, sub, items, rows, opts) {
   .ft b{color:#1E2B2A}.sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10mm;margin-top:10mm;page-break-inside:avoid}.sig div{border-top:1px solid #9AA4A0;padding-top:5px;text-align:center;color:#5F6B68}
   @media screen{body{background:#ECEEEA}.sheet{max-width:210mm;margin:0 auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15);padding-bottom:6mm}}`;
   const doc = `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${esc(title)} — ${fmtD(S.d.today)}</title><link rel="stylesheet" href="${H}"><style>${css}</style></head><body><div class="sheet">
-  <section class="cov"><div class="ch">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div><div class="no">رقم التقرير: <b>${rptNo}</b><br>${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr" title="امسح لفتح المنصة">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
+  <section class="cov"><div class="ch">${LOGO}<div><b>${APP_TITLE}</b><span>${esc(S.d.settings.orgName)}</span></div><div class="no">رقم التقرير: <b>${rptNo}</b><br>${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr" title="امسح لفتح المنصة">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
     <h1>${esc(title)}</h1><p>${esc(sub)}</p></section>
   <div class="pg"><div class="kp">
     <div style="--c:#1E2B2A"><b>${R.length}</b><span>إجمالي البنود</span></div>
@@ -3029,7 +3029,7 @@ function printReport(title, sub, items, rows, opts) {
   <div class="pb"><h2>ملخص الأرقام حسب الجهة</h2>${authMatrix(items, true)}</div>
   <div class="pb"><h2>تفاصيل البنود حسب الجهة${CARDS ? ' — بطاقات' : ''}</h2>${detHtml}
     <div class="sig"><div>أعدّه: ${esc(S.d.me.name)}</div><div>راجعه</div><div>اعتمده</div></div></div>
-  </div><div class="ft"><span><b>إدارة المنصات والتأهيلات</b> · ${esc(title)}</span><span>${rptNo}</span><span>${hijri(today)} · ${fmtD(S.d.today)}</span></div></div></body></html>`;
+  </div><div class="ft"><span><b>${APP_TITLE}</b> · ${esc(title)}</span><span>${rptNo}</span><span>${hijri(today)} · ${fmtD(S.d.today)}</span></div></div></body></html>`;
   let w = null; try { w = window.open('', '_blank'); } catch (e) { w = null; }
   if (!w) { toast('المتصفح منع نافذة الطباعة — اسمح بالنوافذ المنبثقة لهذا الموقع ثم أعد المحاولة', 1); return; }
   w.document.open(); w.document.write(doc); w.document.close();
@@ -3067,14 +3067,14 @@ function printExec(items, sub) {
   @media screen{body{background:#ECEEEA}.pg{margin:0 auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}}`;
   const pill = i => { const e = i._days < 0, c = e ? ['#F6E3E1', '#9E2119'] : i._days <= 30 ? ['#FBEED8', '#8A5300'] : ['#E1F0EA', '#0B6E4F']; return `<span class="pl" style="background:${c[0]};color:${c[1]}">${e ? 'منتهي منذ ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'متبقٍ ' + i._days + ' يوم'}</span>`; };
   const doc = `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>التقرير التنفيذي — ${fmtD(S.d.today)}</title><link rel="stylesheet" href="${H}"><style>${css}</style></head><body><div class="pg">
-  <div class="hd">${LOGO}<div><h1>التقرير التنفيذي</h1><p>${esc(S.d.settings.orgName)} — إدارة المنصات والتأهيلات${sub ? ' — ' + esc(sub) : ''}</p></div><div class="m">${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
+  <div class="hd">${LOGO}<div><h1>التقرير التنفيذي</h1><p>${esc(S.d.settings.orgName)} — ${APP_TITLE}${sub ? ' — ' + esc(sub) : ''}</p></div><div class="m">${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
   <div class="bd"><div class="top"><div class="rd"><span>مؤشر الجاهزية</span><b style="color:${rc}">${rdy}%</b><span>${dated.length - ex.length} من ${dated.length} بنداً غير منتهية · الهدف 90%</span></div>
     <div class="kp"><div style="--c:#1E2B2A"><b>${R.length}</b><span>إجمالي البنود</span></div><div style="--c:#B3261E"><b>${ex.length}</b><span>منتهية / متأخرة</span></div><div style="--c:#C77700"><b>${d30.length}</b><span>تستحق خلال 30 يوماً</span></div><div style="--c:#1E8A5F"><b>${ok.length}</b><span>سارية</span></div></div></div>
   <div><h2>أبرز الملاحظات والتوصيات</h2><div class="nt"><ul>${notes.map(n => '<li>' + n + '</li>').join('')}</ul></div></div>
   <div><h2>الحالة حسب القسم</h2>${secs}<div style="display:flex;gap:14px;color:#5F6B68;font-size:9.5px;margin-top:4px"><span>■ <b style="color:#B3261E">منتهي</b></span><span>■ <b style="color:#D98A1C">خلال 90 يوماً</b></span><span>■ <b style="color:#1E8A5F">ساري</b></span><span>■ <b style="color:#9AA4A0">بلا تاريخ</b></span></div></div>
   <div><h2>أهم 10 بنود تحتاج متابعة</h2><table><thead><tr><th style="text-align:right">البند</th><th>الجهة</th><th>المسؤول</th><th>الموعد</th><th>الحالة</th></tr></thead><tbody>${top.map(i => `<tr style="--c:${i._days < 0 ? '#B3261E' : i._days <= 30 ? '#D98A1C' : '#1E8A5F'}"><td><b>${esc(i.title)}</b></td><td>${esc(i.platform || '—')}</td><td>${esc(i.ownerName || '—')}</td><td>${fmtD(i._due.date)}</td><td>${pill(i)}</td></tr>`).join('') || '<tr><td colspan="5">لا توجد بنود مؤرّخة</td></tr>'}</tbody></table></div>
   <div class="sig"><div>أعدّه: ${esc(S.d.me.name)}</div><div>اعتمده</div></div></div>
-  <div class="ft"><span><b>إدارة المنصات والتأهيلات</b> · التقرير التنفيذي</span><span>${fmtD(S.d.today)}</span></div></div></body></html>`;
+  <div class="ft"><span><b>${APP_TITLE}</b> · التقرير التنفيذي</span><span>${fmtD(S.d.today)}</span></div></div></body></html>`;
   openPrint(doc);
 }
 async function exportStyled(rows, name) {
@@ -3085,7 +3085,7 @@ async function exportStyled(rows, name) {
     const ws = wb.addWorksheet('البنود', { views: [{ rightToLeft: true, state: 'frozen', ySplit: 3 }], pageSetup: { paperSize: 9, orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0 } });
     const cols = [['البند', 34], ['القسم', 18], ['الجهة / المنصة', 26], ['المسؤول', 16], ['تاريخ البداية', 13], ['النهاية / الاستحقاق', 15], ['المطلوب', 16], ['الأيام المتبقية', 12], ['الحالة', 16], ['حالة التجديد', 18], ['آخر متابعة', 30], ['التكلفة (ر.س)', 12]];
     ws.columns = cols.map(c => ({ width: c[1] }));
-    ws.mergeCells(1, 1, 1, cols.length); const t = ws.getCell(1, 1); t.value = 'إدارة المنصات والتأهيلات — ' + name; t.font = { bold: true, size: 15, color: { argb: 'FFFFFFFF' } }; t.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; t.alignment = { horizontal: 'right', vertical: 'middle' }; ws.getRow(1).height = 28;
+    ws.mergeCells(1, 1, 1, cols.length); const t = ws.getCell(1, 1); t.value = APP_TITLE + ' — ' + name; t.font = { bold: true, size: 15, color: { argb: 'FFFFFFFF' } }; t.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; t.alignment = { horizontal: 'right', vertical: 'middle' }; ws.getRow(1).height = 28;
     ws.mergeCells(2, 1, 2, cols.length); const st = ws.getCell(2, 1); st.value = (S.d.settings.orgName || '') + ' — ' + fmtD(S.d.today) + ' — ' + rows.length + ' بنداً'; st.font = { color: { argb: 'FF5F6B68' } }; st.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE9DDBF' } };
     const hr = ws.getRow(3); hr.values = cols.map(c => c[0]); hr.height = 22;
     hr.eachCell(c => { c.font = { bold: true, color: { argb: 'FFFFFFFF' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B6E4F' } }; c.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true }; });
