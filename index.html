@@ -115,6 +115,27 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .nav a .cnt{margin-right:auto;font-size:12px;color:#98A6A1}.nav a .cnt.hot{background:var(--red);color:#fff;border-radius:4px;padding:0 6px;font-weight:600}
 .nav .grp{font-size:12px;color:#7F8E89;padding:16px 12px 6px}
 .ver{margin-top:8px;font-size:11px;color:var(--muted);text-align:center;opacity:.8}.me .ver{text-align:right;color:#7F8E89}
+.dfil{display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px}
+.dfil b{font-size:13px;color:var(--muted);margin-left:4px}.dfil select{width:auto;min-width:150px;padding:7px 10px;border-radius:8px}.dfil .clr{margin-right:auto}.dfil .on{border-color:var(--brass);background:#FBF7EC}
+.rdy{display:grid;grid-template-columns:1fr 1.25fr;gap:16px;margin-bottom:20px}
+.rdy .panel{margin:0}.rdy-n{display:flex;align-items:center;gap:18px}.rdy-n b{font-family:var(--head);font-size:44px;line-height:1}.rdy-n small{display:block;color:var(--muted);font-size:12.5px;line-height:1.6}
+.spark{width:100%;height:64px;margin-top:10px}.spark-l{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.st-list{list-style:none;margin:0;padding:0;max-height:250px;overflow:auto}.st-list li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:8px 10px;border-bottom:1px solid var(--line2);cursor:pointer;border-radius:6px}.st-list li:hover{background:var(--stone)}
+.st-list b{font-size:13px}.st-list span{font-size:12px;color:var(--muted)}.st-list em{grid-row:1/3;grid-column:2;font-style:normal;font-weight:700;font-size:12px;color:var(--amber);align-self:center}
+.chip-start{display:inline-block;background:var(--amber-l);color:var(--amber);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:700;margin-right:6px}
+.fu{border-right:2px solid var(--line);margin:8px 6px 0 0;padding-right:14px}.fu-i{position:relative;padding:4px 0 10px}.fu-i:before{content:"";position:absolute;right:-20px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--brass);border:2px solid var(--paper)}
+.fu-i b{font-size:13px}.fu-i span{color:var(--muted);font-size:12px;margin-right:8px}.fu-i p{margin:2px 0 0;font-size:13px}
+.fu-add{display:grid;grid-template-columns:200px 1fr auto;gap:8px;margin-top:10px}
+.tgl{display:flex;gap:6px;margin-top:8px}.tgl button{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#C9D2CE;border-radius:7px;padding:4px 9px;font-size:12px;cursor:pointer}.tgl button.on{background:rgba(176,141,60,.25);border-color:rgba(176,141,60,.6);color:#fff}
+html[data-font=lg] body{zoom:1.14}
+html[data-theme=dark]{--stone:#0F1513;--paper:#18201E;--line:#2C3633;--line2:#232C2A;--text:#E3E8E5;--muted:#9AA7A3;--red-l:#3B1E1C;--amber-l:#3A2911;--gold-l:#332B13;--ok-l:#12302A;--none-l:#222A28;color-scheme:dark}
+html[data-theme=dark] body{background:var(--stone)}
+html[data-theme=dark] :is(.auth-card,.field input,.field input:focus,input,select,textarea,.rl-col,.mf,.drop,.note,.ring>div,.card-dates,.mx th,.dt-g td,.inst-login,.dfil .on){background:var(--paper)!important;color:var(--text)}
+html[data-theme=dark] :is(.btn.light:hover,.strip button:hover,.dlist li:hover,tbody tr:hover td,.drop:hover,.strip button.on,.mx tr.tot td,.mx tbody tr.clk:hover td,.inst-login:hover){background:#222C29!important}
+html[data-theme=dark] th{background:#222C29;color:var(--text)}html[data-theme=dark] .b-soon{background:#33300F;color:#E5D27A}
+html[data-theme=dark] :is(.rl-col,.rl-sum span)[style*="#FAF6E8"]{--cl:#2E2A16!important;--c:#D9C46A!important}html[data-theme=dark] .strip button[style*="var(--ink)"]{--c:#E3E8E5!important}html[data-theme=dark] .strip button[style*="var(--ink)"] .n{color:#E3E8E5}
+html[data-theme=dark] .btn.light{background:var(--paper);color:var(--text);border-color:var(--line)}
+@media (max-width:900px){.rdy{grid-template-columns:1fr}.fu-add{grid-template-columns:1fr}}
 .inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
@@ -296,7 +317,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
   settings: 'M12 15a3 3 0 100-6 3 3 0 000 6zM19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z',
   file: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6', link: 'M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7',
   renew: 'M21 12a9 9 0 11-3-6.7L21 8M21 3v5h-5', wa: 'M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1121 11.5z', plus: 'M12 5v14M5 12h14', up: 'M12 19V5M5 12l7-7 7 7', down: 'M12 5v14M19 12l-7 7-7-7',
-  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
+  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-4.3-4.3', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
   user: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8', lock: 'M5 11h14v10H5zM8 11V7a4 4 0 018 0v4', eye: 'M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 15a3 3 0 100-6 3 3 0 000 6',
   eyeoff: 'M17.9 17.9A10 10 0 0112 20C5 20 1 12 1 12a18 18 0 015.1-5.9M9.9 4.2A9 9 0 0112 4c7 0 11 8 11 8a18 18 0 01-2.2 3.2M14.1 14.1a3 3 0 11-4.2-4.2M1 1l22 22', shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4',
   bell: 'M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0', alert: 'M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z',
@@ -304,7 +325,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
 const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/install.html';
-const APP_VER = '14 · 04/10/2026';
+const APP_VER = '15 · 04/10/2026';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
 const IN_GAS = !!(window.google && google.script && google.script.run);
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
@@ -321,6 +342,21 @@ function xlsxReady() {
 }
 function loading(on) { $('#loading').classList.toggle('hidden', !on); }
 function toast(m, bad) { const t = document.createElement('div'); t.className = 'toast' + (bad ? ' bad' : ''); t.textContent = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3800); }
+const APP_HOME = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/';
+const LIBS = {};
+function loadLib(u) { if (LIBS[u]) return LIBS[u]; LIBS[u] = new Promise((ok, no) => { const t = document.createElement('script'); t.src = u; t.onload = ok; t.onerror = () => { delete LIBS[u]; no(); }; document.head.appendChild(t); }); return LIBS[u]; }
+const QR_LIB = 'https:' + '/' + '/cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js', XLS_LIB = 'https:' + '/' + '/cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js';
+function qrSvg(t) { try { if (!window.qrcode) return ''; const q = qrcode(0, 'M'); q.addData(t); q.make(); return q.createSvgTag({ cellSize: 2, margin: 0, scalable: true }); } catch (e) { return ''; } }
+function openPrint(doc) {
+  let w = null; try { w = window.open('', '_blank'); } catch (e) { w = null; }
+  if (!w) { toast('المتصفح منع نافذة الطباعة — اسمح بالنوافذ المنبثقة لهذا الموقع ثم أعد المحاولة', 1); return; }
+  w.document.open(); w.document.write(doc); w.document.close();
+  setTimeout(() => { try { w.focus(); w.print(); } catch (e) { } }, 1200);
+}
+function applyLook() { let t = '', f = ''; try { t = localStorage.getItem('dm_theme') || ''; f = localStorage.getItem('dm_font') || ''; } catch (e) { } document.documentElement.dataset.theme = t; document.documentElement.dataset.font = f; }
+function toggleLook(k, v) { try { const cur = localStorage.getItem(k) || ''; localStorage.setItem(k, cur === v ? '' : v); } catch (e) { } applyLook(); renderApp(); }
+applyLook();
+const PROG = ['تحت الدراسة', 'جاري العمل', 'جاري المتابعة', 'بانتظار الدفع', 'بانتظار الجهة', 'تم', 'غير مطلوب', 'تم التواصل مع الجهة', 'قُدّم الطلب', 'بانتظار رد الجهة', 'تم السداد'];
 function gs(fn, ...args) {
   if (IN_GAS) return new Promise((res, rej) => { google.script.run.withSuccessHandler(res).withFailureHandler(e => rej(e))[fn](...args); });
   return fetch(API_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({ fn: fn, args: args }), credentials: 'omit', redirect: 'follow' })
@@ -353,6 +389,8 @@ function enrich(i) {
   i._due = d; i._days = d ? dn(d.date) - t : null;
   const off = ['غير نشط', 'بدون منصة', 'ملغى'].indexOf(i.accStatus) >= 0 || ['غير مطلوب'].indexOf(i.status) >= 0;
   i._st = off ? 'off' : !d ? 'none' : i._days < 0 ? 'expired' : i._days <= 7 ? 'critical' : i._days <= 30 ? 'urgent' : i._days <= 90 ? 'soon' : 'ok';
+  i._lead = Number(i.leadDays) || Number((S.d.settings || {}).leadDays) || 30;
+  i._start = !off && !!d && i._days <= i._lead && PROG.indexOf(i.status) < 0;
   return i;
 }
 const ST = { expired: 'متأخر / منتهي', critical: 'عاجل جداً', urgent: 'عاجل', soon: 'قريب', ok: 'ساري', none: 'بدون تاريخ', off: 'غير متابع' };
@@ -533,11 +571,12 @@ function renderApp() {
     <div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div></div>
     <nav class="nav">${nav.map(link).join('')}<div class="grp">المتابعة والإدارة</div>${nav2.map(link).join('')}</nav>
     <a class="inst" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}<span>تثبيت التطبيق<small>على الكمبيوتر أو الجوال</small></span></a>
-    <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div><div class="ver">الإصدار ${APP_VER}</div></div>
+    <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div><div class="tgl"><button id="tTheme" class="${document.documentElement.dataset.theme === 'dark' ? 'on' : ''}">الوضع الليلي</button><button id="tFont" class="${document.documentElement.dataset.font === 'lg' ? 'on' : ''}">خط كبير</button></div><div class="ver">الإصدار ${APP_VER}</div></div>
   </aside><main class="main" id="main"></main><div class="tip hidden" id="tip"></div></div>`;
   document.querySelectorAll('.nav a').forEach(a => a.onclick = e => { e.preventDefault(); S.view = a.dataset.v; S.filters = {}; $('#side').classList.remove('open'); renderApp(); });
   $('#out').onclick = async () => { try { await gs('logout', S.token); } catch (e) { } logoutLocal(); };
-  $('#myPw').onclick = myPwModal;
+  $('#myPw').onclick = myPwModal; loadLib(QR_LIB).catch(() => { });
+  $('#tTheme').onclick = () => toggleLook('dm_theme', 'dark'); $('#tFont').onclick = () => toggleLook('dm_font', 'lg');
   renderView();
 }
 function topbar(title, sub, actions) {
@@ -553,8 +592,34 @@ function renderView() {
   const map = { reports: reportsView, renewals: renewalsView, contacts: contactsView, users: usersView, alerts: alertsView, logs: logsView, settings: settingsView };
   m.innerHTML = map[v](); (BIND[v] || (() => { }))();
 }
+function dashItems() {
+  const f = S.dashF || {};
+  return S.d.items.filter(i => (!f.plat || (i.platform || 'بدون جهة') === f.plat) && (!f.own || (i.ownerName || 'بدون مسؤول') === f.own) &&
+    (!f.per || (f.per === 'ex' ? i._st === 'expired' : i._due && i._days <= Number(f.per))));
+}
+function dashFilterBar() {
+  const f = S.dashF || {}, uniq = a => [...new Set(a)].sort((x, y) => x.localeCompare(y, 'ar'));
+  const plats = uniq(S.d.items.map(i => i.platform || 'بدون جهة')), owns = uniq(S.d.items.map(i => i.ownerName || 'بدون مسؤول'));
+  const sel = (id, lbl, arr, v) => `<select id="${id}" class="${v ? 'on' : ''}"><option value="">${lbl}</option>${arr.map(a => `<option ${a === v ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>`;
+  const pers = [['', 'كل الفترات'], ['ex', 'المنتهي فقط'], ['7', 'خلال 7 أيام'], ['30', 'خلال 30 يوماً'], ['90', 'خلال 90 يوماً']];
+  const on = f.plat || f.own || f.per;
+  return `<div class="dfil" role="search"><b>${ic('search')} تصفية سريعة</b>${sel('df_plat', 'كل الجهات', plats, f.plat)}${sel('df_own', 'كل المسؤولين', owns, f.own)}<select id="df_per" class="${f.per ? 'on' : ''}">${pers.map(x => `<option value="${x[0]}" ${x[0] === (f.per || '') ? 'selected' : ''}>${x[1]}</option>`).join('')}</select>${on ? '<button class="btn light sm clr" id="df_clr">مسح التصفية</button>' : ''}</div>`;
+}
+function readinessPanel(it) {
+  const L = it.filter(i => i._st !== 'off'), dated = L.filter(i => i._due), ex = dated.filter(i => i._days < 0).length;
+  const now = dated.length ? Math.round((dated.length - ex) / dated.length * 100) : 100, mon = S.d.today.slice(0, 7);
+  const pts = (S.d.snapshots || []).filter(x => x.month !== mon).map(x => [x.month, Number(x.readiness)]).concat([[mon, now]]).slice(-12);
+  const col = now >= 90 ? 'var(--ok)' : now >= 75 ? 'var(--amber)' : 'var(--red)';
+  let spark = '';
+  if (pts.length > 1) { const W = 300, H = 60, xs = i => 6 + i * (W - 12) / (pts.length - 1), ys = v => H - 6 - (v / 100) * (H - 12);
+    spark = `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-label="اتجاه مؤشر الجاهزية"><polyline fill="none" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="3 3" points="0,${ys(90)} ${W},${ys(90)}"/><polyline fill="none" stroke="${col}" stroke-width="2.5" stroke-linejoin="round" points="${pts.map((p, i) => xs(i) + ',' + ys(p[1])).join(' ')}"/>${pts.map((p, i) => `<circle cx="${xs(i)}" cy="${ys(p[1])}" r="3.5" fill="${col}"><title>${p[0]}: ${p[1]}%</title></circle>`).join('')}</svg><div class="spark-l"><span>${pts[0][0]}</span><span>الخط المتقطع = هدف 90%</span><span>${pts[pts.length - 1][0]}</span></div>`; }
+  else spark = '<div class="spark-l" style="margin-top:12px"><span>سيظهر منحنى الاتجاه الشهري تلقائياً بدءاً من الشهر القادم</span></div>';
+  const st = it.filter(i => i._start).sort((a, b) => a._days - b._days);
+  return `<div class="rdy"><section class="panel"><h3>مؤشر الجاهزية <small>نسبة البنود غير المنتهية من البنود المؤرّخة</small></h3><div class="pb"><div class="rdy-n"><b style="color:${col}">${now}%</b><small>${dated.length - ex} من ${dated.length} بنداً سارية أو قيد الاستحقاق<br>${ex} منتهية تخفض المؤشر — الهدف 90% فأكثر</small></div>${spark}</div></section>
+    <section class="panel"><h3>حان وقت بدء الإجراء <small>${st.length} بند دخل مهلة البدء ولم تُسجَّل له متابعة</small></h3><div class="pb">${st.length ? `<ul class="st-list">${st.map(i => `<li data-id="${i.id}"><b>${esc(i.title)}</b><span>${esc(i.platform || i.section)} · ${esc(i.ownerName || 'بدون مسؤول')} · المهلة ${i._lead} يوماً</span><em>${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : 'باقٍ ' + i._days + ' يوم'}</em></li>`).join('')}</ul>` : '<div class="empty" style="padding:18px">كل البنود القريبة عليها متابعة مسجّلة ✓</div>'}</div></section></div>`;
+}
 function dashView() {
-  const it = S.d.items, c = k => it.filter(i => i._st === k).length;
+  const it = dashItems(), c = k => it.filter(i => i._st === k).length;
   const strip = [['', it.length, 'كل البنود', 'var(--ink)'], ['expired', c('expired'), 'منتهية أو متأخرة', 'var(--red)'], ['critical', c('critical'), 'خلال 7 أيام', 'var(--amber)'],
     ['urgent', c('urgent'), 'خلال 30 يوماً', 'var(--gold)'], ['soon', c('soon'), 'خلال 90 يوماً', '#A08A2E'], ['ok', c('ok'), 'سارية', 'var(--ok)'], ['none', c('none'), 'بلا تاريخ انتهاء', 'var(--none)']];
   const span = 120, list = it.filter(i => i._due && i._st !== 'off');
@@ -580,12 +645,13 @@ function dashView() {
   const ownKeys = Object.keys(own).sort((a, b) => own[b] - own[a]).slice(0, 8), mx = Math.max.apply(null, ownKeys.map(k => own[k]).concat([1]));
   const secCards = S.d.sections.map(s => { const x = it.filter(i => i.section === s && i._st !== 'off'), bad = x.filter(i => i._st === 'expired').length, soon = x.filter(i => ['critical', 'urgent', 'soon'].indexOf(i._st) >= 0).length, ok = x.filter(i => i._st === 'ok').length, none = x.filter(i => i._st === 'none').length, tot = x.length || 1;
     return `<button class="sec-card" data-sec="${esc(s)}"><span class="sc-ic">${ic(s)}</span><span class="sc-t">${esc(s)}</span><span class="sc-n">${x.length}</span><span class="sc-bar"><i style="width:${bad / tot * 100}%;background:var(--red)"></i><i style="width:${soon / tot * 100}%;background:var(--amber)"></i><i style="width:${ok / tot * 100}%;background:var(--ok)"></i></span><span class="sc-m"><b style="color:var(--red)">${bad}</b> منتهٍ · <b style="color:var(--amber)">${soon}</b> قريب · <b style="color:var(--ok)">${ok}</b> ساري · ${none} بلا تاريخ</span></button>`; }).join('');
-  return topbar('لوحة المتابعة', esc(S.d.settings.orgName) + ' — ' + it.length + ' بنداً تحت المتابعة', `<button class="btn light" id="prAll">${ic('file')} طباعة التقرير</button>` + (can('editor') ? `<button class="btn light" id="impAny">${ic('up')} استيراد من إكسل</button><button class="btn" id="addAny">${ic('plus')} إضافة بند</button>` : '')) +
-    `<div class="sec-cards">${secCards}</div>` +
+  return topbar('لوحة المتابعة', esc(S.d.settings.orgName) + ' — ' + it.length + ' بنداً تحت المتابعة', `<button class="btn light" id="prAll">${ic('file')} طباعة التقرير</button><button class="btn light" id="prExec">${ic('report')} تقرير تنفيذي</button><button class="btn light" id="xlAll">${ic('down')} تصدير إكسل</button>` + (can('editor') ? `<button class="btn light" id="impAny">${ic('up')} استيراد من إكسل</button><button class="btn" id="addAny">${ic('plus')} إضافة بند</button>` : '')) +
+    dashFilterBar() + `<div class="sec-cards">${secCards}</div>` +
     `<section class="ruler" aria-label="مسطرة الاستحقاقات"><div class="ruler-top"><h3>مسطرة الاستحقاقات</h3><span class="hint">الأكثر إلحاحاً في الأعلى — اضغط أي بند لفتحه</span></div>
       <div class="rl">${RL.map(b => `<div class="rl-col" style="--c:${b.c};--cl:${b.cl}"><div class="rl-h"><b>${b.x.length}</b><span>${b.l}<small>${b.sub}</small></span></div>
-        ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
+        ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${i._start ? '<span class="chip-start" style="margin:0 0 0 4px">ابدأ</span>' : ''}${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
         ${b.x.length > 6 ? `<button class="rl-more" data-rst="${b.st}">عرض الكل (+${b.x.length - 6})</button>` : ''}</div>`).join('')}</div></section>
+    ${readinessPanel(it)}
     <div class="strip">${strip.map(k => `<button data-st="${k[0]}" style="--c:${k[3]}"><div class="n">${k[1]}</div><div class="l">${k[2]}</div></button>`).join('')}</div>
     <section class="panel"><h3>الأرقام حسب الجهة <div class="seg" role="tablist">${S.d.sections.map(x => `<button data-mxt="${esc(x)}" class="${(S.mxSec || S.d.sections[0]) === x ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></h3>${authMatrix(it, false, S.mxSec || S.d.sections[0])}</section>
     <div class="cols"><section class="panel"><h3>المواعيد الأقرب <small>المتأخر في الأعلى</small></h3>${up.length ? `<ul class="dlist">${up.map(i => `<li data-id="${i.id}" style="--c:${STC[i._st]}"><span class="t">${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${esc(i.platform || i.section)} — ${esc(i._due.kind)} ${fmtD(i._due.date)}${i.ownerName ? ' — ' + esc(i.ownerName) : ''}</span></li>`).join('')}</ul>` : '<div class="empty">لا توجد تواريخ انتهاء مسجّلة بعد. افتح أي قسم وأضف تاريخ الانتهاء للبنود لتظهر هنا.</div>'}</section>
@@ -606,7 +672,12 @@ function bindDash() {
   if ($('#impAny')) $('#impAny').onclick = () => { const m = modal('استيراد من إكسل', '<label>اختر القسم الذي تريد الاستيراد إليه</label>' + S.d.sections.map(s => `<button class="btn light block" style="margin-top:8px" data-is="${esc(s)}">${ic(s)} ${esc(s)}</button>`).join(''), '', 'sm'); m.el.querySelectorAll('[data-is]').forEach(b => b.onclick = () => { m.close(); importModal(b.dataset.is); }); };
   document.querySelectorAll('.sec-card').forEach(c => c.onclick = () => { S.view = 'sec:' + c.dataset.sec; S.filters = {}; renderApp(); });
   document.querySelectorAll('[data-mxt]').forEach(b => b.onclick = () => { S.mxSec = b.dataset.mxt; renderView(); });
-  if ($('#prAll')) $('#prAll').onclick = () => { const rows = S.d.items.filter(i => i._st !== 'off').sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)); printReport('تقرير لوحة المتابعة', 'نسخة مطبوعة من لوحة المتابعة — كل الأقسام والجهات وكل البنود بالكامل', rows, rows, { dash: true }); };
+  ['df_plat', 'df_own', 'df_per'].forEach(id => { const el = $('#' + id); if (el) el.onchange = () => { S.dashF = { plat: $('#df_plat').value, own: $('#df_own').value, per: $('#df_per').value }; renderView(); }; });
+  if ($('#df_clr')) $('#df_clr').onclick = () => { S.dashF = {}; renderView(); };
+  const fsub = () => { const f = S.dashF || {}; return [f.plat, f.own, f.per ? $('#df_per').selectedOptions[0].textContent : ''].filter(Boolean).join(' — '); };
+  if ($('#prExec')) $('#prExec').onclick = () => printExec(dashItems(), fsub());
+  if ($('#xlAll')) $('#xlAll').onclick = () => exportStyled(dashItems().filter(i => i._st !== 'off'), 'لوحة المتابعة' + (fsub() ? ' - ' + fsub() : ''));
+  if ($('#prAll')) $('#prAll').onclick = () => { const rows = dashItems().filter(i => i._st !== 'off').sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)); printReport('تقرير لوحة المتابعة', fsub() ? 'تصفية: ' + fsub() + ' — كل البنود المطابقة بالكامل' : 'نسخة مطبوعة من لوحة المتابعة — كل الأقسام والجهات وكل البنود بالكامل', rows, rows, { dash: true }); };
   bindMatrix();
 }
 const RANK = { expired: 0, critical: 1, urgent: 2, soon: 3, ok: 4, none: 5, off: 6 };
@@ -726,17 +797,28 @@ function itemModal(id) {
   if (i.url) kv.push(['الرابط', `<a href="${esc(i.url)}" target="_blank">فتح المنصة</a>`]);
   kv.push(['المسؤول', esc(i.ownerName || '—') + (c.email ? ' · <span dir="ltr">' + esc(c.email) + '</span>' : '') + (c.phone ? ' · <span dir="ltr">+' + esc(c.phone) + '</span>' : '')]);
   kv.push(['تاريخ البداية', fmtD(i.issueDate)], ['تاريخ النهاية', fmtD(i.expiryDate)], ['الاستحقاق القادم', i._due ? esc(i._due.kind) + ' — ' + fmtD(i._due.date) + ' ' + badge(i) : badge(i)], ['حالة التجديد', esc(i.status || '—')]);
+  if (i._due) { const sd = new Date(Date.UTC(+i._due.date.slice(0, 4), +i._due.date.slice(5, 7) - 1, +i._due.date.slice(8, 10)) - i._lead * 864e5).toISOString().slice(0, 10);
+    kv.push(['بدء الإجراء', fmtD(sd) + ' (قبل الموعد بـ ' + i._lead + ' يوماً)' + (i._start ? '<span class="chip-start">حان وقت البدء</span>' : '')]); }
   if (i.cost) kv.push(['التكلفة المتوقعة', esc(i.cost) + ' ر.س']);
   if (i.notes) kv.push(['ملاحظات', esc(i.notes)]);
   kv.push(['الملف الحالي', i.fileId ? `<a href="#" data-f="${i.fileId}">${esc(i.fileName || 'عرض الملف')}</a>` : 'لم يُرفع']);
   kv.push(['آخر تعديل', esc(i.updatedAt || '') + ' — ' + esc(i.updatedBy || '')]);
   if (i.lastAlert) kv.push(['آخر تنبيه', esc(i.lastAlert)]);
-  const body = `<div class="kv">${kv.map(k => '<div>' + k[0] + '</div><div>' + k[1] + '</div>').join('')}</div>
+  const fus = (S.d.followups || []).filter(f => f.itemId === id).slice().reverse();
+  const fuHtml = `<h4 style="color:var(--navy);margin:16px 0 4px">سجل المتابعة</h4>${fus.length ? `<div class="fu">${fus.map(f => `<div class="fu-i"><b>${esc(f.stage)}</b><span>${esc(f.at)} · ${esc(f.by)}</span>${f.note ? '<p>' + esc(f.note) + '</p>' : ''}</div>`).join('')}</div>` : '<div style="color:var(--muted);font-size:13px">لم تُسجَّل أي متابعة بعد.</div>'}
+    ${can('editor') ? `<div class="fu-add"><select id="fu_stage">${(S.d.stages || []).map(x => `<option>${esc(x)}</option>`).join('')}</select><input id="fu_note" placeholder="ملاحظة (اختياري) — مثال: تم الاتصال بالجهة وطلبوا خطاب تفويض"><button class="btn" id="fu_add">${ic('plus')} تسجيل</button></div>` : ''}`;
+  const body = `<div class="kv">${kv.map(k => '<div>' + k[0] + '</div><div>' + k[1] + '</div>').join('')}</div>${fuHtml}
     ${rens.length ? `<h4 style="color:var(--navy);margin:16px 0 6px">سجل التجديدات</h4><div class="tbl-wrap"><table><tbody>${rens.map(r => `<tr><td>${esc(r.at)}</td><td>${esc(r.kind)}</td><td>${r.newDate ? fmtD(r.oldDate) + ' ← ' + fmtD(r.newDate) : ''}</td><td>${r.fileId ? `<a href="#" data-f="${r.fileId}">الملف</a>` : ''}</td><td>${esc(r.by)}</td></tr>`).join('')}</tbody></table></div>` : ''}`;
   const foot = (can('editor') ? `<button class="btn" id="mr">${ic('renew')} تجديد أو تحديث</button><button class="btn light" id="me">${ic('edit')} تعديل</button>` : '') + (waLink(i) ? `<a class="btn wa" href="${waLink(i)}" target="_blank">${ic('wa')} تذكير واتساب</a>` : '') + (can('admin') ? `<button class="btn danger" id="ma" style="margin-right:auto">أرشفة البند</button>` : '');
   const m = modal(esc(i.title), body, foot);
   m.el.querySelectorAll('[data-f]').forEach(a => a.onclick = e => { e.preventDefault(); openFile(a.dataset.f); });
   if (m.q('#sec_show')) m.q('#sec_show').onclick = async () => { const v = await call('revealSecret', { id }); const el = m.q('#sec_v'); el.textContent = v; el.style.letterSpacing = '0'; m.q('#sec_show').classList.add('hidden'); m.q('#sec_copy').classList.remove('hidden'); m.q('#sec_copy').onclick = () => { navigator.clipboard.writeText(v).then(() => toast('تم النسخ')); }; setTimeout(() => { if (document.body.contains(el)) { el.textContent = '••••••••'; el.style.letterSpacing = '2px'; m.q('#sec_show').classList.remove('hidden'); m.q('#sec_copy').classList.add('hidden'); } }, 30000); };
+  if (m.q('#fu_add')) m.q('#fu_add').onclick = async () => {
+    const r = await call('addFollowup', { id, stage: m.q('#fu_stage').value, note: m.q('#fu_note').value });
+    S.d.followups = (S.d.followups || []).filter(f => f.itemId !== id).concat(r.followups);
+    const k = S.d.items.findIndex(x => x.id === id); if (k >= 0) S.d.items[k] = enrich(r.item);
+    cacheSave(S.d); m.close(); toast('تم تسجيل المتابعة'); renderView(); itemModal(id);
+  };
   if (m.q('#mr')) m.q('#mr').onclick = () => { m.close(); renewModal(id); };
   if (m.q('#me')) m.q('#me').onclick = () => { m.close(); editModal(id); };
   if (m.q('#ma')) m.q('#ma').onclick = async () => { if (m.q('#ma').dataset.ok !== '1') { m.q('#ma').dataset.ok = '1'; m.q('#ma').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('archiveItem', { id }); m.close(); toast('تمت الأرشفة'); load(true); };
@@ -749,19 +831,19 @@ function editModal(id, sec) {
     <div class="row"><div><label>اسم البند *</label><input id="e_title" value="${esc(i.title || '')}"></div><div><label>الجهة / المنصة</label><input id="e_platform" value="${esc(i.platform || '')}"></div></div>
     <div class="row"><div><label>المسؤول</label><select id="e_owner"><option value="">— بدون —</option>${opts((S.d.contacts || []).map(c => c.name), i.ownerName)}</select></div><div><label>رقم الوثيقة / المرجع</label><input id="e_refNo" value="${esc(i.refNo || '')}"></div></div>
     <div class="row3"><div><label>تاريخ البداية / الإصدار</label><input type="date" id="e_issueDate" value="${esc(i.issueDate || '')}"></div><div><label>تاريخ النهاية / الانتهاء</label><input type="date" id="e_expiryDate" value="${esc(i.expiryDate || '')}"></div>
-      <div><label>حالة التجديد</label><select id="e_status"><option value=""></option>${opts(['لم يبدأ', 'تحت الدراسة', 'جاري العمل', 'جاري المتابعة', 'بانتظار الدفع', 'بانتظار الجهة', 'تم', 'غير مطلوب'], i.status)}</select></div></div>
+      <div><label>حالة التجديد</label><select id="e_status"><option value=""></option>${opts(['لم يبدأ', 'تحت الدراسة', 'جاري العمل', 'جاري المتابعة', 'تم التواصل مع الجهة', 'قُدّم الطلب', 'بانتظار رد الجهة', 'بانتظار الدفع', 'تم السداد', 'بانتظار الجهة', 'تم', 'غير مطلوب'], i.status)}</select></div></div>
     <div id="accBox"><div class="row"><div><label>رابط الدخول</label><input id="e_url" dir="ltr" value="${esc(i.url || '')}"></div><div><label>اسم المستخدم</label><input id="e_username" dir="ltr" value="${esc(i.username || '')}"></div></div>
       <div class="row3"><div><label>حالة الحساب</label><select id="e_accStatus"><option value=""></option>${opts(['نشط', 'تحت الاجراء', 'في انتظار التفعيل', 'غير نشط', 'بدون منصة', 'ملغى'], i.accStatus)}</select></div>
       <div><label>آخر تغيير لكلمة المرور</label><input type="date" id="e_pwLast" value="${esc(i.pwLast || '')}"></div><div><label>دورة التغيير (يوم)</label><input type="number" id="e_pwCycle" placeholder="${esc(S.d.settings.pwCycle)}" value="${esc(i.pwCycle || '')}"></div></div>
       ${S.d.me.canSecrets ? `<label>كلمة المرور ${i.hasSecret ? '(مسجّلة — اتركها فارغة للإبقاء عليها)' : ''}</label><input type="password" id="e_secret" dir="ltr" autocomplete="new-password"><div class="note">تُحفظ مشفّرة، ولا يراها إلا المدير ومن لديه صلاحية عرض كلمات المرور، وكل عرض لها يُسجَّل في سجل النشاط.</div>` : ''}</div>
-    <div class="row"><div><label>التكلفة المتوقعة (ر.س)</label><input type="number" id="e_cost" value="${esc(i.cost || '')}"></div><div></div></div>
+    <div class="row"><div><label>التكلفة المتوقعة (ر.س)</label><input type="number" id="e_cost" value="${esc(i.cost || '')}"></div><div><label>ابدأ الإجراء قبل الموعد بـ (يوماً)</label><input type="number" id="e_leadDays" min="0" value="${esc(i.leadDays || '')}" placeholder="الافتراضي ${esc((S.d.settings || {}).leadDays || 30)}"></div></div>
     <label>ملاحظات</label><textarea id="e_notes" rows="2">${esc(i.notes || '')}</textarea>`;
   const m = modal(id ? 'تعديل: ' + esc(i.title) : 'إضافة بند جديد', body, '<button class="btn" id="e_save">حفظ</button>');
   const sync = () => { const s = m.q('#e_section').value; m.q('#accBox').style.display = s === 'حسابات المنصات' ? '' : 'none'; m.q('#dl_type').innerHTML = (typesBy[s] || []).map(t => `<option value="${esc(t)}">`).join(''); };
   m.q('#e_section').onchange = sync; sync();
   m.q('#e_save').onclick = async () => {
     const it = { id: id || '' };
-    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes'].forEach(k => it[k] = m.q('#e_' + k).value);
+    ['section', 'type', 'title', 'platform', 'refNo', 'issueDate', 'expiryDate', 'status', 'url', 'username', 'accStatus', 'pwLast', 'pwCycle', 'cost', 'notes', 'leadDays'].forEach(k => it[k] = m.q('#e_' + k).value);
     it.ownerName = m.q('#e_owner').value;
     if (m.q('#e_secret') && m.q('#e_secret').value) it.secret = m.q('#e_secret').value;
     if (!it.title.trim()) return toast('اسم البند مطلوب', 1);
@@ -905,7 +987,8 @@ function printReport(title, sub, items, rows, opts) {
     dashBlock = `<div class="scs">${scards}</div><div class="stp">${strip}</div><h2>مسطرة الاستحقاقات — كل البنود</h2><div class="rlp">${rl}</div>`;
   }
   const rptNo = 'RPT-' + S.d.today.replace(/-/g, '') + '-' + String(today.getHours()).padStart(2, '0') + String(today.getMinutes()).padStart(2, '0');
-  const css = `@page{size:A4;margin:12mm 0 12mm}@page:first{margin-top:0}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  const css = `@page{size:A4;margin:12mm 0 12mm;@bottom-left{content:'صفحة ' counter(page) ' من ' counter(pages);font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;font-size:8.5px;color:#8A9491;padding-left:12mm}}@page:first{margin-top:0}
+  .qr{width:62px;height:62px;background:#fff;padding:4px;border-radius:6px;margin-right:10px;flex-shrink:0}.qr svg{width:100%;height:100%;display:block}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;margin:0;font-size:10.5px;background:#fff;font-variant-numeric:tabular-nums}
   .pg{padding:0 12mm 4mm}.pb{page-break-before:always}
   .cov{background:#1E2B2A;color:#E9E3D2;padding:11mm 12mm 9mm;position:relative;overflow:hidden;border-bottom:4px solid #B08D3C}
@@ -942,7 +1025,7 @@ function printReport(title, sub, items, rows, opts) {
   .ft b{color:#1E2B2A}.sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10mm;margin-top:10mm;page-break-inside:avoid}.sig div{border-top:1px solid #9AA4A0;padding-top:5px;text-align:center;color:#5F6B68}
   @media screen{body{background:#ECEEEA}.sheet{max-width:210mm;margin:0 auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15);padding-bottom:6mm}}`;
   const doc = `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${esc(title)} — ${fmtD(S.d.today)}</title><link rel="stylesheet" href="${H}"><style>${css}</style></head><body><div class="sheet">
-  <section class="cov"><div class="ch">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div><div class="no">رقم التقرير: <b>${rptNo}</b><br>${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div></div>
+  <section class="cov"><div class="ch">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div><div class="no">رقم التقرير: <b>${rptNo}</b><br>${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr" title="امسح لفتح المنصة">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
     <h1>${esc(title)}</h1><p>${esc(sub)}</p></section>
   <div class="pg"><div class="kp">
     <div style="--c:#1E2B2A"><b>${R.length}</b><span>إجمالي البنود</span></div>
@@ -965,6 +1048,80 @@ function printReport(title, sub, items, rows, opts) {
   if (!w) { toast('المتصفح منع نافذة الطباعة — اسمح بالنوافذ المنبثقة لهذا الموقع ثم أعد المحاولة', 1); return; }
   w.document.open(); w.document.write(doc); w.document.close();
   setTimeout(() => { try { w.focus(); w.print(); } catch (e) { } }, 1200);
+}
+function printExec(items, sub) {
+  const R = items.filter(i => i._st !== 'off'), today = new Date(), H = 'https:' + '/' + '/fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700;800&display=swap';
+  const dated = R.filter(i => i._due), ex = dated.filter(i => i._days < 0), d30 = dated.filter(i => i._days >= 0 && i._days <= 30), ok = R.filter(i => i._st === 'ok' || i._st === 'soon');
+  const rdy = dated.length ? Math.round((dated.length - ex.length) / dated.length * 100) : 100, rc = rdy >= 90 ? '#1E8A5F' : rdy >= 75 ? '#C77700' : '#B3261E';
+  const cost30 = d30.concat(ex).reduce((a, i) => a + (Number(i.cost) || 0), 0), starts = R.filter(i => i._start);
+  const byA = {}; ex.forEach(i => { const k = i.platform || 'بدون جهة'; byA[k] = (byA[k] || 0) + 1; }); const topA = Object.keys(byA).sort((a, b) => byA[b] - byA[a])[0];
+  const byO = {}; ex.concat(d30).forEach(i => { const k = i.ownerName || 'بدون مسؤول'; byO[k] = (byO[k] || 0) + 1; }); const topO = Object.keys(byO).sort((a, b) => byO[b] - byO[a])[0];
+  const notes = [];
+  if (ex.length) notes.push(`<b style="color:#B3261E">${ex.length} بنود منتهية</b> تحتاج إجراءً فورياً${topA ? '، أكثرها لدى «' + esc(topA) + '» (' + byA[topA] + ')' : ''}.`);
+  else notes.push('<b style="color:#1E8A5F">لا توجد بنود منتهية</b> — الوضع ممتاز.');
+  if (d30.length) notes.push(`<b>${d30.length} بنداً</b> تستحق خلال 30 يوماً، والتكلفة المتوقعة للمتأخر والعاجل نحو <b>${cost30.toLocaleString('en-US')} ر.س</b>.`);
+  if (starts.length) notes.push(`<b>${starts.length} بنداً</b> دخلت مهلة بدء الإجراء ولم تُسجَّل لها متابعة بعد.`);
+  if (topO) notes.push(`أعلى عبء متابعة لدى <b>${esc(topO)}</b> (${byO[topO]} بنود متأخرة أو عاجلة).`);
+  notes.push(rdy >= 90 ? 'مؤشر الجاهزية ضمن الهدف (90% فأكثر).' : `مؤشر الجاهزية <b>${rdy}%</b> أقل من الهدف 90% — يُوصى بإغلاق البنود المنتهية أولاً.`);
+  const secs = S.d.sections.map(sn => { const x = R.filter(i => i.section === sn), t = x.length || 1, e = x.filter(i => i._st === 'expired').length, n = x.filter(i => ['critical', 'urgent', 'soon'].indexOf(i._st) >= 0).length, o = x.filter(i => i._st === 'ok').length, nd = x.length - e - n - o;
+    return `<div class="sr"><span>${esc(sn)}</span><div class="stk">${e ? `<i style="width:${e / t * 100}%;background:#B3261E">${e}</i>` : ''}${n ? `<i style="width:${n / t * 100}%;background:#D98A1C">${n}</i>` : ''}${o ? `<i style="width:${o / t * 100}%;background:#1E8A5F">${o}</i>` : ''}${nd ? `<i style="width:${nd / t * 100}%;background:#C3C9C5">${nd}</i>` : ''}</div><b>${x.length}</b></div>`; }).join('');
+  const top = dated.slice().sort((a, b) => a._days - b._days).slice(0, 10);
+  const css = `@page{size:A4;margin:0}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{margin:0;font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;font-size:11px}
+  .pg{width:210mm;height:296mm;overflow:hidden;display:flex;flex-direction:column}.hd{background:#1E2B2A;color:#E9E3D2;padding:9mm 12mm 8mm;border-bottom:4px solid #B08D3C;display:flex;align-items:center;gap:12px}.hd .logo{width:46px;height:46px}
+  .hd h1{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:22px;color:#fff;margin:0}.hd p{margin:2px 0 0;color:#C9C2AE;font-size:11px}.hd .m{margin-right:auto;text-align:left;font-size:10px;line-height:1.7;color:#B9C3BF}
+  .qr{width:58px;height:58px;background:#fff;padding:4px;border-radius:6px}.qr svg{width:100%;height:100%;display:block}
+  .bd{padding:7mm 12mm;flex:1;display:flex;flex-direction:column;gap:6mm}.top{display:grid;grid-template-columns:1.1fr 2fr;gap:6mm}
+  .rd{border:1px solid #E3E6E0;border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;justify-content:center}.rd b{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:46px;line-height:1}.rd span{color:#5F6B68}
+  .kp{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.kp div{border:1px solid #E3E6E0;border-top:3px solid var(--c);border-radius:8px;padding:8px 10px}.kp b{display:block;font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:22px;color:var(--c)}.kp span{color:#5F6B68;font-size:10px}
+  h2{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:12.5px;margin:0 0 6px;display:flex;align-items:center;gap:7px}h2:before{content:"";width:4px;height:13px;background:#B08D3C;border-radius:2px}
+  .sr{display:grid;grid-template-columns:120px 1fr 28px;gap:8px;align-items:center;padding:4px 0}.sr span{font-weight:600}.sr b{text-align:left}.stk{display:flex;height:16px;border-radius:4px;overflow:hidden;gap:2px;background:#F1F3EE}.stk i{color:#fff;font-style:normal;font-size:9px;font-weight:700;text-align:center;line-height:16px}
+  .nt{background:#FBF7EC;border:1px solid #E9DDBF;border-radius:10px;padding:10px 14px}.nt ul{margin:0;padding-right:16px;line-height:1.9}
+  table{width:100%;border-collapse:collapse}th{background:#1E2B2A;color:#fff;padding:5px 7px;font-size:9.5px}td{padding:5px 7px;border-bottom:1px solid #EDF0EA;font-size:10px}td:first-child{border-right:3px solid var(--c)}
+  .pl{padding:2px 8px;border-radius:999px;font-weight:700;font-size:9.5px;white-space:nowrap}.ft{display:flex;justify-content:space-between;color:#8A9491;font-size:9px;border-top:1px solid #E3E6E0;padding:4mm 12mm}.sig{display:grid;grid-template-columns:1fr 1fr;gap:20mm;margin-top:auto}.sig div{border-top:1px solid #9AA4A0;padding-top:5px;text-align:center;color:#5F6B68}
+  @media screen{body{background:#ECEEEA}.pg{margin:0 auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15)}}`;
+  const pill = i => { const e = i._days < 0, c = e ? ['#F6E3E1', '#9E2119'] : i._days <= 30 ? ['#FBEED8', '#8A5300'] : ['#E1F0EA', '#0B6E4F']; return `<span class="pl" style="background:${c[0]};color:${c[1]}">${e ? 'منتهي منذ ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'متبقٍ ' + i._days + ' يوم'}</span>`; };
+  const doc = `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>التقرير التنفيذي — ${fmtD(S.d.today)}</title><link rel="stylesheet" href="${H}"><style>${css}</style></head><body><div class="pg">
+  <div class="hd">${LOGO}<div><h1>التقرير التنفيذي</h1><p>${esc(S.d.settings.orgName)} — إدارة المنصات والتأهيلات${sub ? ' — ' + esc(sub) : ''}</p></div><div class="m">${hijri(today)}<br>${greg(today)}<br>أعدّه: ${esc(S.d.me.name)}</div>${qrSvg(APP_HOME) ? '<div class="qr">' + qrSvg(APP_HOME) + '</div>' : ''}</div>
+  <div class="bd"><div class="top"><div class="rd"><span>مؤشر الجاهزية</span><b style="color:${rc}">${rdy}%</b><span>${dated.length - ex.length} من ${dated.length} بنداً غير منتهية · الهدف 90%</span></div>
+    <div class="kp"><div style="--c:#1E2B2A"><b>${R.length}</b><span>إجمالي البنود</span></div><div style="--c:#B3261E"><b>${ex.length}</b><span>منتهية / متأخرة</span></div><div style="--c:#C77700"><b>${d30.length}</b><span>تستحق خلال 30 يوماً</span></div><div style="--c:#1E8A5F"><b>${ok.length}</b><span>سارية</span></div></div></div>
+  <div><h2>أبرز الملاحظات والتوصيات</h2><div class="nt"><ul>${notes.map(n => '<li>' + n + '</li>').join('')}</ul></div></div>
+  <div><h2>الحالة حسب القسم</h2>${secs}<div style="display:flex;gap:14px;color:#5F6B68;font-size:9.5px;margin-top:4px"><span>■ <b style="color:#B3261E">منتهي</b></span><span>■ <b style="color:#D98A1C">خلال 90 يوماً</b></span><span>■ <b style="color:#1E8A5F">ساري</b></span><span>■ <b style="color:#9AA4A0">بلا تاريخ</b></span></div></div>
+  <div><h2>أهم 10 بنود تحتاج متابعة</h2><table><thead><tr><th style="text-align:right">البند</th><th>الجهة</th><th>المسؤول</th><th>الموعد</th><th>الحالة</th></tr></thead><tbody>${top.map(i => `<tr style="--c:${i._days < 0 ? '#B3261E' : i._days <= 30 ? '#D98A1C' : '#1E8A5F'}"><td><b>${esc(i.title)}</b></td><td>${esc(i.platform || '—')}</td><td>${esc(i.ownerName || '—')}</td><td>${fmtD(i._due.date)}</td><td>${pill(i)}</td></tr>`).join('') || '<tr><td colspan="5">لا توجد بنود مؤرّخة</td></tr>'}</tbody></table></div>
+  <div class="sig"><div>أعدّه: ${esc(S.d.me.name)}</div><div>اعتمده</div></div></div>
+  <div class="ft"><span><b>إدارة المنصات والتأهيلات</b> · التقرير التنفيذي</span><span>${fmtD(S.d.today)}</span></div></div></body></html>`;
+  openPrint(doc);
+}
+async function exportStyled(rows, name) {
+  loading(true);
+  try { await loadLib(XLS_LIB); } catch (e) { loading(false); return toast('تعذّر تحميل مكتبة Excel — تحقق من الاتصال', 1); }
+  try {
+    const wb = new ExcelJS.Workbook(); wb.creator = S.d.me.name; wb.created = new Date();
+    const ws = wb.addWorksheet('البنود', { views: [{ rightToLeft: true, state: 'frozen', ySplit: 3 }], pageSetup: { paperSize: 9, orientation: 'landscape', fitToPage: true, fitToWidth: 1, fitToHeight: 0 } });
+    const cols = [['البند', 34], ['القسم', 18], ['الجهة / المنصة', 26], ['المسؤول', 16], ['تاريخ البداية', 13], ['النهاية / الاستحقاق', 15], ['المطلوب', 16], ['الأيام المتبقية', 12], ['الحالة', 16], ['حالة التجديد', 18], ['آخر متابعة', 30], ['التكلفة (ر.س)', 12]];
+    ws.columns = cols.map(c => ({ width: c[1] }));
+    ws.mergeCells(1, 1, 1, cols.length); const t = ws.getCell(1, 1); t.value = 'إدارة المنصات والتأهيلات — ' + name; t.font = { bold: true, size: 15, color: { argb: 'FFFFFFFF' } }; t.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; t.alignment = { horizontal: 'right', vertical: 'middle' }; ws.getRow(1).height = 28;
+    ws.mergeCells(2, 1, 2, cols.length); const st = ws.getCell(2, 1); st.value = (S.d.settings.orgName || '') + ' — ' + fmtD(S.d.today) + ' — ' + rows.length + ' بنداً'; st.font = { color: { argb: 'FF5F6B68' } }; st.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFE9DDBF' } };
+    const hr = ws.getRow(3); hr.values = cols.map(c => c[0]); hr.height = 22;
+    hr.eachCell(c => { c.font = { bold: true, color: { argb: 'FFFFFFFF' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF0B6E4F' } }; c.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true }; });
+    const FILL = { expired: 'FFF6E3E1', critical: 'FFFBEED8', urgent: 'FFF7F0D6', soon: 'FFFAF6E8', ok: 'FFE1F0EA', none: 'FFF1F3EE' }, FONT = { expired: 'FF9E2119', critical: 'FF8A5300', urgent: 'FF7A5F0A', soon: 'FF6B5B1E', ok: 'FF0B6E4F', none: 'FF5F6B68' };
+    const last = {}; (S.d.followups || []).forEach(f => { last[f.itemId] = f; });
+    rows.slice().sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)).forEach(i => {
+      const lf = last[i.id];
+      const r = ws.addRow([i.title, i.section, i.platform || '', i.ownerName || '', i.issueDate || '', i._due ? i._due.date : '', i._due ? i._due.kind : '', i._days === null ? '' : i._days, ST[i._st] || '', i.status || '', lf ? lf.stage + ' — ' + lf.at + (lf.note ? ' — ' + lf.note : '') : '', Number(i.cost) || '']);
+      r.eachCell({ includeEmpty: true }, c => { c.border = { bottom: { style: 'thin', color: { argb: 'FFE3E6E0' } } }; c.alignment = { vertical: 'middle', wrapText: true }; });
+      const sc = r.getCell(9); sc.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: FILL[i._st] || FILL.none } }; sc.font = { bold: true, color: { argb: FONT[i._st] || FONT.none } }; sc.alignment = { horizontal: 'center', vertical: 'middle' };
+      r.getCell(1).border = { right: { style: 'thick', color: { argb: (FONT[i._st] || FONT.none) } }, bottom: { style: 'thin', color: { argb: 'FFE3E6E0' } } }; r.getCell(1).font = { bold: true };
+      r.getCell(8).alignment = { horizontal: 'center' }; if (i._days !== null && i._days < 0) r.getCell(8).font = { bold: true, color: { argb: 'FF9E2119' } };
+    });
+    ws.autoFilter = { from: { row: 3, column: 1 }, to: { row: 3, column: cols.length } };
+    const sum = wb.addWorksheet('الملخص', { views: [{ rightToLeft: true }] }); sum.columns = [{ width: 28 }, { width: 14 }];
+    sum.addRow(['الحالة', 'العدد']).eachCell(c => { c.font = { bold: true, color: { argb: 'FFFFFFFF' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; });
+    ['expired', 'critical', 'urgent', 'soon', 'ok', 'none'].forEach(k => { const r = sum.addRow([ST[k], rows.filter(i => i._st === k).length]); r.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: FILL[k] } }; r.getCell(1).font = { bold: true, color: { argb: FONT[k] } }; });
+    sum.addRow(['الإجمالي', rows.length]).font = { bold: true };
+    const buf = await wb.xlsx.writeBuffer(), a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' })); a.download = name + ' - ' + S.d.today + '.xlsx'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+    toast('تم تصدير ملف Excel');
+  } catch (e) { toast('تعذّر إنشاء ملف Excel: ' + e.message, 1); } finally { loading(false); }
 }
 function reportsView() {
   const f = S.rep || (S.rep = { sec: '', per: '90', own: '' });
@@ -1038,6 +1195,7 @@ function settingsView() {
     <label>بريد مدير النظام (نسخة من كل تنبيه + الملخص الأسبوعي) — يمكن أكثر من بريد مفصول بفاصلة</label><input id="s_adminEmails" dir="ltr" value="${esc(s.adminEmails)}">
     <label>مراحل التذكير قبل الانتهاء (أيام)</label><input id="s_thresholds" dir="ltr" value="${esc(s.thresholds)}">
     <label>مراحل التذكير لتغيير كلمات مرور المنصات (أيام)</label><input id="s_accThresholds" dir="ltr" value="${esc(s.accThresholds)}">
+    <div class="row"><div><label>مهلة بدء الإجراء الافتراضية (يوم قبل الموعد)</label><input type="number" id="s_leadDays" value="${esc(s.leadDays || '30')}"></div><div><label>التصعيد للإدارة إذا لم يُحدَّث البند المتأخر خلال (يوم)</label><input type="number" id="s_escalateDays" value="${esc(s.escalateDays || '7')}"></div></div>
     <div class="row3"><div><label>تكرار بعد الانتهاء (يوم)</label><input type="number" id="s_repeatDays" value="${esc(s.repeatDays)}"></div><div><label>دورة كلمة المرور (يوم)</label><input type="number" id="s_pwCycle" value="${esc(s.pwCycle)}"></div><div><label>ساعة الإرسال اليومي</label><input type="number" min="0" max="23" id="s_hour" value="${esc(s.hour)}"></div></div>
     <label>يوم الملخص الأسبوعي</label><select id="s_weeklyDay">${days.map((d, i) => `<option value="${i}" ${String(i) === String(s.weeklyDay) ? 'selected' : ''}>${d}</option>`).join('')}</select>
     <label>رابط المنصة (يظهر في الرسائل)</label><input id="s_appUrl" dir="ltr" value="${esc(s.appUrl)}">
@@ -1063,15 +1221,13 @@ const BIND = {
       const per = $('#rp_per').selectedOptions[0].textContent; printReport('تقرير الاستحقاقات', (f.sec || 'كل الأقسام') + ' — ' + per + (f.own ? ' — ' + f.own : ''), rows, rows); };
     bindMatrix();
     document.querySelectorAll('[data-rp]').forEach(b => b.onclick = () => { S.rep.per = b.dataset.rp; renderView(); });
-    $('#rp_xls').onclick = async () => { await xlsxReady(); const rows = [...document.querySelectorAll('tr[data-id]')].map(r => S.d.items.find(i => i.id === r.dataset.id));
-      const ws = XLSX.utils.json_to_sheet(rows.map(i => ({ 'البند': i.title, 'الجهة / المنصة': i.platform, 'القسم': i.section, 'المسؤول': i.ownerName, 'المطلوب': i._due ? i._due.kind : '', 'التاريخ': i._due ? i._due.date : '', 'الأيام المتبقية': i._days, 'الحالة': ST[i._st], 'التكلفة المتوقعة': i.cost })));
-      const wb = XLSX.utils.book_new(); wb.Workbook = { Views: [{ RTL: true }] }; XLSX.utils.book_append_sheet(wb, ws, 'التقرير'); XLSX.writeFile(wb, 'تقرير الاستحقاقات - ' + S.d.today + '.xlsx'); };
+    $('#rp_xls').onclick = () => { const rows = [...document.querySelectorAll('tr[data-id]')].map(r => S.d.items.find(i => i.id === r.dataset.id)).filter(Boolean); exportStyled(rows, 'تقرير الاستحقاقات'); };
   },
   renewals: () => document.querySelectorAll('[data-f]').forEach(a => a.onclick = e => { e.preventDefault(); openFile(a.dataset.f); }),
   contacts: () => { if ($('#cAdd')) $('#cAdd').onclick = () => contactModal(); document.querySelectorAll('[data-c]').forEach(b => b.onclick = () => contactModal(b.dataset.c)); },
   users: () => { $('#uAdd').onclick = () => userModal(); document.querySelectorAll('[data-u]').forEach(b => b.onclick = () => userModal(b.dataset.u)); },
   settings: () => {
-    const save = async () => { const o = {}; ['orgName', 'adminEmails', 'thresholds', 'accThresholds', 'repeatDays', 'pwCycle', 'hour', 'weeklyDay', 'appUrl', 'waPhoneId', 'waTemplate', 'waLang'].forEach(k => o[k] = $('#s_' + k).value); if ($('#s_waToken').value) o.waToken = $('#s_waToken').value; await call('saveSettings', { settings: o }); toast('تم حفظ الإعدادات'); S.view = 'settings'; await load(true); };
+    const save = async () => { const o = {}; ['orgName', 'adminEmails', 'thresholds', 'accThresholds', 'repeatDays', 'pwCycle', 'hour', 'weeklyDay', 'appUrl', 'waPhoneId', 'waTemplate', 'waLang', 'leadDays', 'escalateDays'].forEach(k => o[k] = $('#s_' + k).value); if ($('#s_waToken').value) o.waToken = $('#s_waToken').value; await call('saveSettings', { settings: o }); toast('تم حفظ الإعدادات'); S.view = 'settings'; await load(true); };
     $('#s_save').onclick = save; $('#s_save2').onclick = save;
     $('#s_test').onclick = async () => { await call('sendTest'); toast('أُرسل بريد تجريبي'); };
     $('#s_run').onclick = async () => { const r = await call('runCheck'); toast('تم الفحص — أُرسل ' + r.sent + ' تنبيه'); S.view = 'settings'; await load(true); };
