@@ -1,6 +1,6 @@
 /* مهم: هذا الموقع (ebom2030-gif.github.io) مشترك مع تطبيقات أخرى مثل «يومي»، والذاكرة المؤقتة مشتركة بينها.
    لذلك نحذف ونقرأ فقط الذاكرة التي تبدأ بـ dm- ولا نلمس ذاكرة أي تطبيق آخر. */
-const C = 'dm-shell-v10';
+const C = 'dm-shell-v11';
 const SHELL = ['./', './install.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(C).then(c => c.addAll(SHELL.map(u => new Request(u, { cache: 'reload' })))).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('dm-') === 0 && k !== C).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
