@@ -102,6 +102,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .nav a.on{background:rgba(176,141,60,.16);color:#fff}.nav a.on svg{color:var(--brass)}
 .nav a .cnt{margin-right:auto;font-size:12px;color:#98A6A1}.nav a .cnt.hot{background:var(--red);color:#fff;border-radius:4px;padding:0 6px;font-weight:600}
 .nav .grp{font-size:12px;color:#7F8E89;padding:16px 12px 6px}
+.inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
 .me b{color:#fff;display:block;font-weight:600}.me span{color:#98A6A1}.me .links{margin-top:8px;display:flex;gap:14px}.me a{color:#C9D2CE;cursor:pointer;font-size:12.5px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(201,210,206,.35)}
@@ -451,7 +452,10 @@ function contactAdmin(p) {
   log_(un || nm, kind, msg.slice(0, 120));
   return true;
 }
-function keepWarm() { CacheService.getScriptCache().get('warm'); }
+function keepWarm() {
+  try { readAll_('Users'); } catch (e) { }
+  try { const u = ScriptApp.getService().getUrl(); if (u && u.indexOf('/exec') > 0) UrlFetchApp.fetch(u, { muteHttpExceptions: true, followRedirects: true }); } catch (e) { }
+}
 function isFirstRun() { return readAll_('Users').length === 0; }
 function setupAdmin(p) {
   if (!isFirstRun()) throw new Error('تم إنشاء حساب المدير مسبقاً');
@@ -540,13 +544,14 @@ function dec_(s) {
 /* ============================== API ============================== */
 function seed_() {
   const pr = PropertiesService.getScriptProperties(), all = pr.getProperties();
-  if (all.SEED_V2 === 'yes' && all.SEED_V3 === 'yes' && all.SEED_V4 === 'yes') return;
+  if (all.SEED_V2 === 'yes' && all.SEED_V3 === 'yes' && all.SEED_V4 === 'yes' && all.SEED_V5 === 'yes') return;
   const lock = LockService.getScriptLock();
   lock.waitLock(30000);
   try {
     if (pr.getProperty('SEED_V2') !== 'yes') { seedV2_(); pr.setProperty('SEED_V2', 'yes'); }
     if (pr.getProperty('SEED_V3') !== 'yes') { seedV3_(); pr.setProperty('SEED_V3', 'yes'); }
     if (pr.getProperty('SEED_V4') !== 'yes') { try { if (!ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'keepWarm')) ScriptApp.newTrigger('keepWarm').timeBased().everyMinutes(10).create(); } catch (e) { } pr.setProperty('SEED_V4', 'yes'); }
+    if (pr.getProperty('SEED_V5') !== 'yes') { try { ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === 'keepWarm').forEach(t => ScriptApp.deleteTrigger(t)); ScriptApp.newTrigger('keepWarm').timeBased().everyMinutes(5).create(); } catch (e) { } pr.setProperty('SEED_V5', 'yes'); }
   } finally { lock.releaseLock(); }
 }
 function api(token, action, p) {
@@ -1272,7 +1277,8 @@ function renderAuth(forceFirst) {
       <div class="caps" id="caps">زر الأحرف الكبيرة (Caps Lock) مفعّل</div>
       <div class="auth-row"><label class="chk"><input type="checkbox" id="l_rem" checked>تذكّر اسم المستخدم</label><button type="button" class="lnk" id="l_forgot">نسيت كلمة المرور؟</button></div>
       <button class="btn go" id="l_go" type="submit"><span class="spin-s"></span><span>دخول</span></button>
-      <div class="auth-alt"><button type="button" class="lnk" id="l_contact">${ic('alerts')}تواصل مع مدير المنصة</button><a class="lnk" href="${DEMO_URL}" target="_blank" rel="noopener">${ic('cards')}جرّب النسخة التجريبية</a><a class="lnk" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}تثبيت التطبيق</a></div>`);
+      <div class="auth-alt"><button type="button" class="lnk" id="l_contact">${ic('alerts')}تواصل مع مدير المنصة</button><a class="lnk" href="${DEMO_URL}" target="_blank" rel="noopener">${ic('cards')}جرّب النسخة التجريبية</a></div>
+      <a class="inst-login" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}<span>تثبيت التطبيق على جهازك<small>كمبيوتر أو جوال — يفتح بضغطة من سطح المكتب</small></span></a>`);
   startScenes();
   const err = m => { const a = $('#a_err'); a.querySelector('span').textContent = m; a.classList.toggle('on', !!m); };
   document.querySelectorAll('[data-eye]').forEach(b => b.onclick = () => { const i = $('#' + b.dataset.eye), sh = i.type === 'password'; i.type = sh ? 'text' : 'password'; b.innerHTML = ic(sh ? 'eyeoff' : 'eye'); b.setAttribute('aria-label', sh ? 'إخفاء كلمة المرور' : 'إظهار كلمة المرور'); });
