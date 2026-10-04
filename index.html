@@ -166,6 +166,7 @@ th.ck,td.ck{width:34px;text-align:center}td.ck input,th.ck input{width:16px;heig
 :focus-visible{outline:3px solid var(--brass);outline-offset:2px}
 @media (max-width:900px){.mine{grid-template-columns:1fr}.mbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:65;background:var(--paper);border-top:1px solid var(--line);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -8px 20px -12px rgba(0,0,0,.3)}.mbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;font-size:11px;color:var(--muted);padding:4px 0;cursor:pointer}.mbar button svg.i{width:22px;height:22px}.mbar button.on{color:var(--green);font-weight:700}.main{padding-bottom:84px!important}.bulk{bottom:78px}.cd{min-height:70px}.ce{font-size:0;height:8px;padding:0}.gs-btn kbd{display:none}.letter{position:static;box-shadow:none}}
 html[data-theme=dark] :is(.ie:hover,.drop-z.on,.drop-z:hover,.sfc button){background:#2A2716!important;color:var(--text)}html[data-theme=dark] .letter{background:var(--stone)}html[data-theme=dark] .att.cur{background:#12302A}
+.sync{position:fixed;top:12px;left:12px;z-index:90;background:var(--ink);color:#fff;font-size:12px;padding:6px 12px;border-radius:999px;display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(-8px);transition:.2s;pointer-events:none}.sync.on{opacity:.92;transform:none}.sync i{width:10px;height:10px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
 .inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
@@ -355,7 +356,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
 const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/install.html';
-const APP_VER = '16 · 04/10/2026';
+const APP_VER = '17 · 04/10/2026';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
 const IN_GAS = !!(window.google && google.script && google.script.run);
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
@@ -402,7 +403,7 @@ async function call(action, payload, quiet) {
     toast(m.replace(/^Error:\s{0,}/, ''), 1); throw e;
   } finally { if (!quiet) loading(false); }
 }
-function logoutLocal() { S.token = ''; try { sessionStorage.removeItem('dm_token'); sessionStorage.removeItem('dm_cache'); localStorage.removeItem('dm_ptok'); } catch (e) { } S.d = null; renderAuth(); }
+function logoutLocal() { S.token = ''; try { sessionStorage.removeItem('dm_token'); sessionStorage.removeItem('dm_cache'); localStorage.removeItem('dm_ptok'); localStorage.removeItem('dm_cache_l'); } catch (e) { } S.d = null; renderAuth(); }
 const dn = s => { if (!s) return null; const p = String(s).slice(0, 10).split('-').map(Number); if (p.length < 3 || !p[0]) return null; return Date.UTC(p[0], p[1] - 1, p[2]) / 864e5; };
 const addD = (s, n) => { const d = dn(s); return d === null ? '' : new Date((d + n) * 864e5).toISOString().slice(0, 10); };
 const fmtD = s => s ? String(s).slice(0, 10).split('-').reverse().join('/') : '—';
@@ -431,8 +432,9 @@ function badge(i) {
 }
 const can = r => ({ viewer: 1, editor: 2, admin: 3 }[S.d.me.role] >= { viewer: 1, editor: 2, admin: 3 }[r]);
 const contact = n => (S.d.contacts || []).find(c => c.name === n) || {};
-function cacheSave(d) { try { sessionStorage.setItem('dm_cache', JSON.stringify(d)); } catch (e) { } }
-function cacheGet() { try { const v = sessionStorage.getItem('dm_cache'); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
+function syncDot(on) { let el = $('#sync'); if (!el) { document.body.insertAdjacentHTML('beforeend', '<div id="sync" class="sync" role="status"><i></i>جارٍ تحديث البيانات…</div>'); el = $('#sync'); } el.classList.toggle('on', !!on); }
+function cacheSave(d) { try { const j = JSON.stringify(d); sessionStorage.setItem('dm_cache', j); if (localStorage.getItem('dm_ptok')) localStorage.setItem('dm_cache_l', j); } catch (e) { } }
+function cacheGet() { try { const v = sessionStorage.getItem('dm_cache') || (localStorage.getItem('dm_ptok') === S.token ? localStorage.getItem('dm_cache_l') : ''); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
 function useData(d, keepView) {
   cacheSave(d); S.d = d; S.d.items.forEach(enrich);
   if (!keepView) S.view = 'dash';
@@ -443,8 +445,8 @@ async function boot() {
   if (S.token) {
     const c = cacheGet();
     if (c) {
-      S.d = c; S.d.items.forEach(enrich); renderApp();
-      try { const d = await call('bootstrap', {}, true); const v = S.view, f = S.filters; useData(d, true); S.view = v; S.filters = f; renderApp(); } catch (e) { }
+      S.d = c; S.d.items.forEach(enrich); renderApp(); syncDot(true);
+      try { const d = await call('bootstrap', {}, true); const v = S.view, f = S.filters; useData(d, true); S.view = v; S.filters = f; renderApp(); } catch (e) { } syncDot(false);
       return;
     }
     try { $('#root').innerHTML = skeleton(); await load(); return; } catch (e) { }
