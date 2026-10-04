@@ -1465,7 +1465,7 @@ function bindDash() {
   if ($('#impAny')) $('#impAny').onclick = () => { const m = modal('استيراد من إكسل', '<label>اختر القسم الذي تريد الاستيراد إليه</label>' + S.d.sections.map(s => `<button class="btn light block" style="margin-top:8px" data-is="${esc(s)}">${ic(s)} ${esc(s)}</button>`).join(''), '', 'sm'); m.el.querySelectorAll('[data-is]').forEach(b => b.onclick = () => { m.close(); importModal(b.dataset.is); }); };
   document.querySelectorAll('.sec-card').forEach(c => c.onclick = () => { S.view = 'sec:' + c.dataset.sec; S.filters = {}; renderApp(); });
   document.querySelectorAll('[data-mxt]').forEach(b => b.onclick = () => { S.mxSec = b.dataset.mxt; renderView(); });
-  if ($('#prAll')) $('#prAll').onclick = () => { const rows = S.d.items.filter(i => i._st !== 'off').sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)); printReport('التقرير الشامل', 'كل الأقسام والجهات', rows, rows); };
+  if ($('#prAll')) $('#prAll').onclick = () => { const rows = S.d.items.filter(i => i._st !== 'off').sort((a, b) => (a._days === null ? 1e9 : a._days) - (b._days === null ? 1e9 : b._days)); printReport('تقرير لوحة المتابعة', 'نسخة مطبوعة من لوحة المتابعة — كل الأقسام والجهات وكل البنود بالكامل', rows, rows, { dash: true }); };
   bindMatrix();
 }
 const RANK = { expired: 0, critical: 1, urgent: 2, soon: 3, ok: 4, none: 5, off: 6 };
@@ -1560,7 +1560,7 @@ function bindSec(sec) {
   if ($('#add')) $('#add').onclick = () => editModal(null, sec);
   if ($('#imp')) $('#imp').onclick = () => importModal(sec);
   $('#exp').onclick = () => exportXlsx(sec);
-  $('#prSec').onclick = () => { const all = S.d.items.filter(i => S.filters.all || i.section === sec); const rows = [...document.querySelectorAll('[data-id]')].map(r => S.d.items.find(i => i.id === r.dataset.id)).filter(Boolean); printReport('تقرير ' + (S.filters.all ? 'كل البنود' : sec), (S.filters.plat ? 'الجهة: ' + S.filters.plat : 'كل الجهات') + (S.filters.st ? ' — ' + ST[S.filters.st] : ''), S.filters.plat ? rows : all, rows); };
+  $('#prSec').onclick = () => { const all = S.d.items.filter(i => S.filters.all || i.section === sec); const rows = [...document.querySelectorAll('[data-id]')].map(r => S.d.items.find(i => i.id === r.dataset.id)).filter(Boolean); printReport('تقرير ' + (S.filters.all ? 'كل البنود' : sec), (S.filters.plat ? 'الجهة: ' + S.filters.plat : 'كل الجهات') + (S.filters.st ? ' — ' + ST[S.filters.st] : ''), S.filters.plat ? rows : all, rows, { layout: S.filters.all ? 'table' : getLayout(sec) }); };
 }
 function waLink(i) {
   const c = contact(i.ownerName); if (!c.phone || !i._due) return '';
@@ -1721,7 +1721,8 @@ function authMatrix(items, withCost, only) {
   return `<div class="mx-wrap"><table class="mx"><thead><tr><th>الجهة / المنصة</th><th>العدد</th>${BK.map(b => `<th class="${b[0] === 'expired' ? 'c-ex' : ''}">${b[1]}</th>`).join('')}${withCost ? '<th>التكلفة (ر.س)</th>' : ''}</tr></thead><tbody>${body}</tbody></table></div>`;
 }
 function bindMatrix() { document.querySelectorAll('[data-mx-sec]').forEach(r => r.onclick = () => { S.view = 'sec:' + r.dataset.mxSec; S.filters = { plat: r.dataset.mxPlat }; renderApp(); }); }
-function printReport(title, sub, items, rows) {
+function printReport(title, sub, items, rows, opts) {
+  opts = opts || {}; const DASH = !!opts.dash;
   const today = new Date(), H = 'https:' + '/' + '/fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700;800&display=swap';
   const G4 = [['ex', 'منتهية', '#B3261E'], ['sn', 'تستحق خلال 90 يوماً', '#D98A1C'], ['ok', 'سارية', '#1E8A5F'], ['nd', 'بلا تاريخ', '#C3C9C5']];
   const g4 = i => i._st === 'expired' ? 'ex' : ['critical', 'urgent', 'soon'].indexOf(i._st) >= 0 ? 'sn' : i._st === 'ok' ? 'ok' : 'nd';
@@ -1732,16 +1733,36 @@ function printReport(title, sub, items, rows) {
   const stack = arr => { const t = arr.length || 1; return `<div class="stk">${G4.map(g => { const n = cnt(arr, g[0]); return n ? `<i style="width:${n / t * 100}%;background:${g[2]}" title="${g[1]}">${n / t > .08 ? n : ''}</i>` : ''; }).join('')}</div>`; };
   const bySec = S.d.sections.map(s => [s, R.filter(i => i.section === s)]).filter(x => x[1].length);
   const pg = {}; R.forEach(i => { const k = i.platform || NOPLAT; (pg[k] = pg[k] || []).push(i); });
-  const topA = Object.keys(pg).map(k => [k, pg[k]]).sort((a, b) => (cnt(b[1], 'ex') * 3 + cnt(b[1], 'sn')) - (cnt(a[1], 'ex') * 3 + cnt(a[1], 'sn')) || b[1].length - a[1].length).slice(0, 8);
+  const topA = Object.keys(pg).map(k => [k, pg[k]]).sort((a, b) => (cnt(b[1], 'ex') * 3 + cnt(b[1], 'sn')) - (cnt(a[1], 'ex') * 3 + cnt(a[1], 'sn')) || b[1].length - a[1].length).slice(0, DASH ? 999 : 8);
   const mxA = Math.max.apply(null, topA.map(x => x[1].length).concat([1]));
   const ow = {}; R.filter(i => g4(i) === 'ex' || g4(i) === 'sn').forEach(i => { const k = i.ownerName || 'بدون مسؤول'; ow[k] = (ow[k] || 0) + 1; });
-  const owK = Object.keys(ow).sort((a, b) => ow[b] - ow[a]).slice(0, 7), mxO = Math.max.apply(null, owK.map(k => ow[k]).concat([1]));
+  const owK = Object.keys(ow).sort((a, b) => ow[b] - ow[a]).slice(0, DASH ? 999 : 7), mxO = Math.max.apply(null, owK.map(k => ow[k]).concat([1]));
   const near = R.filter(i => i._due && i._days >= -3650).sort((a, b) => a._days - b._days).slice(0, 8);
   const pill = i => `<span class="pl ${g4(i)}">${i._st === 'expired' ? 'منتهي منذ ' + (-i._days) + ' يوم' : i._due ? (i._days === 0 ? 'اليوم' : 'متبقٍ ' + i._days + ' يوم') : 'بلا تاريخ'}</span>`;
   const grp = {}; R.forEach(i => { const k = i.section + '|' + (i.platform || NOPLAT); (grp[k] = grp[k] || []).push(i); });
   const det = Object.keys(grp).sort().map(k => { const [sec, pl] = k.split('|'), arr = grp[k];
     return `<tr class="g"><td colspan="6"><b>${esc(pl)}</b><span>${esc(sec)} · ${arr.length} بند${cnt(arr, 'ex') ? ' · <em style="color:#B3261E">' + cnt(arr, 'ex') + ' منتهية</em>' : ''}</span></td></tr>` +
       arr.map(i => `<tr class="r ${g4(i)}"><td><b>${esc(i.title)}</b>${i.refNo ? '<small>رقم: ' + esc(i.refNo) + '</small>' : ''}${i.status ? '<small>' + esc(i.status) + '</small>' : ''}</td><td>${esc(i.ownerName || '—')}</td><td class="d">${fmtD(i.issueDate)}</td><td class="d">${i._due ? fmtD(i._due.date) : '—'}</td><td>${i._due ? esc(i._due.kind) : '—'}</td><td>${pill(i)}</td></tr>`).join(''); }).join('');
+  const CARDS = opts.layout === 'cards';
+  const detCards = Object.keys(grp).sort().map(k => { const [sec, pl] = k.split('|'), arr = grp[k];
+    return `<div class="cg"><div class="cgh"><b>${esc(pl)}</b><span>${esc(sec)} · ${arr.length} بند${cnt(arr, 'ex') ? ' · <em style="color:#B3261E">' + cnt(arr, 'ex') + ' منتهية</em>' : ''}</span></div><div class="cgr">` +
+      arr.map(i => `<div class="pc ${g4(i)}"><div class="pct"><b>${esc(i.title)}</b>${pill(i)}</div>${i.refNo ? '<small>رقم: ' + esc(i.refNo) + '</small>' : ''}<dl><dt>المسؤول</dt><dd>${esc(i.ownerName || '—')}</dd><dt>البداية</dt><dd>${fmtD(i.issueDate)}</dd><dt>${i._due ? esc(i._due.kind) : 'النهاية'}</dt><dd>${i._due ? fmtD(i._due.date) : '—'}</dd>${i.status ? '<dt>الحالة</dt><dd>' + esc(i.status) + '</dd>' : ''}</dl></div>`).join('') + '</div></div>'; }).join('');
+  const detHtml = CARDS ? (detCards || '<div class="re">لا توجد بنود</div>') : `<table><thead><tr><th>البند</th><th>المسؤول</th><th>البداية</th><th>النهاية / الاستحقاق</th><th>المطلوب</th><th>الحالة</th></tr></thead><tbody>${det || '<tr><td colspan="6">لا توجد بنود</td></tr>'}</tbody></table>`;
+  let dashBlock = '';
+  if (DASH) {
+    const L = R.filter(i => i._due), byD = (a, b) => a._days - b._days, cs = k => R.filter(i => i._st === k).length;
+    const B4 = [['منتهي أو متأخر', 'تجاوز موعده — يحتاج إجراء فوري', '#B3261E', '#F6E3E1', L.filter(i => i._days < 0)],
+      ['خلال 7 أيام', 'هذا الأسبوع', '#C77700', '#FBEED8', L.filter(i => i._days >= 0 && i._days <= 7)],
+      ['خلال 30 يوماً', 'من 8 إلى 30 يوماً', '#9A7B12', '#F7F0D6', L.filter(i => i._days > 7 && i._days <= 30)],
+      ['خلال 90 يوماً', 'من 31 إلى 90 يوماً', '#7A6A22', '#FAF6E8', L.filter(i => i._days > 30 && i._days <= 90)]];
+    const scards = S.d.sections.map(sn => { const x = R.filter(i => i.section === sn), t = x.length || 1, e = cnt(x, 'ex'), n = cnt(x, 'sn'), o = cnt(x, 'ok'), d = cnt(x, 'nd');
+      return `<div class="sc"><b>${esc(sn)}</b><strong>${x.length}</strong><div class="stk">${e ? `<i style="width:${e / t * 100}%;background:#B3261E"></i>` : ''}${n ? `<i style="width:${n / t * 100}%;background:#D98A1C"></i>` : ''}${o ? `<i style="width:${o / t * 100}%;background:#1E8A5F"></i>` : ''}</div><span><em style="color:#B3261E">${e}</em> منتهٍ · <em style="color:#A86400">${n}</em> قريب · <em style="color:#0B6E4F">${o}</em> ساري · ${d} بلا تاريخ</span></div>`; }).join('');
+    const strip = [['كل البنود', R.length, '#1E2B2A'], ['منتهية أو متأخرة', cs('expired'), '#B3261E'], ['خلال 7 أيام', cs('critical'), '#C77700'], ['خلال 30 يوماً', cs('urgent'), '#9A7B12'], ['خلال 90 يوماً', cs('soon'), '#7A6A22'], ['سارية', cs('ok'), '#0B6E4F'], ['بلا تاريخ انتهاء', cs('none'), '#8A9491']]
+      .map(k => `<div style="--c:${k[2]}"><b style="color:${k[2]}">${k[1]}</b><span>${k[0]}</span></div>`).join('');
+    const rl = B4.map(b => { const x = b[4].slice().sort(byD);
+      return `<div class="rb" style="--c:${b[2]};--cl:${b[3]}"><div class="rh"><b>${x.length}</b><span>${b[0]}<small>${b[1]}</small></span></div>${x.length ? x.map(i => `<div class="ri"><div><b>${esc(i.title)}</b><small>${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</small></div><em>${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</em></div>`).join('') : '<div class="re">لا توجد بنود</div>'}</div>`; }).join('');
+    dashBlock = `<div class="scs">${scards}</div><div class="stp">${strip}</div><h2>مسطرة الاستحقاقات — كل البنود</h2><div class="rlp">${rl}</div>`;
+  }
   const rptNo = 'RPT-' + S.d.today.replace(/-/g, '') + '-' + String(today.getHours()).padStart(2, '0') + String(today.getMinutes()).padStart(2, '0');
   const css = `@page{size:A4;margin:12mm 0 12mm}@page:first{margin-top:0}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;margin:0;font-size:10.5px;background:#fff;font-variant-numeric:tabular-nums}
@@ -1768,6 +1789,14 @@ function printReport(title, sub, items, rows) {
   tr.r td:first-child{border-right:3px solid #C3C9C5}tr.r.ex td:first-child{border-right-color:#B3261E}tr.r.sn td:first-child{border-right-color:#D98A1C}tr.r.ok td:first-child{border-right-color:#1E8A5F}
   .pl{display:inline-block;padding:2px 8px;border-radius:999px;font-weight:700;font-size:9.5px;white-space:nowrap;background:#EFF1EE;color:#5F6B68}.pl.ex{background:#F6E3E1;color:#9E2119}.pl.sn{background:#FBEED8;color:#8A5300}.pl.ok{background:#E1F0EA;color:#0B6E4F}
   .mx td,.mx th{font-size:9.5px;padding:4px 6px}.mx td.n{font-weight:700}.mx td.z{color:#CDD2CD}.mx td.k{min-width:0;font-weight:600}.mx td.k small{display:none}.mx tr.grp-r td{background:#E9DDBF;color:#1E2B2A;font-weight:700;text-align:right;font-size:10.5px}.mx tr.grp-r td span{color:#5F6B68;font-weight:400;margin-right:6px}.mx tr.tot td{background:#F1F3EE;font-weight:700}.mx tr.all td{background:#1E2B2A;color:#fff;font-weight:700}.mx th.c-ex,.mx td.c-ex{background-clip:padding-box}
+  .scs{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:6px}.sc{border:1px solid #E3E6E0;border-radius:9px;padding:9px 11px;page-break-inside:avoid}.sc b{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:11px}.sc strong{float:left;font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:18px;line-height:1}.sc .stk{height:7px;margin:8px 0 6px}.sc span{color:#5F6B68;font-size:9.5px}.sc em{font-style:normal;font-weight:700}
+  .stp{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid #E3E6E0;border-radius:9px;overflow:hidden;margin-bottom:6mm;page-break-inside:avoid}.stp div{padding:8px 9px;border-left:1px solid #EDF0EA;border-top:3px solid var(--c)}.stp div:last-child{border-left:0}.stp b{display:block;font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:17px;line-height:1.2}.stp span{color:#5F6B68;font-size:9px}
+  .rlp{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:6mm;align-items:start}.rb{border:1px solid #E3E6E0;border-top:4px solid var(--c);border-radius:9px;overflow:hidden}.rh{display:flex;align-items:center;gap:9px;padding:8px 10px;background:var(--cl);border-bottom:1px solid #EDF0EA;page-break-inside:avoid;page-break-after:avoid}.rh b{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:20px;color:var(--c);line-height:1}.rh span{font-weight:700;font-size:11px}.rh small{display:block;color:#5F6B68;font-weight:400;font-size:9px}
+  .ri{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 10px;border-bottom:1px solid #F1F3EE;page-break-inside:avoid}.ri b{font-size:10px;display:block}.ri small{color:#8A9491;font-size:8.5px}.ri em{font-style:normal;font-weight:700;font-size:9px;color:var(--c);background:var(--cl);border-radius:999px;padding:2px 8px;white-space:nowrap}.re{color:#8A9491;padding:10px;text-align:center}
+  ${DASH ? '.box{page-break-inside:auto}' : ''}
+  .cg{margin-bottom:5mm}.cgh{background:#F4F1E8;border-radius:7px;padding:7px 10px;margin-bottom:6px;page-break-after:avoid}.cgh b{font-family:'Noto Kufi Arabic',Tahoma,sans-serif;font-size:11px}.cgh span{color:#5F6B68;margin-right:8px;font-size:9.5px}.cgh em{font-style:normal;font-weight:700}
+  .cgr{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.pc{border:1px solid #E3E6E0;border-right:4px solid #C3C9C5;border-radius:8px;padding:8px 9px;page-break-inside:avoid}.pc.ex{border-right-color:#B3261E}.pc.sn{border-right-color:#D98A1C}.pc.ok{border-right-color:#1E8A5F}
+  .pct{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}.pct b{font-size:10.5px}.pc small{display:block;color:#8A9491;font-size:9px;margin-top:2px}.pc dl{display:grid;grid-template-columns:auto 1fr;gap:2px 8px;margin:6px 0 0;font-size:9.5px}.pc dt{color:#8A9491}.pc dd{margin:0;font-weight:600}
   .ft{margin:8mm 12mm 0;height:10mm;padding:0;display:flex;align-items:center;justify-content:space-between;color:#8A9491;font-size:9px;border-top:1px solid #E3E6E0;background:#fff}
   .ft b{color:#1E2B2A}.sig{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10mm;margin-top:10mm;page-break-inside:avoid}.sig div{border-top:1px solid #9AA4A0;padding-top:5px;text-align:center;color:#5F6B68}
   @media screen{body{background:#ECEEEA}.sheet{max-width:210mm;margin:0 auto;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.15);padding-bottom:6mm}}`;
@@ -1779,7 +1808,7 @@ function printReport(title, sub, items, rows) {
     <div style="--c:#B3261E"><b style="color:#B3261E">${cnt(R, 'ex')}</b><span>منتهية أو متأخرة</span><em>${pct(cnt(R, 'ex'))}</em></div>
     <div style="--c:#D98A1C"><b style="color:#A86400">${cnt(R, 'sn')}</b><span>تستحق خلال 90 يوماً</span><em>${pct(cnt(R, 'sn'))}</em></div>
     <div style="--c:#1E8A5F"><b style="color:#0B6E4F">${cnt(R, 'ok')}</b><span>سارية</span><em>${pct(cnt(R, 'ok'))}</em></div>
-    <div style="--c:#B08D3C"><b>${money(R).toLocaleString('en-US')}</b><span>تكلفة التجديد المتوقعة (ر.س)</span></div></div>
+    <div style="--c:#B08D3C"><b>${money(R).toLocaleString('en-US')}</b><span>تكلفة التجديد المتوقعة (ر.س)</span></div></div>${dashBlock}
   <div class="row"><div class="box"><h2>توزيع الحالات</h2><div class="dn"><svg viewBox="0 0 140 140"><circle r="54" cx="70" cy="70" fill="none" stroke="#F1F3EE" stroke-width="22"/>${donut}<text x="70" y="68" text-anchor="middle" font-size="26" font-weight="800" fill="#1E2B2A" font-family="Noto Kufi Arabic,Tahoma">${R.length}</text><text x="70" y="86" text-anchor="middle" font-size="10" fill="#5F6B68">بند</text></svg>
       <div class="lg">${G4.map(g => `<div><i style="background:${g[2]}"></i><span>${g[1]}</span><b>${cnt(R, g[0])}</b><em>${pct(cnt(R, g[0]))}</em></div>`).join('')}</div></div></div>
     <div class="box"><h2>الحالة حسب القسم</h2>${bySec.map(([sname, arr]) => `<div style="margin:6px 0 9px"><div style="display:flex;justify-content:space-between;font-weight:600;margin-bottom:4px"><span>${esc(sname)}</span><span style="color:#5F6B68">${arr.length} بند</span></div>${stack(arr)}</div>`).join('')}
@@ -1788,7 +1817,7 @@ function printReport(title, sub, items, rows) {
     <div class="box"><h2>البنود العاجلة حسب المسؤول</h2>${owK.length ? owK.map(k => `<div class="br"><span>${esc(k)}</span><div class="hb" style="width:${ow[k] / mxO * 100}%"></div><b>${ow[k]}</b></div>`).join('') : '<div style="color:#8A9491;padding:10px 0">لا توجد بنود عاجلة</div>'}
       <h2 style="margin-top:12px">أقرب المواعيد</h2><table><tbody>${near.map(i => `<tr class="r ${g4(i)}"><td><b>${esc(i.title)}</b><small>${esc(i.platform || i.section)}</small></td><td class="d">${fmtD(i._due.date)}</td><td>${pill(i)}</td></tr>`).join('') || '<tr><td>—</td></tr>'}</tbody></table></div></div>
   <div class="pb"><h2>ملخص الأرقام حسب الجهة</h2>${authMatrix(items, true)}</div>
-  <div class="pb"><h2>تفاصيل البنود حسب الجهة</h2><table><thead><tr><th>البند</th><th>المسؤول</th><th>البداية</th><th>النهاية / الاستحقاق</th><th>المطلوب</th><th>الحالة</th></tr></thead><tbody>${det || '<tr><td colspan="6">لا توجد بنود</td></tr>'}</tbody></table>
+  <div class="pb"><h2>تفاصيل البنود حسب الجهة${CARDS ? ' — بطاقات' : ''}</h2>${detHtml}
     <div class="sig"><div>أعدّه: ${esc(S.d.me.name)}</div><div>راجعه</div><div>اعتمده</div></div></div>
   </div><div class="ft"><span><b>إدارة المنصات والتأهيلات</b> · ${esc(title)}</span><span>${rptNo}</span><span>${hijri(today)} · ${fmtD(S.d.today)}</span></div></div></body></html>`;
   let w = null; try { w = window.open('', '_blank'); } catch (e) { w = null; }
