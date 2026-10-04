@@ -114,6 +114,19 @@ input:focus,select:focus,textarea:focus{border-color:var(--green);box-shadow:0 0
 .ruler{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:20px 22px 16px;margin-bottom:20px}
 .ruler-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
 .ruler-top h3{font-size:16px}.ruler-top .hint{color:var(--muted);font-size:13px}
+.rl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rl-col{border:1px solid var(--line);border-radius:10px;background:#fff;display:flex;flex-direction:column;min-width:0;border-top:4px solid var(--c)}
+.rl-h{display:flex;align-items:center;gap:10px;padding:12px 14px 10px;background:var(--cl);border-bottom:1px solid var(--line2)}
+.rl-h b{font-size:26px;line-height:1;color:var(--c);font-weight:800;min-width:30px}.rl-h span{font-weight:700;font-size:14px;color:var(--ink)}.rl-h small{display:block;font-weight:500;color:var(--muted);font-size:11.5px}
+.rl-list{list-style:none;margin:0;padding:6px;display:flex;flex-direction:column;gap:4px;flex:1}
+.rl-it{display:grid;grid-template-columns:1fr auto;gap:1px 8px;align-items:center;padding:7px 9px;border-radius:7px;cursor:pointer;border:1px solid transparent;background:none;text-align:right;width:100%;font:inherit;color:inherit}
+.rl-it:hover,.rl-it:focus-visible{background:var(--cl);border-color:var(--line2)}
+.rl-it .t{font-weight:600;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rl-it .s{grid-column:1;font-size:11.5px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rl-it .d{grid-row:1/3;grid-column:2;font-size:12px;font-weight:700;color:var(--c);background:var(--cl);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.rl-empty{color:var(--muted);font-size:12.5px;padding:14px 10px;text-align:center}
+.rl-more{margin:0 6px 8px;border:1px dashed var(--line);background:none;border-radius:7px;padding:6px;font:inherit;font-size:12.5px;font-weight:600;color:var(--c);cursor:pointer}.rl-more:hover{background:var(--cl)}
+.rl-sum{display:flex;gap:6px;flex-wrap:wrap}.rl-sum span{font-size:12.5px;font-weight:700;border-radius:999px;padding:4px 11px;background:var(--cl);color:var(--c)}
+@media (max-width:1100px){.rl{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (max-width:620px){.rl{grid-template-columns:1fr}}
 .track{position:relative;height:96px;margin:0 6px}
 .track .zone{position:absolute;top:44px;height:10px}
 .track .axis{position:absolute;top:54px;left:0;right:0;height:1px;background:var(--line)}
@@ -252,7 +265,7 @@ tbody tr:hover td{background:#F8F9F6}tr.click{cursor:pointer}
  .strip button:nth-child(2n){border-left:0}.strip button:nth-child(n+3){border-top:1px solid var(--line2)}.track{height:110px}
 }
 </style>
-<style>.demo-bar{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:50%;transform:translateX(50%);z-index:90;background:#B08D3C;color:#1E2B2A;font:600 13px/1.4 "IBM Plex Sans Arabic",Tahoma,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px);text-align:center}</style>
+<style>.demo-bar{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:50%;transform:translateX(50%);z-index:90;background:#B08D3C;color:#1E2B2A;font:600 13px/1.4 "IBM Plex Sans Arabic",Tahoma,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px);text-align:center}@media (max-width:620px){.demo-bar{font-size:11px;padding:5px 12px;border-radius:12px;opacity:.92}}</style>
 
 <div class="demo-bar" dir="rtl">نسخة تجريبية ببيانات افتراضية — الدخول: demo / demo1234 — لتجربة أول دخول: new بدون كلمة مرور — التعديلات لا تُحفظ بعد إعادة التحميل</div>
 <div id="root"><div class="splash"><svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
@@ -1384,6 +1397,12 @@ function dashView() {
   const zones = `<span class="zone" style="right:0;width:${pos(7)}%;background:var(--amber-l)"></span><span class="zone" style="right:${pos(7)}%;width:${pos(23)}%;background:var(--gold-l)"></span><span class="zone" style="right:${pos(30)}%;width:${pos(60)}%;background:#FAF6E8"></span>`;
   const pins = placed.map(([i, lane]) => `<button class="pin ${i._st}" style="right:${pos(i._days)}%;top:${lane * 15}px" data-id="${i.id}" data-tip="${esc(i.title)}|${esc(i._due.kind + ' — ' + fmtD(i._due.date))}|${i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}" aria-label="${esc(i.title)}"></button>`).join('');
   const od = overdue.slice(0, 6).map(i => `<button class="pin expired" style="position:static;transform:none" data-id="${i.id}" data-tip="${esc(i.title)}|${esc(i._due.kind + ' — ' + fmtD(i._due.date))}|متأخر ${-i._days} يوم" aria-label="${esc(i.title)}"></button>`).join('');
+  const byD = (a, b) => a._days - b._days;
+  const RL = [
+    { l: 'منتهي أو متأخر', sub: 'تجاوز موعده — يحتاج إجراء فوري', c: 'var(--red)', cl: 'var(--red-l)', st: 'expired', e: 'لا يوجد شيء منتهٍ ✓', x: overdue.slice().sort(byD) },
+    { l: 'خلال 7 أيام', sub: 'هذا الأسبوع', c: 'var(--amber)', cl: 'var(--amber-l)', st: 'critical', e: 'لا شيء هذا الأسبوع', x: list.filter(i => i._days >= 0 && i._days <= 7).sort(byD) },
+    { l: 'خلال 30 يوماً', sub: 'من 8 إلى 30 يوماً', c: 'var(--gold)', cl: 'var(--gold-l)', st: 'urgent', e: 'لا شيء خلال الشهر', x: list.filter(i => i._days > 7 && i._days <= 30).sort(byD) },
+    { l: 'خلال 90 يوماً', sub: 'من 31 إلى 90 يوماً', c: '#7A6A22', cl: '#FAF6E8', st: 'soon', e: 'لا شيء خلال 3 أشهر', x: list.filter(i => i._days > 30 && i._days <= 90).sort(byD) }];
   const up = list.sort((a, b) => a._days - b._days).slice(0, 10);
   const secRows = S.d.sections.map(s => {
     const x = it.filter(i => i.section === s), n = x.length || 1, seg = (k, col) => { const v = x.filter(i => i._st === k).length; return v ? `<i style="width:${v / n * 100}%;background:${col}"></i>` : ''; };
@@ -1395,9 +1414,10 @@ function dashView() {
     return `<button class="sec-card" data-sec="${esc(s)}"><span class="sc-ic">${ic(s)}</span><span class="sc-t">${esc(s)}</span><span class="sc-n">${x.length}</span><span class="sc-bar"><i style="width:${bad / tot * 100}%;background:var(--red)"></i><i style="width:${soon / tot * 100}%;background:var(--amber)"></i><i style="width:${ok / tot * 100}%;background:var(--ok)"></i></span><span class="sc-m"><b style="color:var(--red)">${bad}</b> منتهٍ · <b style="color:var(--amber)">${soon}</b> قريب · <b style="color:var(--ok)">${ok}</b> ساري · ${none} بلا تاريخ</span></button>`; }).join('');
   return topbar('لوحة المتابعة', esc(S.d.settings.orgName) + ' — ' + it.length + ' بنداً تحت المتابعة', `<button class="btn light" id="prAll">${ic('file')} طباعة التقرير</button>` + (can('editor') ? `<button class="btn light" id="impAny">${ic('up')} استيراد من إكسل</button><button class="btn" id="addAny">${ic('plus')} إضافة بند</button>` : '')) +
     `<div class="sec-cards">${secCards}</div>` +
-    `<section class="ruler" aria-label="مسطرة الاستحقاقات"><div class="ruler-top"><h3>مسطرة الاستحقاقات — الأشهر الأربعة القادمة</h3><span class="hint">${ahead.length} موعداً قادماً، و${overdue.length} متأخراً. مرّر على أي نقطة لعرض البند، واضغطها لفتحه.</span></div>
-      <div class="track">${zones}<span class="axis"></span>${ticks}<span class="today" style="right:0"><span>اليوم</span></span>${pins}</div>
-      ${overdue.length ? `<div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--red);font-weight:600;margin-top:4px">متأخر عن موعده: ${od}${overdue.length > 6 ? '<span>+' + (overdue.length - 6) + '</span>' : ''}</div>` : ''}</section>
+    `<section class="ruler" aria-label="مسطرة الاستحقاقات"><div class="ruler-top"><h3>مسطرة الاستحقاقات</h3><span class="hint">الأكثر إلحاحاً في الأعلى — اضغط أي بند لفتحه</span></div>
+      <div class="rl">${RL.map(b => `<div class="rl-col" style="--c:${b.c};--cl:${b.cl}"><div class="rl-h"><b>${b.x.length}</b><span>${b.l}<small>${b.sub}</small></span></div>
+        ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
+        ${b.x.length > 6 ? `<button class="rl-more" data-rst="${b.st}">عرض الكل (+${b.x.length - 6})</button>` : ''}</div>`).join('')}</div></section>
     <div class="strip">${strip.map(k => `<button data-st="${k[0]}" style="--c:${k[3]}"><div class="n">${k[1]}</div><div class="l">${k[2]}</div></button>`).join('')}</div>
     <section class="panel"><h3>الأرقام حسب الجهة <div class="seg" role="tablist">${S.d.sections.map(x => `<button data-mxt="${esc(x)}" class="${(S.mxSec || S.d.sections[0]) === x ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></h3>${authMatrix(it, false, S.mxSec || S.d.sections[0])}</section>
     <div class="cols"><section class="panel"><h3>المواعيد الأقرب <small>المتأخر في الأعلى</small></h3>${up.length ? `<ul class="dlist">${up.map(i => `<li data-id="${i.id}" style="--c:${STC[i._st]}"><span class="t">${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${esc(i.platform || i.section)} — ${esc(i._due.kind)} ${fmtD(i._due.date)}${i.ownerName ? ' — ' + esc(i.ownerName) : ''}</span></li>`).join('')}</ul>` : '<div class="empty">لا توجد تواريخ انتهاء مسجّلة بعد. افتح أي قسم وأضف تاريخ الانتهاء للبنود لتظهر هنا.</div>'}</section>
@@ -1405,6 +1425,7 @@ function dashView() {
     <section class="panel"><h3>العاجل حسب المسؤول</h3><div class="pb">${ownKeys.length ? ownKeys.map(k => `<div class="secrow" style="cursor:default"><span>${esc(k)}</span><span class="bar"><i style="width:${own[k] / mx * 100}%;background:var(--amber)"></i></span><span class="v">${own[k]}</span></div>`).join('') : '<div class="empty" style="padding:20px">لا توجد بنود عاجلة.</div>'}</div></section></div></div>`;
 }
 function bindDash() {
+  document.querySelectorAll('.rl-more').forEach(k => k.onclick = () => { S.filters = { st: k.dataset.rst, all: true }; S.view = 'sec:' + S.d.sections[0]; renderApp(); });
   document.querySelectorAll('.strip button').forEach(k => k.onclick = () => { S.filters = { st: k.dataset.st, all: true }; S.view = 'sec:' + S.d.sections[0]; renderApp(); });
   document.querySelectorAll('[data-id]').forEach(r => r.onclick = () => itemModal(r.dataset.id));
   document.querySelectorAll('.secrow[data-sec]').forEach(r => r.onclick = () => { S.view = 'sec:' + r.dataset.sec; S.filters = {}; renderApp(); });
