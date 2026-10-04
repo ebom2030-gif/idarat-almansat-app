@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8">
-<title>إدارة المنصات والتأهيلات</title>
-<link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#1E2B2A">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="المنصات والتأهيلات">
-<meta name="description" content="متابعة التأهيلات والتراخيص ومستندات المكتب وحسابات المنصات وتنبيهات الانتهاء">
-<link rel="preconnect" href="https://script.google.com">
-<link rel="preconnect" href="https://script.googleusercontent.com">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المنافسات والضمانات — نسخة تجريبية</title>
+<script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
+
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4' fill='%231E2B2A' stroke='%23B08D3C' stroke-width='1.6' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='32' r='18.6' fill='none' stroke='%23B08D3C' stroke-opacity='.6' stroke-width='.9'/%3E%3Ccircle cx='32' cy='32' r='15.4' fill='%230B6E4F'/%3E%3Cpath d='M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z' fill='%23fff'/%3E%3Cpath d='M34 22.6v4.8h4.8' fill='none' stroke='%230B6E4F' stroke-width='1.2' stroke-linejoin='round'/%3E%3Cpath d='M28.6 34.4l2.5 2.5 5.1-5.3' fill='none' stroke='%23B08D3C' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -361,11 +349,1222 @@ tbody tr:hover td{background:#F8F9F6}tr.click{cursor:pointer}
  .strip button:nth-child(2n){border-left:0}.strip button:nth-child(n+3){border-top:1px solid var(--line2)}.track{height:110px}
 }
 </style>
-</head>
-<body>
+<style>.demo-bar{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));right:50%;transform:translateX(50%);z-index:90;background:#B08D3C;color:#1E2B2A;font:600 13px/1.4 "IBM Plex Sans Arabic",Tahoma,sans-serif;padding:8px 16px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px);text-align:center}@media (max-width:620px){.demo-bar{font-size:11px;padding:5px 12px;border-radius:12px;opacity:.92}}</style>
+
+<div class="demo-bar" dir="rtl">نسخة تجريبية ببيانات افتراضية — الدخول: demo / demo1234 — لتجربة أول دخول: new بدون كلمة مرور — التعديلات لا تُحفظ بعد إعادة التحميل</div>
 <div id="root"><div class="splash"><svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
 <div id="modals"></div>
 <div id="loading" class="loading hidden"><div class="spin"></div></div>
+<script>window.DM_MODE = "tenders";</script>
+<script>
+
+(function () {
+  const enc = new TextEncoder(), dec = new TextDecoder();
+  const b64 = a => { let s = ''; a.forEach(x => s += String.fromCharCode(x & 255)); return btoa(s); };
+  class Range { constructor(sh, r, c, nr, nc) { Object.assign(this, { sh, r, c, nr: nr || 1, nc: nc || 1 }); }
+    getValues() { const o = []; for (let i = 0; i < this.nr; i++) { const row = []; for (let j = 0; j < this.nc; j++) { const v = (this.sh.d[this.r - 1 + i] || [])[this.c - 1 + j]; row.push(v === undefined ? '' : v); } o.push(row); } return o; }
+    setValues(v) { v.forEach((row, i) => row.forEach((x, j) => { const R = this.r - 1 + i; this.sh.d[R] = this.sh.d[R] || []; this.sh.d[R][this.c - 1 + j] = x; })); return this; }
+    setValue(x) { return this.setValues([[x]]); } setFontWeight() { return this; } setBackground() { return this; } setFontColor() { return this; } setNumberFormat() { return this; } }
+  class Sheet { constructor(n) { this.n = n; this.d = []; } getRange(a, b, c, d) { if (typeof a === 'string') return new Range(this, 1, 1, 1, 26); return new Range(this, a, b, c, d); }
+    getLastRow() { return this.d.length; } getLastColumn() { let m = 0; for (let i = 0; i < this.d.length; i++) m = Math.max(m, this.d[i] ? this.d[i].length : 0); return m; }
+    appendRow(r) { this.d.push(r.slice()); } deleteRow(i) { this.d.splice(i - 1, 1); } setFrozenRows() { } setRightToLeft() { } getName() { return this.n; } }
+  class SSh { constructor() { this.sheets = [new Sheet('Sheet1')]; this.id = 'demo'; } getSheetByName(n) { return this.sheets.find(s => s.n === n) || null; } insertSheet(n) { const s = new Sheet(n); this.sheets.push(s); return s; }
+    getSheets() { return this.sheets; } deleteSheet(s) { this.sheets = this.sheets.filter(x => x !== s); } setSpreadsheetTimeZone() { } getId() { return this.id; } }
+  let theSS = null; const props = {}, cache = {}, triggers = [], files = {};
+  window.SpreadsheetApp = { create: () => (theSS = new SSh()), openById: () => { if (!theSS) throw new Error('x'); return theSS; } };
+  window.PropertiesService = { getScriptProperties: () => ({ getProperty: k => props[k] || null, setProperty: (k, v) => { props[k] = v; }, deleteProperty: k => { delete props[k]; }, getProperties: () => Object.assign({}, props) }) };
+  window.CacheService = { getScriptCache: () => ({ get: k => cache[k] || null, put: (k, v) => { cache[k] = v; }, remove: k => { delete cache[k]; }, getAll: ks => { const o = {}; ks.forEach(k => { if (k in cache) o[k] = cache[k]; }); return o; }, putAll: (o) => { Object.assign(cache, o); } }) };
+  window.LockService = { getScriptLock: () => ({ waitLock() { }, releaseLock() { } }) };
+  const fmt = (d, tz, f) => { const x = new Date(d.getTime() + 3 * 3600e3).toISOString(); if (f === 'yyyy-MM-dd') return x.slice(0, 10); if (f === 'u') { const w = new Date(d.getTime() + 3 * 3600e3).getUTCDay(); return String(w === 0 ? 7 : w); } if (f === 'yyyy-MM-dd HH-mm') return x.slice(0, 16).replace('T', ' ').replace(':', '-'); return x.slice(0, 16).replace('T', ' '); };
+  const uuid = () => (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => (Math.random() * 16 | 0).toString(16)));
+  window.Utilities = { formatDate: fmt, getUuid: uuid, base64Encode: b64, base64Decode: s => Array.from(atob(s), c => c.charCodeAt(0) << 24 >> 24),
+    computeDigest: () => new Array(32).fill(1), DigestAlgorithm: { SHA_256: 1 }, Charset: { UTF_8: 1 },
+    newBlob: (b, m, n) => typeof b === 'string' ? { getBytes: () => Array.from(enc.encode(b), x => x << 24 >> 24) } : { getDataAsString: () => dec.decode(new Uint8Array(b.map(x => x & 255))), getBytes: () => b, getContentType: () => m, getName: () => n } };
+  window.MailApp = { sendEmail: () => { } };
+  window.MimeType = { PLAIN_TEXT: 'text/plain' };
+  window.ScriptApp = { getScriptId: () => 'demo', getProjectTriggers: () => triggers.map(f => ({ getHandlerFunction: () => f })), newTrigger: f => ({ timeBased: () => ({ everyMinutes: () => ({ create: () => triggers.push(f) }), everyDays: () => ({ atHour: () => ({ inTimezone: () => ({ create: () => triggers.push(f) }) }) }) }) }), deleteTrigger: () => { }, getService: () => ({ getUrl: () => '' }) };
+  const folder = n => ({ getId: () => 'f', getUrl: () => '', getFoldersByName: () => ({ hasNext: () => false }), createFolder: folder, createFile: (b) => { const id = 'file' + Object.keys(files).length; files[id] = b; return { getId: () => id, setDescription() { } }; } });
+  window.DriveApp = { getFolderById: () => { throw new Error('x'); }, createFolder: folder, getFileById: () => { throw new Error('الملفات غير متاحة في النسخة التجريبية'); } };
+  window.HtmlService = {}; window.Session = { getActiveUser: () => ({ getEmail: () => 'demo@example.com' }) };
+  window.UrlFetchApp = { fetch: () => ({ getResponseCode: () => 200, getContentText: () => '{}' }) };
+})();
+
+(function(){
+/* =====================================================================
+ *  منصة «إدارة المنصات والتأهيلات» — دار مكة
+ *  Google Apps Script Web App (Backend)
+ * ===================================================================== */
+const APP_NAME = 'إدارة المنصات والتأهيلات';
+const TZ = 'Asia/Riyadh';
+const SECTIONS = ['التأهيلات والتراخيص', 'مستندات المكتب', 'حسابات المنصات'];
+const ROLES = { admin: 'مدير', editor: 'محرِّر', viewer: 'مشاهِد' };
+const STOP_STATUSES = ['تم', 'غير مطلوب'];
+const INACTIVE = ['غير نشط', 'بدون منصة', 'ملغى'];
+const SCHEMA = {
+  Items: ['id', 'section', 'platform', 'title', 'type', 'refNo', 'username', 'url', 'ownerName', 'issueDate', 'expiryDate',
+    'pwLast', 'pwCycle', 'status', 'accStatus', 'cost', 'notes', 'fileId', 'fileName', 'createdAt', 'createdBy',
+    'updatedAt', 'updatedBy', 'lastAlert', 'archived', 'secret', 'leadDays', 'priority', 'crNo', 'branch', 'docKey'],
+  Contacts: ['name', 'email', 'phone', 'title'],
+  Users: ['username', 'name', 'email', 'phone', 'role', 'sections', 'salt', 'hash', 'active', 'createdAt', 'lastLogin', 'canSecrets'],
+  Renewals: ['at', 'itemId', 'title', 'section', 'kind', 'oldDate', 'newDate', 'fileId', 'fileName', 'cost', 'notes', 'by'],
+  Logs: ['at', 'user', 'action', 'details'],
+  Alerts: ['at', 'itemId', 'title', 'channel', 'to', 'stage', 'result'],
+  Settings: ['key', 'value'],
+  Followups: ['at', 'itemId', 'title', 'section', 'stage', 'note', 'by'],
+  Snapshots: ['month', 'total', 'ok', 'soon', 'expired', 'none', 'readiness'],
+  Changes: ['at', 'itemId', 'user', 'field', 'old', 'new'],
+  Tenders: ['id', 'title', 'entity', 'platform', 'refNo', 'sector', 'branch', 'manager', 'estValue', 'bookletCost', 'stage', 'decision', 'decisionReason', 'score', 'questionsDue', 'siteVisit', 'submitDue', 'openDate', 'validityDue', 'submittedAt', 'result', 'ourPrice', 'winnerName', 'winnerPrice', 'awardValue', 'contractNo', 'contractStart', 'contractEnd', 'notes', 'reqs', 'tasks', 'competitors', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
+  Guarantees: ['id', 'tenderId', 'type', 'bank', 'gNo', 'amount', 'percent', 'beneficiary', 'issueDate', 'expiryDate', 'status', 'cashMargin', 'feeIssue', 'feeExt', 'notes', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
+  Violations: ['id', 'crNo', 'source', 'violationNo', 'date', 'title', 'amount', 'dueDate', 'status', 'objectionDue', 'ownerName', 'location', 'notes', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
+};
+const APP_HOME = 'https://ebom2030-gif.github.io/idarat-almansat-app/';
+const T_STAGES = ['رصد', 'دراسة', 'قرار المشاركة', 'شراء الكراسة', 'إعداد العرض', 'تم التقديم', 'فتح المظاريف', 'مرسى', 'خاسر', 'معتذر / ملغاة'];
+const T_CLOSED = ['مرسى', 'خاسر', 'معتذر / ملغاة'];
+const G_TYPES = ['ابتدائي', 'نهائي', 'دفعة مقدمة', 'صيانة'];
+const G_STATUSES = ['طلب إصدار', 'سارٍ', 'طلب تمديد', 'ممدّد', 'طلب إفراج', 'مُفرج عنه', 'مُسيَّل'];
+const G_CLOSED = ['مُفرج عنه', 'مُسيَّل'];
+const VIOL_STATUSES = ['جديدة', 'قيد الاعتراض', 'مرفوض الاعتراض', 'بانتظار السداد', 'مسددة', 'مقبول الاعتراض', 'ملغاة'];
+const VIOL_CLOSED = ['مسددة', 'مقبول الاعتراض', 'ملغاة'];
+const FOLLOW_STAGES = ['تم التواصل مع الجهة', 'قُدّم الطلب', 'بانتظار رد الجهة', 'تم السداد', 'تم الإصدار', 'ملاحظة'];
+const DEFAULT_SETTINGS = {
+  orgName: 'شركة نموذجية (نسخة تجريبية)', adminEmails: 'demo@example.com', thresholds: '90,60,30,14,7,3,1,0',
+  accThresholds: '30,14,7,3,1,0', repeatDays: '7', weeklyDay: '0', hour: '8', pwCycle: '90',
+  waPhoneId: '', waTemplate: '', waLang: 'ar', appUrl: '', leadDays: '30', escalateDays: '7', crList: '[]', branches: '[]', banks: '[]', tenderTarget: '',
+  docTemplate: '[{"k": "cr", "name": "السجل التجاري للفرع", "issuer": "وزارة التجارة"}, {"k": "balady", "name": "رخصة البلدية للفرع (رخصة النشاط)", "issuer": "بلدي - الأمانة"}, {"k": "eng", "name": "ترخيص المكتب الهندسي للفرع", "issuer": "وزارة البلديات / الهيئة السعودية للمهندسين"}, {"k": "civil", "name": "شهادة الدفاع المدني (سلامة)", "issuer": "المديرية العامة للدفاع المدني"}, {"k": "safety", "name": "عقد صيانة أنظمة السلامة والإطفاء", "issuer": "شركة صيانة معتمدة"}, {"k": "ejar", "name": "عقد إيجار مقر الفرع", "issuer": "منصة إيجار"}, {"k": "address", "name": "شهادة العنوان الوطني للفرع", "issuer": "سبل - البريد السعودي"}, {"k": "chamber", "name": "عضوية الغرفة التجارية", "issuer": "الغرفة التجارية"}, {"k": "sign", "name": "رخصة اللوحة الإعلانية", "issuer": "بلدي - الأمانة"}, {"k": "gosi", "name": "شهادة التأمينات الاجتماعية", "issuer": "المؤسسة العامة للتأمينات الاجتماعية"}, {"k": "nitaqat", "name": "شهادة السعودة (نطاقات)", "issuer": "وزارة الموارد البشرية - قوى"}, {"k": "mudad", "name": "شهادة الالتزام بحماية الأجور", "issuer": "وزارة الموارد البشرية - مدد"}, {"k": "zakat", "name": "شهادة الزكاة والدخل", "issuer": "هيئة الزكاة والضريبة والجمارك"}, {"k": "medical", "name": "وثيقة التأمين الطبي للموظفين", "issuer": "مجلس الضمان الصحي / شركة التأمين"}]',
+};
+
+/* ============================== Web entry ============================== */
+function doPost(e) {
+  let out;
+  try {
+    const b = JSON.parse((e && e.postData && e.postData.contents) || '{}');
+    const F = { isFirstRun: isFirstRun, setupAdmin: setupAdmin, login: login, firstLogin: firstLogin, logout: logout, api: api, contactAdmin: contactAdmin };
+    const f = F[b.fn];
+    if (!f) throw new Error('طلب غير معروف');
+    out = { ok: true, v: f.apply(null, b.args || []) };
+  } catch (err) { out = { ok: false, e: String((err && err.message) || err) }; }
+  return ContentService.createTextOutput(JSON.stringify(out)).setMimeType(ContentService.MimeType.JSON);
+}
+function doGet() {
+  return HtmlService.createHtmlOutputFromFile('Index')
+    .setTitle(APP_NAME)
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
+}
+
+/* ============================== Database ============================== */
+let SS_ = null; const SH_ = {};
+function db_() {
+  if (SS_) return SS_;
+  const props = PropertiesService.getScriptProperties();
+  let id = props.getProperty('DB_ID');
+  if (id) { try { SS_ = SpreadsheetApp.openById(id); return SS_; } catch (e) {} }
+  const ss = SpreadsheetApp.create('قاعدة بيانات ' + APP_NAME + '');
+  ss.setSpreadsheetTimeZone(TZ);
+  props.setProperty('DB_ID', ss.getId());
+  SS_ = ss;
+  return ss;
+}
+function sheet_(name) {
+  if (SH_[name]) return SH_[name];
+  const ss = db_();
+  let sh = ss.getSheetByName(name);
+  if (!sh) {
+    sh = ss.insertSheet(name);
+    sh.getRange(1, 1, 1, SCHEMA[name].length).setValues([SCHEMA[name]]).setFontWeight('bold').setBackground('#1F3A5F').setFontColor('#fff');
+    sh.setFrozenRows(1);
+    sh.getRange('A:Z').setNumberFormat('@');
+    sh.setRightToLeft(true);
+  } else if (sh.getLastColumn() < SCHEMA[name].length) {
+    sh.getRange(1, 1, 1, SCHEMA[name].length).setValues([SCHEMA[name]]).setFontWeight('bold').setBackground('#1F3A5F').setFontColor('#fff');
+  }
+  SH_[name] = sh;
+  return sh;
+}
+function readTail_(name, n) {
+  if (CACHED_[name]) return readAll_(name).slice(-n);
+  const sh = sheet_(name), last = sh.getLastRow();
+  if (last < 2) return [];
+  const from = Math.max(2, last - n + 1), cols = SCHEMA[name];
+  return sh.getRange(from, 1, last - from + 1, cols.length).getValues().map((r, i) => {
+    const o = { _row: from + i };
+    cols.forEach((c, j) => { o[c] = r[j] instanceof Date ? ymd_(r[j]) : String(r[j]); });
+    return o;
+  });
+}
+function triggerOn_() {
+  const pr = PropertiesService.getScriptProperties(), v = pr.getProperty('TRIGGER_ON');
+  if (v) return v === 'yes';
+  const on = ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'dailyCheck');
+  pr.setProperty('TRIGGER_ON', on ? 'yes' : 'no');
+  return on;
+}
+/* ذاكرة سريعة للجداول: تُقرأ من الخادم مرة واحدة وتُحفظ حتى يتغيّر الجدول (كل كتابة تغيّر رقم إصداره) */
+const CACHED_ = { Items: 1, Contacts: 1, Users: 1, Settings: 1, Renewals: 1, Followups: 1, Snapshots: 1, Violations: 1, Tenders: 1, Guarantees: 1 };
+function cver_(name) { const c = CacheService.getScriptCache(); let v = c.get('v_' + name); if (!v) { v = uid_(); c.put('v_' + name, v, 21600); } return v; }
+function bump_(name) { if (CACHED_[name]) { try { CacheService.getScriptCache().put('v_' + name, uid_(), 21600); } catch (e) { } } }
+function readAll_(name) {
+  if (!CACHED_[name]) return readSheet_(name);
+  const c = CacheService.getScriptCache(), key = 'd_' + name + '_' + cver_(name);
+  try {
+    const meta = c.get(key);
+    if (meta) { const n = Number(meta), keys = []; for (let i = 0; i < n; i++) keys.push(key + '_' + i); const parts = c.getAll(keys); let s = ''; for (let i = 0; i < n; i++) { const p = parts[key + '_' + i]; if (p == null) { s = null; break; } s += p; } if (s !== null) return JSON.parse(s); }
+  } catch (e) { }
+  const rows = readSheet_(name);
+  try { const s = JSON.stringify(rows), size = 30000, n = Math.max(1, Math.ceil(s.length / size)), o = {}; for (let i = 0; i < n; i++) o[key + '_' + i] = s.slice(i * size, (i + 1) * size); c.putAll(o, 21600); c.put(key, String(n), 21600); } catch (e) { }
+  return rows;
+}
+function readSheet_(name) {
+  const sh = sheet_(name), n = sh.getLastRow();
+  if (n < 2) return [];
+  const cols = SCHEMA[name];
+  return sh.getRange(2, 1, n - 1, cols.length).getValues().map((r, i) => {
+    const o = { _row: i + 2 };
+    cols.forEach((c, j) => { o[c] = r[j] instanceof Date ? ymd_(r[j]) : String(r[j]); });
+    return o;
+  });
+}
+function appendRows_(name, objs) {
+  if (!objs.length) return;
+  const sh = sheet_(name), cols = SCHEMA[name];
+  sh.getRange(sh.getLastRow() + 1, 1, objs.length, cols.length).setValues(objs.map(o => cols.map(c => o[c] === undefined || o[c] === null ? '' : String(o[c]))));
+  bump_(name);
+}
+function writeRow_(name, row, obj) {
+  const cols = SCHEMA[name];
+  sheet_(name).getRange(row, 1, 1, cols.length).setValues([cols.map(c => obj[c] === undefined || obj[c] === null ? '' : String(obj[c]))]);
+  bump_(name);
+}
+function settings_() {
+  const s = Object.assign({}, DEFAULT_SETTINGS);
+  readAll_('Settings').forEach(r => { s[r.key] = r.value; });
+  return s;
+}
+function saveSettingsMap_(map) {
+  const sh = sheet_('Settings'), rows = readAll_('Settings');
+  Object.keys(map).forEach(k => {
+    const ex = rows.find(r => r.key === k);
+    if (ex) sh.getRange(ex._row, 2).setValue(String(map[k]));
+    else { sh.appendRow([k, String(map[k])]); rows.push({ key: k, _row: sh.getLastRow() }); }
+  });
+  bump_('Settings');
+}
+function ymd_(d) { return Utilities.formatDate(d, TZ, 'yyyy-MM-dd'); }
+function now_() { return Utilities.formatDate(new Date(), TZ, 'yyyy-MM-dd HH:mm'); }
+function uid_() { return Utilities.getUuid().replace(/-/g, '').slice(0, 12); }
+function dayNum_(s) { if (!s) return null; const p = String(s).slice(0, 10).split('-').map(Number); if (p.length < 3 || !p[0]) return null; return Date.UTC(p[0], p[1] - 1, p[2]) / 86400000; }
+function today_() { return dayNum_(ymd_(new Date())); }
+function addDays_(s, n) { const d = dayNum_(s); if (d === null) return ''; const x = new Date((d + Number(n)) * 86400000); return x.toISOString().slice(0, 10); }
+function log_(user, action, details) { appendRows_('Logs', [{ at: now_(), user: user, action: action, details: details }]); }
+
+/* ============================== Auth ============================== */
+function hash_(salt, pw) {
+  let h = salt + '|' + pw;
+  for (let i = 0; i < 300; i++) h = Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, h + salt, Utilities.Charset.UTF_8));
+  return h;
+}
+function contactAdmin(p) {
+  p = p || {};
+  const un = String(p.username || '').trim().slice(0, 40), nm = String(p.name || '').trim().slice(0, 60), msg = String(p.msg || '').trim().slice(0, 500);
+  const kind = p.kind === 'reset' ? 'طلب إعادة تعيين كلمة المرور' : 'رسالة لمدير المنصة';
+  if (!un && !nm) throw new Error('اكتب اسم المستخدم أو اسمك');
+  if (p.kind !== 'reset' && !msg) throw new Error('اكتب نص الرسالة');
+  const cache = CacheService.getScriptCache(), k1 = 'ca_all', k2 = 'ca_' + (un || nm).toLowerCase();
+  const n1 = Number(cache.get(k1) || 0), n2 = Number(cache.get(k2) || 0);
+  if (n1 >= 20 || n2 >= 3) throw new Error('تم إرسال طلبات كثيرة، حاول بعد ساعة');
+  cache.put(k1, String(n1 + 1), 3600); cache.put(k2, String(n2 + 1), 3600);
+  const s = settings_(), admins = splitEmails_(s.adminEmails);
+  const u = un ? readAll_('Users').find(x => x.username === un.toLowerCase()) : null;
+  const lines = [kind, '', 'اسم المستخدم: ' + (un || '—') + (un ? (u ? ' (حساب موجود: ' + u.name + ')' : ' (غير موجود في المنصة)') : ''), 'الاسم: ' + (nm || '—'), msg ? 'الرسالة: ' + msg : '', '',
+    p.kind === 'reset' ? 'لإعادة التعيين: ادخل المنصة ← المستخدمون والصلاحيات ← تعديل المستخدم ← فعّل «إعادة تعيين» ← حفظ، ثم أبلغه أن يدخل باسم المستخدم فقط ليختار كلمة مرور جديدة.' : '', s.appUrl ? 'رابط المنصة: ' + s.appUrl : ''].filter(String);
+  if (admins.length) MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] ' + kind + (un ? ': ' + un : ''), body: lines.join('\n') });
+  log_(un || nm, kind, msg.slice(0, 120));
+  return true;
+}
+function keepWarm() {
+  try { readAll_('Users'); } catch (e) { }
+  try { const u = ScriptApp.getService().getUrl(); if (u && u.indexOf('/exec') > 0) UrlFetchApp.fetch(u, { muteHttpExceptions: true, followRedirects: true }); } catch (e) { }
+}
+function isFirstRun() { return readAll_('Users').length === 0; }
+function setupAdmin(p) {
+  if (!isFirstRun()) throw new Error('تم إنشاء حساب المدير مسبقاً');
+  validatePw_(p.password);
+  if (!/^[A-Za-z0-9_.-]{3,30}$/.test(p.username || '')) throw new Error('اسم المستخدم: حروف إنجليزية أو أرقام (3-30)');
+  const salt = uid_() + uid_();
+  appendRows_('Users', [{ username: p.username.toLowerCase(), name: p.name || p.username, email: p.email || '', phone: p.phone || '', role: 'admin', sections: 'الكل',
+    salt: salt, hash: hash_(salt, p.password), active: 'نعم', createdAt: now_(), lastLogin: '' }]);
+  log_(p.username, 'إنشاء حساب المدير', '');
+  return login(p.username, p.password, true);
+}
+function validatePw_(pw) { if (!pw || String(pw).length < 8) throw new Error('كلمة المرور يجب ألا تقل عن 8 أحرف'); }
+function login(username, password, remember) {
+  username = String(username || '').trim().toLowerCase();
+  const cache = CacheService.getScriptCache(), fk = 'fail_' + username;
+  const fails = Number(cache.get(fk) || 0);
+  if (fails >= 5) throw new Error('تم إيقاف الدخول مؤقتاً لكثرة المحاولات. حاول بعد 15 دقيقة');
+  const u = readAll_('Users').find(x => x.username === username);
+  if (u && u.active === 'نعم' && !u.hash) throw new Error('NEED_SETUP');
+  if (!u || u.active !== 'نعم' || hash_(u.salt, password) !== u.hash) {
+    cache.put(fk, String(fails + 1), 900);
+    throw new Error('اسم المستخدم أو كلمة المرور غير صحيحة');
+  }
+  cache.remove(fk);
+  const token = Utilities.getUuid() + uid_();
+  cache.put('tok_' + token, u.username, 21600);
+  if (remember) { try { const pr = PropertiesService.getScriptProperties(), all = pr.getProperties(), nowT = Date.now();
+    Object.keys(all).forEach(k => { if (k.indexOf('ptok_') === 0) { try { if (JSON.parse(all[k]).x < nowT) pr.deleteProperty(k); } catch (x) { pr.deleteProperty(k); } } });
+    pr.setProperty('ptok_' + token, JSON.stringify({ u: u.username, x: nowT + 30 * 864e5 })); } catch (e) { } }
+  sheet_('Users').getRange(u._row, SCHEMA.Users.indexOf('lastLogin') + 1).setValue(now_()); bump_('Users');
+  log_(u.username, 'تسجيل دخول', '');
+  let data = null;
+  try { seed_(); data = ACTIONS.bootstrap(auth_(token), {}); } catch (e) { data = null; }
+  return { token: token, data: data };
+}
+function firstLogin(username, password) {
+  username = String(username || '').trim().toLowerCase();
+  validatePw_(password);
+  const lock = LockService.getScriptLock(); lock.waitLock(20000);
+  try {
+    const u = readAll_('Users').find(x => x.username === username);
+    if (!u || u.active !== 'نعم' || u.hash) throw new Error('هذا الحساب مُفعَّل مسبقاً — ادخل بكلمة المرور');
+    u.salt = uid_() + uid_(); u.hash = hash_(u.salt, password);
+    writeRow_('Users', u._row, u);
+    log_(u.username, 'تفعيل الحساب وتعيين كلمة المرور', '');
+  } finally { lock.releaseLock(); }
+  return login(username, password, true);
+}
+function auth_(token) {
+  const cache = CacheService.getScriptCache();
+  let un = token && cache.get('tok_' + token);
+  if (!un && token) { try { const p = JSON.parse(PropertiesService.getScriptProperties().getProperty('ptok_' + token) || 'null'); if (p && p.x > Date.now()) un = p.u; } catch (e) { } }
+  if (!un) throw new Error('SESSION_EXPIRED');
+  const u = readAll_('Users').find(x => x.username === un);
+  if (!u || u.active !== 'نعم') throw new Error('SESSION_EXPIRED');
+  cache.put('tok_' + token, un, 21600);
+  u.sectionList = u.sections === 'الكل' || u.role === 'admin' ? SECTIONS.slice() : u.sections.split(',').map(s => s.trim()).filter(Boolean);
+  return u;
+}
+function logout(token) { CacheService.getScriptCache().remove('tok_' + token); try { PropertiesService.getScriptProperties().deleteProperty('ptok_' + token); } catch (e) { } return true; }
+function need_(u, role) {
+  const lv = { viewer: 1, editor: 2, admin: 3 };
+  if (lv[u.role] < lv[role]) throw new Error('ليست لديك صلاحية لهذا الإجراء');
+}
+function canSection_(u, section) { if (u.sectionList.indexOf(section) < 0) throw new Error('ليست لديك صلاحية على قسم: ' + section); }
+function publicUser_(u) { return { username: u.username, name: u.name, email: u.email, phone: u.phone, role: u.role, sections: u.sections, active: u.active, lastLogin: u.lastLogin, createdAt: u.createdAt, canSecrets: u.role === 'admin' || u.canSecrets === 'نعم', pending: !u.hash }; }
+function canSecrets_(u) { return u.role === 'admin' || u.canSecrets === 'نعم'; }
+function secretKey_() {
+  const pr = PropertiesService.getScriptProperties();
+  let k = pr.getProperty('SECRET_KEY');
+  if (!k) { k = Utilities.getUuid() + Utilities.getUuid(); pr.setProperty('SECRET_KEY', k); }
+  return k;
+}
+function stream_(salt, n) {
+  const out = []; let i = 0; const key = secretKey_();
+  while (out.length < n) { Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, key + '|' + salt + '|' + (i++), Utilities.Charset.UTF_8).forEach(b => out.push(b)); }
+  return out;
+}
+function enc_(plain) {
+  if (!plain) return '';
+  const salt = uid_(), bytes = Utilities.newBlob(String(plain)).getBytes(), ks = stream_(salt, bytes.length);
+  return 'v1:' + salt + ':' + Utilities.base64Encode(bytes.map((b, i) => (b ^ ks[i]) << 24 >> 24));
+}
+function dec_(s) {
+  if (!s || String(s).indexOf('v1:') !== 0) return '';
+  const p = String(s).split(':'), bytes = Utilities.base64Decode(p[2]), ks = stream_(p[1], bytes.length);
+  return Utilities.newBlob(bytes.map((b, i) => (b ^ ks[i]) << 24 >> 24)).getDataAsString();
+}
+
+/* ============================== API ============================== */
+function seed_() {
+  const pr = PropertiesService.getScriptProperties(), all = pr.getProperties();
+  if (all.SEED_V2 === 'yes' && all.SEED_V3 === 'yes' && all.SEED_V4 === 'yes' && all.SEED_V5 === 'yes') return;
+  const lock = LockService.getScriptLock();
+  lock.waitLock(30000);
+  try {
+    if (pr.getProperty('SEED_V2') !== 'yes') { seedV2_(); pr.setProperty('SEED_V2', 'yes'); }
+    if (pr.getProperty('SEED_V3') !== 'yes') { seedV3_(); pr.setProperty('SEED_V3', 'yes'); }
+    if (pr.getProperty('SEED_V4') !== 'yes') { try { if (!ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'keepWarm')) ScriptApp.newTrigger('keepWarm').timeBased().everyMinutes(10).create(); } catch (e) { } pr.setProperty('SEED_V4', 'yes'); }
+    if (pr.getProperty('SEED_V5') !== 'yes') { try { ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === 'keepWarm').forEach(t => ScriptApp.deleteTrigger(t)); ScriptApp.newTrigger('keepWarm').timeBased().everyMinutes(5).create(); } catch (e) { } pr.setProperty('SEED_V5', 'yes'); }
+  } finally { lock.releaseLock(); }
+}
+function api(token, action, p) {
+  const u = auth_(token);
+  p = p || {};
+  const fn = ACTIONS[action];
+  if (!fn) throw new Error('إجراء غير معروف');
+  const lock = LockService.getScriptLock();
+  seed_();
+  const writes = ['bootstrap', 'download'].indexOf(action) < 0;
+  if (writes) lock.waitLock(20000);
+  try { return fn(u, p); } finally { if (writes) lock.releaseLock(); }
+}
+const ACTIONS = {
+  bootstrap: (u) => {
+    const s = settings_();
+    const items = readAll_('Items').filter(i => i.archived !== 'نعم' && u.sectionList.indexOf(i.section) >= 0).map(cleanItem_);
+    const out = { me: publicUser_(u), sections: u.sectionList, allSections: SECTIONS, roles: ROLES, items: items,
+      contacts: readAll_('Contacts').map(strip_), renewals: readTail_('Renewals', 400).filter(r => u.sectionList.indexOf(r.section) >= 0).slice(-300).reverse().map(strip_),
+      followups: readTail_('Followups', 2000).filter(f => u.sectionList.indexOf(f.section) >= 0).map(strip_),
+      snapshots: readAll_('Snapshots').slice(-12).map(strip_), stages: FOLLOW_STAGES,
+      tenders: readAll_('Tenders').filter(x => x.archived !== 'نعم').map(strip_), guarantees: readAll_('Guarantees').filter(x => x.archived !== 'نعم').map(strip_), tStages: T_STAGES, tClosed: T_CLOSED, gTypes: G_TYPES, gStatuses: G_STATUSES, gClosed: G_CLOSED,
+      violations: readAll_('Violations').filter(v => v.archived !== 'نعم').map(strip_), violStatuses: VIOL_STATUSES, violClosed: VIOL_CLOSED,
+      settings: { banks: s.banks, tenderTarget: s.tenderTarget, branches: s.branches, docTemplate: s.docTemplate, crList: s.crList, leadDays: s.leadDays, escalateDays: s.escalateDays, orgName: s.orgName, thresholds: s.thresholds, accThresholds: s.accThresholds, pwCycle: s.pwCycle, repeatDays: s.repeatDays,
+        waEnabled: !!(s.waPhoneId && PropertiesService.getScriptProperties().getProperty('WA_TOKEN')) }, today: ymd_(new Date()) };
+    if (u.role === 'admin') {
+      out.users = readAll_('Users').map(publicUser_);
+      out.adminSettings = Object.assign({}, s, { waTokenSet: !!PropertiesService.getScriptProperties().getProperty('WA_TOKEN') });
+      out.logs = readTail_('Logs', 300).reverse().map(strip_);
+      out.alerts = readTail_('Alerts', 300).reverse().map(strip_);
+      out.triggerOn = triggerOn_();
+      const bp = PropertiesService.getScriptProperties();
+      out.lastBackup = bp.getProperty('LAST_BACKUP') || '';
+      out.backupFolder = bp.getProperty('BACKUP_FOLDER') ? 'https://drive.google.com/drive/folders/' + bp.getProperty('BACKUP_FOLDER') : '';
+    }
+    return out;
+  },
+  backupNow: (u) => { need_(u, 'admin'); return backupNow(); },
+  saveTender: (u, p) => {
+    need_(u, 'editor');
+    const t = p.t || {}, F = SCHEMA.Tenders.filter(k => ['id', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'].indexOf(k) < 0);
+    if (!String(t.title || '').trim()) throw new Error('اسم المنافسة مطلوب');
+    if (t.stage && T_STAGES.indexOf(t.stage) < 0) throw new Error('مرحلة غير صحيحة');
+    ['score', 'reqs', 'tasks', 'competitors'].forEach(k => { if (t[k] !== undefined && typeof t[k] !== 'string') t[k] = JSON.stringify(t[k]); });
+    let ex = t.id ? readAll_('Tenders').find(x => x.id === t.id) : null;
+    if (t.id && !ex) throw new Error('المنافسة غير موجودة');
+    if (ex) {
+      const ch = [], oldStage = ex.stage;
+      F.forEach(k => { if (t[k] !== undefined) { const nv = String(t[k]); if (String(ex[k] || '') !== nv) { if (['reqs', 'tasks', 'score', 'competitors', 'notes'].indexOf(k) < 0) ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: 't.' + k, old: ex[k] || '', new: nv }); ex[k] = nv; } } });
+      if (ex.stage === 'تم التقديم' && oldStage !== 'تم التقديم' && !ex.submittedAt) ex.submittedAt = ymd_(new Date());
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Tenders', ex._row, ex);
+      if (ch.length) appendRows_('Changes', ch);
+      log_(u.username, oldStage !== ex.stage ? 'منافسة: ' + oldStage + ' ← ' + ex.stage : 'تعديل منافسة', ex.title);
+      return strip_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '', stage: 'رصد', reqs: '[]', tasks: '[]', score: '{}', competitors: '[]' };
+    F.forEach(k => { if (t[k] !== undefined && t[k] !== '') o[k] = String(t[k]); });
+    appendRows_('Tenders', [o]); log_(u.username, 'إضافة منافسة', o.title);
+    return o;
+  },
+  deleteTender: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Tenders').find(x => x.id === p.id); if (!ex) throw new Error('المنافسة غير موجودة');
+    ex.archived = p.restore ? '' : 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Tenders', ex._row, ex);
+    log_(u.username, p.restore ? 'استعادة منافسة' : 'حذف منافسة', ex.title); return true;
+  },
+  saveGuarantee: (u, p) => {
+    need_(u, 'editor');
+    const g = p.g || {}, F = SCHEMA.Guarantees.filter(k => ['id', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'].indexOf(k) < 0);
+    if (!g.bank || !g.amount) throw new Error('البنك والمبلغ مطلوبان');
+    if (g.type && G_TYPES.indexOf(g.type) < 0) throw new Error('نوع غير صحيح');
+    if (g.status && G_STATUSES.indexOf(g.status) < 0) throw new Error('حالة غير صحيحة');
+    let ex = g.id ? readAll_('Guarantees').find(x => x.id === g.id) : null, f = null;
+    if (g.id && !ex) throw new Error('الضمان غير موجود');
+    if (p.file && p.file.data) f = saveFile_({ title: 'ضمان ' + (g.gNo || '') + ' ' + (g.type || ''), platform: g.bank, section: 'الضمانات البنكية' }, p.file);
+    if (ex) {
+      const ch = [];
+      F.forEach(k => { if (g[k] !== undefined) { const nv = String(g[k]).trim(); if (String(ex[k] || '') !== nv) { ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: 'g.' + k, old: ex[k] || '', new: nv }); ex[k] = nv; } } });
+      if (f) { ex.fileId = f.id; ex.fileName = f.name; }
+      if (ch.some(c => c.field === 'g.expiryDate')) ex.lastAlert = '';
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Guarantees', ex._row, ex);
+      if (ch.length) appendRows_('Changes', ch);
+      log_(u.username, 'تعديل ضمان', (ex.gNo || '') + ' ' + ex.bank); return strip_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '', status: 'طلب إصدار', type: 'ابتدائي' };
+    F.forEach(k => { if (g[k] !== undefined && g[k] !== '') o[k] = String(g[k]).trim(); });
+    if (f) { o.fileId = f.id; o.fileName = f.name; }
+    appendRows_('Guarantees', [o]); log_(u.username, 'إضافة ضمان', (o.gNo || '') + ' ' + o.bank);
+    return o;
+  },
+  deleteGuarantee: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Guarantees').find(x => x.id === p.id); if (!ex) throw new Error('الضمان غير موجود');
+    ex.archived = p.restore ? '' : 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Guarantees', ex._row, ex);
+    log_(u.username, p.restore ? 'استعادة ضمان' : 'حذف ضمان', ex.gNo || ex.bank); return true;
+  },
+  saveBanks: (u, p) => {
+    need_(u, 'admin');
+    const b = (p.banks || []).map(x => ({ name: String(x.name || '').trim(), limit: Number(x.limit) || 0, marginPct: Number(x.marginPct) || 0, feePct: Number(x.feePct) || 0 })).filter(x => x.name);
+    const map = { banks: JSON.stringify(b) }; if (p.tenderTarget !== undefined) map.tenderTarget = String(Number(p.tenderTarget) || '');
+    saveSettingsMap_(map); log_(u.username, 'تعديل البنوك والحدود', b.length + ' بنك'); return true;
+  },
+  saveBranches: (u, p) => {
+    need_(u, 'admin');
+    const b = (p.branches || []).map(x => ({ id: String(x.id || uid_()), name: String(x.name || '').trim(), city: String(x.city || '').trim(), crNo: String(x.crNo || '').replace(/\s/g, ''), main: !!x.main })).filter(x => x.name);
+    const map = { branches: JSON.stringify(b) };
+    if (p.docTemplate) { const t = (p.docTemplate || []).map(x => ({ k: String(x.k || uid_()).slice(0, 20), name: String(x.name || '').trim(), issuer: String(x.issuer || '').trim() })).filter(x => x.name); map.docTemplate = JSON.stringify(t); }
+    const crs = (() => { try { return JSON.parse(settings_().crList || '[]'); } catch (e) { return []; } })();
+    b.forEach(x => { if (x.crNo && !crs.some(c => String(c.no) === x.crNo)) crs.push({ no: x.crNo, name: x.name }); });
+    map.crList = JSON.stringify(crs);
+    saveSettingsMap_(map);
+    log_(u.username, 'تعديل الفروع', b.length + ' فرع');
+    return true;
+  },
+  assignDocs: (u, p) => {
+    need_(u, 'editor');
+    const all = readAll_('Items'), out = [], ch = [];
+    (p.list || []).forEach(x => { const ex = all.find(i => i.id === x.id); if (!ex) return; canSection_(u, ex.section);
+      ['branch', 'docKey', 'crNo'].forEach(k => { if (x[k] !== undefined && String(ex[k] || '') !== String(x[k])) { ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: k, old: ex[k] || '', new: String(x[k]) }); ex[k] = String(x[k]); } });
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Items', ex._row, ex); out.push(cleanItem_(ex)); });
+    if (ch.length) appendRows_('Changes', ch);
+    log_(u.username, 'ربط مستندات بالفروع', out.length + ' مستند');
+    return out;
+  },
+  saveViolation: (u, p) => {
+    need_(u, 'editor');
+    const v = p.v || {}, F = ['crNo', 'source', 'violationNo', 'date', 'title', 'amount', 'dueDate', 'status', 'objectionDue', 'ownerName', 'location', 'notes'];
+    if (!String(v.title || v.violationNo || '').trim()) throw new Error('أدخل وصف المخالفة أو رقمها');
+    if (!String(v.crNo || '').trim()) throw new Error('رقم السجل التجاري مطلوب لربط المخالفة');
+    if (v.status && VIOL_STATUSES.indexOf(v.status) < 0) throw new Error('حالة غير صحيحة');
+    let ex = null, f = null;
+    if (v.id) { ex = readAll_('Violations').find(x => x.id === v.id); if (!ex) throw new Error('المخالفة غير موجودة'); }
+    if (p.file && p.file.data) f = saveFile_({ title: 'مخالفة ' + (v.violationNo || v.title || ''), platform: v.source || '', section: 'المخالفات' }, p.file);
+    if (ex) {
+      const ch = [];
+      F.forEach(k => { if (v[k] !== undefined) { const nv = String(v[k]).trim(); if (String(ex[k] || '') !== nv) ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: 'v.' + k, old: ex[k] || '', new: nv }); ex[k] = nv; } });
+      if (f) { ex.fileId = f.id; ex.fileName = f.name; }
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Violations', ex._row, ex);
+      if (ch.length) appendRows_('Changes', ch);
+      log_(u.username, 'تعديل مخالفة', ex.violationNo || ex.title);
+      return strip_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '', status: 'جديدة' };
+    F.forEach(k => { if (v[k] !== undefined && v[k] !== '') o[k] = String(v[k]).trim(); });
+    if (f) { o.fileId = f.id; o.fileName = f.name; }
+    appendRows_('Violations', [o]);
+    log_(u.username, 'إضافة مخالفة', o.violationNo || o.title);
+    return o;
+  },
+  deleteViolation: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Violations').find(x => x.id === p.id);
+    if (!ex) throw new Error('المخالفة غير موجودة');
+    ex.archived = p.restore ? '' : 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Violations', ex._row, ex);
+    log_(u.username, p.restore ? 'استعادة مخالفة' : 'حذف مخالفة', ex.violationNo || ex.title);
+    return true;
+  },
+  importViolations: (u, p) => {
+    need_(u, 'editor');
+    const F = ['crNo', 'source', 'violationNo', 'date', 'title', 'amount', 'dueDate', 'status', 'objectionDue', 'ownerName', 'location', 'notes'];
+    const existing = readAll_('Violations'), seen = {}; existing.forEach(x => { if (x.violationNo) seen[x.crNo + '|' + x.violationNo] = 1; });
+    const rows = (p.rows || []).filter(r => (r.title || r.violationNo) && r.crNo).filter(r => !(r.violationNo && seen[String(r.crNo).trim() + '|' + String(r.violationNo).trim()]));
+    if (!rows.length) throw new Error('لا توجد صفوف جديدة صالحة (يلزم رقم السجل ورقم المخالفة أو وصفها)');
+    appendRows_('Violations', rows.map(r => { const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '' }; F.forEach(k => { o[k] = r[k] === undefined ? '' : String(r[k]).trim(); }); if (VIOL_STATUSES.indexOf(o.status) < 0) o.status = 'جديدة'; return o; }));
+    log_(u.username, 'استيراد مخالفات', rows.length + ' مخالفة');
+    return rows.length;
+  },
+  bulkUpdate: (u, p) => {
+    need_(u, 'editor');
+    const set = p.set || {}, keys = ['ownerName', 'status', 'priority'].filter(k => set[k] !== undefined), ids = p.ids || [];
+    if (!keys.length || !ids.length) throw new Error('لا يوجد تغيير');
+    const all = readAll_('Items'), out = [], ch = [];
+    ids.forEach(id => { const ex = all.find(x => x.id === id); if (!ex) return; canSection_(u, ex.section);
+      keys.forEach(k => { const nv = String(set[k]).trim(); if (String(ex[k] || '') !== nv) { ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: k, old: ex[k] || '', new: nv }); ex[k] = nv; } });
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Items', ex._row, ex); out.push(cleanItem_(ex)); });
+    if (ch.length) appendRows_('Changes', ch);
+    log_(u.username, 'تعديل جماعي', out.length + ' بند — ' + keys.join('، '));
+    return out;
+  },
+  bulkFollowup: (u, p) => {
+    need_(u, 'editor');
+    const stage = FOLLOW_STAGES.indexOf(p.stage) >= 0 ? p.stage : 'ملاحظة', note = String(p.note || '').trim().slice(0, 500);
+    if (stage === 'ملاحظة' && !note) throw new Error('اكتب الملاحظة');
+    const all = readAll_('Items'), out = [], rows = [];
+    (p.ids || []).forEach(id => { const ex = all.find(x => x.id === id); if (!ex) return; canSection_(u, ex.section);
+      rows.push({ at: now_(), itemId: ex.id, title: ex.title, section: ex.section, stage: stage, note: note, by: u.name || u.username });
+      if (stage !== 'ملاحظة') ex.status = stage === 'تم الإصدار' ? 'تم' : stage;
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Items', ex._row, ex); out.push(cleanItem_(ex)); });
+    appendRows_('Followups', rows);
+    log_(u.username, 'متابعة جماعية: ' + stage, out.length + ' بند');
+    return { items: out, followups: rows };
+  },
+  unarchiveItem: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    ex.archived = ''; ex.updatedAt = now_(); ex.updatedBy = u.username;
+    writeRow_('Items', ex._row, ex);
+    log_(u.username, 'تراجع عن الأرشفة', ex.title);
+    return cleanItem_(ex);
+  },
+  itemHistory: (u, p) => {
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    canSection_(u, ex.section);
+    return { changes: readAll_('Changes').filter(c => c.itemId === p.id).slice(-150).reverse().map(strip_) };
+  },
+  addFollowup: (u, p) => {
+    need_(u, 'editor');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    canSection_(u, ex.section);
+    const stage = FOLLOW_STAGES.indexOf(p.stage) >= 0 ? p.stage : 'ملاحظة', note = String(p.note || '').trim().slice(0, 500);
+    if (stage === 'ملاحظة' && !note) throw new Error('اكتب الملاحظة');
+    appendRows_('Followups', [{ at: now_(), itemId: ex.id, title: ex.title, section: ex.section, stage: stage, note: note, by: u.name || u.username }]);
+    if (stage !== 'ملاحظة') ex.status = stage === 'تم الإصدار' ? 'تم' : stage;
+    ex.updatedAt = now_(); ex.updatedBy = u.username;
+    writeRow_('Items', ex._row, ex);
+    log_(u.username, 'متابعة: ' + stage, ex.title);
+    return { item: cleanItem_(ex), followups: readTail_('Followups', 2000).filter(f => f.itemId === ex.id).map(strip_) };
+  },
+  saveItem: (u, p) => {
+    need_(u, 'editor');
+    const it = p.item || {};
+    if (!it.title) throw new Error('اسم البند مطلوب');
+    if (SECTIONS.indexOf(it.section) < 0) throw new Error('القسم غير صحيح');
+    canSection_(u, it.section);
+    const fields = ['section', 'platform', 'title', 'type', 'refNo', 'username', 'url', 'ownerName', 'issueDate', 'expiryDate', 'pwLast', 'pwCycle', 'status', 'accStatus', 'cost', 'notes', 'leadDays', 'priority', 'crNo', 'branch', 'docKey'];
+    if (it.id) {
+      const ex = readAll_('Items').find(x => x.id === it.id);
+      if (!ex) throw new Error('البند غير موجود');
+      canSection_(u, ex.section);
+      const changedDates = ex.expiryDate !== (it.expiryDate || '') || ex.pwLast !== (it.pwLast || '');
+      const ch = [];
+      fields.forEach(f => { if (it[f] !== undefined) { const nv = String(it[f]).trim(); if (String(ex[f] || '') !== nv) ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: f, old: ex[f] || '', new: nv }); ex[f] = nv; } });
+      if (ch.length) appendRows_('Changes', ch);
+      ex.updatedAt = now_(); ex.updatedBy = u.username;
+      if (changedDates) ex.lastAlert = '';
+      if (canSecrets_(u) && it.secret) { ex.secret = enc_(it.secret); log_(u.username, 'تحديث كلمة مرور', ex.title); }
+      if (canSecrets_(u) && it.clearSecret) ex.secret = '';
+      writeRow_('Items', ex._row, ex);
+      log_(u.username, 'تعديل بند', ex.title);
+      return cleanItem_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '' };
+    fields.forEach(f => { o[f] = it[f] === undefined ? '' : String(it[f]).trim(); });
+    o.secret = canSecrets_(u) && it.secret ? enc_(it.secret) : '';
+    appendRows_('Items', [o]);
+    log_(u.username, 'إضافة بند', o.title);
+    return cleanItem_(o);
+  },
+  archiveItem: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    ex.archived = 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username;
+    writeRow_('Items', ex._row, ex);
+    log_(u.username, 'أرشفة بند', ex.title);
+    return true;
+  },
+  renewItem: (u, p) => {
+    need_(u, 'editor');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    canSection_(u, ex.section);
+    const kinds = [];
+    let oldDate = '', newDate = '';
+    if (p.newIssue) ex.issueDate = p.newIssue;
+    if (p.newExpiry) { oldDate = ex.expiryDate; newDate = p.newExpiry; ex.expiryDate = p.newExpiry; kinds.push('تجديد'); }
+    if (p.pwChanged) { if (!newDate) { oldDate = ex.pwLast; newDate = p.pwChanged; } ex.pwLast = p.pwChanged; kinds.push('تغيير كلمة المرور'); }
+    if (p.newSecret && canSecrets_(u)) { ex.secret = enc_(p.newSecret); if (kinds.indexOf('تغيير كلمة المرور') < 0) kinds.push('تحديث كلمة المرور'); }
+    let f = null;
+    if (p.file && p.file.data) { f = saveFile_(ex, p.file); ex.fileId = f.id; ex.fileName = f.name; kinds.push('رفع ملف'); }
+    if (!kinds.length) throw new Error('أدخل التاريخ الجديد أو ارفع ملفاً');
+    if (p.newExpiry || p.pwChanged) { ex.status = ''; ex.lastAlert = ''; }
+    ex.updatedAt = now_(); ex.updatedBy = u.username;
+    writeRow_('Items', ex._row, ex);
+    appendRows_('Renewals', [{ at: now_(), itemId: ex.id, title: ex.title, section: ex.section, kind: kinds.join(' + '), oldDate: oldDate, newDate: newDate,
+      fileId: f ? f.id : '', fileName: f ? f.name : '', cost: p.cost || '', notes: p.notes || '', by: u.username }]);
+    log_(u.username, kinds.join(' + '), ex.title);
+    notifyRenewal_(ex, kinds.join(' + '), oldDate, newDate, u);
+    return cleanItem_(ex);
+  },
+  uploadFile: (u, p) => {
+    need_(u, 'editor');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    canSection_(u, ex.section);
+    const f = saveFile_(ex, p.file);
+    if (!p.extra) { ex.fileId = f.id; ex.fileName = f.name; }
+    ex.updatedAt = now_(); ex.updatedBy = u.username;
+    writeRow_('Items', ex._row, ex);
+    appendRows_('Renewals', [{ at: now_(), itemId: ex.id, title: ex.title, section: ex.section, kind: p.extra ? 'مرفق إضافي' : 'رفع ملف', fileId: f.id, fileName: f.name, notes: p.notes || '', by: u.username }]);
+    log_(u.username, 'رفع ملف', ex.title + ' — ' + f.name);
+    return cleanItem_(ex);
+  },
+  download: (u, p) => {
+    const items = readAll_('Items'), rens = readAll_('Renewals');
+    const owner = items.find(i => i.fileId === p.fileId) || rens.find(r => r.fileId === p.fileId);
+    if (!owner) throw new Error('الملف غير موجود');
+    canSection_(u, owner.section);
+    const file = DriveApp.getFileById(p.fileId), blob = file.getBlob();
+    if (blob.getBytes().length > 25 * 1024 * 1024) throw new Error('الملف أكبر من 25MB — افتحه من Drive');
+    return { name: file.getName(), mime: blob.getContentType(), data: Utilities.base64Encode(blob.getBytes()) };
+  },
+  importItems: (u, p) => {
+    need_(u, 'editor');
+    canSection_(u, p.section);
+    const rows = (p.rows || []).filter(r => r.title);
+    if (!rows.length) throw new Error('لا توجد صفوف صالحة');
+    const norm = s => String(s || '').replace(/\s+/g, ' ').trim().toLowerCase();
+    const existing = p.merge ? readAll_('Items').filter(i => i.section === p.section && i.archived !== 'نعم') : [];
+    const objs = []; let updated = 0;
+    const keep = ['platform', 'type', 'refNo', 'username', 'url', 'ownerName', 'issueDate', 'expiryDate', 'status', 'accStatus', 'cost', 'notes'];
+    rows.forEach(r => {
+      const sec = canSecrets_(u) && r.secret ? enc_(String(r.secret).trim()) : '';
+      const ex = p.merge ? existing.find(i => norm(i.title) === norm(r.title) && (!r.username || !i.username || norm(i.username) === norm(r.username))) : null;
+      if (ex) {
+        keep.forEach(c => { if (r[c] && !ex[c]) ex[c] = String(r[c]).trim(); });
+        if (sec) ex.secret = sec;
+        ex.updatedAt = now_(); ex.updatedBy = u.username;
+        writeRow_('Items', ex._row, ex); updated++;
+        return;
+      }
+      const o = { id: uid_(), section: p.section, createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '' };
+      SCHEMA.Items.forEach(c => { if (o[c] === undefined) o[c] = r[c] === undefined ? '' : String(r[c]).trim(); });
+      o.secret = sec; o.fileId = ''; o.fileName = ''; o.lastAlert = '';
+      objs.push(o);
+    });
+    appendRows_('Items', objs);
+    log_(u.username, 'استيراد', objs.length + ' جديد و' + updated + ' محدّث في ' + p.section);
+    return { added: objs.length, updated: updated };
+  },
+  revealSecret: (u, p) => {
+    if (!canSecrets_(u)) throw new Error('ليست لديك صلاحية عرض كلمات المرور');
+    const ex = readAll_('Items').find(x => x.id === p.id);
+    if (!ex) throw new Error('البند غير موجود');
+    canSection_(u, ex.section);
+    log_(u.username, 'عرض كلمة مرور', ex.title);
+    return dec_(ex.secret);
+  },
+  saveContact: (u, p) => {
+    need_(u, 'editor');
+    const c = p.contact || {};
+    if (!c.name) throw new Error('الاسم مطلوب');
+    const all = readAll_('Contacts'), ex = all.find(x => x.name === (p.oldName || c.name));
+    const o = { name: c.name.trim(), email: (c.email || '').trim(), phone: normPhone_(c.phone), title: c.title || '' };
+    if (ex) writeRow_('Contacts', ex._row, o); else appendRows_('Contacts', [o]);
+    if (ex && p.oldName && p.oldName !== o.name) {
+      readAll_('Items').filter(i => i.ownerName === p.oldName).forEach(i => { i.ownerName = o.name; writeRow_('Items', i._row, i); });
+    }
+    log_(u.username, 'حفظ مسؤول', o.name);
+    return o;
+  },
+  deleteContact: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Contacts').find(x => x.name === p.name);
+    if (ex) { sheet_('Contacts').deleteRow(ex._row); bump_('Contacts'); }
+    log_(u.username, 'حذف مسؤول', p.name);
+    return true;
+  },
+  saveUser: (u, p) => {
+    need_(u, 'admin');
+    const x = p.user || {}, all = readAll_('Users');
+    const un = String(x.username || '').trim().toLowerCase();
+    if (!/^[A-Za-z0-9_.-]{3,30}$/.test(un)) throw new Error('اسم المستخدم: حروف إنجليزية أو أرقام (3-30)');
+    if (!ROLES[x.role]) throw new Error('الصلاحية غير صحيحة');
+    const ex = all.find(a => a.username === un);
+    if (ex) {
+      if (ex.username === u.username && (x.role !== 'admin' || x.active !== 'نعم')) throw new Error('لا يمكنك إلغاء صلاحية المدير عن حسابك');
+      Object.assign(ex, { name: x.name, email: x.email || '', phone: normPhone_(x.phone), role: x.role, sections: x.sections || 'الكل', active: x.active || 'نعم', canSecrets: x.canSecrets ? 'نعم' : '' });
+      if (x.password) { validatePw_(x.password); ex.salt = uid_() + uid_(); ex.hash = hash_(ex.salt, x.password); }
+      else if (x.resetPw) { if (ex.username === u.username) throw new Error('لا يمكنك إعادة تعيين كلمة مرور حسابك من هنا'); ex.salt = ''; ex.hash = ''; }
+      writeRow_('Users', ex._row, ex);
+      log_(u.username, 'تعديل مستخدم', un);
+    } else {
+      if (x.password) validatePw_(x.password);
+      const salt = x.password ? uid_() + uid_() : '';
+      appendRows_('Users', [{ username: un, name: x.name || un, email: x.email || '', phone: normPhone_(x.phone), role: x.role, sections: x.sections || 'الكل',
+        salt: salt, hash: x.password ? hash_(salt, x.password) : '', active: x.active || 'نعم', createdAt: now_(), lastLogin: '', canSecrets: x.canSecrets ? 'نعم' : '' }]);
+      log_(u.username, 'إضافة مستخدم', un);
+    }
+    return true;
+  },
+  changeMyPassword: (u, p) => {
+    if (hash_(u.salt, p.current) !== u.hash) throw new Error('كلمة المرور الحالية غير صحيحة');
+    validatePw_(p.next);
+    u.salt = uid_() + uid_(); u.hash = hash_(u.salt, p.next);
+    writeRow_('Users', u._row, u);
+    log_(u.username, 'تغيير كلمة المرور', '');
+    return true;
+  },
+  saveSettings: (u, p) => {
+    need_(u, 'admin');
+    const s = p.settings || {}, allowed = Object.keys(DEFAULT_SETTINGS), map = {};
+    allowed.forEach(k => { if (s[k] !== undefined) map[k] = String(s[k]).trim(); });
+    saveSettingsMap_(map);
+    if (s.waToken) PropertiesService.getScriptProperties().setProperty('WA_TOKEN', String(s.waToken).trim());
+    if (s.clearWaToken) PropertiesService.getScriptProperties().deleteProperty('WA_TOKEN');
+    if (map.hour !== undefined && ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'dailyCheck')) installDailyTrigger();
+    log_(u.username, 'تعديل الإعدادات', Object.keys(map).join('، '));
+    return true;
+  },
+  runCheck: (u) => { need_(u, 'admin'); return dailyCheck(); },
+  sendTest: (u) => { need_(u, 'admin'); sendTestEmail(); return true; },
+  sendSummary: (u) => { need_(u, 'admin'); sendWeeklySummary_(); return true; },
+  setTrigger: (u, p) => { need_(u, 'admin'); if (p.on) installDailyTrigger(); else removeDailyTrigger(); return p.on; },
+  testWhatsApp: (u, p) => { need_(u, 'admin'); return sendWhatsApp_(p.phone, ['اختبار', 'رسالة تجريبية من ' + APP_NAME, ymd_(new Date()), '0']); },
+};
+function strip_(o) { const c = Object.assign({}, o); delete c._row; return c; }
+function cleanItem_(i) { const c = strip_(i); c.hasSecret = !!c.secret; delete c.secret; return c; }
+function normPhone_(p) {
+  let s = String(p || '').replace(/[^\d]/g, '');
+  if (!s) return '';
+  if (s.indexOf('00') === 0) s = s.slice(2);
+  if (s.indexOf('05') === 0 && s.length === 10) s = '966' + s.slice(1);
+  if (s.indexOf('5') === 0 && s.length === 9) s = '966' + s;
+  return s;
+}
+
+/* ============================== Files ============================== */
+function folder_(section) {
+  const props = PropertiesService.getScriptProperties();
+  let root;
+  const rid = props.getProperty('ROOT_FOLDER');
+  if (rid) { try { root = DriveApp.getFolderById(rid); } catch (e) {} }
+  if (!root) { root = DriveApp.createFolder(APP_NAME + ' - ملفات دار مكة'); props.setProperty('ROOT_FOLDER', root.getId()); }
+  const it = root.getFoldersByName(section);
+  return it.hasNext() ? it.next() : root.createFolder(section);
+}
+function saveFile_(item, file) {
+  if (!file || !file.data) throw new Error('لم يتم اختيار ملف');
+  const ext = (String(file.name || '').match(/\.[^.]+$/) || [''])[0];
+  const name = (item.title + ' - ' + (item.platform || '') + ' - ' + ymd_(new Date())).replace(/[\\/:*?"<>|]/g, '-') + ext;
+  const f = folder_(item.section).createFile(Utilities.newBlob(Utilities.base64Decode(file.data), file.mime || 'application/octet-stream', name));
+  f.setDescription(item.section + ' | ' + item.platform + ' | ' + item.title);
+  return { id: f.getId(), name: name };
+}
+
+/* ============================== Reminders ============================== */
+function dueOf_(i, s) {
+  const exp = i.expiryDate && dayNum_(i.expiryDate) !== null ? i.expiryDate : '';
+  let pw = '';
+  if (i.section === 'حسابات المنصات' && i.pwLast && dayNum_(i.pwLast) !== null) pw = addDays_(i.pwLast, Number(i.pwCycle) || Number(s.pwCycle) || 90);
+  if (!exp && !pw) return null;
+  if (exp && (!pw || dayNum_(exp) <= dayNum_(pw))) return { date: exp, kind: i.section === 'حسابات المنصات' ? 'تجديد التسجيل / التأهيل' : 'التجديد' };
+  return { date: pw, kind: 'تغيير كلمة المرور' };
+}
+function th_(s, kind) { return String(kind === 'تغيير كلمة المرور' ? s.accThresholds : s.thresholds).split(',').map(Number).filter(n => !isNaN(n)).sort((a, b) => b - a); }
+function stage_(days, list, repeat) {
+  if (days < 0) return { key: 'E' + Math.floor((-days - 1) / repeat), label: 'متأخر منذ ' + (-days) + ' يوم', level: 'expired' };
+  const el = list.filter(t => t >= days);
+  if (!el.length) return null;
+  return { key: 'T' + Math.min.apply(null, el), label: days === 0 ? 'مستحق اليوم' : 'متبقٍ ' + days + ' يوم', level: days <= 7 ? 'critical' : days <= 30 ? 'urgent' : 'soon' };
+}
+function backupFolder_() {
+  const props = PropertiesService.getScriptProperties();
+  let id = props.getProperty('BACKUP_FOLDER'), f = null;
+  if (id) { try { f = DriveApp.getFolderById(id); } catch (e) { f = null; } }
+  if (!f) { f = DriveApp.createFolder('النسخ الاحتياطية — ' + APP_NAME); props.setProperty('BACKUP_FOLDER', f.getId()); }
+  return f;
+}
+function backupNow() {
+  const stamp = Utilities.formatDate(new Date(), TZ, 'yyyy-MM-dd HH-mm');
+  const root = backupFolder_(), dir = root.createFolder('نسخة ' + stamp);
+  DriveApp.getFileById(db_().getId()).makeCopy('قاعدة البيانات — ' + stamp, dir);
+  let scriptOk = true;
+  try { DriveApp.getFileById(ScriptApp.getScriptId()).makeCopy('سكريبت المنصة — ' + stamp, dir); } catch (e) { scriptOk = false; }
+  dir.createFile('اقرأني — طريقة الاسترجاع.txt', [
+    'نسخة احتياطية من منصة ' + APP_NAME + ' — ' + stamp, '',
+    'المحتويات:', '1) قاعدة البيانات: جدول Google Sheets فيه كل البنود والمستخدمين والتجديدات والسجلات.',
+    '2) سكريبت المنصة: نسخة كاملة من مشروع Apps Script (الكود والواجهة).', '',
+    'الاسترجاع على نفس الحساب أو حساب آخر:',
+    '- افتح «سكريبت المنصة» ثم: نشر ← نشر جديد ← تطبيق ويب (التنفيذ: أنا، الوصول: أي شخص).',
+    '- لربط قاعدة البيانات المنسوخة: إعدادات المشروع ← خصائص النص البرمجي ← أضف DB_ID = معرّف جدول قاعدة البيانات (الجزء بين /d/ و /edit في رابطه).',
+    '- كلمات مرور المنصات مشفّرة بمفتاح خاص بالمنصة الأصلية، ولا تُنقل مع النسخة لأسباب أمنية؛ أعد استيرادها من ملف كلمات المرور بعد الاسترجاع.',
+    '- الملفات المرفوعة (الشهادات) تبقى في مجلد Drive الأصلي.'].join('\n'), MimeType.PLAIN_TEXT);
+  PropertiesService.getScriptProperties().setProperty('LAST_BACKUP', now_());
+  log_('النظام', 'نسخة احتياطية', stamp + (scriptOk ? '' : ' (بدون السكريبت)'));
+  return { url: root.getUrl(), stamp: stamp, scriptOk: scriptOk };
+}
+function autoBackup_() {
+  try {
+    const last = PropertiesService.getScriptProperties().getProperty('LAST_BACKUP');
+    if (!last || today_() - dayNum_(last) >= 7) backupNow();
+  } catch (e) { log_('النظام', 'تعذّرت النسخة الاحتياطية التلقائية', e.message); }
+}
+function dailyCheck() {
+  Object.keys(CACHED_).forEach(bump_);
+  autoBackup_();
+  const s = settings_(), today = today_(), contacts = readAll_('Contacts'), admins = splitEmails_(s.adminEmails);
+  const repeat = Math.max(1, Number(s.repeatDays) || 7);
+  let sent = 0, failed = 0;
+  readAll_('Items').forEach(i => {
+    if (i.archived === 'نعم' || INACTIVE.indexOf(i.accStatus) >= 0 || STOP_STATUSES.indexOf(i.status) >= 0) return;
+    const due = dueOf_(i, s);
+    if (!due) return;
+    const days = dayNum_(due.date) - today, st = stage_(days, th_(s, due.kind), repeat);
+    if (!st) return;
+    const m = String(i.lastAlert).match(/\|\s*([TE]\d+)\s*\|/);
+    if (m && m[1] === st.key) return;
+    const c = contacts.find(x => x.name === i.ownerName) || {};
+    const to = c.email || admins[0];
+    let ok = false;
+    if (to) {
+      try {
+        MailApp.sendEmail({ to: to, cc: admins.filter(a => a.toLowerCase() !== to.toLowerCase()).join(','), name: s.orgName + ' — ' + APP_NAME,
+          subject: '[' + s.orgName + '] ' + ({ expired: 'متأخر', critical: 'عاجل جداً' }[st.level] || 'تذكير') + ' — ' + due.kind + ': ' + i.title,
+          htmlBody: itemMail_(i, due, days, st, c, s) });
+        ok = true; sent++;
+        appendRows_('Alerts', [{ at: now_(), itemId: i.id, title: i.title, channel: 'بريد', to: to, stage: due.kind + ' — ' + st.label, result: 'تم' }]);
+      } catch (e) { failed++; appendRows_('Alerts', [{ at: now_(), itemId: i.id, title: i.title, channel: 'بريد', to: to, stage: st.label, result: 'فشل: ' + e.message }]); }
+    }
+    if (c.phone && s.waPhoneId) {
+      const r = sendWhatsApp_(c.phone, [c.name || '', i.title + (i.platform ? ' — ' + i.platform : ''), due.kind + ' ' + due.date, String(days)]);
+      appendRows_('Alerts', [{ at: now_(), itemId: i.id, title: i.title, channel: 'واتساب', to: c.phone, stage: st.label, result: r }]);
+      if (r === 'تم') ok = true;
+    }
+    if (ok) writeRow_('Items', i._row, Object.assign(i, { lastAlert: ymd_(new Date()) + ' | ' + st.key + ' | ' + due.kind + ' — ' + st.label }));
+  });
+  try { escalate_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر التصعيد', e.message); }
+  try { violAlerts_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر تنبيه المخالفات', e.message); }
+  try { tenderAlerts_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر تنبيه المنافسات والضمانات', e.message); }
+  try { snapshot_(s, today); } catch (e) { }
+  if (Number(Utilities.formatDate(new Date(), TZ, 'u')) % 7 === Number(s.weeklyDay)) sendWeeklySummary_();
+  return { sent: sent, failed: failed };
+}
+function liveItems_(s, today) {
+  return readAll_('Items').filter(i => i.archived !== 'نعم' && INACTIVE.indexOf(i.accStatus) < 0)
+    .map(i => { const d = dueOf_(i, s); return Object.assign({ due: d, days: d ? dayNum_(d.date) - today : null }, i); });
+}
+function escalate_(s, today, admins) {
+  if (!admins.length) return;
+  const lim = Math.max(1, Number(s.escalateDays) || 7), pr = PropertiesService.getScriptProperties();
+  const list = liveItems_(s, today).filter(i => i.due && i.days < 0 && STOP_STATUSES.indexOf(i.status) < 0 && (today - dayNum_(String(i.updatedAt).slice(0, 10) || '2000-01-01')) >= (i.priority === 'حرج' ? Math.max(1, Math.ceil(lim / 2)) : lim))
+    .filter(i => { const k = 'ESC_' + i.id, last = pr.getProperty(k); if (last && today - dayNum_(last) < lim) return false; pr.setProperty(k, ymd_(new Date())); return true; });
+  if (!list.length) return;
+  const rows = list.sort((a, b) => a.days - b.days).map(x => '<tr>' + td_(x.title) + td_(x.platform) + td_(x.ownerName || '—') + td_(x.due.date) + td_(String(x.updatedAt).slice(0, 10)) + '<td style="' + cs_() + 'text-align:center">' + badge_(x.days) + '</td></tr>').join('');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] تصعيد — ' + list.length + ' بند متأخر بدون تحديث منذ ' + lim + ' أيام',
+    htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#B3261E">تصعيد: بنود متأخرة لم يُتخذ فيها إجراء</h2><p style="color:#5A6B7F;margin:0 0 12px">هذه البنود تجاوزت موعدها ولم يسجّل المسؤول أي متابعة منذ ' + lim + ' أيام أو أكثر.</p><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' +
+      ['البند', 'الجهة', 'المسؤول', 'الموعد', 'آخر تحديث', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#B3261E;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' + linkBtn_(s)) });
+  log_('النظام', 'تصعيد', list.length + ' بند');
+}
+function tenderAlerts_(s, today, admins) {
+  if (!admins.length) return;
+  const out = [], upd = { Tenders: {}, Guarantees: {} };
+  const push = (sheet, x, key, row) => { if (String(x.lastAlert || '').indexOf(key) >= 0) return; out.push(row); upd[sheet][x.id] = ((upd[sheet][x.id] || String(x.lastAlert || '')) + ' ' + key).trim(); };
+  const TD = [['questionsDue', 'آخر موعد للاستفسارات'], ['siteVisit', 'الزيارة الميدانية'], ['submitDue', 'آخر موعد للتقديم'], ['openDate', 'فتح المظاريف'], ['validityDue', 'انتهاء صلاحية العرض']];
+  readAll_('Tenders').filter(t => t.archived !== 'نعم' && T_CLOSED.indexOf(t.stage) < 0).forEach(t => TD.forEach(([k, lbl]) => {
+    const d = dayNum_(t[k]); if (d === null) return; const days = d - today; if ([7, 3, 1, 0].indexOf(days) < 0) return;
+    push('Tenders', t, k + ':' + days, ['منافسة', t.title + (t.entity ? ' — ' + t.entity : ''), lbl, t[k], days]); }));
+  readAll_('Guarantees').filter(g => g.archived !== 'نعم' && G_CLOSED.indexOf(g.status) < 0).forEach(g => {
+    const d = dayNum_(g.expiryDate); if (d === null) return; const days = d - today;
+    if ([60, 30, 14, 7, 1, 0].indexOf(days) >= 0 || (days < 0 && (-days) % 7 === 0 && days >= -60)) push('Guarantees', g, 'E' + days, ['ضمان ' + g.type, g.bank + ' — ' + (g.gNo || '') + ' — ' + Number(g.amount || 0).toLocaleString('en-US') + ' ر.س', 'انتهاء الضمان', g.expiryDate, days]);
+  });
+  const tmap = {}; readAll_('Tenders').forEach(t => tmap[t.id] = t);
+  if (Number(Utilities.formatDate(new Date(), TZ, 'u')) % 7 === Number(s.weeklyDay)) readAll_('Guarantees').filter(g => g.archived !== 'نعم' && g.type === 'ابتدائي' && G_CLOSED.indexOf(g.status) < 0 && tmap[g.tenderId] && ['خاسر', 'معتذر / ملغاة'].indexOf(tmap[g.tenderId].stage) >= 0)
+    .forEach(g => out.push(['استرداد ضمان', g.bank + ' — ' + Number(g.amount || 0).toLocaleString('en-US') + ' ر.س', 'المنافسة ' + tmap[g.tenderId].stage + ' — اطلب الإفراج عن الضمان', '', null]));
+  if (!out.length) return;
+  const rows = out.sort((a, b) => (a[4] === null ? -1e9 : a[4]) - (b[4] === null ? -1e9 : b[4])).map(r => '<tr>' + td_(r[0]) + td_(r[1]) + td_(r[2]) + td_(r[3]) + '<td style="' + cs_() + 'text-align:center">' + (r[4] === null ? '<b style="color:#B3261E">استرداد</b>' : badge_(r[4])) + '</td></tr>').join('');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + 'المنافسات والضمانات', subject: '[' + s.orgName + '] المنافسات والضمانات — ' + out.length + ' موعد يحتاج إجراء',
+    htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#1F3A5F">مواعيد المنافسات والضمانات</h2><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' + ['النوع', 'التفاصيل', 'الموعد', 'التاريخ', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#1F3A5F;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' + linkBtn_(Object.assign({}, s, { appUrl: APP_HOME + 'tenders/' }))) });
+  ['Tenders', 'Guarantees'].forEach(sh => { const ids = Object.keys(upd[sh]); if (!ids.length) return; const all = readAll_(sh); ids.forEach(id => { const x = all.find(z => z.id === id); if (x) { x.lastAlert = upd[sh][id].split(' ').slice(-16).join(' '); writeRow_(sh, x._row, x); } }); });
+}
+function crName_(s, no) { try { const l = JSON.parse(s.crList || '[]'); const x = l.find(c => String(c.no) === String(no)); return x ? x.name : ''; } catch (e) { return ''; } }
+function violAlerts_(s, today, admins) {
+  if (!admins.length) return;
+  const steps = [7, 3, 1, 0], list = [];
+  readAll_('Violations').filter(v => v.archived !== 'نعم' && VIOL_CLOSED.indexOf(v.status) < 0).forEach(v => {
+    [['objectionDue', 'آخر موعد للاعتراض'], ['dueDate', 'آخر موعد للسداد']].forEach(([k, lbl]) => {
+      const d = dayNum_(v[k]); if (d === null) return; const days = d - today;
+      const st = days < 0 ? (days >= -30 && (-days) % 7 === 0 ? 'X' + (-days) : '') : steps.indexOf(days) >= 0 ? 'D' + days : '';
+      if (!st) return; const key = k + ':' + st; if (String(v.lastAlert).indexOf(key) >= 0) return;
+      list.push({ v: v, k: k, lbl: lbl, days: days, key: key });
+    });
+  });
+  if (!list.length) return;
+  const rows = list.sort((a, b) => a.days - b.days).map(x => '<tr>' + td_(x.v.crNo + (crName_(s, x.v.crNo) ? ' — ' + crName_(s, x.v.crNo) : '')) + td_(x.v.source) + td_(x.v.violationNo) + td_(x.v.title) + td_(x.v.amount ? Number(x.v.amount).toLocaleString('en-US') + ' ر.س' : '—') + td_(x.lbl + ': ' + x.v[x.k]) + '<td style="' + cs_() + 'text-align:center">' + badge_(x.days) + '</td></tr>').join('');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] مخالفات — ' + list.length + ' موعد اعتراض أو سداد قريب',
+    htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#B3261E">مواعيد مخالفات تحتاج إجراء</h2><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' + ['السجل التجاري', 'المصدر', 'رقم المخالفة', 'الوصف', 'المبلغ', 'الموعد', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#1F3A5F;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' + linkBtn_(s)) });
+  const byId = {}; list.forEach(x => { byId[x.v.id] = (byId[x.v.id] || String(x.v.lastAlert || '')) + ' ' + x.key; });
+  const all = readAll_('Violations'); Object.keys(byId).forEach(id => { const v = all.find(z => z.id === id); if (v) { v.lastAlert = byId[id].trim().split(' ').slice(-12).join(' '); writeRow_('Violations', v._row, v); } });
+}
+function snapshot_(s, today) {
+  const month = Utilities.formatDate(new Date(), TZ, 'yyyy-MM');
+  const ex = readAll_('Snapshots').find(r => r.month === month);
+  const L = liveItems_(s, today).filter(i => STOP_STATUSES.indexOf(i.status) < 0 || i.due);
+  const c = { total: L.length, ok: 0, soon: 0, expired: 0, none: 0 };
+  L.forEach(i => { if (!i.due) c.none++; else if (i.days < 0) c.expired++; else if (i.days <= 90) c.soon++; else c.ok++; });
+  const dated = c.total - c.none, row = { month: month, total: c.total, ok: c.ok, soon: c.soon, expired: c.expired, none: c.none, readiness: dated ? Math.round((dated - c.expired) / dated * 100) : 100 };
+  if (ex) writeRow_('Snapshots', ex._row, row); else appendRows_('Snapshots', [row]);
+}
+function sendWhatsApp_(phone, params) {
+  const s = settings_(), tok = PropertiesService.getScriptProperties().getProperty('WA_TOKEN');
+  if (!s.waPhoneId || !tok || !s.waTemplate) return 'غير مفعّل';
+  try {
+    const res = UrlFetchApp.fetch('https://graph.facebook.com/v20.0/' + s.waPhoneId + '/messages', {
+      method: 'post', contentType: 'application/json', muteHttpExceptions: true, headers: { Authorization: 'Bearer ' + tok },
+      payload: JSON.stringify({ messaging_product: 'whatsapp', to: normPhone_(phone), type: 'template',
+        template: { name: s.waTemplate, language: { code: s.waLang || 'ar' }, components: [{ type: 'body', parameters: params.map(t => ({ type: 'text', text: String(t) })) }] } }) });
+    return res.getResponseCode() < 300 ? 'تم' : 'فشل: ' + res.getContentText().slice(0, 180);
+  } catch (e) { return 'فشل: ' + e.message; }
+}
+function splitEmails_(s) { return String(s || '').split(/[,;\s]+/).map(x => x.trim()).filter(x => x.indexOf('@') > 0); }
+function sendWeeklySummary_() {
+  const s = settings_(), admins = splitEmails_(s.adminEmails), today = today_();
+  if (!admins.length) return;
+  const max = Math.max.apply(null, th_(s, '').concat(th_(s, 'تغيير كلمة المرور')));
+  const list = readAll_('Items').filter(i => i.archived !== 'نعم' && INACTIVE.indexOf(i.accStatus) < 0 && STOP_STATUSES.indexOf(i.status) < 0)
+    .map(i => { const d = dueOf_(i, s); return d ? Object.assign({ due: d, days: dayNum_(d.date) - today }, i) : null; })
+    .filter(x => x && x.days <= max).sort((a, b) => a.days - b.days);
+  const rows = list.map(x => '<tr>' + td_(x.title) + td_(x.platform) + td_(x.section) + td_(x.ownerName || '—') + td_(x.due.kind) + td_(x.due.date) +
+    '<td style="' + cs_() + 'text-align:center">' + badge_(x.days) + '</td></tr>').join('');
+  const stale = {}; list.filter(x => x.days <= 30 && (today - dayNum_(String(x.updatedAt).slice(0, 10) || '2000-01-01')) >= 14).forEach(x => { const k = x.ownerName || 'بدون مسؤول'; (stale[k] = stale[k] || []).push(x.title); });
+  const ov = readAll_('Violations').filter(v => v.archived !== 'نعم' && VIOL_CLOSED.indexOf(v.status) < 0), byCr = {};
+  ov.forEach(v => { const k = v.crNo || '—'; byCr[k] = byCr[k] || { n: 0, a: 0 }; byCr[k].n++; byCr[k].a += Number(v.amount) || 0; });
+  const violHtml = ov.length ? '<h3 style="margin:18px 0 6px;color:#B3261E">المخالفات المفتوحة</h3><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' + ['السجل التجاري', 'العدد', 'المبلغ (ر.س)'].map(h => '<th style="' + cs_() + 'background:#1F3A5F;color:#fff">' + h + '</th>').join('') + '</tr>' + Object.keys(byCr).map(k => '<tr>' + td_(k + (crName_(s, k) ? ' — ' + crName_(s, k) : '')) + td_(String(byCr[k].n)) + td_(byCr[k].a.toLocaleString('en-US')) + '</tr>').join('') + '</table>' : '';
+  const staleHtml = violHtml + (Object.keys(stale).length ? '<h3 style="margin:18px 0 6px;color:#B3261E">لم يُحدَّث منذ أكثر من 14 يوماً</h3><ul style="margin:0;padding-right:18px">' + Object.keys(stale).map(k => '<li><b>' + k + '</b> (' + stale[k].length + '): ' + stale[k].slice(0, 8).join('، ') + (stale[k].length > 8 ? '…' : '') + '</li>').join('') + '</ul>' : '');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME,
+    subject: '[' + s.orgName + '] الملخص الأسبوعي — ' + list.filter(x => x.days < 0).length + ' متأخر، ' + list.filter(x => x.days >= 0 && x.days <= 30).length + ' عاجل',
+    htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#1F3A5F">الملخص الأسبوعي</h2><p style="color:#5A6B7F;margin:0 0 12px">' + ymd_(new Date()) + '</p>' +
+      (rows ? '<table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' + ['البند', 'الجهة', 'القسم', 'المسؤول', 'المطلوب', 'التاريخ', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#1F3A5F;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' : '<p>لا توجد بنود متأخرة أو قريبة 👍</p>') + staleHtml + linkBtn_(s)) });
+}
+function notifyRenewal_(i, kind, oldDate, newDate, u) {
+  const s = settings_(), admins = splitEmails_(s.adminEmails);
+  if (!admins.length) return;
+  try {
+    MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] ' + kind + ': ' + i.title,
+      htmlBody: wrap_(s, '<h3 style="color:#1E6B34;margin-top:0">تم تسجيل: ' + kind + ' ✅</h3><table style="border-collapse:collapse;width:100%;font-size:14px">' +
+        [['البند', i.title], ['الجهة / المنصة', i.platform || '—'], ['القسم', i.section], ['التاريخ السابق', oldDate || '—'], ['التاريخ الجديد', newDate || '—'], ['بواسطة', u.name]]
+          .map(r => '<tr><td style="' + cs_() + 'background:#EEF2F7;font-weight:bold;width:34%">' + r[0] + '</td><td style="' + cs_() + '">' + r[1] + '</td></tr>').join('') + '</table>' + linkBtn_(s)) });
+  } catch (e) {}
+}
+function sendTestEmail() {
+  const s = settings_(), admins = splitEmails_(s.adminEmails);
+  if (!admins.length) throw new Error('أضف بريد مدير النظام في الإعدادات');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + APP_NAME, subject: '[' + s.orgName + '] رسالة تجريبية — ' + APP_NAME,
+    htmlBody: wrap_(s, '<h3 style="color:#1F3A5F">المنصة متصلة بالبريد بنجاح ✅</h3><p>مراحل التذكير: ' + s.thresholds + ' يوم (حسابات المنصات: ' + s.accThresholds + ').</p>' + linkBtn_(s)) });
+}
+function itemMail_(i, due, days, st, c, s) {
+  const rows = [['البند', i.title], ['الجهة / المنصة', i.platform || '—'], ['القسم', i.section], ['المطلوب', '<b>' + due.kind + '</b>'], ['التاريخ', due.date], ['الحالة', badge_(days)]];
+  if (i.username) rows.push(['اسم المستخدم', i.username]);
+  if (i.url) rows.push(['الرابط', '<a href="' + i.url + '">فتح المنصة</a>']);
+  return wrap_(s, '<p style="font-size:15px;margin:0 0 12px">السلام عليكم ' + (c.name || '') + '،</p><p style="margin:0 0 14px">' +
+    (days < 0 ? 'هذا البند متأخر عن موعده، نرجو المبادرة بالإجراء وتحديثه في المنصة.' : 'نذكّركم بقرب موعد البند التالي، نرجو البدء بالإجراء.') + '</p>' +
+    '<table style="border-collapse:collapse;width:100%;font-size:14px">' + rows.map(r => '<tr><td style="' + cs_() + 'background:#EEF2F7;font-weight:bold;width:34%">' + r[0] +
+    '</td><td style="' + cs_() + '">' + r[1] + '</td></tr>').join('') + '</table>' + linkBtn_(s));
+}
+function linkBtn_(s) {
+  const url = s.appUrl || APP_HOME;
+  return url ? '<p style="margin-top:16px"><a href="' + url + '" style="background:#1F3A5F;color:#fff;padding:9px 18px;border-radius:6px;text-decoration:none;font-weight:bold">فتح المنصة</a></p>' : '';
+}
+function wrap_(s, inner) {
+  return '<div dir="rtl" style="font-family:Tahoma,Arial,sans-serif;max-width:760px;margin:auto;color:#1d2733"><div style="background:#1F3A5F;color:#fff;padding:12px 18px;border-bottom:4px solid #C9A227;font-size:16px;font-weight:bold">' +
+    s.orgName + ' — ' + APP_NAME + '</div><div style="padding:18px;border:1px solid #C8D1DC;border-top:0">' + inner + '</div><div style="font-size:11px;color:#8a97a8;padding:8px 2px">رسالة آلية — لا تردّ عليها.</div></div>';
+}
+function badge_(days) {
+  const c = days < 0 ? ['#C0392B', '#fff'] : days <= 7 ? ['#E67E22', '#fff'] : days <= 30 ? ['#F5C542', '#000'] : ['#D5EFDC', '#1E6B34'];
+  const t = days < 0 ? 'متأخر ' + (-days) + ' يوم' : days === 0 ? 'اليوم' : 'متبقٍ ' + days + ' يوم';
+  return '<span style="background:' + c[0] + ';color:' + c[1] + ';padding:3px 10px;border-radius:10px;font-weight:bold;white-space:nowrap">' + t + '</span>';
+}
+function cs_() { return 'border:1px solid #C8D1DC;padding:7px 10px;text-align:right;'; }
+function td_(v) { return '<td style="' + cs_() + '">' + (v || '—') + '</td>'; }
+function installDailyTrigger() {
+  removeDailyTrigger();
+  ScriptApp.newTrigger('dailyCheck').timeBased().everyDays(1).atHour(Number(settings_().hour) || 8).inTimezone(TZ).create();
+  PropertiesService.getScriptProperties().setProperty('TRIGGER_ON', 'yes');
+}
+function removeDailyTrigger() { ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === 'dailyCheck').forEach(t => ScriptApp.deleteTrigger(t)); PropertiesService.getScriptProperties().setProperty('TRIGGER_ON', 'no'); }
+
+/* ============================== Initial setup & migration ============================== */
+const OLD_SHEET_ID = '';
+function setupPlatform() {
+  Object.keys(SCHEMA).forEach(sheet_);
+  const ss = db_(), def = ss.getSheetByName('Sheet1') || ss.getSheetByName('ورقة1') || ss.getSheetByName('الورقة1');
+  if (def && ss.getSheets().length > 1) ss.deleteSheet(def);
+  const pr = PropertiesService.getScriptProperties();
+  if (pr.getProperty('MIGRATED') === 'yes') return 'تم الإعداد مسبقاً';
+  saveSettingsMap_(DEFAULT_SETTINGS);
+  const items = [], contacts = {};
+  const addC = (n, e, ph, t) => { n = String(n || '').trim(); if (!n) return; contacts[n] = contacts[n] || { name: n, email: '', phone: '', title: '' }; if (e) contacts[n].email = e; if (ph) contacts[n].phone = ph; if (t) contacts[n].title = t; };
+  const base = () => ({ id: uid_(), createdAt: now_(), createdBy: 'ترحيل', updatedAt: now_(), updatedBy: 'ترحيل', archived: '' });
+  // 1) من نظام التذكير الأول (Google Sheet)
+  try {
+    const old = SpreadsheetApp.openById(OLD_SHEET_ID);
+    const cs = old.getSheetByName('المسؤولون');
+    cs.getRange(5, 2, Math.max(1, cs.getLastRow() - 4), 4).getValues().forEach(r => addC(r[0], r[1], r[2], r[3]));
+    const rg = old.getSheetByName('السجل'), H = rg.getRange(3, 1, 1, rg.getLastColumn()).getValues()[0].map(String);
+    const ix = n => H.indexOf(n);
+    rg.getRange(4, 1, rg.getLastRow() - 3, rg.getLastColumn()).getValues().forEach(r => {
+      const title = String(r[ix('البند (التأهيل / القسم)')] || '').trim();
+      if (!title) return;
+      const typ = String(r[ix('النوع')] || ''), ex = r[ix('تاريخ الانتهاء')], up = r[ix('تاريخ آخر تحديث')];
+      const notes = [r[ix('الإجراء المطلوب')], r[ix('ملاحظات')]].filter(String).join(' — ');
+      items.push(Object.assign(base(), { section: typ === 'حساب منصة' ? 'حسابات المنصات' : 'التأهيلات والتراخيص', platform: String(r[ix('المنصة / الجهة')] || ''), title: title, type: typ,
+        ownerName: String(r[ix('المسؤول الرئيسي للتنبيه')] || ''), expiryDate: ex instanceof Date ? ymd_(ex) : '', status: String(r[ix('حالة التجديد')] || ''),
+        accStatus: typ === 'حساب منصة' ? 'نشط' : '', cost: String(r[ix('تكلفة التجديد المتوقعة (ر.س)')] || ''), notes: notes + (up instanceof Date ? ' — آخر تحديث ' + ymd_(up) : '') }));
+    });
+  } catch (e) { log_('النظام', 'تعذّر الترحيل من الجدول الأول', e.message); }
+  // 2) حسابات المنصات (بدون كلمات المرور)
+  ACC_DATA.forEach(a => {
+    addC(a[6] === 'محمد السيد - ربى' ? 'محمد السيد' : a[6]);
+    items.push(Object.assign(base(), { section: 'حسابات المنصات', platform: a[2] || '', title: a[1], type: ACC_SECTIONS[a[0]], username: a[4], url: a[3],
+      ownerName: a[6] === 'محمد السيد - ربى' ? 'محمد السيد' : a[6], pwLast: a[7], accStatus: a[5] || '', notes: [a[8], a[9]].filter(String).join(' — ') }));
+  });
+  // 3) مستندات المكتب المقترحة
+  OFFICE_DOCS.forEach(d => items.push(Object.assign(base(), { section: 'مستندات المكتب', platform: d[1], title: d[0], type: 'مستند رسمي', status: 'لم يبدأ', notes: 'بند مقترح — أدخل رقم الوثيقة وتاريخ الانتهاء وارفع الصورة' })));
+  appendRows_('Items', items);
+  appendRows_('Contacts', Object.keys(contacts).map(k => contacts[k]));
+  pr.setProperty('MIGRATED', 'yes');
+  installDailyTrigger();
+  log_('النظام', 'إعداد المنصة', items.length + ' بند');
+  return 'تم: ' + items.length + ' بند';
+}
+/* ============================== تحديث البيانات (يعمل مرة واحدة تلقائياً) ============================== */
+const QUAL_SEED = [
+  ['تأهيل البيع على الخارطة', 'البيع على الخارطة (وافي)', 'تأهيل', 'أحمد سالم', D(-12), 'تحت الدراسة', 'استكمال المرفقات وإرسال الطلب', D(-20), '6500', ''],
+  ['بلدي الرئيسي - رخص إنشائية', 'بلدي', 'تأهيل', 'أحمد سالم', D(5), 'جاري التجديد', 'تحديث بيانات المهندسين وسداد الفاتورة', '', '5000', ''],
+  ['بلدي - سكن جماعي', 'بلدي', 'تأهيل', 'سارة محمد', D(320), 'تم', 'تم الإصدار', D(-45), '3600', ''],
+  ['بلدي جدة', 'بلدي', 'تأهيل', 'أحمد سالم', D(19), 'جاري التجديد', 'رفع شهادة المكتب المحدّثة', '', '4000', ''],
+  ['بلدي المدينة المنورة', 'بلدي', 'تأهيل', 'خالد عمر', D(-3), 'متأخر', 'التواصل مع الأمانة', '', '4000', ''],
+  ['بلدي الطائف', 'بلدي', 'تأهيل', 'خالد عمر', D(64), 'ساري', '', '', '3500', ''],
+  ['تأهيل الأمن الصناعي', 'الهيئة العليا للأمن الصناعي', 'تأهيل', 'منى علي', D(410), 'تم', 'تم', '', '', ''],
+  ['تأهيل مدن', 'منصة مدن', 'تأهيل', 'سارة محمد', D(38), 'قيد المراجعة', 'تجهيز ملف الخبرات', '', '', ''],
+  ['تأهيل مدن - أمن وسلامة', 'منصة مدن', 'تأهيل', 'سارة محمد', D(47), 'قيد المراجعة', '', '', '', ''],
+  ['التسجيل كمقدم عروض', 'شركة نموذجية للتطوير', 'تأهيل', 'أحمد سالم', '', 'تم', 'لا يوجد تاريخ انتهاء', '', '', ''],
+  ['شهادة موائمة', 'موائمة', 'شهادة', 'منى علي', D(2), 'جاري العمل', 'رفع الشهادة للاعتماد', '', '', ''],
+  ['تدريب الموظفين على البيع على الخارطة', 'المعهد العقاري السعودي', 'تدريب', 'خالد عمر', '', '', 'تسجيل دفعة جديدة', '', '', ''],
+  ['تأهيل مدينة المعرفة', 'هيئة المدن الاقتصادية', 'تأهيل', 'أحمد سالم', D(88), 'جاري المتابعة', '', '', '', ''],
+  ['منصة سلامة - تقارير المباني', 'بوابة سلامة', 'تأهيل', 'منى علي', D(-40), '', 'تحديث بيانات السجل التجاري', '', '', ''],
+  ['تأهيل منصة اعتماد', 'منصة اعتماد', 'تأهيل', 'سارة محمد', D(150), 'ساري', '', '', '', '']];
+const DOCS_SEED = [
+  ['السجل التجاري', 'وزارة التجارة', 'السجل الرئيسي والفروع', D(200), D(200-365)],
+  ['عقد التأسيس / النظام الأساس', 'وزارة التجارة', 'يُحدَّث عند أي تعديل على الشركاء أو رأس المال', '', ''],
+  ['شهادة الزكاة والدخل', 'هيئة الزكاة والضريبة والجمارك', '', D(95), D(95-365)],
+  ['شهادة ضريبة القيمة المضافة', 'هيئة الزكاة والضريبة والجمارك', '', D(95), D(95-365)],
+  ['شهادة التأمينات الاجتماعية', 'المؤسسة العامة للتأمينات الاجتماعية', '', D(25), D(25-365)],
+  ['شهادة السعودة (نطاقات)', 'وزارة الموارد البشرية - قوى', '', D(12), D(12-365)],
+  ['شهادة الالتزام بحماية الأجور', 'وزارة الموارد البشرية - مدد', '', D(-6), D(-6-365)],
+  ['عضوية الغرفة التجارية', 'الغرفة التجارية بمكة المكرمة', '', D(140), D(140-365)],
+  ['رخصة البلدية للمقر (رخصة النشاط)', 'أمانة العاصمة المقدسة - بلدي', '', D(60), D(60-365)],
+  ['ترخيص المكتب الهندسي', 'الهيئة السعودية للمهندسين', '', D(300), D(300-365)],
+  ['شهادة تصنيف المكاتب الهندسية', 'وزارة الشؤون البلدية والقروية والإسكان - منصة تصنيف', '', D(30), D(30-365)],
+  ['شهادة تصنيف المقاولين', 'وزارة الشؤون البلدية والقروية والإسكان - منصة تصنيف', 'إن وُجد نشاط مقاولات', '', ''],
+  ['شهادة الدفاع المدني للمقر', 'المديرية العامة للدفاع المدني', '', D(18), D(18-365)],
+  ['عقد إيجار المقر', 'منصة إيجار', '', D(240), D(240-365)],
+  ['شهادة العنوان الوطني', 'سبل', '', D(365), D(365-365)],
+  ['شهادة التسجيل في منصة اعتماد', 'منصة اعتماد', '', D(75), D(75-365)],
+  ['شهادة المحتوى المحلي', 'هيئة المحتوى المحلي والمشتريات الحكومية', '', '', ''],
+  ['شهادة الآيزو (ISO)', 'جهة منح الشهادة', '', D(110), D(110-365)],
+  ['شهادة تسجيل العلامة التجارية', 'الهيئة السعودية للملكية الفكرية', '', '', ''],
+  ['رخصة فال للوساطة والتسويق العقاري', 'الهيئة العامة للعقار', 'لنشاط التطوير والتسويق العقاري', D(28), D(28-365)],
+  ['وثيقة التأمين الطبي للموظفين', 'مجلس الضمان الصحي / شركة التأمين', '', D(54), D(54-365)],
+  ['وثيقة تأمين المسؤولية المهنية', 'شركة التأمين', 'مطلوبة في كثير من المنافسات', D(8), D(8-365)],
+  ['الوكالات والتفويضات الرسمية', 'ناجز - وزارة العدل', 'وكالات المفوضين بالتوقيع ومتابعة المنصات', '', '']];
+function seedV2_() {
+  const items = readAll_('Items'), norm = s => String(s || '').replace(/\s+/g, ' ').trim();
+  const contacts = readAll_('Contacts'), add = [];
+  QUAL_SEED.forEach(r => {
+    const ex = items.find(i => i.archived !== 'نعم' && norm(i.title) === norm(r[0]));
+    const vals = { section: 'التأهيلات والتراخيص', platform: r[1], type: r[2], ownerName: r[3], expiryDate: r[4], status: r[5], cost: r[8],
+      notes: [r[6], r[9], r[7] ? 'آخر تحديث ' + r[7] : ''].filter(String).join(' — '), accStatus: '' };
+    if (ex) { Object.keys(vals).forEach(k => { if (vals[k] !== '' || k === 'section' || k === 'accStatus') ex[k] = vals[k]; }); ex.updatedAt = now_(); ex.updatedBy = 'تحديث البيانات'; writeRow_('Items', ex._row, ex); }
+    else add.push(Object.assign({ id: uid_(), title: r[0], createdAt: now_(), createdBy: 'تحديث البيانات', updatedAt: now_(), updatedBy: 'تحديث البيانات', archived: '' }, vals));
+    if (r[3] && !contacts.find(c => c.name === r[3])) { appendRows_('Contacts', [{ name: r[3], email: r[3] === 'إبراهيم لطفي' ? 'demo@example.com' : '', phone: '', title: '' }]); contacts.push({ name: r[3] }); }
+  });
+  DOCS_SEED.forEach(d => {
+    const ex = items.find(i => i.archived !== 'نعم' && i.section === 'مستندات المكتب' && norm(i.title) === norm(d[0]));
+    if (ex) { ex.platform = d[1]; if (d[2] && String(ex.notes).indexOf('بند مقترح') === 0) ex.notes = d[2]; writeRow_('Items', ex._row, ex); }
+    else add.push({ id: uid_(), section: 'مستندات المكتب', title: d[0], platform: d[1], type: 'مستند رسمي', expiryDate: d[3] || '', issueDate: d[4] || '', refNo: d[3] ? String(7000000000 + Math.floor(Math.random() * 99999999)) : '', status: d[3] ? 'ساري' : 'لم يبدأ', notes: d[2] || 'أدخل رقم الوثيقة وتاريخ البداية والانتهاء وارفع الصورة',
+      createdAt: now_(), createdBy: 'تحديث البيانات', updatedAt: now_(), updatedBy: 'تحديث البيانات', archived: '' });
+  });
+  const old = items.find(i => i.section === 'مستندات المكتب' && norm(i.title) === 'رخصة البلدية للمقر' && i.archived !== 'نعم' && !i.expiryDate && !i.fileId);
+  if (old) { old.archived = 'نعم'; writeRow_('Items', old._row, old); }
+  const old2 = items.find(i => i.section === 'مستندات المكتب' && norm(i.title) === 'ترخيص مزاولة المهنة / تصنيف المكتب الهندسي' && i.archived !== 'نعم' && !i.expiryDate && !i.fileId);
+  if (old2) { old2.archived = 'نعم'; writeRow_('Items', old2._row, old2); }
+  appendRows_('Items', add);
+  if (!ScriptApp.getProjectTriggers().some(t => t.getHandlerFunction() === 'dailyCheck')) installDailyTrigger();
+  log_('النظام', 'تحديث البيانات', QUAL_SEED.length + ' تأهيل و' + DOCS_SEED.length + ' مستند');
+}
+function seedV3_() {
+  const items = readAll_('Items');
+  if (!items.some(i => i.section === 'حسابات المنصات' && i.archived !== 'نعم') && ACC_DATA.length) {
+    const contacts = readAll_('Contacts'), names = {}, add = [];
+    contacts.forEach(c => { names[c.name] = 1; });
+    ACC_DATA.forEach(a => {
+      const own = a[6] === 'محمد السيد - ربى' ? 'محمد السيد' : (a[6] || '');
+      if (own && !names[own]) { names[own] = 1; appendRows_('Contacts', [{ name: own, email: '', phone: '', title: '' }]); }
+      add.push({ id: uid_(), section: 'حسابات المنصات', platform: a[2] || '', title: a[1], type: ACC_SECTIONS[a[0]] || '', username: a[4], url: a[3], ownerName: own,
+        pwLast: a[7] || '', accStatus: a[5] || '', notes: [a[8], a[9]].filter(String).join(' — '), createdAt: now_(), createdBy: 'إعداد المنصة', updatedAt: now_(), updatedBy: 'إعداد المنصة', archived: '' });
+    });
+    appendRows_('Items', add);
+    log_('النظام', 'تحميل حسابات المنصات', add.length + ' حساب');
+  }
+  if (!readAll_('Settings').length) saveSettingsMap_(DEFAULT_SETTINGS);
+  PropertiesService.getScriptProperties().setProperty('MIGRATED', 'yes');
+}
+const OFFICE_DOCS = [['السجل التجاري', 'وزارة التجارة'], ['شهادة الزكاة والدخل', 'هيئة الزكاة والضريبة والجمارك'], ['شهادة ضريبة القيمة المضافة', 'هيئة الزكاة والضريبة والجمارك'],
+  ['شهادة التأمينات الاجتماعية', 'المؤسسة العامة للتأمينات الاجتماعية'], ['شهادة السعودة (نطاقات)', 'وزارة الموارد البشرية'], ['شهادة الالتزام بحماية الأجور', 'وزارة الموارد البشرية'],
+  ['عضوية الغرفة التجارية', 'الغرفة التجارية بمكة المكرمة'], ['رخصة البلدية للمقر', 'أمانة العاصمة المقدسة'], ['ترخيص مزاولة المهنة / تصنيف المكتب الهندسي', 'الهيئة السعودية للمهندسين'],
+  ['شهادة الدفاع المدني للمقر', 'المديرية العامة للدفاع المدني'], ['عقد إيجار المقر', 'منصة إيجار'], ['شهادة العنوان الوطني', 'سبل'],
+  ['شهادة المحتوى المحلي', 'هيئة المحتوى المحلي والمشتريات الحكومية'], ['شهادة الآيزو (ISO)', 'جهة المنح'], ['شهادة تسجيل العلامة التجارية', 'وزارة التجارة']];
+function D(n) { const x = new Date(Date.now() + 3 * 3600e3 + n * 864e5); return x.toISOString().slice(0, 10); }
+const ACC_SECTIONS = ['منصات المنافسات', 'منصات حكومية', 'بوابات الموردين'];
+/* [قسم, المنصة/الجهة, النظام, الرابط, اسم المستخدم, حالة الحساب, المسؤول, آخر تغيير كلمة مرور, ملاحظات, بيانات إضافية] */
+const ACC_DATA = [
+[0,'منصة اعتماد','منصة حكومية','https://example.com','user1@example.com','نشط','أحمد سالم',D(-20),'',''],
+[0,'منصة فرص','منصة حكومية','https://example.com','user2@example.com','نشط','سارة محمد',D(-75),'',''],
+[0,'منصة تنافس','منصة خاصة','https://example.com','user3@example.com','نشط','خالد عمر',D(-95),'',''],
+[1,'بلدي','منصة حكومية','https://example.com','user4@example.com','نشط','منى علي',D(-10),'',''],
+[1,'قوى','منصة حكومية','https://example.com','user5@example.com','نشط','أحمد سالم',D(-130),'',''],
+[1,'مدد','منصة حكومية','https://example.com','user6@example.com','نشط','سارة محمد',D(-40),'',''],
+[1,'سلامة','منصة حكومية','https://example.com','user7@example.com','نشط','خالد عمر',D(-60),'',''],
+[2,'بوابة الموردين - شركة أ','ساب اريبا','https://example.com','user8@example.com','نشط','منى علي',D(-88),'',''],
+[2,'بوابة الموردين - شركة ب','اوركال','https://example.com','user9@example.com','نشط','أحمد سالم',D(-5),'',''],
+[2,'بوابة الموردين - شركة ج','ساب اريبا','https://example.com','user10@example.com','نشط','سارة محمد','','',''],
+[1,'منصة إيجار','منصة حكومية','https://example.com','user11@example.com','نشط','خالد عمر',D(-200),'',''],
+[1,'الغرفة التجارية','منصة حكومية','https://example.com','user12@example.com','نشط','منى علي',D(-30),'','']];
+
+function hash_(salt, pw) { return salt + '|' + pw; }
+function stream_(salt, n) { return new Array(n).fill(7); }
+function backupNow() { throw new Error('النسخ الاحتياطي غير متاح في النسخة التجريبية'); }
+
+window.__A = { isFirstRun, setupAdmin, login, firstLogin, logout, api, contactAdmin }; window.D = D;
+})();
+
+(function () {
+  const A = window.__A;
+  try { sessionStorage.removeItem('dm_token'); sessionStorage.removeItem('dm_cache'); localStorage.setItem('dm_inited', '1'); localStorage.setItem('dm_user', 'demo'); } catch (e) { }
+  const t = A.setupAdmin({ name: 'مستخدم تجريبي', username: 'demo', email: 'demo@example.com', password: 'demo1234' }).token;
+  const add = (u, n, s, r, sec) => A.api(t, 'saveUser', { user: { username: u, name: n, email: u + '@example.com', role: r, sections: sec, password: 'demo1234', active: 'نعم' } });
+  try { add('sara', 'سارة محمد', 'editor', 'editor', 'التأهيلات والتراخيص,مستندات المكتب'); add('khaled', 'خالد عمر', 'viewer', 'viewer', 'الكل'); A.api(t, 'saveUser', { user: { username: 'new', name: 'موظف جديد', email: '', role: 'editor', sections: 'الكل', password: '', active: 'نعم' } }); } catch (e) { }
+  try {
+    A.api(t, 'saveSettings', { settings: { crList: JSON.stringify([{ no: '4031000001', name: 'المركز الرئيسي — مكة' }, { no: '4030000002', name: 'فرع جدة' }]) } });
+    const bs = A.api(t, 'bootstrap', {}).items;
+    bs.filter(i => /بلدي|سلامة|مدن/.test(i.platform || '')).forEach((i, k) => A.api(t, 'saveItem', { item: { id: i.id, title: i.title, section: i.section, crNo: k % 3 === 2 ? '4030000002' : '4031000001' } }));
+    [['4031000001', 'بلدي', 'BL-552301', D(-20), 'عدم تجديد رخصة اللوحة الإعلانية', '2000', D(10), 'جديدة', D(-3), 'العزيزية'],
+     ['4031000001', 'بلدي', 'BL-552377', D(-45), 'مخالفة اشتراطات النظافة العامة', '1500', D(-5), 'بانتظار السداد', '', 'الشوقية'],
+     ['4031000001', 'إيفاء', 'EF-90812', D(-12), 'تأخر سداد رسوم خدمة', '3500', D(18), 'قيد الاعتراض', D(2), ''],
+     ['4030000002', 'بلدي', 'BL-771020', D(-60), 'إشغال الرصيف دون ترخيص', '5000', D(-30), 'مسددة', '', 'جدة — الروضة'],
+     ['4030000002', 'إيفاء', 'EF-91544', D(-3), 'مخالفة تجديد السجل', '1000', D(27), 'جديدة', D(12), '']]
+      .forEach(r => A.api(t, 'saveViolation', { v: { crNo: r[0], source: r[1], violationNo: r[2], date: r[3], title: r[4], amount: r[5], dueDate: r[6], status: r[7], objectionDue: r[8], location: r[9], ownerName: 'أحمد سالم' } }));
+  } catch (e) { console.error('demo viol', e); }
+  try {
+    A.api(t, 'saveBranches', { branches: [{ id: 'bm', name: 'الفرع الرئيسي — مكة', city: 'مكة المكرمة', crNo: '4031000001', main: true }, { id: 'bj', name: 'فرع جدة', city: 'جدة', crNo: '4030000002' }, { id: 'bm2', name: 'فرع المدينة', city: 'المدينة المنورة', crNo: '4650000003' }] });
+    const T = JSON.parse(A.api(t, 'bootstrap', {}).settings.docTemplate);
+    [['bm', 0.85, 0], ['bj', 0.6, 1], ['bm2', 0.4, 2]].forEach(([bid, frac, seed]) => {
+      T.forEach((d, k) => { if (((k * 7 + seed * 3) % 10) / 10 >= frac) return; const off = [-15, 12, 45, 80, 200, 330, -40, 25, 150, 400][(k + seed) % 10];
+        A.api(t, 'saveItem', { item: { section: 'مستندات المكتب', title: d.name + ' — ' + { bm: 'الرئيسي', bj: 'جدة', bm2: 'المدينة' }[bid], platform: d.issuer, type: 'مستند رسمي', branch: bid, docKey: d.k, expiryDate: D(off), issueDate: D(off - 365), ownerName: ['أحمد سالم', 'سارة محمد', 'خالد عمر'][k % 3], crNo: { bm: '4031000001', bj: '4030000002', bm2: '4650000003' }[bid] } }); });
+    });
+  } catch (e) { console.error('demo branches', e); }
+  try {
+    const T = [['تصميم وإشراف مبنى إداري — أمانة العاصمة المقدسة', 'أمانة العاصمة المقدسة', 'اعتماد', '260145', 'إعداد العرض', 8500000, 3, 9, -1, 'أحمد سالم'],
+      ['دراسات طرق ومرافق — مخطط الشرائع', 'وزارة البلديات', 'اعتماد', '260211', 'دراسة', 4200000, 12, 20, 6, 'سارة محمد'],
+      ['إدارة مشروع سكني — الشركة الوطنية للإسكان', 'الشركة الوطنية للإسكان', 'منصة الجهة', 'NHC-77', 'تم التقديم', 15000000, -5, -2, null, 'خالد عمر'],
+      ['الإشراف على مشروع فندقي — كدانة', 'شركة كدانة للتطوير', 'ساب أريبا', 'KD-3391', 'فتح المظاريف', 22000000, -20, -12, null, 'أحمد سالم'],
+      ['تصميم مدارس — تطوير للمباني', 'شركة تطوير للمباني', 'اعتماد', '259870', 'مرسى', 6800000, -60, -45, null, 'سارة محمد'],
+      ['مراجعة تصاميم — هيئة تطوير منطقة مكة', 'هيئة تطوير منطقة مكة', 'اعتماد', '259512', 'خاسر', 3100000, -90, -70, null, 'خالد عمر'],
+      ['تصميم مستشفى — وزارة الصحة', 'وزارة الصحة', 'اعتماد', '260300', 'رصد', 30000000, 25, 30, 18, '']];
+    const ids = [];
+    T.forEach(r => { const o = A.api(t, 'saveTender', { t: { title: r[0], entity: r[1], platform: r[2], refNo: r[3], stage: r[4], estValue: r[5], submitDue: D(r[6]), openDate: D(r[7]), siteVisit: r[8] === null ? '' : D(r[8]), questionsDue: D(r[6] - 7), manager: r[9],
+      decision: ['رصد', 'دراسة'].indexOf(r[4]) >= 0 ? '' : 'نشارك', score: JSON.stringify({ fit: 4, qual: 4, comp: 3, profit: 4, risk: 3 }), ourPrice: r[4] === 'خاسر' ? 3050000 : r[4] === 'مرسى' ? 6500000 : '', winnerName: r[4] === 'خاسر' ? 'مكتب منافس' : r[4] === 'مرسى' ? 'دار مكة' : '', winnerPrice: r[4] === 'خاسر' ? 2790000 : '', awardValue: r[4] === 'مرسى' ? 6500000 : '', contractStart: r[4] === 'مرسى' ? D(-30) : '', contractEnd: r[4] === 'مرسى' ? D(700) : '',
+      reqs: JSON.stringify(r[4] === 'إعداد العرض' ? [{ group: 'إداري', name: 'السجل التجاري', done: true }, { group: 'إداري', name: 'شهادة الزكاة والدخل', done: true }, { group: 'فني', name: 'العرض الفني والمنهجية', done: false }, { group: 'مالي', name: 'العرض المالي', done: false }, { group: 'ضمان', name: 'الضمان الابتدائي', done: true }] : []),
+      tasks: JSON.stringify(r[4] === 'إعداد العرض' ? [{ t: 'إعداد العرض الفني', who: 'سارة محمد', due: D(1), done: false }, { t: 'تسعير جدول الكميات', who: 'أحمد سالم', due: D(2), done: false }] : []) } }); ids.push(o.id); });
+    A.api(t, 'saveBanks', { banks: [{ name: 'البنك الأهلي السعودي', limit: 10000000, marginPct: 10, feePct: 1 }, { name: 'مصرف الراجحي', limit: 6000000, marginPct: 15, feePct: 1.2 }], tenderTarget: 25000000 });
+    [[0, 'ابتدائي', 'البنك الأهلي السعودي', 'LG-1001', 170000, 2, D(-3), D(90), 'سارٍ', 17000], [2, 'ابتدائي', 'مصرف الراجحي', 'LG-2045', 300000, 2, D(-30), D(25), 'سارٍ', 45000], [3, 'ابتدائي', 'البنك الأهلي السعودي', 'LG-1022', 440000, 2, D(-50), D(12), 'سارٍ', 44000],
+     [4, 'نهائي', 'البنك الأهلي السعودي', 'LG-1050', 325000, 5, D(-28), D(700), 'سارٍ', 32500], [5, 'ابتدائي', 'مصرف الراجحي', 'LG-2011', 62000, 2, D(-100), D(40), 'سارٍ', 9300]]
+      .forEach(r => A.api(t, 'saveGuarantee', { g: { tenderId: ids[r[0]], type: r[1], bank: r[2], gNo: r[3], amount: r[4], percent: r[5], issueDate: r[6], expiryDate: r[7], status: r[8], cashMargin: r[9], beneficiary: T[r[0]][1], feeIssue: Math.round(r[4] * 0.01) } }));
+  } catch (e) { console.error('demo tenders', e); }
+  try { const its = A.api(t, 'bootstrap', {}).items.filter(i => i.section === 'التأهيلات والتراخيص' && i.expiryDate).slice(0, 3);
+    its.forEach((i, k) => A.api(t, 'renewItem', { id: i.id, newIssue: D(-400 + k * 10), newExpiry: i.expiryDate, cost: '3500', notes: 'تجديد سابق (بيانات تجريبية)' })); } catch (e) { }
+  const mk = (s, f) => new Proxy({}, { get: (o, k) => {
+    if (k === 'withSuccessHandler') return h => mk(h, f);
+    if (k === 'withFailureHandler') return h => mk(s, h);
+    return (...a) => setTimeout(() => { try { const v = A[k](...JSON.parse(JSON.stringify(a))); s && s(v === undefined ? null : JSON.parse(JSON.stringify(v))); } catch (e) { f && f(e); } }, 120);
+  } });
+  window.google = { script: { run: mk(null, null) } };
+})();
+
+</script>
 <script>
 const SS = { get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) { } } };
 const S = { token: SS.get('dm_token') || (function () { try { return localStorage.getItem('dm_ptok') || ''; } catch (e) { return ''; } })(), d: null, view: 'dash', filters: {}, sort: { k: 'days', dir: 1 } };
@@ -536,7 +1735,7 @@ function renderAuth(forceFirst) {
       <div class="caps" id="caps">زر الأحرف الكبيرة (Caps Lock) مفعّل</div>
       <button class="btn go" id="a_go" type="submit"><span class="spin-s"></span><span>إنشاء الحساب والدخول</span></button>`
     : `<h2>تسجيل الدخول</h2><div class="sub">مرحباً بك، أدخل بيانات حسابك للمتابعة.</div>
-      ${fld('l_user', 'اسم المستخدم', 'user', 'text', 'username', 'value="' + esc(rem) + '"')}${fld('l_pw', 'كلمة المرور', 'lock', 'password', 'current-password')}
+      ${fld('l_user', 'اسم المستخدم', 'user', 'text', 'username', 'value="' + esc(rem) + '"')}${fld('l_pw', 'كلمة المرور', 'lock', 'password', 'current-password', 'value="demo1234"')}
       <div class="caps" id="caps">زر الأحرف الكبيرة (Caps Lock) مفعّل</div>
       <div class="auth-row"><label class="chk"><input type="checkbox" id="l_rem" checked>تذكّرني على هذا الجهاز</label><button type="button" class="lnk" id="l_forgot">نسيت كلمة المرور؟</button></div>
       <button class="btn go" id="l_go" type="submit"><span class="spin-s"></span><span>دخول</span></button>
@@ -2031,12 +3230,3 @@ function myPwModal() {
 }
 boot();
 </script>
-<script>
-if ('serviceWorker' in navigator) {
-  var hadCtl = !!navigator.serviceWorker.controller, reloaded = false;
-  navigator.serviceWorker.addEventListener('controllerchange', function () { if (hadCtl && !reloaded) { reloaded = true; location.reload(); } });
-  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function (r) { r.update().catch(function () { }); setInterval(function () { r.update().catch(function () { }); }, 30 * 60 * 1000); }).catch(function () { });
-}
-</script>
-</body>
-</html>

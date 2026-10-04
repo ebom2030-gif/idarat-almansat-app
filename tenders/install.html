@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>إدارة المنافسات والضمانات</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#1E2B2A">
+<link rel="apple-touch-icon" href="../icons/t-apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="المنافسات والضمانات">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpolygon points='32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4' fill='%231E2B2A' stroke='%23B08D3C' stroke-width='1.6' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='32' r='18.6' fill='none' stroke='%23B08D3C' stroke-opacity='.6' stroke-width='.9'/%3E%3Ccircle cx='32' cy='32' r='15.4' fill='%230B6E4F'/%3E%3Cpath d='M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z' fill='%23fff'/%3E%3Cpath d='M34 22.6v4.8h4.8' fill='none' stroke='%230B6E4F' stroke-width='1.2' stroke-linejoin='round'/%3E%3Cpath d='M28.6 34.4l2.5 2.5 5.1-5.3' fill='none' stroke='%23B08D3C' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+html,body{margin:0;height:100%;background:#1E2B2A;font-family:"Noto Kufi Arabic","IBM Plex Sans Arabic",Tahoma,sans-serif}
+.sp{width:34px;height:34px;border:3px solid rgba(233,221,191,.25);border-top-color:#B08D3C;border-radius:50%;animation:s .8s linear infinite;margin:18px auto 0}@keyframes s{to{transform:rotate(360deg)}}
+#fb{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#DDE3DF;text-align:center;padding:16px}
+#fb a,#fb button{font:inherit;border:0;cursor:pointer;display:inline-block;margin-top:16px;background:#0B6E4F;color:#fff;padding:12px 22px;border-radius:8px;text-decoration:none;border-bottom:3px solid #B08D3C}
+#ins{display:none;max-width:440px;margin:0 auto}#ins.on{display:block}
+#ins .card{background:rgba(255,255,255,.05);border:1px solid rgba(233,221,191,.18);border-radius:14px;padding:18px;margin-top:16px;text-align:right;line-height:1.9;font-size:14px}
+#ins .card b{color:#E9DDBF}#ins ol{margin:6px 0 0;padding-right:20px}
+#ins .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#ins .ghost{background:transparent!important;border:1px solid rgba(233,221,191,.4)!important;border-bottom:1px solid rgba(233,221,191,.4)!important}
+#ins .ok{color:#7FD1A8;font-weight:700;margin-top:12px}
+.mini{display:inline-block;margin-top:10px;color:#C9D2CE;font-size:12.5px;text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="fb"><div><svg style="width:72px;height:72px;margin:0 auto 14px;display:block" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg><div style="font-size:22px;font-weight:700">إدارة المنافسات والضمانات</div><div style="opacity:.75;margin-top:6px">جاري فتح المنصة…</div><div class="sp"></div><div id="ins"><div class="row"><button id="btnInstall">⬇ تثبيت التطبيق الآن</button><a id="go2" class="ghost" href="./">فتح المنصة</a></div><div id="insDone" class="ok" style="display:none">✓ تم تثبيت التطبيق — ستجده على سطح المكتب أو الشاشة الرئيسية</div><div id="insNote" style="display:none;margin-top:12px;color:#E9DDBF;font-size:13.5px;line-height:1.8"></div><div class="card" id="howto"></div></div><a id="go" href="./">فتح المنصة مباشرة</a><br><a class="mini" href="install.html">تثبيت التطبيق على جهازك</a></div></div>
+<script>
+/* المنصة تفتح كصفحة كاملة (لا إطار مضمّن) لتجنّب خطأ Google Drive. */
+var APP = document.getElementById('go').href;
+var q = new URLSearchParams(location.search);
+var standalone = matchMedia('(display-mode: standalone)').matches || matchMedia('(display-mode: window-controls-overlay)').matches || navigator.standalone === true;
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(function () { });
+var deferred = null;
+window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferred = e; });
+window.addEventListener('appinstalled', function () { document.getElementById('insDone').style.display = ''; document.getElementById('btnInstall').style.display = 'none'; });
+if (!standalone) {
+  document.getElementById('go').style.display = 'none';
+  document.querySelector('.sp').style.display = 'none';
+  document.querySelector('.mini').style.display = 'none';
+  document.querySelector('#fb > div > div:nth-of-type(2)').textContent = 'ثبّت المنصة كتطبيق على جهازك';
+  document.getElementById('ins').classList.add('on');
+  var ua = navigator.userAgent, ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1), android = /Android/.test(ua), safariMac = /Macintosh/.test(ua) && /Safari/.test(ua) && !/Chrome|Edg/.test(ua);
+  var h = '';
+  if (ios) h = '<b>على الآيفون / الآيباد (من Safari):</b><ol><li>اضغط زر المشاركة <b>⬆︎</b> أسفل الشاشة.</li><li>اختر <b>«إضافة إلى الشاشة الرئيسية»</b>.</li><li>اضغط <b>«إضافة»</b> — ستظهر أيقونة المنصة على الشاشة.</li></ol>';
+  else if (android) h = '<b>على أندرويد (Chrome):</b><ol><li>اضغط زر <b>«تثبيت التطبيق الآن»</b> أعلاه إن ظهر.</li><li>أو افتح قائمة المتصفح <b>⋮</b> واختر <b>«تثبيت التطبيق»</b> أو <b>«إضافة إلى الشاشة الرئيسية»</b>.</li></ol>';
+  else if (safariMac) h = '<b>على ماك (Safari):</b><ol><li>من القائمة العلوية اختر <b>ملف ← إضافة إلى Dock</b>.</li></ol>';
+  else h = '<b>على الكمبيوتر (Chrome أو Edge):</b><ol><li>اضغط زر <b>«تثبيت التطبيق الآن»</b> أعلاه إن ظهر.</li><li>أو اضغط أيقونة التثبيت <b>⊕</b> في نهاية شريط العنوان.</li><li>أو من القائمة <b>⋮</b> ← <b>«حفظ ومشاركة» ← «تثبيت الصفحة كتطبيق»</b>.</li></ol>';
+  h += '<div style="margin-top:8px;color:#98A6A1;font-size:12.5px">إن كان التطبيق مثبّتاً من قبل، افتحه من سطح المكتب أو الشاشة الرئيسية — يمكنك العودة لهذه الصفحة في أي وقت من زر «تثبيت التطبيق» داخل المنصة.</div>';
+  document.getElementById('howto').innerHTML = h;
+  document.getElementById('btnInstall').onclick = function () {
+    if (deferred) { deferred.prompt(); deferred.userChoice.then(function (c) { deferred = null; if (c && c.outcome === 'accepted') document.getElementById('insDone').style.display = ''; }); return; }
+    var hw = document.getElementById('howto'); hw.style.borderColor = '#B08D3C'; hw.style.boxShadow = '0 0 0 3px rgba(176,141,60,.35)';
+    var n = document.getElementById('insNote'); n.style.display = '';
+    n.textContent = ios ? 'على الآيفون يتم التثبيت من زر المشاركة في Safari — اتبع الخطوات بالأسفل.' : 'المتصفح لم يُظهر نافذة التثبيت تلقائياً — غالباً التطبيق مثبّت عندك بالفعل (ابحث عن «المنافسات والضمانات» في سطح المكتب أو قائمة التطبيقات)، أو اتبع الخطوات بالأسفل.';
+    hw.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  if (navigator.getInstalledRelatedApps) navigator.getInstalledRelatedApps().then(function (a) { if (a && a.length) { var d = document.getElementById('insDone'); d.textContent = '✓ التطبيق مثبّت على هذا الجهاز — افتحه من سطح المكتب أو الشاشة الرئيسية'; d.style.display = ''; } }).catch(function () { });
+}
+</script>
+</body>
+</html>

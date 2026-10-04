@@ -170,6 +170,20 @@ html[data-theme=dark] :is(.ie:hover,.drop-z.on,.drop-z:hover,.sfc button){backgr
 .br-row{display:grid;grid-template-columns:2fr 1fr 1.2fr auto auto;gap:8px;align-items:center;margin-bottom:8px}.br-main{display:flex;gap:4px;align-items:center;font-size:12.5px;white-space:nowrap}.br-main input{width:auto}
 html[data-theme=dark] .mxc.soon{background:#2E2A16;color:#D9C46A}html[data-theme=dark] .bmx .mx-d{background:var(--paper)}
 @media (max-width:700px){.br-row{grid-template-columns:1fr 1fr}.bh-k{gap:14px}}
+.xlink{margin-top:10px!important;border:1px dashed rgba(233,221,191,.35)!important;border-radius:10px}.xlink small{margin-right:auto;font-size:10.5px;color:#B9C3BF}
+.kanban{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;padding-bottom:10px;align-items:start}.kcol{background:var(--paper);border:1px solid var(--line);border-radius:12px;min-height:200px;display:flex;flex-direction:column}.kcol.closed{opacity:.85;background:var(--stone)}.kcol header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line2);position:sticky;top:0}.kcol header b{font-size:13.5px}.kcol header span{background:var(--stone);border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700}
+.kcol.over{outline:2px dashed var(--brass);outline-offset:-4px}.kbody{padding:8px;display:flex;flex-direction:column;gap:8px;flex:1}.kempty{color:var(--muted);font-size:12px;text-align:center;padding:20px 6px;border:1px dashed var(--line);border-radius:8px}
+.tcard{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 11px;cursor:pointer;display:flex;flex-direction:column;gap:5px;box-shadow:0 2px 6px -4px rgba(0,0,0,.2)}.tcard:hover{border-color:var(--brass)}.tcard.drag{opacity:.5}.tc-t{font-weight:700;font-size:13.5px;line-height:1.5}.tc-s{font-size:12px;color:var(--muted)}.tc-v{font-size:12.5px;font-weight:700}.tc-f{display:flex;justify-content:space-between;align-items:center}.tc-r{font-size:11.5px;background:var(--ok-l);color:var(--ok);border-radius:6px;padding:1px 7px;font-weight:700}.tc-r.bad{background:var(--red-l);color:var(--red)}
+.ttabs{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin:-4px 0 14px}.ttabs button{background:none;border:0;border-bottom:3px solid transparent;padding:8px 12px;font:inherit;font-weight:600;cursor:pointer;color:var(--muted)}.ttabs button.on{color:var(--text);border-color:var(--brass)}.ttabs small{background:var(--stone);border-radius:999px;padding:0 6px;font-size:11px}
+.sc-grid{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center}.sc-row{display:flex;gap:4px}.sc-b{width:34px;height:32px;border:1px solid var(--line);background:var(--paper);border-radius:7px;cursor:pointer;font-weight:700;font-family:inherit}.sc-b.on{background:var(--green);color:#fff;border-color:var(--green)}.sc-tot{margin-top:12px;font-size:14px}
+.rq-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}.rq-bar{flex:1;min-width:120px;height:7px;background:var(--line2);border-radius:4px;overflow:hidden}.rq-bar i{display:block;height:100%;background:var(--ok)}.rq-g{margin:12px 0 4px;color:var(--muted);font-size:12.5px}
+.rq{display:grid;grid-template-columns:auto 1fr auto auto auto;gap:10px;align-items:center;padding:7px 8px;border-bottom:1px solid var(--line2)}.rq input[type=checkbox]{width:17px;height:17px}.rq.done .rq-n{text-decoration:line-through;color:var(--muted)}.rq-m{font-size:12px;color:var(--muted)}.rq-i{background:none;border:0;padding:0;cursor:pointer}.rq-x{background:none;border:0;color:var(--muted);cursor:pointer;font-size:13px}
+.rq-add{display:grid;grid-template-columns:120px 1fr auto;gap:8px;margin-top:10px}.rq-add.tk{grid-template-columns:1fr 160px 150px auto}.pk-l{max-height:55vh;overflow:auto}.pk{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:7px;border-bottom:1px solid var(--line2);cursor:pointer}.pk b{display:block;font-size:13px}.pk small{color:var(--muted);font-size:11.5px}
+.gflow{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-bottom:12px;font-size:11.5px}.gflow i{color:var(--muted);font-style:normal}.gf{padding:3px 8px;border-radius:999px;background:var(--stone);color:var(--muted)}.gf.on{background:var(--green);color:#fff;font-weight:700}
+.lim{height:8px;background:var(--line2);border-radius:5px;overflow:hidden;margin:0 16px 10px;position:relative}.lim i{display:block;height:100%}.lim.big{height:16px;margin:12px 0 0}.lim.big span{position:absolute;inset:0;text-align:center;font-size:11px;font-weight:800;line-height:16px}
+.banks{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}.bank{margin:0}.bk-h{display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:10px}.bk-k{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.bk-k b{display:block;font-family:var(--head);font-size:18px}.bk-k span{font-size:11.5px;color:var(--muted)}.bk-row{grid-template-columns:2fr 1.4fr 1fr 1fr auto}
+.wr{position:relative;height:16px;background:var(--line2);border-radius:5px;overflow:hidden;min-width:90px}.wr i{display:block;height:100%;background:var(--ok)}.wr span{position:absolute;inset:0;text-align:center;font-size:11px;font-weight:800;line-height:16px}
+@media (max-width:700px){.rq-add,.rq-add.tk{grid-template-columns:1fr}.bk-k{grid-template-columns:repeat(2,1fr)}.sc-grid{grid-template-columns:1fr}}
 .inst-login{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 14px;border-radius:12px;border:1.5px dashed var(--brass);background:#FBF7EC;color:var(--ink);text-decoration:none;font-weight:700;font-size:14px;transition:background .2s,transform .2s}.inst-login:hover{background:#F5EDD8;transform:translateY(-1px)}.inst-login svg.i{width:22px;height:22px;color:var(--brass);flex-shrink:0}.inst-login small{display:block;font-weight:500;color:var(--muted);font-size:12px}
 .inst{display:flex;align-items:center;gap:10px;margin:10px 14px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(176,141,60,.22),rgba(11,110,79,.25));border:1px solid rgba(176,141,60,.45);color:#fff;text-decoration:none;font-size:13px;font-weight:700}.inst:hover{background:linear-gradient(135deg,rgba(176,141,60,.32),rgba(11,110,79,.35))}.inst svg.i{width:18px;height:18px;color:#E9DDBF}.inst small{display:block;font-weight:500;color:#C9D2CE;font-size:11px}
 .me{padding:14px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:13px}
@@ -398,16 +412,23 @@ const SCHEMA = {
   Followups: ['at', 'itemId', 'title', 'section', 'stage', 'note', 'by'],
   Snapshots: ['month', 'total', 'ok', 'soon', 'expired', 'none', 'readiness'],
   Changes: ['at', 'itemId', 'user', 'field', 'old', 'new'],
+  Tenders: ['id', 'title', 'entity', 'platform', 'refNo', 'sector', 'branch', 'manager', 'estValue', 'bookletCost', 'stage', 'decision', 'decisionReason', 'score', 'questionsDue', 'siteVisit', 'submitDue', 'openDate', 'validityDue', 'submittedAt', 'result', 'ourPrice', 'winnerName', 'winnerPrice', 'awardValue', 'contractNo', 'contractStart', 'contractEnd', 'notes', 'reqs', 'tasks', 'competitors', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
+  Guarantees: ['id', 'tenderId', 'type', 'bank', 'gNo', 'amount', 'percent', 'beneficiary', 'issueDate', 'expiryDate', 'status', 'cashMargin', 'feeIssue', 'feeExt', 'notes', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
   Violations: ['id', 'crNo', 'source', 'violationNo', 'date', 'title', 'amount', 'dueDate', 'status', 'objectionDue', 'ownerName', 'location', 'notes', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'],
 };
 const APP_HOME = 'https://ebom2030-gif.github.io/idarat-almansat-app/';
+const T_STAGES = ['رصد', 'دراسة', 'قرار المشاركة', 'شراء الكراسة', 'إعداد العرض', 'تم التقديم', 'فتح المظاريف', 'مرسى', 'خاسر', 'معتذر / ملغاة'];
+const T_CLOSED = ['مرسى', 'خاسر', 'معتذر / ملغاة'];
+const G_TYPES = ['ابتدائي', 'نهائي', 'دفعة مقدمة', 'صيانة'];
+const G_STATUSES = ['طلب إصدار', 'سارٍ', 'طلب تمديد', 'ممدّد', 'طلب إفراج', 'مُفرج عنه', 'مُسيَّل'];
+const G_CLOSED = ['مُفرج عنه', 'مُسيَّل'];
 const VIOL_STATUSES = ['جديدة', 'قيد الاعتراض', 'مرفوض الاعتراض', 'بانتظار السداد', 'مسددة', 'مقبول الاعتراض', 'ملغاة'];
 const VIOL_CLOSED = ['مسددة', 'مقبول الاعتراض', 'ملغاة'];
 const FOLLOW_STAGES = ['تم التواصل مع الجهة', 'قُدّم الطلب', 'بانتظار رد الجهة', 'تم السداد', 'تم الإصدار', 'ملاحظة'];
 const DEFAULT_SETTINGS = {
   orgName: 'شركة نموذجية (نسخة تجريبية)', adminEmails: 'demo@example.com', thresholds: '90,60,30,14,7,3,1,0',
   accThresholds: '30,14,7,3,1,0', repeatDays: '7', weeklyDay: '0', hour: '8', pwCycle: '90',
-  waPhoneId: '', waTemplate: '', waLang: 'ar', appUrl: '', leadDays: '30', escalateDays: '7', crList: '[]', branches: '[]',
+  waPhoneId: '', waTemplate: '', waLang: 'ar', appUrl: '', leadDays: '30', escalateDays: '7', crList: '[]', branches: '[]', banks: '[]', tenderTarget: '',
   docTemplate: '[{"k": "cr", "name": "السجل التجاري للفرع", "issuer": "وزارة التجارة"}, {"k": "balady", "name": "رخصة البلدية للفرع (رخصة النشاط)", "issuer": "بلدي - الأمانة"}, {"k": "eng", "name": "ترخيص المكتب الهندسي للفرع", "issuer": "وزارة البلديات / الهيئة السعودية للمهندسين"}, {"k": "civil", "name": "شهادة الدفاع المدني (سلامة)", "issuer": "المديرية العامة للدفاع المدني"}, {"k": "safety", "name": "عقد صيانة أنظمة السلامة والإطفاء", "issuer": "شركة صيانة معتمدة"}, {"k": "ejar", "name": "عقد إيجار مقر الفرع", "issuer": "منصة إيجار"}, {"k": "address", "name": "شهادة العنوان الوطني للفرع", "issuer": "سبل - البريد السعودي"}, {"k": "chamber", "name": "عضوية الغرفة التجارية", "issuer": "الغرفة التجارية"}, {"k": "sign", "name": "رخصة اللوحة الإعلانية", "issuer": "بلدي - الأمانة"}, {"k": "gosi", "name": "شهادة التأمينات الاجتماعية", "issuer": "المؤسسة العامة للتأمينات الاجتماعية"}, {"k": "nitaqat", "name": "شهادة السعودة (نطاقات)", "issuer": "وزارة الموارد البشرية - قوى"}, {"k": "mudad", "name": "شهادة الالتزام بحماية الأجور", "issuer": "وزارة الموارد البشرية - مدد"}, {"k": "zakat", "name": "شهادة الزكاة والدخل", "issuer": "هيئة الزكاة والضريبة والجمارك"}, {"k": "medical", "name": "وثيقة التأمين الطبي للموظفين", "issuer": "مجلس الضمان الصحي / شركة التأمين"}]',
 };
 
@@ -478,7 +499,7 @@ function triggerOn_() {
   return on;
 }
 /* ذاكرة سريعة للجداول: تُقرأ من الخادم مرة واحدة وتُحفظ حتى يتغيّر الجدول (كل كتابة تغيّر رقم إصداره) */
-const CACHED_ = { Items: 1, Contacts: 1, Users: 1, Settings: 1, Renewals: 1, Followups: 1, Snapshots: 1, Violations: 1 };
+const CACHED_ = { Items: 1, Contacts: 1, Users: 1, Settings: 1, Renewals: 1, Followups: 1, Snapshots: 1, Violations: 1, Tenders: 1, Guarantees: 1 };
 function cver_(name) { const c = CacheService.getScriptCache(); let v = c.get('v_' + name); if (!v) { v = uid_(); c.put('v_' + name, v, 21600); } return v; }
 function bump_(name) { if (CACHED_[name]) { try { CacheService.getScriptCache().put('v_' + name, uid_(), 21600); } catch (e) { } } }
 function readAll_(name) {
@@ -684,8 +705,9 @@ const ACTIONS = {
       contacts: readAll_('Contacts').map(strip_), renewals: readTail_('Renewals', 400).filter(r => u.sectionList.indexOf(r.section) >= 0).slice(-300).reverse().map(strip_),
       followups: readTail_('Followups', 2000).filter(f => u.sectionList.indexOf(f.section) >= 0).map(strip_),
       snapshots: readAll_('Snapshots').slice(-12).map(strip_), stages: FOLLOW_STAGES,
+      tenders: readAll_('Tenders').filter(x => x.archived !== 'نعم').map(strip_), guarantees: readAll_('Guarantees').filter(x => x.archived !== 'نعم').map(strip_), tStages: T_STAGES, tClosed: T_CLOSED, gTypes: G_TYPES, gStatuses: G_STATUSES, gClosed: G_CLOSED,
       violations: readAll_('Violations').filter(v => v.archived !== 'نعم').map(strip_), violStatuses: VIOL_STATUSES, violClosed: VIOL_CLOSED,
-      settings: { branches: s.branches, docTemplate: s.docTemplate, crList: s.crList, leadDays: s.leadDays, escalateDays: s.escalateDays, orgName: s.orgName, thresholds: s.thresholds, accThresholds: s.accThresholds, pwCycle: s.pwCycle, repeatDays: s.repeatDays,
+      settings: { banks: s.banks, tenderTarget: s.tenderTarget, branches: s.branches, docTemplate: s.docTemplate, crList: s.crList, leadDays: s.leadDays, escalateDays: s.escalateDays, orgName: s.orgName, thresholds: s.thresholds, accThresholds: s.accThresholds, pwCycle: s.pwCycle, repeatDays: s.repeatDays,
         waEnabled: !!(s.waPhoneId && PropertiesService.getScriptProperties().getProperty('WA_TOKEN')) }, today: ymd_(new Date()) };
     if (u.role === 'admin') {
       out.users = readAll_('Users').map(publicUser_);
@@ -700,6 +722,70 @@ const ACTIONS = {
     return out;
   },
   backupNow: (u) => { need_(u, 'admin'); return backupNow(); },
+  saveTender: (u, p) => {
+    need_(u, 'editor');
+    const t = p.t || {}, F = SCHEMA.Tenders.filter(k => ['id', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'].indexOf(k) < 0);
+    if (!String(t.title || '').trim()) throw new Error('اسم المنافسة مطلوب');
+    if (t.stage && T_STAGES.indexOf(t.stage) < 0) throw new Error('مرحلة غير صحيحة');
+    ['score', 'reqs', 'tasks', 'competitors'].forEach(k => { if (t[k] !== undefined && typeof t[k] !== 'string') t[k] = JSON.stringify(t[k]); });
+    let ex = t.id ? readAll_('Tenders').find(x => x.id === t.id) : null;
+    if (t.id && !ex) throw new Error('المنافسة غير موجودة');
+    if (ex) {
+      const ch = [], oldStage = ex.stage;
+      F.forEach(k => { if (t[k] !== undefined) { const nv = String(t[k]); if (String(ex[k] || '') !== nv) { if (['reqs', 'tasks', 'score', 'competitors', 'notes'].indexOf(k) < 0) ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: 't.' + k, old: ex[k] || '', new: nv }); ex[k] = nv; } } });
+      if (ex.stage === 'تم التقديم' && oldStage !== 'تم التقديم' && !ex.submittedAt) ex.submittedAt = ymd_(new Date());
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Tenders', ex._row, ex);
+      if (ch.length) appendRows_('Changes', ch);
+      log_(u.username, oldStage !== ex.stage ? 'منافسة: ' + oldStage + ' ← ' + ex.stage : 'تعديل منافسة', ex.title);
+      return strip_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '', stage: 'رصد', reqs: '[]', tasks: '[]', score: '{}', competitors: '[]' };
+    F.forEach(k => { if (t[k] !== undefined && t[k] !== '') o[k] = String(t[k]); });
+    appendRows_('Tenders', [o]); log_(u.username, 'إضافة منافسة', o.title);
+    return o;
+  },
+  deleteTender: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Tenders').find(x => x.id === p.id); if (!ex) throw new Error('المنافسة غير موجودة');
+    ex.archived = p.restore ? '' : 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Tenders', ex._row, ex);
+    log_(u.username, p.restore ? 'استعادة منافسة' : 'حذف منافسة', ex.title); return true;
+  },
+  saveGuarantee: (u, p) => {
+    need_(u, 'editor');
+    const g = p.g || {}, F = SCHEMA.Guarantees.filter(k => ['id', 'fileId', 'fileName', 'createdAt', 'createdBy', 'updatedAt', 'updatedBy', 'archived', 'lastAlert'].indexOf(k) < 0);
+    if (!g.bank || !g.amount) throw new Error('البنك والمبلغ مطلوبان');
+    if (g.type && G_TYPES.indexOf(g.type) < 0) throw new Error('نوع غير صحيح');
+    if (g.status && G_STATUSES.indexOf(g.status) < 0) throw new Error('حالة غير صحيحة');
+    let ex = g.id ? readAll_('Guarantees').find(x => x.id === g.id) : null, f = null;
+    if (g.id && !ex) throw new Error('الضمان غير موجود');
+    if (p.file && p.file.data) f = saveFile_({ title: 'ضمان ' + (g.gNo || '') + ' ' + (g.type || ''), platform: g.bank, section: 'الضمانات البنكية' }, p.file);
+    if (ex) {
+      const ch = [];
+      F.forEach(k => { if (g[k] !== undefined) { const nv = String(g[k]).trim(); if (String(ex[k] || '') !== nv) { ch.push({ at: now_(), itemId: ex.id, user: u.name || u.username, field: 'g.' + k, old: ex[k] || '', new: nv }); ex[k] = nv; } } });
+      if (f) { ex.fileId = f.id; ex.fileName = f.name; }
+      if (ch.some(c => c.field === 'g.expiryDate')) ex.lastAlert = '';
+      ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Guarantees', ex._row, ex);
+      if (ch.length) appendRows_('Changes', ch);
+      log_(u.username, 'تعديل ضمان', (ex.gNo || '') + ' ' + ex.bank); return strip_(ex);
+    }
+    const o = { id: uid_(), createdAt: now_(), createdBy: u.username, updatedAt: now_(), updatedBy: u.username, archived: '', status: 'طلب إصدار', type: 'ابتدائي' };
+    F.forEach(k => { if (g[k] !== undefined && g[k] !== '') o[k] = String(g[k]).trim(); });
+    if (f) { o.fileId = f.id; o.fileName = f.name; }
+    appendRows_('Guarantees', [o]); log_(u.username, 'إضافة ضمان', (o.gNo || '') + ' ' + o.bank);
+    return o;
+  },
+  deleteGuarantee: (u, p) => {
+    need_(u, 'admin');
+    const ex = readAll_('Guarantees').find(x => x.id === p.id); if (!ex) throw new Error('الضمان غير موجود');
+    ex.archived = p.restore ? '' : 'نعم'; ex.updatedAt = now_(); ex.updatedBy = u.username; writeRow_('Guarantees', ex._row, ex);
+    log_(u.username, p.restore ? 'استعادة ضمان' : 'حذف ضمان', ex.gNo || ex.bank); return true;
+  },
+  saveBanks: (u, p) => {
+    need_(u, 'admin');
+    const b = (p.banks || []).map(x => ({ name: String(x.name || '').trim(), limit: Number(x.limit) || 0, marginPct: Number(x.marginPct) || 0, feePct: Number(x.feePct) || 0 })).filter(x => x.name);
+    const map = { banks: JSON.stringify(b) }; if (p.tenderTarget !== undefined) map.tenderTarget = String(Number(p.tenderTarget) || '');
+    saveSettingsMap_(map); log_(u.username, 'تعديل البنوك والحدود', b.length + ' بنك'); return true;
+  },
   saveBranches: (u, p) => {
     need_(u, 'admin');
     const b = (p.branches || []).map(x => ({ id: String(x.id || uid_()), name: String(x.name || '').trim(), city: String(x.city || '').trim(), crNo: String(x.crNo || '').replace(/\s/g, ''), main: !!x.main })).filter(x => x.name);
@@ -1120,6 +1206,7 @@ function dailyCheck() {
   });
   try { escalate_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر التصعيد', e.message); }
   try { violAlerts_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر تنبيه المخالفات', e.message); }
+  try { tenderAlerts_(s, today, admins); } catch (e) { log_('النظام', 'تعذّر تنبيه المنافسات والضمانات', e.message); }
   try { snapshot_(s, today); } catch (e) { }
   if (Number(Utilities.formatDate(new Date(), TZ, 'u')) % 7 === Number(s.weeklyDay)) sendWeeklySummary_();
   return { sent: sent, failed: failed };
@@ -1139,6 +1226,27 @@ function escalate_(s, today, admins) {
     htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#B3261E">تصعيد: بنود متأخرة لم يُتخذ فيها إجراء</h2><p style="color:#5A6B7F;margin:0 0 12px">هذه البنود تجاوزت موعدها ولم يسجّل المسؤول أي متابعة منذ ' + lim + ' أيام أو أكثر.</p><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' +
       ['البند', 'الجهة', 'المسؤول', 'الموعد', 'آخر تحديث', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#B3261E;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' + linkBtn_(s)) });
   log_('النظام', 'تصعيد', list.length + ' بند');
+}
+function tenderAlerts_(s, today, admins) {
+  if (!admins.length) return;
+  const out = [], upd = { Tenders: {}, Guarantees: {} };
+  const push = (sheet, x, key, row) => { if (String(x.lastAlert || '').indexOf(key) >= 0) return; out.push(row); upd[sheet][x.id] = ((upd[sheet][x.id] || String(x.lastAlert || '')) + ' ' + key).trim(); };
+  const TD = [['questionsDue', 'آخر موعد للاستفسارات'], ['siteVisit', 'الزيارة الميدانية'], ['submitDue', 'آخر موعد للتقديم'], ['openDate', 'فتح المظاريف'], ['validityDue', 'انتهاء صلاحية العرض']];
+  readAll_('Tenders').filter(t => t.archived !== 'نعم' && T_CLOSED.indexOf(t.stage) < 0).forEach(t => TD.forEach(([k, lbl]) => {
+    const d = dayNum_(t[k]); if (d === null) return; const days = d - today; if ([7, 3, 1, 0].indexOf(days) < 0) return;
+    push('Tenders', t, k + ':' + days, ['منافسة', t.title + (t.entity ? ' — ' + t.entity : ''), lbl, t[k], days]); }));
+  readAll_('Guarantees').filter(g => g.archived !== 'نعم' && G_CLOSED.indexOf(g.status) < 0).forEach(g => {
+    const d = dayNum_(g.expiryDate); if (d === null) return; const days = d - today;
+    if ([60, 30, 14, 7, 1, 0].indexOf(days) >= 0 || (days < 0 && (-days) % 7 === 0 && days >= -60)) push('Guarantees', g, 'E' + days, ['ضمان ' + g.type, g.bank + ' — ' + (g.gNo || '') + ' — ' + Number(g.amount || 0).toLocaleString('en-US') + ' ر.س', 'انتهاء الضمان', g.expiryDate, days]);
+  });
+  const tmap = {}; readAll_('Tenders').forEach(t => tmap[t.id] = t);
+  if (Number(Utilities.formatDate(new Date(), TZ, 'u')) % 7 === Number(s.weeklyDay)) readAll_('Guarantees').filter(g => g.archived !== 'نعم' && g.type === 'ابتدائي' && G_CLOSED.indexOf(g.status) < 0 && tmap[g.tenderId] && ['خاسر', 'معتذر / ملغاة'].indexOf(tmap[g.tenderId].stage) >= 0)
+    .forEach(g => out.push(['استرداد ضمان', g.bank + ' — ' + Number(g.amount || 0).toLocaleString('en-US') + ' ر.س', 'المنافسة ' + tmap[g.tenderId].stage + ' — اطلب الإفراج عن الضمان', '', null]));
+  if (!out.length) return;
+  const rows = out.sort((a, b) => (a[4] === null ? -1e9 : a[4]) - (b[4] === null ? -1e9 : b[4])).map(r => '<tr>' + td_(r[0]) + td_(r[1]) + td_(r[2]) + td_(r[3]) + '<td style="' + cs_() + 'text-align:center">' + (r[4] === null ? '<b style="color:#B3261E">استرداد</b>' : badge_(r[4])) + '</td></tr>').join('');
+  MailApp.sendEmail({ to: admins.join(','), name: s.orgName + ' — ' + 'المنافسات والضمانات', subject: '[' + s.orgName + '] المنافسات والضمانات — ' + out.length + ' موعد يحتاج إجراء',
+    htmlBody: wrap_(s, '<h2 style="margin:0 0 8px;color:#1F3A5F">مواعيد المنافسات والضمانات</h2><table style="border-collapse:collapse;width:100%;font-size:13px"><tr>' + ['النوع', 'التفاصيل', 'الموعد', 'التاريخ', 'الحالة'].map(h => '<th style="' + cs_() + 'background:#1F3A5F;color:#fff">' + h + '</th>').join('') + '</tr>' + rows + '</table>' + linkBtn_(Object.assign({}, s, { appUrl: APP_HOME + 'tenders/' }))) });
+  ['Tenders', 'Guarantees'].forEach(sh => { const ids = Object.keys(upd[sh]); if (!ids.length) return; const all = readAll_(sh); ids.forEach(id => { const x = all.find(z => z.id === id); if (x) { x.lastAlert = upd[sh][id].split(' ').slice(-16).join(' '); writeRow_(sh, x._row, x); } }); });
 }
 function crName_(s, no) { try { const l = JSON.parse(s.crList || '[]'); const x = l.find(c => String(c.no) === String(no)); return x ? x.name : ''; } catch (e) { return ''; } }
 function violAlerts_(s, today, admins) {
@@ -1427,6 +1535,24 @@ window.__A = { isFirstRun, setupAdmin, login, firstLogin, logout, api, contactAd
         A.api(t, 'saveItem', { item: { section: 'مستندات المكتب', title: d.name + ' — ' + { bm: 'الرئيسي', bj: 'جدة', bm2: 'المدينة' }[bid], platform: d.issuer, type: 'مستند رسمي', branch: bid, docKey: d.k, expiryDate: D(off), issueDate: D(off - 365), ownerName: ['أحمد سالم', 'سارة محمد', 'خالد عمر'][k % 3], crNo: { bm: '4031000001', bj: '4030000002', bm2: '4650000003' }[bid] } }); });
     });
   } catch (e) { console.error('demo branches', e); }
+  try {
+    const T = [['تصميم وإشراف مبنى إداري — أمانة العاصمة المقدسة', 'أمانة العاصمة المقدسة', 'اعتماد', '260145', 'إعداد العرض', 8500000, 3, 9, -1, 'أحمد سالم'],
+      ['دراسات طرق ومرافق — مخطط الشرائع', 'وزارة البلديات', 'اعتماد', '260211', 'دراسة', 4200000, 12, 20, 6, 'سارة محمد'],
+      ['إدارة مشروع سكني — الشركة الوطنية للإسكان', 'الشركة الوطنية للإسكان', 'منصة الجهة', 'NHC-77', 'تم التقديم', 15000000, -5, -2, null, 'خالد عمر'],
+      ['الإشراف على مشروع فندقي — كدانة', 'شركة كدانة للتطوير', 'ساب أريبا', 'KD-3391', 'فتح المظاريف', 22000000, -20, -12, null, 'أحمد سالم'],
+      ['تصميم مدارس — تطوير للمباني', 'شركة تطوير للمباني', 'اعتماد', '259870', 'مرسى', 6800000, -60, -45, null, 'سارة محمد'],
+      ['مراجعة تصاميم — هيئة تطوير منطقة مكة', 'هيئة تطوير منطقة مكة', 'اعتماد', '259512', 'خاسر', 3100000, -90, -70, null, 'خالد عمر'],
+      ['تصميم مستشفى — وزارة الصحة', 'وزارة الصحة', 'اعتماد', '260300', 'رصد', 30000000, 25, 30, 18, '']];
+    const ids = [];
+    T.forEach(r => { const o = A.api(t, 'saveTender', { t: { title: r[0], entity: r[1], platform: r[2], refNo: r[3], stage: r[4], estValue: r[5], submitDue: D(r[6]), openDate: D(r[7]), siteVisit: r[8] === null ? '' : D(r[8]), questionsDue: D(r[6] - 7), manager: r[9],
+      decision: ['رصد', 'دراسة'].indexOf(r[4]) >= 0 ? '' : 'نشارك', score: JSON.stringify({ fit: 4, qual: 4, comp: 3, profit: 4, risk: 3 }), ourPrice: r[4] === 'خاسر' ? 3050000 : r[4] === 'مرسى' ? 6500000 : '', winnerName: r[4] === 'خاسر' ? 'مكتب منافس' : r[4] === 'مرسى' ? 'دار مكة' : '', winnerPrice: r[4] === 'خاسر' ? 2790000 : '', awardValue: r[4] === 'مرسى' ? 6500000 : '', contractStart: r[4] === 'مرسى' ? D(-30) : '', contractEnd: r[4] === 'مرسى' ? D(700) : '',
+      reqs: JSON.stringify(r[4] === 'إعداد العرض' ? [{ group: 'إداري', name: 'السجل التجاري', done: true }, { group: 'إداري', name: 'شهادة الزكاة والدخل', done: true }, { group: 'فني', name: 'العرض الفني والمنهجية', done: false }, { group: 'مالي', name: 'العرض المالي', done: false }, { group: 'ضمان', name: 'الضمان الابتدائي', done: true }] : []),
+      tasks: JSON.stringify(r[4] === 'إعداد العرض' ? [{ t: 'إعداد العرض الفني', who: 'سارة محمد', due: D(1), done: false }, { t: 'تسعير جدول الكميات', who: 'أحمد سالم', due: D(2), done: false }] : []) } }); ids.push(o.id); });
+    A.api(t, 'saveBanks', { banks: [{ name: 'البنك الأهلي السعودي', limit: 10000000, marginPct: 10, feePct: 1 }, { name: 'مصرف الراجحي', limit: 6000000, marginPct: 15, feePct: 1.2 }], tenderTarget: 25000000 });
+    [[0, 'ابتدائي', 'البنك الأهلي السعودي', 'LG-1001', 170000, 2, D(-3), D(90), 'سارٍ', 17000], [2, 'ابتدائي', 'مصرف الراجحي', 'LG-2045', 300000, 2, D(-30), D(25), 'سارٍ', 45000], [3, 'ابتدائي', 'البنك الأهلي السعودي', 'LG-1022', 440000, 2, D(-50), D(12), 'سارٍ', 44000],
+     [4, 'نهائي', 'البنك الأهلي السعودي', 'LG-1050', 325000, 5, D(-28), D(700), 'سارٍ', 32500], [5, 'ابتدائي', 'مصرف الراجحي', 'LG-2011', 62000, 2, D(-100), D(40), 'سارٍ', 9300]]
+      .forEach(r => A.api(t, 'saveGuarantee', { g: { tenderId: ids[r[0]], type: r[1], bank: r[2], gNo: r[3], amount: r[4], percent: r[5], issueDate: r[6], expiryDate: r[7], status: r[8], cashMargin: r[9], beneficiary: T[r[0]][1], feeIssue: Math.round(r[4] * 0.01) } }));
+  } catch (e) { console.error('demo tenders', e); }
   try { const its = A.api(t, 'bootstrap', {}).items.filter(i => i.section === 'التأهيلات والتراخيص' && i.expiryDate).slice(0, 3);
     its.forEach((i, k) => A.api(t, 'renewItem', { id: i.id, newIssue: D(-400 + k * 10), newExpiry: i.expiryDate, cost: '3500', notes: 'تجديد سابق (بيانات تجريبية)' })); } catch (e) { }
   const mk = (s, f) => new Proxy({}, { get: (o, k) => {
@@ -1449,15 +1575,17 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
   settings: 'M12 15a3 3 0 100-6 3 3 0 000 6zM19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z',
   file: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8zM14 2v6h6', link: 'M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.7 1.7M14 11a5 5 0 00-7.5-.5l-3 3a5 5 0 007 7l1.7-1.7',
   renew: 'M21 12a9 9 0 11-3-6.7L21 8M21 3v5h-5', wa: 'M21 11.5a8.4 8.4 0 01-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1121 11.5z', plus: 'M12 5v14M5 12h14', up: 'M12 19V5M5 12l7-7 7 7', down: 'M12 5v14M19 12l-7 7-7-7',
-  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4', viol: 'M12 3l10 18H2L12 3zM12 10v5M12 18h.01', link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1', hist: 'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2', search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-4.3-4.3', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
+  report: 'M3 3v18h18M7 15l4-4 3 3 5-6', calendar: 'M4 6h16v14H4zM4 10h16M8 3v4M16 3v4', tender: 'M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6', bank: 'M3 10h18M5 10v8M9 10v8M15 10v8M19 10v8M3 20h18M12 3l9 5H3z', viol: 'M12 3l10 18H2L12 3zM12 10v5M12 18h.01', link: 'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1', hist: 'M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5M12 7v5l3 2', search: 'M11 4a7 7 0 1 0 0 14a7 7 0 1 0 0-14zM21 21l-4.3-4.3', x: 'M18 6L6 18M6 6l12 12', menu: 'M3 6h18M3 12h18M3 18h18', edit: 'M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z', search: 'M11 19a8 8 0 100-16 8 8 0 000 16zM21 21l-4.3-4.3',
   user: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8', lock: 'M5 11h14v10H5zM8 11V7a4 4 0 018 0v4', eye: 'M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8zM12 15a3 3 0 100-6 3 3 0 000 6',
   eyeoff: 'M17.9 17.9A10 10 0 0112 20C5 20 1 12 1 12a18 18 0 015.1-5.9M9.9 4.2A9 9 0 0112 4c7 0 11 8 11 8a18 18 0 01-2.2 3.2M14.1 14.1a3 3 0 11-4.2-4.2M1 1l22 22', shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4',
   bell: 'M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0', alert: 'M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z',
   cards: 'M3 3h8v8H3zM13 3h8v8h-8zM3 13h8v8H3zM13 13h8v8h-8z', table: 'M3 4h18v16H3zM3 10h18M3 15h18M9 10v10', chev: 'M6 9l6 6 6-6', cal: 'M3 5h18v16H3zM16 3v4M8 3v4M3 10h18' };
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/';
-const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/install.html';
-const APP_VER = '19 · 04/10/2026';
+const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/' + (window.DM_MODE === 'tenders' ? 'tenders/' : '');
+const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/' + (window.DM_MODE === 'tenders' ? 'tenders/' : '') + 'install.html';
+const APP_VER = '20 · 04/10/2026';
+const APP_MODE = window.DM_MODE === 'tenders' ? 'tenders' : 'platforms';
+const APP_TITLE = APP_MODE === 'tenders' ? 'إدارة المنافسات والضمانات' : 'إدارة المنصات والتأهيلات';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
 const IN_GAS = !!(window.google && google.script && google.script.run);
 const ic = k => '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="' + (P[k] || '') + '"/></svg>';
@@ -1538,7 +1666,8 @@ function cacheSave(d) { try { const j = JSON.stringify(d); sessionStorage.setIte
 function cacheGet() { try { const v = sessionStorage.getItem('dm_cache') || (localStorage.getItem('dm_ptok') === S.token ? localStorage.getItem('dm_cache_l') : ''); return v ? JSON.parse(v) : null; } catch (e) { return null; } }
 function useData(d, keepView) {
   cacheSave(d); S.d = d; S.d.items.forEach(enrich);
-  if (!keepView) S.view = 'dash';
+  if (!keepView) S.view = APP_MODE === 'tenders' ? 'tdash' : 'dash';
+  document.title = APP_TITLE;
   renderApp(); applyHash(); setTimeout(() => notifyDaily(), 1500);
 }
 async function boot() {
@@ -1556,9 +1685,10 @@ async function boot() {
 }
 function authShell(inner) {
   return `<div class="auth"><section class="auth-art" id="art"><div class="spot" aria-hidden="true"></div>
-    <div class="brand">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>منصة المتابعة الموحّدة</span></div></div>
-    <div class="art-mid"><h1>كل التأهيلات والمستندات الرسمية <em>في سجل واحد</em> لا يفوته موعد.</h1>
-      <p class="lead">تابع تواريخ انتهاء التأهيلات والتراخيص ومستندات المكتب وحسابات المنصات، واستقبل التذكير قبل كل استحقاق.</p>
+    <div class="brand">${LOGO}<div><b>${APP_TITLE}</b><span>${APP_MODE === 'tenders' ? 'المنافسات والضمانات البنكية' : 'منصة المتابعة الموحّدة'}</span></div></div>
+    <div class="art-mid">${APP_MODE === 'tenders' ? `<h1>كل المنافسات والضمانات <em>في لوحة واحدة</em> لا يفوتك موعد تقديم.</h1>
+      <p class="lead">تابع مراحل المنافسات ومواعيدها وقرارات المشاركة ومتطلبات العرض، والضمانات البنكية وحدودها، مع تنبيه قبل كل موعد.</p>` : `<h1>كل التأهيلات والمستندات الرسمية <em>في سجل واحد</em> لا يفوته موعد.</h1>
+      <p class="lead">تابع تواريخ انتهاء التأهيلات والتراخيص ومستندات المكتب وحسابات المنصات، واستقبل التذكير قبل كل استحقاق.</p>`}
       <div class="pv" id="pv" aria-live="polite"></div>
       <div class="feat" role="tablist"><button type="button" role="tab" data-sc="0">${ic('bell')}<b>تذكير قبل الانتهاء</b><span>بريد وواتساب من 90 يوماً وحتى يوم الاستحقاق</span><i></i></button>
         <button type="button" role="tab" data-sc="1">${ic('file')}<b>أرشيف الشهادات</b><span>كل تجديد بملفه وتاريخ بدايته ونهايته</span><i></i></button>
@@ -1693,23 +1823,26 @@ function counts(sec) {
   return { n: it.length, bad: it.filter(i => i._st === 'expired' || i._st === 'critical').length };
 }
 function renderApp() {
-  const me = S.d.me, nav = [['dash', 'dash', 'لوحة المتابعة'], ['mine', 'user', 'مهامي'], ['calendar', 'calendar', 'التقويم'], ['viol', 'viol', 'المخالفات']];
-  S.d.sections.forEach(s => nav.push(['sec:' + s, s, s]));
-  const nav2 = [['reports', 'report', 'التقارير'], ['renewals', 'renewals', 'سجل التجديدات'], ['contacts', 'contacts', 'المسؤولون']];
+  const TM = APP_MODE === 'tenders';
+  const me = S.d.me, nav = TM ? [['tdash', 'dash', 'لوحة المنافسات'], ['tenders', 'tender', 'المنافسات'], ['guar', 'shield', 'الضمانات البنكية'], ['banks', 'bank', 'البنوك والحدود'], ['tcal', 'calendar', 'التقويم'], ['treports', 'report', 'المؤشرات والتقارير']] : [['dash', 'dash', 'لوحة المتابعة'], ['mine', 'user', 'مهامي'], ['calendar', 'calendar', 'التقويم'], ['viol', 'viol', 'المخالفات']];
+  if (!TM) S.d.sections.forEach(s => nav.push(['sec:' + s, s, s]));
+  const nav2 = TM ? [['contacts', 'contacts', 'المسؤولون']] : [['reports', 'report', 'التقارير'], ['renewals', 'renewals', 'سجل التجديدات'], ['contacts', 'contacts', 'المسؤولون']];
   if (me.role === 'admin') nav2.push(['users', 'users', 'المستخدمون والصلاحيات'], ['alerts', 'alerts', 'سجل التنبيهات'], ['logs', 'logs', 'سجل النشاط'], ['settings', 'settings', 'الإعدادات']);
   const link = n => { let c = '';
     if (n[0].indexOf('sec:') === 0) { const k = counts(n[0].slice(4)); c = k.bad ? '<span class="cnt hot">' + k.bad + '</span>' : '<span class="cnt">' + k.n + '</span>'; }
     else if (n[0] === 'dash') { const k = counts(); c = k.bad ? '<span class="cnt hot">' + k.bad + '</span>' : ''; }
+    else if (n[0] === 'tenders') { const td = dn(S.d.today), k = (S.d.tenders || []).filter(t => tOpen(t) && t.submitDue && dn(t.submitDue) - td >= 0 && dn(t.submitDue) - td <= 7).length; c = k ? '<span class="cnt hot">' + k + '</span>' : '<span class="cnt">' + (S.d.tenders || []).filter(tOpen).length + '</span>'; }
+    else if (n[0] === 'guar') { const k = (S.d.guarantees || []).filter(g => gOpen(g) && gDays(g) !== null && gDays(g) <= 30).length; c = k ? '<span class="cnt hot">' + k + '</span>' : ''; }
     else if (n[0] === 'viol') { const k = (S.d.violations || []).filter(v => vOpen(v) && (vDays(v) || [99])[0] <= 7).length, o = (S.d.violations || []).filter(vOpen).length; c = k ? '<span class="cnt hot">' + k + '</span>' : o ? '<span class="cnt">' + o + '</span>' : ''; }
     else if (n[0] === 'mine') { const mo = myOwnerName(), k = mo ? S.d.items.filter(i => i.ownerName === mo && (i._st === 'expired' || (i._due && i._days <= 7))).length : 0; c = k ? '<span class="cnt hot">' + k + '</span>' : ''; }
     return `<a data-v="${esc(n[0])}" class="${S.view === n[0] ? 'on' : ''}" href="#" ${S.view === n[0] ? 'aria-current="page"' : ''}>${ic(n[1])}<span>${esc(n[2])}</span>${c}</a>`; };
   $('#root').innerHTML = `<a class="skip" href="#main">تخطٍّ إلى المحتوى</a><div class="app"><aside class="side" id="side" aria-label="القائمة الرئيسية">
-    <div class="head">${LOGO}<div><b>إدارة المنصات والتأهيلات</b><span>${esc(S.d.settings.orgName)}</span></div></div>
-    <nav class="nav">${nav.map(link).join('')}<div class="grp">المتابعة والإدارة</div>${nav2.map(link).join('')}</nav>
+    <div class="head">${LOGO}<div><b>${APP_TITLE}</b><span>${esc(S.d.settings.orgName)}</span></div></div>
+    <nav class="nav">${nav.map(link).join('')}<div class="grp">المتابعة والإدارة</div>${nav2.map(link).join('')}<a class="xlink" href="${TM ? APP_HOME : TENDER_HOME}" ${IN_GAS ? 'target="_blank" rel="noopener"' : ''}>${ic(TM ? 'dash' : 'tender')}<span>${TM ? 'منصة التأهيلات والمستندات' : 'المنافسات والضمانات'}</span><small>نظام مستقل ↗</small></a></nav>
     <a class="inst" href="${INSTALL_URL}" target="_blank" rel="noopener">${ic('down')}<span>تثبيت التطبيق<small>على الكمبيوتر أو الجوال</small></span></a>
     <div class="me"><b>${esc(me.name)}</b><span>${esc(S.d.roles[me.role])} — ${esc(me.username)}</span><div class="links"><a id="myPw">تغيير كلمة المرور</a><a id="out">خروج</a><a href="${DEMO_URL}" target="_blank" rel="noopener">النسخة التجريبية</a></div><div class="tgl"><button id="tTheme" class="${document.documentElement.dataset.theme === 'dark' ? 'on' : ''}">الوضع الليلي</button><button id="tFont" class="${document.documentElement.dataset.font === 'lg' ? 'on' : ''}">خط كبير</button><button id="tNotif" class="${notifEnabled() ? 'on' : ''}">الإشعارات</button><button data-search title="بحث (Ctrl+K)">بحث</button><button id="tKeys" title="اختصارات لوحة المفاتيح">⌨</button></div><div class="ver">الإصدار ${APP_VER}</div></div>
   </aside><main class="main" id="main" tabindex="-1"></main><div class="tip hidden" id="tip"></div></div>
-  <nav class="mbar" aria-label="تنقل سريع">${[['dash', 'dash', 'اللوحة'], ['mine', 'user', 'مهامي'], ['search', 'search', 'بحث'], ['calendar', 'calendar', 'التقويم']].concat(can('editor') ? [['add', 'plus', 'إضافة']] : []).map(b => `<button data-nav="${b[0]}" class="${S.view === b[0] ? 'on' : ''}">${ic(b[1])}<span>${b[2]}</span></button>`).join('')}</nav>`;
+  <nav class="mbar" aria-label="تنقل سريع">${(TM ? [['tdash', 'dash', 'اللوحة'], ['tenders', 'tender', 'المنافسات'], ['search', 'search', 'بحث'], ['guar', 'shield', 'الضمانات']] : [['dash', 'dash', 'اللوحة'], ['mine', 'user', 'مهامي'], ['search', 'search', 'بحث'], ['calendar', 'calendar', 'التقويم']]).concat(can('editor') ? [['add', 'plus', 'إضافة']] : []).map(b => `<button data-nav="${b[0]}" class="${S.view === b[0] ? 'on' : ''}">${ic(b[1])}<span>${b[2]}</span></button>`).join('')}</nav>`;
   document.querySelectorAll('.nav a').forEach(a => a.onclick = e => { e.preventDefault(); S.view = a.dataset.v; S.filters = {}; $('#side').classList.remove('open'); renderApp(); });
   $('#out').onclick = async () => { try { await gs('logout', S.token); } catch (e) { } logoutLocal(); };
   $('#myPw').onclick = myPwModal; loadLib(QR_LIB).catch(() => { });
@@ -1806,18 +1939,21 @@ function openSearch() {
     if (t) {
       const plats = [...new Set(S.d.items.map(i => i.platform).filter(Boolean))].filter(p => norm(p).indexOf(t) >= 0).slice(0, 4).map(p => ({ k: 'auth', v: p }));
       const its = S.d.items.filter(i => norm([i.title, i.platform, i.refNo, i.ownerName, i.username, i.notes, i.type, i.status].join(' ')).indexOf(t) >= 0).sort(byPriDays).slice(0, 12).map(i => ({ k: 'item', v: i }));
-      const views = [['dash', 'لوحة المتابعة'], ['mine', 'مهامي'], ['calendar', 'التقويم'], ['viol', 'المخالفات'], ['reports', 'التقارير'], ['renewals', 'سجل التجديدات'], ['contacts', 'المسؤولون']].filter(x => norm(x[1]).indexOf(t) >= 0).map(x => ({ k: 'view', v: x }));
+      const views = (APP_MODE === 'tenders' ? [['tdash', 'لوحة المنافسات'], ['tenders', 'المنافسات'], ['guar', 'الضمانات البنكية'], ['banks', 'البنوك والحدود'], ['tcal', 'التقويم'], ['treports', 'المؤشرات والتقارير']] : [['dash', 'لوحة المتابعة'], ['mine', 'مهامي'], ['calendar', 'التقويم'], ['viol', 'المخالفات'], ['reports', 'التقارير'], ['renewals', 'سجل التجديدات'], ['contacts', 'المسؤولون']]).filter(x => norm(x[1]).indexOf(t) >= 0).map(x => ({ k: 'view', v: x }));
       const vs = (S.d.violations || []).filter(v => norm([v.title, v.violationNo, v.crNo, v.location, v.source].join(' ')).indexOf(t) >= 0).slice(0, 6).map(v => ({ k: 'viol', v: v }));
-      res = views.concat(plats).concat(its).concat(vs);
+      const ts = (S.d.tenders || []).filter(x => norm([x.title, x.entity, x.refNo, x.platform].join(' ')).indexOf(t) >= 0).slice(0, 6).map(x => ({ k: 'tender', v: x })), gsr = (S.d.guarantees || []).filter(x => norm([x.gNo, x.bank, x.beneficiary].join(' ')).indexOf(t) >= 0).slice(0, 4).map(x => ({ k: 'guarr', v: x }));
+      res = APP_MODE === 'tenders' ? views.concat(ts).concat(gsr).concat(its) : views.concat(plats).concat(its).concat(vs).concat(ts);
     } else res = S.d.items.filter(i => i._due && i._st !== 'off').sort((a, b) => a._days - b._days).slice(0, 8).map(i => ({ k: 'item', v: i }));
     sel = Math.min(sel, Math.max(0, res.length - 1));
     R.innerHTML = (!t ? '<div class="gs-h">الأقرب موعداً</div>' : '') + (res.map((r, n) => r.k === 'item' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option"><i class="dot" style="background:${STC[r.v._st] === 'transparent' ? 'var(--line)' : STC[r.v._st]}"></i><div><b>${priChip(r.v)}${esc(r.v.title)}</b><small>${esc(r.v.platform || r.v.section)}${r.v.refNo ? ' — رقم ' + esc(r.v.refNo) : ''} — ${esc(r.v.ownerName || 'بدون مسؤول')}</small></div>${badge(r.v)}</div>`
+      : r.k === 'tender' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${ic('tender')}<div><b>منافسة: ${esc(r.v.title)}</b><small>${esc(r.v.entity || '')} — ${esc(r.v.stage)}</small></div>${tNext(r.v) && tOpen(r.v) ? dBadge(tNext(r.v)[0]) : ''}</div>`
+      : r.k === 'guarr' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${ic('shield')}<div><b>ضمان ${esc(r.v.type)} — ${esc(r.v.bank)}</b><small>${sar(r.v.amount)} ر.س — ${esc(r.v.status)}</small></div>${gOpen(r.v) ? dBadge(gDays(r.v)) : ''}</div>`
       : r.k === 'viol' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${ic('viol')}<div><b>مخالفة: ${esc(r.v.title || r.v.violationNo)}</b><small>${esc(r.v.source || '')} — ${esc(crLabel(r.v.crNo))}${r.v.amount ? ' — ' + money(r.v.amount) + ' ر.س' : ''}</small></div>${vBadge(r.v)}</div>`
       : r.k === 'auth' ? `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${av(r.v)}<div><b>${esc(r.v)}</b><small>ملف الجهة — ${S.d.items.filter(i => i.platform === r.v).length} بند</small></div></div>`
       : `<div class="gs-i ${n === sel ? 'on' : ''}" data-n="${n}" role="option">${ic('dash')}<div><b>${esc(r.v[1])}</b><small>انتقال للصفحة</small></div></div>`).join('') || '<div class="gs-h">لا توجد نتائج</div>');
     R.querySelectorAll('[data-n]').forEach(e => e.onclick = () => go(+e.dataset.n));
   };
-  const go = n => { const r = res[n]; if (!r) return; close(); if (r.k === 'item') itemModal(r.v.id); else if (r.k === 'viol') violModal(r.v.id); else if (r.k === 'auth') { S.view = 'auth:' + r.v; renderApp(); } else { S.view = r.v[0]; S.filters = {}; renderApp(); } };
+  const go = n => { const r = res[n]; if (!r) return; close(); if (r.k === 'item') itemModal(r.v.id); else if (r.k === 'tender') { if (APP_MODE === 'tenders') tenderModal(r.v.id); else location.href = TENDER_HOME; } else if (r.k === 'guarr') guarModal(r.v.id); else if (r.k === 'viol') violModal(r.v.id); else if (r.k === 'auth') { S.view = 'auth:' + r.v; renderApp(); } else { S.view = r.v[0]; S.filters = {}; renderApp(); } };
   q.oninput = () => { sel = 0; draw(); };
   q.onkeydown = e => { if (e.key === 'ArrowDown') { sel = Math.min(res.length - 1, sel + 1); draw(); e.preventDefault(); } else if (e.key === 'ArrowUp') { sel = Math.max(0, sel - 1); draw(); e.preventDefault(); } else if (e.key === 'Enter') go(sel); else if (e.key === 'Escape') close(); };
   draw(); setTimeout(() => q.focus(), 20);
@@ -1834,14 +1970,16 @@ document.addEventListener('keydown', e => {
   if (gKey && Date.now() - gKey < 1200) { gKey = 0; const t = { d: 'dash', m: 'mine', c: 'calendar' }[k]; if (t) { S.view = t; S.filters = {}; renderApp(); } return; }
   if (k === 'g') { gKey = Date.now(); return; }
   if (k === '/') { e.preventDefault(); openSearch(); }
+  else if (k === 'n' && can('editor') && APP_MODE === 'tenders') { e.preventDefault(); S.view === 'guar' ? guarModal(null) : tenderModal(null); }
   else if (k === 'n' && can('editor')) { e.preventDefault(); editModal(null, S.view.indexOf('sec:') === 0 ? S.view.slice(4) : S.d.sections[0]); }
-  else if (k === 'p') { const b = $('#prAll') || $('#prSec') || $('#authPr') || $('#rp_pr'); if (b) { e.preventDefault(); b.click(); } }
+  else if (k === 'p') { const b = $('#prAll') || $('#prSec') || $('#authPr') || $('#rp_pr') || $('#tPr') || $('#gPr') || $('#vPr'); if (b) { e.preventDefault(); b.click(); } }
   else if (e.key === '?') { e.preventDefault(); shortcutsHelp(); }
 });
 document.addEventListener('click', e => {
   const s = e.target.closest('[data-search]'); if (s) { e.preventDefault(); openSearch(); return; }
+  const xg = e.target.closest('[data-xgo]'); if (xg) { e.preventDefault(); const u = xg.dataset.xgo === 'tenders' ? TENDER_HOME : APP_HOME; if (IN_GAS) window.open(u, '_blank'); else location.href = u; return; }
   const a = e.target.closest('[data-auth]'); if (a) { e.preventDefault(); e.stopPropagation(); document.querySelectorAll('#modals .ov').forEach(o => o.remove()); S.view = 'auth:' + a.dataset.auth; renderApp(); return; }
-  const n = e.target.closest('[data-nav]'); if (n) { e.preventDefault(); if (n.dataset.nav === 'search') return openSearch(); if (n.dataset.nav === 'add') return editModal(null, S.view.indexOf('sec:') === 0 ? S.view.slice(4) : S.d.sections[0]); S.view = n.dataset.nav; S.filters = {}; renderApp(); }
+  const n = e.target.closest('[data-nav]'); if (n) { e.preventDefault(); if (n.dataset.nav === 'search') return openSearch(); if (n.dataset.nav === 'add') return APP_MODE === 'tenders' ? tenderModal(null) : editModal(null, S.view.indexOf('sec:') === 0 ? S.view.slice(4) : S.d.sections[0]); S.view = n.dataset.nav; S.filters = {}; renderApp(); }
 }, true);
 
 let hovT = 0;
@@ -1866,7 +2004,7 @@ function applyHash() {
   const [k, ...rest] = h.split('='), v = rest.join('=');
   if (k === 'item' && S.d.items.some(i => i.id === v)) setTimeout(() => itemModal(v), 150);
   else if (k === 'auth' && v) { S.view = 'auth:' + v; renderApp(); }
-  else if (k === 'v' && v && (v === 'dash' || v === 'mine' || v === 'calendar' || v.indexOf('sec:') === 0)) { S.view = v; renderApp(); }
+  else if (k === 'v' && v && (['dash', 'mine', 'calendar', 'viol', 'tdash', 'tenders', 'guar', 'banks', 'tcal', 'treports'].indexOf(v) >= 0 || v.indexOf('sec:') === 0) && (APP_MODE === 'tenders') === (['tdash', 'tenders', 'guar', 'banks', 'tcal', 'treports'].indexOf(v) >= 0)) { S.view = v; renderApp(); }
 }
 function itemLink(id) { return APP_HOME + '#item=' + encodeURIComponent(id); }
 function copyText(t) { try { navigator.clipboard.writeText(t).then(() => toast('تم نسخ الرابط')); } catch (e) { prompt('انسخ الرابط', t); } }
@@ -2100,6 +2238,273 @@ function printBranchMatrix() {
     <table><thead><tr><th>المستند</th>${B.map(b => { const s = branchStats(b.id, base); return `<th>${esc(b.name)}<small>${s.pct}% · ${s.missing} ناقص · ${s.bad} منتهٍ</small></th>`; }).join('')}</tr></thead><tbody>${T.map(t => `<tr><td class="d">${esc(t.name)}<small>${esc(t.issuer || '')}</small></td>${B.map(b => cell(find(b.id, t.k))).join('')}</tr>`).join('')}</tbody></table></body></html>`;
   openPrint(doc);
 }
+const TENDER_HOME = APP_HOME + 'tenders/';
+const TD_DATES = [['questionsDue', 'آخر موعد للاستفسارات'], ['siteVisit', 'الزيارة الميدانية'], ['submitDue', 'آخر موعد للتقديم'], ['openDate', 'فتح المظاريف'], ['validityDue', 'انتهاء صلاحية العرض']];
+const T_PLATFORMS = ['اعتماد', 'فرص', 'ساب أريبا', 'أوركال', 'أرامكو', 'منصة الجهة', 'دعوة مباشرة', 'أخرى'];
+const T_SCORE = [['fit', 'مناسبة التخصص'], ['qual', 'توفر التأهيل المطلوب'], ['comp', 'قوة المنافسة (5 = منافسة ضعيفة)'], ['profit', 'الربحية المتوقعة'], ['risk', 'المخاطر (5 = مخاطر منخفضة)']];
+const jp = (s, d) => { try { const v = JSON.parse(s || ''); return v == null ? d : v; } catch (e) { return d; } };
+const tOpen = t => (S.d.tClosed || []).indexOf(t.stage) < 0;
+const gOpen = g => (S.d.gClosed || []).indexOf(g.status) < 0;
+const sar = n => (Number(n) || 0).toLocaleString('en-US');
+const sarK = n => { n = Number(n) || 0; return n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + ' م' : n >= 1e3 ? Math.round(n / 1e3) + ' ألف' : String(n); };
+function tNext(t) { const td = dn(S.d.today); let best = null; TD_DATES.forEach(([k, l]) => { if (!t[k]) return; const d = dn(t[k]) - td; if (d >= -1 && (!best || d < best[0])) best = [d, l, t[k]]; }); return best; }
+function dBadge(days, label) { if (days === null || days === undefined) return ''; const cls = days < 0 ? 'b-expired' : days <= 3 ? 'b-critical' : days <= 7 ? 'b-urgent' : days <= 30 ? 'b-soon' : 'b-ok'; return `<span class="badge ${cls}">${days < 0 ? '✕ فات منذ ' + (-days) + ' يوم' : days === 0 ? '⏱ اليوم' : '⏱ ' + days + ' يوم'}${label ? ' · ' + esc(label) : ''}</span>`; }
+function gDays(g) { return g.expiryDate ? dn(g.expiryDate) - dn(S.d.today) : null; }
+const tById = id => (S.d.tenders || []).find(t => t.id === id);
+function reqStatus(r) { if (!r.itemId) return null; const i = S.d.items.find(x => x.id === r.itemId); return i || 'gone'; }
+function reqProg(t) { const R = jp(t.reqs, []); return [R.filter(r => r.done).length, R.length, R.filter(r => { const i = reqStatus(r); return i && i !== 'gone' && i._st === 'expired'; }).length]; }
+function winStats(L) { const w = L.filter(t => t.stage === 'مرسى').length, l = L.filter(t => t.stage === 'خاسر').length; return { w, l, rate: (w + l) ? Math.round(w / (w + l) * 100) : null }; }
+function banksList() { return jp((S.d.settings || {}).banks, []); }
+function bankUse(name) { const G = (S.d.guarantees || []).filter(g => g.bank === name && gOpen(g) && g.status !== 'طلب إصدار'); return { amount: G.reduce((a, g) => a + (Number(g.amount) || 0), 0), margin: G.reduce((a, g) => a + (Number(g.cashMargin) || 0), 0), n: G.length }; }
+
+function tdashView() {
+  const T = S.d.tenders || [], G = S.d.guarantees || [], op = T.filter(tOpen), y = S.d.today.slice(0, 4), ws = winStats(T.filter(t => String(t.updatedAt || t.createdAt).slice(0, 4) === y)), wAll = winStats(T);
+  const won = T.filter(t => t.stage === 'مرسى' && String(t.updatedAt).slice(0, 4) === y).reduce((a, t) => a + (Number(t.awardValue) || 0), 0), target = Number((S.d.settings || {}).tenderTarget) || 0;
+  const gAct = G.filter(g => gOpen(g) && g.status !== 'طلب إصدار'), gSum = gAct.reduce((a, g) => a + (Number(g.amount) || 0), 0), gMar = gAct.reduce((a, g) => a + (Number(g.cashMargin) || 0), 0);
+  const sub7 = op.filter(t => t.submitDue && dn(t.submitDue) - dn(S.d.today) >= 0 && dn(t.submitDue) - dn(S.d.today) <= 7);
+  const refund = G.filter(g => gOpen(g) && g.type === 'ابتدائي' && tById(g.tenderId) && ['خاسر', 'معتذر / ملغاة'].indexOf(tById(g.tenderId).stage) >= 0);
+  const kp = [['منافسات مفتوحة', op.length, 'var(--ink)'], ['تقديم خلال 7 أيام', sub7.length, 'var(--amber)'], ['نسبة الفوز ' + y, ws.rate === null ? '—' : ws.rate + '%', 'var(--ok)'], ['المرسى ' + y + (target ? ' / المستهدف' : '') + ' (ر.س)', sarK(won) + (target ? ' / ' + sarK(target) : ''), '#7A6A22'], ['ضمانات قائمة (ر.س)', sarK(gSum), 'var(--red)'], ['هامش نقدي محجوز (ر.س)', sarK(gMar), 'var(--gold)']];
+  const ev = []; const td = dn(S.d.today);
+  op.forEach(t => TD_DATES.forEach(([k, l]) => { if (t[k]) { const d = dn(t[k]) - td; if (d >= -3 && d <= 21) ev.push({ d, l, title: t.title, sub: t.entity || '', tid: t.id }); } }));
+  G.filter(gOpen).forEach(g => { const d = gDays(g); if (d !== null && d <= 30) ev.push({ d, l: 'انتهاء ضمان ' + g.type, title: g.bank + ' — ' + sar(g.amount) + ' ر.س', sub: (tById(g.tenderId) || {}).title || g.beneficiary || '', gid: g.id }); });
+  ev.sort((a, b) => a.d - b.d);
+  const stg = (S.d.tStages || []).filter(s => (S.d.tClosed || []).indexOf(s) < 0), mx = Math.max(1, ...stg.map(s => op.filter(t => t.stage === s).length));
+  const L = S.d.items.filter(i => i._st !== 'off'), dated = L.filter(i => i._due), ex = dated.filter(i => i._days < 0).length, rdy = dated.length ? Math.round((dated.length - ex) / dated.length * 100) : 100;
+  return topbar('لوحة المنافسات والضمانات', esc(S.d.settings.orgName) + ' — ' + op.length + ' منافسة مفتوحة و' + gAct.length + ' ضماناً قائماً', can('editor') ? `<button class="btn light" id="tdG">${ic('shield')} ضمان جديد</button><button class="btn" id="tdT">${ic('plus')} منافسة جديدة</button>` : '') +
+    `<div class="strip">${kp.map(k => `<button style="--c:${k[2]};cursor:default"><div class="n">${k[1]}</div><div class="l">${k[0]}</div></button>`).join('')}</div>
+    <div class="cols"><section class="panel"><h3>المواعيد القادمة <small>منافسات وضمانات — 3 أسابيع</small></h3>${ev.length ? `<ul class="dlist">${ev.slice(0, 14).map(e => `<li ${e.tid ? `data-tid="${e.tid}"` : `data-gid="${e.gid}"`} style="--c:${e.d < 0 ? 'var(--red)' : e.d <= 3 ? 'var(--amber)' : 'var(--gold)'}"><span class="t">${esc(e.title)}</span><span class="d">${dBadge(e.d)}</span><span class="s">${esc(e.l)}${e.sub ? ' — ' + esc(e.sub) : ''}</span></li>`).join('')}</ul>` : '<div class="empty">لا توجد مواعيد قريبة ✓</div>'}</section>
+    <div><section class="panel"><h3>خط سير المنافسات <small>المفتوحة حسب المرحلة</small></h3><div class="pb">${stg.map(s => { const n = op.filter(t => t.stage === s).length; return `<div class="secrow" data-tstage="${esc(s)}"><span>${esc(s)}</span><span class="bar"><i style="width:${n / mx * 100}%;background:var(--green)"></i></span><span class="v">${n}</span></div>`; }).join('')}<div style="margin-top:10px;color:var(--muted);font-size:12.5px">الكل: ${wAll.w} مرسى · ${wAll.l} خاسر${wAll.rate !== null ? ' · نسبة الفوز ' + wAll.rate + '%' : ''}</div></div></section>
+    ${refund.length ? `<section class="panel"><h3 style="color:var(--red)">ضمانات يجب استردادها <small>منافسات خاسرة أو ملغاة</small></h3><ul class="dlist">${refund.map(g => `<li data-gid="${g.id}" style="--c:var(--red)"><span class="t">${esc(g.bank)} — ${sar(g.amount)} ر.س</span><span class="d"><span class="badge b-expired">اطلب الإفراج</span></span><span class="s">${esc((tById(g.tenderId) || {}).title || '')}</span></li>`).join('')}</ul></section>` : ''}
+    <section class="panel xsys" data-xgo="platforms"><h3>${ic('dash')} جاهزية التأهيل <small>من منصة التأهيلات — اضغط للانتقال</small></h3><div class="pb vp-g"><div><b style="color:${rdy >= 90 ? 'var(--ok)' : rdy >= 75 ? 'var(--amber)' : 'var(--red)'}">${rdy}%</b><span>مؤشر الجاهزية</span></div><div><b style="color:var(--red)">${ex}</b><span>مستند منتهٍ</span></div><div><b>${L.length}</b><span>بند تحت المتابعة</span></div></div></section></div></div>`;
+}
+function bindTdash() {
+  document.querySelectorAll('[data-tid]').forEach(e => e.onclick = () => tenderModal(e.dataset.tid));
+  document.querySelectorAll('[data-gid]').forEach(e => e.onclick = () => guarModal(e.dataset.gid));
+  document.querySelectorAll('[data-tstage]').forEach(e => e.onclick = () => { S.tf = { stage: e.dataset.tstage }; S.view = 'tenders'; renderApp(); });
+  if ($('#tdT')) $('#tdT').onclick = () => tenderModal(null); if ($('#tdG')) $('#tdG').onclick = () => guarModal(null);
+}
+function tFiltered() {
+  const f = S.tf || (S.tf = {}); let L = (S.d.tenders || []).slice();
+  if (f.q) { const q = f.q.toLowerCase(); L = L.filter(t => [t.title, t.entity, t.refNo, t.platform, t.sector, t.manager, t.notes].join(' ').toLowerCase().indexOf(q) >= 0); }
+  ['entity', 'platform', 'manager', 'branch'].forEach(k => { if (f[k]) L = L.filter(t => (t[k] || '') === f[k]); });
+  if (f.stage) L = L.filter(t => t.stage === f.stage);
+  return L;
+}
+function tendersView() {
+  const f = S.tf || (S.tf = {}), lay = (() => { try { return localStorage.getItem('dm_tlay') || 'kanban'; } catch (e) { return 'kanban'; } })(), L = tFiltered(), T = S.d.tenders || [];
+  const uq = k => [...new Set(T.map(t => t[k]).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ar'));
+  const sel = (id, ph, arr, v, lbl) => `<select id="${id}"><option value="">${ph}</option>${arr.map(a => `<option value="${esc(a)}" ${a === v ? 'selected' : ''}>${esc(lbl ? lbl(a) : a)}</option>`).join('')}</select>`;
+  const tools = `<div class="tools"><input class="search" id="tq" placeholder="بحث باسم المنافسة أو الجهة أو الرقم" value="${esc(f.q || '')}">${sel('tf_entity', 'كل الجهات', uq('entity'), f.entity)}${sel('tf_platform', 'كل المنصات', uq('platform'), f.platform)}${sel('tf_manager', 'كل المدراء', uq('manager'), f.manager)}${branches().length ? sel('tf_branch', 'كل الفروع', branches().map(b => b.id), f.branch, brName) : ''}<div class="seg"><button data-tlay="kanban" class="${lay === 'kanban' ? 'on' : ''}">${ic('cards')}لوحة المراحل</button><button data-tlay="list" class="${lay === 'list' ? 'on' : ''}">${ic('table')}جدول</button></div></div>`;
+  const card = t => { const n = tNext(t), [dd, tt, bad] = reqProg(t); return `<article class="tcard" draggable="${can('editor')}" data-tid="${t.id}"><div class="tc-t">${esc(t.title)}</div><div class="tc-s">${av(t.entity)}${esc(t.entity || '—')}${t.platform ? ' · ' + esc(t.platform) : ''}</div>${t.estValue ? `<div class="tc-v">${sar(t.estValue)} ر.س</div>` : ''}${n && tOpen(t) ? `<div>${dBadge(n[0], n[1])}</div>` : ''}${t.stage === 'مرسى' && t.awardValue ? `<div class="tc-v" style="color:var(--ok)">مرسى: ${sar(t.awardValue)} ر.س</div>` : ''}<div class="tc-f">${tt ? `<span class="tc-r ${bad ? 'bad' : ''}" title="المتطلبات">${dd}/${tt}${bad ? ' · ' + bad + ' منتهٍ' : ''}</span>` : '<span></span>'}${t.manager ? `<span class="who"><i style="--av:${avc(t.manager)}">${esc(ini(t.manager))}</i></span>` : ''}</div></article>`; };
+  let body;
+  if (lay === 'kanban') {
+    const stg = S.d.tStages || [], cl = S.d.tClosed || [];
+    body = `<div class="kanban">${stg.map(s => { const X = L.filter(t => t.stage === s); return `<section class="kcol ${cl.indexOf(s) >= 0 ? 'closed' : ''}" data-kst="${esc(s)}"><header><b>${esc(s)}</b><span>${X.length}</span></header><div class="kbody">${X.sort((a, b) => ((tNext(a) || [1e9])[0]) - ((tNext(b) || [1e9])[0])).map(card).join('') || '<div class="kempty">اسحب منافسة هنا</div>'}</div></section>`; }).join('')}</div>`;
+  } else {
+    body = `<div class="tbl-wrap"><table><thead><tr><th>المنافسة</th><th class="hide-m">الجهة</th><th class="hide-m">المنصة</th><th>المرحلة</th><th class="hide-m">القيمة التقديرية</th><th>أقرب موعد</th><th class="hide-m">المتطلبات</th></tr></thead><tbody>${L.map(t => { const n = tNext(t), [dd, tt, bad] = reqProg(t); return `<tr class="click" data-tid="${t.id}" style="--c:${tOpen(t) ? 'var(--gold)' : t.stage === 'مرسى' ? 'var(--ok)' : 'var(--line)'}"><td><div class="t-title">${esc(t.title)}</div><div class="t-sub">${t.refNo ? 'رقم ' + esc(t.refNo) : ''}${t.manager ? ' — ' + esc(t.manager) : ''}</div></td><td class="hide-m">${esc(t.entity || '—')}</td><td class="hide-m">${esc(t.platform || '—')}</td><td><span class="chip">${esc(t.stage)}</span></td><td class="hide-m">${t.estValue ? sar(t.estValue) : '—'}</td><td>${n && tOpen(t) ? dBadge(n[0], n[1]) : '—'}</td><td class="hide-m">${tt ? dd + '/' + tt + (bad ? ' <b style="color:var(--red)">· ' + bad + ' منتهٍ</b>' : '') : '—'}</td></tr>`; }).join('') || '<tr><td colspan="7" class="empty">لا توجد منافسات مطابقة</td></tr>'}</tbody></table></div>`;
+  }
+  const on = f.q || f.entity || f.platform || f.manager || f.branch || f.stage;
+  return topbar('المنافسات', L.length + ' منافسة' + (f.stage ? ' — ' + esc(f.stage) : ''), `<button class="btn light" id="tPr">${ic('file')} طباعة</button><button class="btn light" id="tXl">${ic('down')} إكسل</button>` + (can('editor') ? `<button class="btn" id="tAdd">${ic('plus')} منافسة جديدة</button>` : '')) + tools + (on ? `<div style="margin:-6px 0 12px"><button class="btn light sm" id="tClr">مسح التصفية</button></div>` : '') + body;
+}
+function bindTenders() {
+  const f = S.tf, re = () => renderView();
+  let tm; $('#tq').oninput = e => { clearTimeout(tm); tm = setTimeout(() => { f.q = e.target.value; re(); const q = $('#tq'); q.focus(); q.setSelectionRange(q.value.length, q.value.length); }, 250); };
+  ['entity', 'platform', 'manager', 'branch'].forEach(k => { const el = $('#tf_' + k); if (el) el.onchange = () => { f[k] = el.value; re(); }; });
+  document.querySelectorAll('[data-tlay]').forEach(b => b.onclick = () => { try { localStorage.setItem('dm_tlay', b.dataset.tlay); } catch (e) { } re(); });
+  if ($('#tClr')) $('#tClr').onclick = () => { S.tf = {}; re(); };
+  document.querySelectorAll('[data-tid]').forEach(c => c.onclick = () => tenderModal(c.dataset.tid));
+  if ($('#tAdd')) $('#tAdd').onclick = () => tenderModal(null);
+  $('#tPr').onclick = () => printTenders(tFiltered()); $('#tXl').onclick = () => exportTenders(tFiltered());
+  if (can('editor')) {
+    document.querySelectorAll('.tcard').forEach(c => { c.ondragstart = e => { e.dataTransfer.setData('text/plain', c.dataset.tid); c.classList.add('drag'); }; c.ondragend = () => c.classList.remove('drag'); });
+    document.querySelectorAll('.kcol').forEach(col => { col.ondragover = e => { e.preventDefault(); col.classList.add('over'); }; col.ondragleave = () => col.classList.remove('over');
+      col.ondrop = async e => { e.preventDefault(); col.classList.remove('over'); const id = e.dataTransfer.getData('text/plain'), st = col.dataset.kst, t = tById(id); if (!t || t.stage === st) return;
+        const r = await call('saveTender', { t: { id, title: t.title, stage: st } }, true); Object.assign(t, r); cacheSave(S.d); toast('نُقلت إلى: ' + st); re();
+        if (st === 'مرسى' || st === 'خاسر') tenderModal(id, 'result'); else if (st === 'قرار المشاركة') tenderModal(id, 'decision'); }; });
+  }
+}
+const STD_REQS = [['إداري', 'السجل التجاري', 'cr'], ['إداري', 'شهادة الزكاة والدخل', 'zakat'], ['إداري', 'شهادة التأمينات الاجتماعية', 'gosi'], ['إداري', 'شهادة السعودة (نطاقات)', 'nitaqat'], ['إداري', 'عضوية الغرفة التجارية', 'chamber'], ['إداري', 'شهادة ضريبة القيمة المضافة', 'vat'], ['إداري', 'شهادة تصنيف المكاتب الهندسية', 'class'], ['إداري', 'شهادة المحتوى المحلي', 'local'], ['إداري', 'خطاب التفويض بالتوقيع', ''],
+  ['فني', 'العرض الفني والمنهجية', ''], ['فني', 'السير الذاتية لفريق العمل', ''], ['فني', 'سابقة الأعمال المشابهة', ''], ['فني', 'الهيكل التنظيمي وخطة العمل', ''], ['مالي', 'العرض المالي', ''], ['مالي', 'جدول الكميات المسعّر', ''], ['ضمان', 'الضمان الابتدائي', '']];
+function matchItem(name, key, t) {
+  const n = normT(name).replace('شهاده ', ''), br = t.branch || ((branches().find(b => b.main) || {}).id) || '';
+  const cands = S.d.items.filter(i => i._st !== 'off' && (key && i.docKey === key || normT(i.title).indexOf(n) >= 0 || n.indexOf(normT(i.title).replace('شهاده ', '')) >= 0));
+  return cands.sort((a, b) => ((b.branch === br) - (a.branch === br)) || (RANK[a._st] - RANK[b._st]))[0];
+}
+function tenderModal(id, tab) {
+  const t0 = id ? tById(id) : { stage: 'رصد', platform: 'اعتماد' }; if (!t0) return;
+  const t = Object.assign({}, t0), ro = !can('editor'), dis = ro ? 'disabled' : '';
+  let R = jp(t.reqs, []), K = jp(t.tasks, []), SC = jp(t.score, {}), CP = jp(t.competitors, []);
+  const linkedG = (S.d.guarantees || []).filter(g => g.tenderId === id);
+  const inp = (k, lbl, type, extra) => `<div><label>${lbl}</label><input id="t_${k}" type="${type || 'text'}" value="${esc(t[k] || '')}" ${extra || ''} ${dis}></div>`;
+  const tabs = [['info', 'البيانات'], ['dates', 'المواعيد'], ['decision', 'قرار المشاركة'], ['reqs', 'المتطلبات'], ['tasks', 'المهام'], ['result', 'النتيجة والترسية'], ['guar', 'الضمانات']];
+  const scoreHtml = () => { const vals = T_SCORE.map(c => Number(SC[c[0]]) || 0), tot = vals.reduce((a, b) => a + b, 0), pct = Math.round(tot / (T_SCORE.length * 5) * 100); return `<div class="sc-grid">${T_SCORE.map(c => `<label>${c[1]}</label><div class="sc-row">${[1, 2, 3, 4, 5].map(v => `<button type="button" class="sc-b ${Number(SC[c[0]]) === v ? 'on' : ''}" data-sc="${c[0]}" data-v="${v}" ${dis}>${v}</button>`).join('')}</div>`).join('')}</div><div class="sc-tot">التقييم: <b style="color:${pct >= 70 ? 'var(--ok)' : pct >= 50 ? 'var(--amber)' : 'var(--red)'}">${tot ? pct + '%' : '—'}</b> ${tot ? (pct >= 70 ? '— يُنصح بالمشاركة' : pct >= 50 ? '— مشاركة بحذر' : '— لا يُنصح بالمشاركة') : ''}</div>`; };
+  const reqHtml = () => { const groups = ['إداري', 'فني', 'مالي', 'ضمان', 'أخرى']; const [dd, tt, bad] = [R.filter(r => r.done).length, R.length, R.filter(r => { const i = reqStatus(r); return i && i !== 'gone' && i._st === 'expired'; }).length];
+    return `<div class="rq-top"><b>${dd}/${tt}</b> جاهز${bad ? ` · <b style="color:var(--red)">${bad} مستند منتهٍ في التأهيل</b>` : ''}<div class="rq-bar"><i style="width:${tt ? dd / tt * 100 : 0}%"></i></div>${ro ? '' : `<button type="button" class="btn light sm" id="rq_std">${ic('plus')} القائمة القياسية للمكتب الهندسي</button><button type="button" class="btn light sm" id="rq_pick">${ic('link')} إضافة من منصة التأهيلات</button>`}</div>
+      ${groups.map(g => { const X = R.map((r, n) => [r, n]).filter(x => (x[0].group || 'أخرى') === g); if (!X.length) return ''; return `<h4 class="rq-g">${g}</h4>${X.map(([r, n]) => { const i = reqStatus(r); return `<div class="rq ${r.done ? 'done' : ''}"><input type="checkbox" data-rqd="${n}" ${r.done ? 'checked' : ''} ${dis}><span class="rq-n">${esc(r.name)}</span>${i === 'gone' ? '<span class="badge b-none">المستند محذوف</span>' : i ? `<button type="button" class="rq-i" data-rqi="${i.id}">${badge(i)}</button>` : '<span class="rq-m">غير مربوط</span>'}${ro ? '' : `<button type="button" class="rq-x" data-rqx="${n}" aria-label="حذف">✕</button>`}</div>`; }).join('')}`; }).join('') || '<div class="empty" style="padding:14px">لا توجد متطلبات — أضف القائمة القياسية أو من منصة التأهيلات</div>'}
+      ${ro ? '' : `<div class="rq-add"><select id="rq_g">${groups.map(g => `<option>${g}</option>`).join('')}</select><input id="rq_n" placeholder="متطلب إضافي…"><button type="button" class="btn light sm" id="rq_add">إضافة</button></div>`}`; };
+  const taskHtml = () => `${K.length ? K.map((k, n) => `<div class="rq ${k.done ? 'done' : ''}"><input type="checkbox" data-tkd="${n}" ${k.done ? 'checked' : ''} ${dis}><span class="rq-n">${esc(k.t)}</span><span class="rq-m">${esc(k.who || '—')}${k.due ? ' · ' + fmtD(k.due) : ''}</span>${k.due && !k.done ? dBadge(dn(k.due) - dn(S.d.today)) : ''}${ro ? '' : `<button type="button" class="rq-x" data-tkx="${n}">✕</button>`}</div>`).join('') : '<div class="empty" style="padding:14px">لا توجد مهام</div>'}
+    ${ro ? '' : `<div class="rq-add tk"><input id="tk_t" placeholder="المهمة — مثال: إعداد العرض الفني"><select id="tk_w">${ownerOptions('')}</select><input type="date" id="tk_d"><button type="button" class="btn light sm" id="tk_add">إضافة</button></div>`}`;
+  const gap = () => { const o = Number(t.ourPrice) || 0, w = Number(t.winnerPrice) || 0; return o && w ? `<div class="note">فارق سعرنا عن الفائز: <b style="color:${o > w ? 'var(--red)' : 'var(--ok)'}">${o > w ? '+' : ''}${Math.round((o - w) / w * 1000) / 10}%</b> (${sar(o - w)} ر.س)</div>` : ''; };
+  const body = `<div class="ttabs" role="tablist">${tabs.map(x => `<button type="button" data-ttab="${x[0]}" class="${(tab || 'info') === x[0] ? 'on' : ''}">${x[1]}${x[0] === 'reqs' && R.length ? ' <small>' + R.filter(r => r.done).length + '/' + R.length + '</small>' : x[0] === 'guar' && linkedG.length ? ' <small>' + linkedG.length + '</small>' : ''}</button>`).join('')}</div>
+    <div class="tpane" data-tp="info"><label>اسم المنافسة *</label><input id="t_title" value="${esc(t.title || '')}" ${dis}><div class="row">${inp('entity', 'الجهة المالكة', 'text', 'list="dl_ent"')}<div><label>المنصة</label><select id="t_platform" ${dis}>${T_PLATFORMS.map(x => `<option ${x === t.platform ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div><datalist id="dl_ent">${[...new Set((S.d.tenders || []).map(x => x.entity).concat(S.d.items.map(i => i.platform)).filter(Boolean))].map(x => `<option value="${esc(x)}">`).join('')}</datalist>
+      <div class="row">${inp('refNo', 'رقم المنافسة', 'text', 'dir="ltr"')}${inp('sector', 'القطاع / نوع العمل')}</div><div class="row"><div><label>المرحلة</label><select id="t_stage" ${dis}>${(S.d.tStages || []).map(x => `<option ${x === t.stage ? 'selected' : ''}>${x}</option>`).join('')}</select></div><div><label>مدير العرض</label><select id="t_manager" ${dis}>${ownerOptions(t.manager)}</select></div></div>
+      <div class="row">${inp('estValue', 'القيمة التقديرية (ر.س)', 'number')}${inp('bookletCost', 'قيمة الكراسة (ر.س)', 'number')}</div>${branches().length ? `<div class="row"><div><label>الفرع</label><select id="t_branch" ${dis}><option value="">—</option>${branches().map(b => `<option value="${esc(b.id)}" ${t.branch === b.id ? 'selected' : ''}>${esc(b.name)}</option>`).join('')}</select></div><div></div></div>` : ''}<label>ملاحظات</label><textarea id="t_notes" rows="2" ${dis}>${esc(t.notes || '')}</textarea></div>
+    <div class="tpane" data-tp="dates"><div class="row">${inp('questionsDue', 'آخر موعد للاستفسارات', 'date')}${inp('siteVisit', 'الزيارة الميدانية', 'date')}</div><div class="row">${inp('submitDue', 'آخر موعد للتقديم *', 'date')}${inp('openDate', 'فتح المظاريف', 'date')}</div><div class="row">${inp('validityDue', 'انتهاء صلاحية العرض', 'date')}${inp('submittedAt', 'تاريخ التقديم الفعلي', 'date')}</div><div class="note">تصلك رسالة قبل كل موعد بـ 7 و3 أيام ويوم ويوم الموعد، ويظهر العدّ التنازلي على بطاقة المنافسة.</div></div>
+    <div class="tpane" data-tp="decision"><div id="sc_box">${scoreHtml()}</div><div class="row" style="margin-top:12px"><div><label>القرار</label><select id="t_decision" ${dis}>${['', 'نشارك', 'لا نشارك', 'قيد الدراسة'].map(x => `<option value="${x}" ${x === (t.decision || '') ? 'selected' : ''}>${x || '—'}</option>`).join('')}</select></div><div></div></div><label>سبب القرار</label><textarea id="t_decisionReason" rows="2" ${dis}>${esc(t.decisionReason || '')}</textarea></div>
+    <div class="tpane" data-tp="reqs"><div id="rq_box">${reqHtml()}</div></div>
+    <div class="tpane" data-tp="tasks"><div id="tk_box">${taskHtml()}</div></div>
+    <div class="tpane" data-tp="result"><div class="row">${inp('ourPrice', 'سعرنا (ر.س)', 'number')}${inp('winnerName', 'الفائز')}</div><div class="row">${inp('winnerPrice', 'سعر الفائز (ر.س)', 'number')}${inp('awardValue', 'قيمة الترسية لنا (ر.س)', 'number')}</div>${gap()}
+      <label>أسعار المنافسين (سطر لكل منافس: الاسم — السعر)</label><textarea id="t_comp" rows="3" ${dis}>${esc(CP.map(c => c.name + ' — ' + (c.price || '')).join('\n'))}</textarea>
+      <h4 style="margin:14px 0 6px">ما بعد الترسية</h4><div class="row">${inp('contractNo', 'رقم العقد', 'text', 'dir="ltr"')}${inp('contractStart', 'بداية العقد', 'date')}</div><div class="row">${inp('contractEnd', 'نهاية العقد', 'date')}<div></div></div>${ro || !id ? '' : `<button type="button" class="btn light sm" id="t_final">${ic('shield')} إنشاء الضمان النهائي (5% من قيمة الترسية)</button>`}</div>
+    <div class="tpane" data-tp="guar">${linkedG.length ? `<ul class="dlist">${linkedG.map(g => `<li data-lg="${g.id}" style="--c:${gOpen(g) ? 'var(--gold)' : 'var(--ok)'}"><span class="t">ضمان ${esc(g.type)} — ${esc(g.bank)}</span><span class="d">${gOpen(g) ? dBadge(gDays(g), 'الانتهاء') : '<span class="badge b-ok">' + esc(g.status) + '</span>'}</span><span class="s">${sar(g.amount)} ر.س — ${esc(g.status)}${g.gNo ? ' — رقم ' + esc(g.gNo) : ''}</span></li>`).join('')}</ul>` : '<div class="empty" style="padding:14px">لا توجد ضمانات مرتبطة</div>'}${ro || !id ? (id ? '' : '<div class="note">احفظ المنافسة أولاً ثم أضف الضمان.</div>') : `<div style="display:flex;gap:8px;margin-top:10px"><button type="button" class="btn light sm" id="t_ig">${ic('plus')} ضمان ابتدائي</button><button type="button" class="btn light sm" id="t_fg">${ic('plus')} ضمان نهائي</button></div>`}</div>`;
+  const foot = (ro ? '' : `<button class="btn" id="t_save">حفظ</button>`) + (id ? `<button class="btn light" id="t_pr">${ic('file')} طباعة ملف المنافسة</button>` : '') + (id && can('admin') ? `<button class="btn danger" id="t_del">حذف</button>` : '');
+  const m = modal(id ? esc(t.title) : 'منافسة جديدة', body, foot, 'lg');
+  const show = k => { m.el.querySelectorAll('[data-ttab]').forEach(b => b.classList.toggle('on', b.dataset.ttab === k)); m.el.querySelectorAll('.tpane').forEach(p => p.style.display = p.dataset.tp === k ? '' : 'none'); };
+  m.el.querySelectorAll('[data-ttab]').forEach(b => b.onclick = () => show(b.dataset.ttab)); show(tab || 'info');
+  const bindSc = () => m.el.querySelectorAll('[data-sc]').forEach(b => b.onclick = () => { SC[b.dataset.sc] = Number(b.dataset.v); m.q('#sc_box').innerHTML = scoreHtml(); bindSc(); });
+  const bindRq = () => {
+    m.el.querySelectorAll('[data-rqd]').forEach(c => c.onchange = () => { R[+c.dataset.rqd].done = c.checked; m.q('#rq_box').innerHTML = reqHtml(); bindRq(); });
+    m.el.querySelectorAll('[data-rqx]').forEach(c => c.onclick = () => { R.splice(+c.dataset.rqx, 1); m.q('#rq_box').innerHTML = reqHtml(); bindRq(); });
+    m.el.querySelectorAll('[data-rqi]').forEach(c => c.onclick = () => itemModal(c.dataset.rqi));
+    if (m.q('#rq_add')) m.q('#rq_add').onclick = () => { const n = m.q('#rq_n').value.trim(); if (!n) return; R.push({ group: m.q('#rq_g').value, name: n, done: false }); m.q('#rq_box').innerHTML = reqHtml(); bindRq(); };
+    if (m.q('#rq_std')) m.q('#rq_std').onclick = () => { STD_REQS.forEach(([g, n, k]) => { if (R.some(r => normT(r.name) === normT(n))) return; const it = g === 'إداري' ? matchItem(n, k, Object.assign({}, t, { branch: m.q('#t_branch') ? m.q('#t_branch').value : t.branch })) : null; R.push({ group: g, name: n, done: !!(it && it._st !== 'expired' && it._st !== 'none'), itemId: it ? it.id : '' }); }); m.q('#rq_box').innerHTML = reqHtml(); bindRq(); toast('أُضيفت القائمة القياسية وربطت المستندات المتاحة من منصة التأهيلات'); };
+    if (m.q('#rq_pick')) m.q('#rq_pick').onclick = () => { const ent = normT(m.q('#t_entity').value); const L = S.d.items.filter(i => i._st !== 'off').sort((a, b) => ((normT(b.platform).indexOf(ent) >= 0 && ent) - (normT(a.platform).indexOf(ent) >= 0 && ent)) || a.title.localeCompare(b.title, 'ar'));
+      const pm = modal('إضافة مستندات من منصة التأهيلات', `<input id="pk_q" class="search" placeholder="بحث…" style="margin-bottom:8px"><div id="pk_l" class="pk-l">${L.map(i => `<label class="pk" data-pq="${esc(normT(i.title + ' ' + i.platform))}"><input type="checkbox" value="${i.id}" style="width:auto" ${R.some(r => r.itemId === i.id) ? 'checked disabled' : ''}><span><b>${esc(i.title)}</b><small>${esc(i.platform || i.section)}${i.branch ? ' — ' + esc(brName(i.branch)) : ''}</small></span>${badge(i)}</label>`).join('')}</div>`, '<button class="btn" id="pk_go">إضافة المحدد</button>', 'lg');
+      pm.q('#pk_q').oninput = e => { const q = normT(e.target.value); pm.el.querySelectorAll('.pk').forEach(l => l.style.display = l.dataset.pq.indexOf(q) >= 0 ? '' : 'none'); };
+      pm.q('#pk_go').onclick = () => { pm.el.querySelectorAll('.pk input:checked:not(:disabled)').forEach(c => { const i = S.d.items.find(x => x.id === c.value); R.push({ group: 'إداري', name: i.title, itemId: i.id, done: i._st !== 'expired' && i._st !== 'none' }); }); pm.close(); m.q('#rq_box').innerHTML = reqHtml(); bindRq(); }; };
+  };
+  const bindTk = () => {
+    m.el.querySelectorAll('[data-tkd]').forEach(c => c.onchange = () => { K[+c.dataset.tkd].done = c.checked; m.q('#tk_box').innerHTML = taskHtml(); bindTk(); });
+    m.el.querySelectorAll('[data-tkx]').forEach(c => c.onclick = () => { K.splice(+c.dataset.tkx, 1); m.q('#tk_box').innerHTML = taskHtml(); bindTk(); });
+    if (m.q('#tk_add')) m.q('#tk_add').onclick = () => { const x = m.q('#tk_t').value.trim(); if (!x) return; K.push({ t: x, who: m.q('#tk_w').value, due: m.q('#tk_d').value, done: false }); m.q('#tk_box').innerHTML = taskHtml(); bindTk(); };
+  };
+  bindSc(); bindRq(); bindTk();
+  m.el.querySelectorAll('[data-lg]').forEach(l => l.onclick = () => guarModal(l.dataset.lg));
+  const collect = () => { const o = { id: id || '' }; ['title', 'entity', 'platform', 'refNo', 'sector', 'stage', 'manager', 'estValue', 'bookletCost', 'notes', 'questionsDue', 'siteVisit', 'submitDue', 'openDate', 'validityDue', 'submittedAt', 'decision', 'decisionReason', 'ourPrice', 'winnerName', 'winnerPrice', 'awardValue', 'contractNo', 'contractStart', 'contractEnd'].forEach(k => { const el = m.q('#t_' + k); if (el) o[k] = el.value; }); if (m.q('#t_branch')) o.branch = m.q('#t_branch').value;
+    o.reqs = R; o.tasks = K; o.score = SC; o.competitors = (m.q('#t_comp').value || '').split('\n').map(l => l.trim()).filter(Boolean).map(l => { const p = l.split(/\s{0,}[—–]\s{0,}/); return { name: p[0], price: Number(String(p[1] || '').replace(/[^\d.]/g, '')) || '' }; }); return o; };
+  const save = async (quiet) => { const o = collect(); if (!o.title.trim()) { show('info'); toast('اسم المنافسة مطلوب', 1); return null; } const r = await call('saveTender', { t: o }); const k = (S.d.tenders || []).findIndex(x => x.id === r.id); if (k >= 0) S.d.tenders[k] = r; else (S.d.tenders = S.d.tenders || []).push(r); cacheSave(S.d); if (!quiet) toast('تم حفظ المنافسة'); return r; };
+  if (m.q('#t_save')) m.q('#t_save').onclick = async () => { const r = await save(); if (r) { m.close(); renderView(); } };
+  if (m.q('#t_ig')) m.q('#t_ig').onclick = async () => { const r = await save(true); if (!r) return; m.close(); renderView(); guarModal(null, { tenderId: r.id, type: 'ابتدائي', beneficiary: r.entity }); };
+  const finalG = async () => { const r = await save(true); if (!r) return; m.close(); renderView(); guarModal(null, { tenderId: r.id, type: 'نهائي', beneficiary: r.entity, amount: r.awardValue ? Math.round(Number(r.awardValue) * 0.05) : '', percent: '5', expiryDate: r.contractEnd || '' }); };
+  if (m.q('#t_fg')) m.q('#t_fg').onclick = finalG; if (m.q('#t_final')) m.q('#t_final').onclick = finalG;
+  if (m.q('#t_pr')) m.q('#t_pr').onclick = () => printTenderFile(collect(), linkedG);
+  if (m.q('#t_del')) m.q('#t_del').onclick = async () => { if (m.q('#t_del').dataset.ok !== '1') { m.q('#t_del').dataset.ok = '1'; m.q('#t_del').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('deleteTender', { id }); m.close(); await load(true); toastUndo('تم حذف المنافسة', async () => { await call('deleteTender', { id, restore: true }); await load(true); }); };
+}
+function gFiltered() { const f = S.gf || (S.gf = {}); let L = (S.d.guarantees || []).slice(); if (f.bank) L = L.filter(g => g.bank === f.bank); if (f.type) L = L.filter(g => g.type === f.type); if (f.st === 'open') L = L.filter(gOpen); else if (f.st === 'refund') L = L.filter(g => gOpen(g) && g.type === 'ابتدائي' && tById(g.tenderId) && ['خاسر', 'معتذر / ملغاة'].indexOf(tById(g.tenderId).stage) >= 0); else if (f.st === 'soon') L = L.filter(g => gOpen(g) && gDays(g) !== null && gDays(g) <= 30); else if (f.st) L = L.filter(g => g.status === f.st);
+  if (f.q) { const q = f.q.toLowerCase(); L = L.filter(g => [g.gNo, g.bank, g.beneficiary, g.notes, (tById(g.tenderId) || {}).title].join(' ').toLowerCase().indexOf(q) >= 0); } return L; }
+function guarView() {
+  const f = S.gf || (S.gf = { st: 'open' }), G = S.d.guarantees || [], L = gFiltered().sort((a, b) => (gOpen(b) - gOpen(a)) || ((gDays(a) === null ? 1e9 : gDays(a)) - (gDays(b) === null ? 1e9 : gDays(b))));
+  const act = G.filter(g => gOpen(g) && g.status !== 'طلب إصدار'), soon = act.filter(g => gDays(g) !== null && gDays(g) <= 30), refund = G.filter(g => gOpen(g) && g.type === 'ابتدائي' && tById(g.tenderId) && ['خاسر', 'معتذر / ملغاة'].indexOf(tById(g.tenderId).stage) >= 0);
+  const fees = act.reduce((a, g) => a + (Number(g.feeIssue) || 0) + (Number(g.feeExt) || 0), 0);
+  const kp = [['ضمانات قائمة', act.length + ' · ' + sarK(act.reduce((a, g) => a + (Number(g.amount) || 0), 0)), 'var(--ink)'], ['تنتهي خلال 30 يوماً', soon.length, 'var(--amber)'], ['يجب استردادها', refund.length + (refund.length ? ' · ' + sarK(refund.reduce((a, g) => a + (Number(g.amount) || 0), 0)) : ''), 'var(--red)'], ['هامش نقدي محجوز', sarK(act.reduce((a, g) => a + (Number(g.cashMargin) || 0), 0)), 'var(--gold)'], ['عمولات (ر.س)', sar(fees), '#7A6A22']];
+  const banksU = [...new Set(G.map(g => g.bank).concat(banksList().map(b => b.name)).filter(Boolean))];
+  const sel = (id, ph, arr, v) => `<select id="${id}"><option value="">${ph}</option>${arr.map(a => `<option value="${esc(a[0] !== undefined && Array.isArray(a) ? a[0] : a)}" ${(Array.isArray(a) ? a[0] : a) === v ? 'selected' : ''}>${esc(Array.isArray(a) ? a[1] : a)}</option>`).join('')}</select>`;
+  const tools = `<div class="tools"><input class="search" id="gq" placeholder="بحث برقم الضمان أو المستفيد أو المنافسة" value="${esc(f.q || '')}">${sel('gf_bank', 'كل البنوك', banksU, f.bank)}${sel('gf_type', 'كل الأنواع', S.d.gTypes || [], f.type)}${sel('gf_st', 'كل الحالات', [['open', 'القائمة فقط'], ['soon', 'تنتهي خلال 30 يوماً'], ['refund', 'يجب استردادها']].concat((S.d.gStatuses || []).map(x => [x, x])), f.st)}</div>`;
+  const gb = {}; L.forEach(g => (gb[g.bank || '—'] = gb[g.bank || '—'] || []).push(g));
+  const body = Object.keys(gb).map(b => { const X = gb[b], u = bankUse(b), lim = (banksList().find(x => x.name === b) || {}).limit || 0;
+    return `<section class="panel vg"><h3>${av(b)}<span>${esc(b)}</span><small>${X.length} ضمان${lim ? ` · المستخدم ${sarK(u.amount)} من حد ${sarK(lim)} (${Math.round(u.amount / lim * 100)}%)` : ` · القائم ${sarK(u.amount)} ر.س`}</small></h3>${lim ? `<div class="lim"><i style="width:${Math.min(100, u.amount / lim * 100)}%;background:${u.amount / lim > .9 ? 'var(--red)' : u.amount / lim > .75 ? 'var(--amber)' : 'var(--ok)'}"></i></div>` : ''}
+      <div class="tbl-wrap"><table><thead><tr><th>الضمان</th><th class="hide-m">المنافسة / المستفيد</th><th>المبلغ</th><th class="hide-m">الإصدار</th><th>الانتهاء</th><th>الحالة</th></tr></thead><tbody>${X.map(g => { const t = tById(g.tenderId), d = gDays(g), rf = gOpen(g) && g.type === 'ابتدائي' && t && ['خاسر', 'معتذر / ملغاة'].indexOf(t.stage) >= 0;
+        return `<tr class="click" data-gid="${g.id}" style="--c:${!gOpen(g) ? 'var(--ok)' : rf || (d !== null && d < 0) ? 'var(--red)' : d !== null && d <= 30 ? 'var(--amber)' : 'var(--gold)'}"><td><div class="t-title">ضمان ${esc(g.type)}</div><div class="t-sub">${g.gNo ? 'رقم ' + esc(g.gNo) : 'بدون رقم'}${g.percent ? ' — ' + esc(g.percent) + '%' : ''}</div></td><td class="hide-m">${t ? esc(t.title) : '—'}<div class="t-sub">${esc(g.beneficiary || '')}</div></td><td><b>${sar(g.amount)}</b>${g.cashMargin ? `<div class="t-sub">هامش ${sar(g.cashMargin)}</div>` : ''}</td><td class="hide-m">${fmtD(g.issueDate)}</td><td>${fmtDH(g.expiryDate)}</td><td>${rf ? '<span class="badge b-expired">✕ اطلب الإفراج</span>' : gOpen(g) ? dBadge(d) : ''}<div class="t-sub">${esc(g.status)}</div></td></tr>`; }).join('')}</tbody></table></div></section>`; }).join('');
+  return topbar('الضمانات البنكية', 'ابتدائية ونهائية ودفعات مقدمة وصيانة — مرتبطة بالمنافسات', `<button class="btn light" id="gPr">${ic('file')} طباعة</button><button class="btn light" id="gXl">${ic('down')} إكسل</button>` + (can('editor') ? `<button class="btn" id="gAdd">${ic('plus')} ضمان جديد</button>` : '')) +
+    `<div class="strip">${kp.map(k => `<button style="--c:${k[2]};cursor:default"><div class="n" style="font-size:22px">${k[1]}</div><div class="l">${k[0]}</div></button>`).join('')}</div>${tools}` + (body || `<div class="empty big">${ic('shield')}<h3>لا توجد ضمانات ${G.length ? 'مطابقة' : 'مسجّلة'}</h3><p>سجّل الضمانات البنكية لتصلك تنبيهات قبل انتهائها بـ 60 و30 و14 يوماً، وتذكير باسترداد ضمانات المنافسات الخاسرة.</p></div>`);
+}
+function bindGuar() {
+  const f = S.gf, re = () => renderView();
+  let tm; $('#gq').oninput = e => { clearTimeout(tm); tm = setTimeout(() => { f.q = e.target.value; re(); const q = $('#gq'); q.focus(); q.setSelectionRange(q.value.length, q.value.length); }, 250); };
+  ['bank', 'type', 'st'].forEach(k => $('#gf_' + k).onchange = e => { f[k] = e.target.value; re(); });
+  document.querySelectorAll('[data-gid]').forEach(r => r.onclick = () => guarModal(r.dataset.gid));
+  if ($('#gAdd')) $('#gAdd').onclick = () => guarModal(null);
+  $('#gPr').onclick = () => printGuars(gFiltered()); $('#gXl').onclick = () => exportGuars(gFiltered());
+}
+function guarModal(id, preset) {
+  const g = id ? (S.d.guarantees || []).find(x => x.id === id) : Object.assign({ type: 'ابتدائي', status: 'طلب إصدار', issueDate: S.d.today }, preset || {}); if (!g) return;
+  const ro = !can('editor'), dis = ro ? 'disabled' : '', t = tById(g.tenderId), B = banksList();
+  const inp = (k, lbl, type, extra) => `<div><label>${lbl}</label><input id="g_${k}" type="${type || 'text'}" value="${esc(g[k] || '')}" ${extra || ''} ${dis}></div>`;
+  const flow = (S.d.gStatuses || []).map(s => `<span class="gf ${s === g.status ? 'on' : ''}">${esc(s)}</span>`).join('<i>←</i>');
+  const body = `<div class="gflow">${flow}</div>
+    <div class="row"><div><label>النوع</label><select id="g_type" ${dis}>${(S.d.gTypes || []).map(x => `<option ${x === g.type ? 'selected' : ''}>${x}</option>`).join('')}</select></div><div><label>الحالة</label><select id="g_status" ${dis}>${(S.d.gStatuses || []).map(x => `<option ${x === g.status ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div>
+    <div class="row"><div><label>البنك *</label><input id="g_bank" list="dl_bank" value="${esc(g.bank || '')}" ${dis}><datalist id="dl_bank">${[...new Set(B.map(b => b.name).concat((S.d.guarantees || []).map(x => x.bank)).filter(Boolean))].map(b => `<option value="${esc(b)}">`).join('')}</datalist></div>${inp('gNo', 'رقم الضمان', 'text', 'dir="ltr"')}</div>
+    <div class="row">${inp('amount', 'المبلغ (ر.س) *', 'number')}${inp('percent', 'النسبة من قيمة العقد/العرض (%)', 'number')}</div>
+    <div class="row"><div><label>المنافسة المرتبطة</label><select id="g_tenderId" ${dis}><option value="">— بدون —</option>${(S.d.tenders || []).map(x => `<option value="${x.id}" ${x.id === g.tenderId ? 'selected' : ''}>${esc(x.title)}${x.entity ? ' — ' + esc(x.entity) : ''}</option>`).join('')}</select></div>${inp('beneficiary', 'المستفيد')}</div>
+    <div class="row">${inp('issueDate', 'تاريخ الإصدار', 'date')}${inp('expiryDate', 'تاريخ الانتهاء', 'date')}</div>
+    <div class="row">${inp('cashMargin', 'الهامش النقدي المحجوز (ر.س)', 'number')}<div class="row" style="gap:8px">${inp('feeIssue', 'عمولة الإصدار', 'number')}${inp('feeExt', 'عمولات التمديد', 'number')}</div></div>
+    <label>ملاحظات</label><textarea id="g_notes" rows="2" ${dis}>${esc(g.notes || '')}</textarea>
+    ${g.fileId ? `<div class="att cur" style="margin-top:10px">${ic('file')}<div><b>${esc(g.fileName || 'خطاب الضمان')}</b></div><button class="btn light sm" data-pv="${g.fileId}">معاينة</button><button class="btn light sm" data-f="${g.fileId}">تنزيل</button></div>` : ''}
+    ${ro ? '' : `<label class="drop-z" id="gdz">${ic('up')}<span><b>إرفاق صورة خطاب الضمان</b> — اسحب الملف أو اضغط</span><input type="file" id="g_file" hidden accept=".pdf,.jpg,.jpeg,.png"></label><div id="g_fn" style="font-size:12.5px;color:var(--muted)"></div>`}`;
+  const foot = (ro ? '' : `<button class="btn" id="g_save">حفظ</button>`) + (id ? `<button class="btn light" id="g_lx">${ic('file')} خطاب طلب تمديد</button><button class="btn light" id="g_lr">${ic('file')} خطاب طلب إفراج</button>` : '') + (id && can('admin') ? `<button class="btn danger" id="g_del">حذف</button>` : '');
+  const m = modal(id ? 'ضمان ' + esc(g.type) + ' — ' + esc(g.bank) : 'ضمان بنكي جديد', body, foot, 'lg'); let file = null;
+  m.el.querySelectorAll('[data-pv]').forEach(b => b.onclick = () => previewFile(b.dataset.pv, g.fileName)); m.el.querySelectorAll('[data-f]').forEach(b => b.onclick = () => openFile(b.dataset.f));
+  if (m.q('#g_bank') && !ro) m.q('#g_bank').onchange = () => { const b = B.find(x => x.name === m.q('#g_bank').value); if (b && b.marginPct && !m.q('#g_cashMargin').value && m.q('#g_amount').value) m.q('#g_cashMargin').value = Math.round(Number(m.q('#g_amount').value) * b.marginPct / 100); };
+  const dz = m.q('#gdz'); if (dz) { const pick = async fl => { if (!fl) return; file = { name: fl.name, mime: fl.type, data: await fileToB64(fl) }; m.q('#g_fn').textContent = 'سيُرفع: ' + fl.name; }; dz.ondragover = e => { e.preventDefault(); dz.classList.add('on'); }; dz.ondragleave = () => dz.classList.remove('on'); dz.ondrop = e => { e.preventDefault(); dz.classList.remove('on'); pick(e.dataTransfer.files[0]); }; m.q('#g_file').onchange = e => pick(e.target.files[0]); }
+  if (m.q('#g_save')) m.q('#g_save').onclick = async () => { const o = { id: id || '' }; ['type', 'status', 'bank', 'gNo', 'amount', 'percent', 'tenderId', 'beneficiary', 'issueDate', 'expiryDate', 'cashMargin', 'feeIssue', 'feeExt', 'notes'].forEach(k => o[k] = m.q('#g_' + k).value);
+    if (!o.bank.trim() || !o.amount) return toast('البنك والمبلغ مطلوبان', 1); await call('saveGuarantee', { g: o, file }); m.close(); toast('تم حفظ الضمان'); await load(true); };
+  if (m.q('#g_lx')) m.q('#g_lx').onclick = () => printGLetter('ext', g); if (m.q('#g_lr')) m.q('#g_lr').onclick = () => printGLetter('rel', g);
+  if (m.q('#g_del')) m.q('#g_del').onclick = async () => { if (m.q('#g_del').dataset.ok !== '1') { m.q('#g_del').dataset.ok = '1'; m.q('#g_del').textContent = 'اضغط مرة أخرى للتأكيد'; return; } await call('deleteGuarantee', { id }); m.close(); await load(true); toastUndo('تم حذف الضمان', async () => { await call('deleteGuarantee', { id, restore: true }); await load(true); }); };
+}
+function banksView() {
+  const B = banksList(), names = [...new Set(B.map(b => b.name).concat((S.d.guarantees || []).map(g => g.bank)).filter(Boolean))];
+  const rows = names.map(n => { const b = B.find(x => x.name === n) || { name: n }, u = bankUse(n), lim = b.limit || 0, pct = lim ? Math.round(u.amount / lim * 100) : null;
+    return `<section class="panel bank"><div class="pb"><div class="bk-h">${av(n)}<b>${esc(n)}</b>${pct !== null && pct > 90 ? '<span class="badge b-expired">قارب الحد</span>' : ''}</div><div class="bk-k"><div><b>${sarK(u.amount)}</b><span>القائم (${u.n})</span></div><div><b>${lim ? sarK(lim) : '—'}</b><span>الحد الائتماني</span></div><div><b style="color:var(--ok)">${lim ? sarK(Math.max(0, lim - u.amount)) : '—'}</b><span>المتاح</span></div><div><b style="color:var(--gold)">${sarK(u.margin)}</b><span>هامش محجوز</span></div></div>${lim ? `<div class="lim big"><i style="width:${Math.min(100, pct)}%;background:${pct > 90 ? 'var(--red)' : pct > 75 ? 'var(--amber)' : 'var(--ok)'}"></i><span>${pct}%</span></div>` : '<div class="note">حدّد الحد الائتماني لهذا البنك من «إدارة البنوك»</div>'}</div></section>`; }).join('');
+  return topbar('البنوك والحدود الائتمانية', 'استخدام الحدود والهامش المحجوز لكل بنك', can('admin') ? `<button class="btn" id="bkMgr">${ic('settings')} إدارة البنوك والمستهدف</button>` : '') + (rows ? `<div class="banks">${rows}</div>` : `<div class="empty big">${ic('bank')}<h3>لا توجد بنوك</h3><p>أضف البنوك وحدودها الائتمانية لمتابعة الاستخدام والمتاح.</p></div>`);
+}
+function bindBanks() { if ($('#bkMgr')) $('#bkMgr').onclick = () => { const B = banksList(); const row = b => `<div class="br-row bk-row"><input class="bk-n" value="${esc(b.name || '')}" placeholder="اسم البنك"><input class="bk-l" type="number" value="${esc(b.limit || '')}" placeholder="الحد الائتماني (ر.س)"><input class="bk-m" type="number" value="${esc(b.marginPct || '')}" placeholder="نسبة الهامش %"><input class="bk-f" type="number" value="${esc(b.feePct || '')}" placeholder="العمولة %"><button class="btn light sm bk-x">✕</button></div>`;
+  const m = modal('إدارة البنوك والمستهدف', `<div id="bk_l">${B.map(row).join('')}</div><button class="btn light sm" id="bk_add">${ic('plus')} إضافة بنك</button><label style="margin-top:16px">المستهدف السنوي لقيمة العقود المرساة (ر.س)</label><input id="bk_t" type="number" value="${esc((S.d.settings || {}).tenderTarget || '')}">`, '<button class="btn" id="bk_go">حفظ</button>', 'lg');
+  const bx = () => m.el.querySelectorAll('.bk-x').forEach(b => b.onclick = () => b.closest('.bk-row').remove()); bx(); m.q('#bk_add').onclick = () => { m.q('#bk_l').insertAdjacentHTML('beforeend', row({})); bx(); };
+  m.q('#bk_go').onclick = async () => { const banks = [...m.el.querySelectorAll('.bk-row')].map(r => ({ name: r.querySelector('.bk-n').value, limit: r.querySelector('.bk-l').value, marginPct: r.querySelector('.bk-m').value, feePct: r.querySelector('.bk-f').value })); await call('saveBanks', { banks, tenderTarget: m.q('#bk_t').value }); m.close(); toast('تم الحفظ'); await load(true); }; }; }
+function treportsView() {
+  const T = S.d.tenders || [], closed = T.filter(t => t.stage === 'مرسى' || t.stage === 'خاسر');
+  const by = k => { const g = {}; closed.forEach(t => { const x = t[k] || '—'; g[x] = g[x] || { w: 0, l: 0, v: 0 }; t.stage === 'مرسى' ? (g[x].w++, g[x].v += Number(t.awardValue) || 0) : g[x].l++; }); return Object.keys(g).map(x => [x, g[x]]).sort((a, b) => (b[1].w + b[1].l) - (a[1].w + a[1].l)); };
+  const tbl = (title, rows) => `<section class="panel"><h3>${title}</h3><div class="tbl-wrap"><table><thead><tr><th>الفئة</th><th>مرسى</th><th>خاسر</th><th>نسبة الفوز</th><th>قيمة المرسى</th></tr></thead><tbody>${rows.map(([x, s]) => `<tr><td>${esc(x)}</td><td>${s.w}</td><td>${s.l}</td><td><div class="wr"><i style="width:${Math.round(s.w / (s.w + s.l) * 100)}%"></i><span>${Math.round(s.w / (s.w + s.l) * 100)}%</span></div></td><td>${sar(s.v)}</td></tr>`).join('') || '<tr><td colspan="5" class="empty">لا توجد منافسات مغلقة بعد</td></tr>'}</tbody></table></div></section>`;
+  const size = t => { const v = Number(t.estValue) || 0; return v < 1e6 ? 'أقل من مليون' : v < 5e6 ? '1–5 مليون' : v < 2e7 ? '5–20 مليون' : 'أكثر من 20 مليون'; };
+  const bySize = (() => { const g = {}; closed.forEach(t => { const x = size(t); g[x] = g[x] || { w: 0, l: 0, v: 0 }; t.stage === 'مرسى' ? (g[x].w++, g[x].v += Number(t.awardValue) || 0) : g[x].l++; }); return Object.keys(g).map(x => [x, g[x]]); })();
+  const gaps = T.filter(t => t.stage === 'خاسر' && Number(t.ourPrice) && Number(t.winnerPrice)).map(t => [t, (Number(t.ourPrice) - Number(t.winnerPrice)) / Number(t.winnerPrice) * 100]);
+  const yrs = {}; T.filter(t => t.stage === 'مرسى').forEach(t => { const y = String(t.contractStart || t.updatedAt).slice(0, 4); yrs[y] = (yrs[y] || 0) + (Number(t.awardValue) || 0); }); const target = Number((S.d.settings || {}).tenderTarget) || 0, ymax = Math.max(target, ...Object.values(yrs), 1);
+  return topbar('المؤشرات والتقارير', 'نسب الفوز وفروق الأسعار وقيمة العقود', '') +
+    `<section class="panel"><h3>قيمة العقود المرساة سنوياً${target ? ' <small>المستهدف ' + sar(target) + ' ر.س</small>' : ''}</h3><div class="pb">${Object.keys(yrs).sort().map(y => `<div class="secrow" style="cursor:default"><span>${y}</span><span class="bar"><i style="width:${yrs[y] / ymax * 100}%;background:var(--ok)"></i></span><span class="v" style="min-width:110px">${sar(yrs[y])}</span></div>`).join('') || '<div class="empty" style="padding:14px">لا توجد عقود مرساة بعد</div>'}${target ? `<div style="margin-top:6px;font-size:12.5px;color:var(--muted)">السنة الحالية: ${Math.round((yrs[S.d.today.slice(0, 4)] || 0) / target * 100)}% من المستهدف</div>` : ''}</div></section>
+    <div class="cols">${tbl('نسبة الفوز حسب الجهة', by('entity'))}${tbl('نسبة الفوز حسب المنصة', by('platform'))}</div><div class="cols">${tbl('نسبة الفوز حسب حجم المشروع', bySize)}${branches().length ? tbl('نسبة الفوز حسب الفرع', by('branch').map(([x, s]) => [brName(x) || x, s])) : tbl('نسبة الفوز حسب القطاع', by('sector'))}</div>
+    <section class="panel"><h3>فارق السعر في المنافسات الخاسرة <small>متوسط ${gaps.length ? (Math.round(gaps.reduce((a, g) => a + g[1], 0) / gaps.length * 10) / 10) + '%' : '—'}</small></h3><div class="tbl-wrap"><table><thead><tr><th>المنافسة</th><th>سعرنا</th><th>الفائز</th><th>سعر الفائز</th><th>الفارق</th></tr></thead><tbody>${gaps.map(([t, g]) => `<tr data-tid="${t.id}" class="click"><td>${esc(t.title)}</td><td>${sar(t.ourPrice)}</td><td>${esc(t.winnerName || '—')}</td><td>${sar(t.winnerPrice)}</td><td><b style="color:${g > 0 ? 'var(--red)' : 'var(--ok)'}">${g > 0 ? '+' : ''}${Math.round(g * 10) / 10}%</b></td></tr>`).join('') || '<tr><td colspan="5" class="empty">سجّل سعرنا وسعر الفائز في المنافسات الخاسرة لتظهر هنا</td></tr>'}</tbody></table></div></section>`;
+}
+function tcalView() {
+  const base = S.tcal || S.d.today.slice(0, 7), y = +base.slice(0, 4), mo = +base.slice(5, 7) - 1, first = new Date(Date.UTC(y, mo, 1)), days = new Date(Date.UTC(y, mo + 1, 0)).getUTCDate(), off = (first.getUTCDay() + 1) % 7, by = {};
+  (S.d.tenders || []).filter(tOpen).forEach(t => TD_DATES.forEach(([k, l]) => { if (t[k] && t[k].slice(0, 7) === base) (by[t[k]] = by[t[k]] || []).push({ l: l, title: t.title, tid: t.id, c: k === 'submitDue' ? 'var(--red)' : 'var(--amber)' }); }));
+  (S.d.guarantees || []).filter(gOpen).forEach(g => { if (g.expiryDate && g.expiryDate.slice(0, 7) === base) (by[g.expiryDate] = by[g.expiryDate] || []).push({ l: 'انتهاء ضمان', title: g.bank + ' ' + sarK(g.amount), gid: g.id, c: 'var(--gold)' }); });
+  const wd = ['السبت', 'الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة']; let cells = ''; for (let k = 0; k < off; k++) cells += '<div class="cd empty-d"></div>';
+  for (let d = 1; d <= days; d++) { const key = base + '-' + String(d).padStart(2, '0'), arr = by[key] || []; cells += `<div class="cd ${key === S.d.today ? 'today' : ''}"><div class="cdn"><b>${d}</b><small>${hijriS(key).split('/')[0] || ''}</small></div>${arr.slice(0, 4).map(e => `<div class="ce" style="--c:${e.c}" ${e.tid ? `data-tid="${e.tid}"` : `data-gid="${e.gid}"`} title="${esc(e.l + ': ' + e.title)}">${esc(e.l.split(' ').slice(-1)[0] + ' · ' + e.title)}</div>`).join('')}${arr.length > 4 ? `<div class="cmore">+${arr.length - 4}</div>` : ''}</div>`; }
+  const mname = new Intl.DateTimeFormat('ar-EG', { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(first);
+  return topbar('تقويم المنافسات والضمانات', mname, `<button class="btn light" id="tcPrev">السابق</button><button class="btn light" id="tcNow">الشهر الحالي</button><button class="btn light" id="tcNext">التالي</button>`) + `<div class="cal"><div class="cwd">${wd.map(w => `<div>${w}</div>`).join('')}</div><div class="cgrid">${cells}</div></div><div class="legend" style="margin-top:12px"><span><i style="background:var(--red)"></i>آخر موعد للتقديم</span><span><i style="background:var(--amber)"></i>مواعيد المنافسة الأخرى</span><span><i style="background:var(--gold)"></i>انتهاء ضمان</span></div>`;
+}
+function bindTcal() { const mv = n => { const b = S.tcal || S.d.today.slice(0, 7), d = new Date(Date.UTC(+b.slice(0, 4), +b.slice(5, 7) - 1 + n, 1)); S.tcal = d.toISOString().slice(0, 7); renderView(); }; $('#tcPrev').onclick = () => mv(-1); $('#tcNext').onclick = () => mv(1); $('#tcNow').onclick = () => { S.tcal = ''; renderView(); };
+  document.querySelectorAll('[data-tid]').forEach(e => e.onclick = () => tenderModal(e.dataset.tid)); document.querySelectorAll('[data-gid]').forEach(e => e.onclick = () => guarModal(e.dataset.gid)); }
+function docShell(title, sub, inner, landscape) {
+  const today = new Date(), css = `@page{size:A4 ${landscape ? 'landscape' : ''};margin:12mm;@bottom-left{content:'صفحة ' counter(page) ' من ' counter(pages);font-size:8.5px;color:#8A9491}}*{box-sizing:border-box}html{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;margin:0;font-size:10.5px}
+    .hd{display:flex;align-items:center;gap:12px;background:#1E2B2A;color:#fff;padding:10px 14px;border-radius:8px;border-bottom:3px solid #B08D3C;margin-bottom:12px}.hd .logo{width:42px;height:42px}.hd h1{margin:0;font-size:18px;font-family:'Noto Kufi Arabic',Tahoma}.hd p{margin:0;color:#C9C2AE}.hd .m{margin-right:auto;text-align:left;color:#B9C3BF;line-height:1.6}.qr{width:52px;height:52px;background:#fff;padding:3px;border-radius:5px}.qr svg{width:100%;height:100%}
+    table{width:100%;border-collapse:collapse}th{background:#1E2B2A;color:#fff;padding:6px;font-size:9.5px}td{border-bottom:1px solid #EDF0EA;padding:5px 6px;font-size:10px}tr{page-break-inside:avoid}h2{font-family:'Noto Kufi Arabic',Tahoma;font-size:13px;margin:14px 0 6px;border-right:4px solid #B08D3C;padding-right:8px}.kv{display:grid;grid-template-columns:150px 1fr;gap:4px 12px}.kv div:nth-child(odd){color:#5F6B68}.pill{display:inline-block;padding:1px 8px;border-radius:999px;font-weight:700;font-size:9.5px}`;
+  return `<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${esc(title)} — ${fmtD(S.d.today)}</title><style>${css}</style></head><body><div class="hd">${LOGO}<div><h1>${esc(title)}</h1><p>${esc(S.d.settings.orgName)}${sub ? ' — ' + esc(sub) : ''}</p></div><div class="m">${hijri(today)}<br>${greg(today)}</div>${qrSvg(TENDER_HOME) ? '<div class="qr">' + qrSvg(TENDER_HOME) + '</div>' : ''}</div>${inner}</body></html>`;
+}
+function printTenders(L) { openPrint(docShell('تقرير المنافسات', L.length + ' منافسة', `<table><thead><tr><th>المنافسة</th><th>الجهة</th><th>المنصة</th><th>المرحلة</th><th>القيمة التقديرية</th><th>آخر موعد للتقديم</th><th>المتطلبات</th><th>النتيجة</th></tr></thead><tbody>${L.map(t => { const [dd, tt] = reqProg(t); return `<tr><td><b>${esc(t.title)}</b><br><small>${esc(t.refNo || '')}</small></td><td>${esc(t.entity || '')}</td><td>${esc(t.platform || '')}</td><td>${esc(t.stage)}</td><td>${t.estValue ? sar(t.estValue) : '—'}</td><td>${fmtD(t.submitDue)}</td><td>${tt ? dd + '/' + tt : '—'}</td><td>${t.stage === 'مرسى' ? sar(t.awardValue) + ' ر.س' : t.stage === 'خاسر' ? 'خاسر' + (t.winnerName ? ' — ' + esc(t.winnerName) : '') : ''}</td></tr>`; }).join('')}</tbody></table>`, true)); }
+function printTenderFile(t, G) { const R = jp(JSON.stringify(t.reqs), []), K = t.tasks || []; openPrint(docShell('ملف المنافسة', t.title, `<h2>البيانات</h2><div class="kv">${[['الجهة', t.entity], ['المنصة', t.platform], ['رقم المنافسة', t.refNo], ['المرحلة', t.stage], ['مدير العرض', t.manager], ['القيمة التقديرية', t.estValue ? sar(t.estValue) + ' ر.س' : ''], ['القرار', (t.decision || '') + (t.decisionReason ? ' — ' + t.decisionReason : '')]].map(r => `<div>${r[0]}</div><div>${esc(r[1] || '—')}</div>`).join('')}</div>
+  <h2>المواعيد</h2><div class="kv">${TD_DATES.map(([k, l]) => `<div>${l}</div><div>${t[k] ? fmtD(t[k]) + ' — ' + hijriS(t[k]) + ' هـ' : '—'}</div>`).join('')}</div>
+  <h2>المتطلبات (${R.filter(r => r.done).length}/${R.length})</h2><table><thead><tr><th>المجموعة</th><th>المتطلب</th><th>جاهز</th><th>حالة المستند في التأهيل</th></tr></thead><tbody>${R.map(r => { const i = reqStatus(r); return `<tr><td>${esc(r.group || '')}</td><td>${esc(r.name)}</td><td>${r.done ? '✓' : '—'}</td><td>${i && i !== 'gone' ? esc(ST[i._st]) + (i._due ? ' — ' + fmtD(i._due.date) : '') : '—'}</td></tr>`; }).join('')}</tbody></table>
+  ${K.length ? `<h2>المهام</h2><table><thead><tr><th>المهمة</th><th>المسؤول</th><th>الموعد</th><th>الحالة</th></tr></thead><tbody>${K.map(k => `<tr><td>${esc(k.t)}</td><td>${esc(k.who || '')}</td><td>${fmtD(k.due)}</td><td>${k.done ? 'منجزة' : 'قيد التنفيذ'}</td></tr>`).join('')}</tbody></table>` : ''}
+  ${G.length ? `<h2>الضمانات</h2><table><thead><tr><th>النوع</th><th>البنك</th><th>الرقم</th><th>المبلغ</th><th>الانتهاء</th><th>الحالة</th></tr></thead><tbody>${G.map(g => `<tr><td>${esc(g.type)}</td><td>${esc(g.bank)}</td><td>${esc(g.gNo || '')}</td><td>${sar(g.amount)}</td><td>${fmtD(g.expiryDate)}</td><td>${esc(g.status)}</td></tr>`).join('')}</tbody></table>` : ''}`)); }
+function printGuars(L) { const tot = L.filter(gOpen).reduce((a, g) => a + (Number(g.amount) || 0), 0); openPrint(docShell('تقرير الضمانات البنكية', L.length + ' ضمان — القائم ' + sar(tot) + ' ر.س', `<table><thead><tr><th>البنك</th><th>النوع</th><th>الرقم</th><th>المنافسة / المستفيد</th><th>المبلغ</th><th>الهامش</th><th>الإصدار</th><th>الانتهاء</th><th>الحالة</th></tr></thead><tbody>${L.map(g => `<tr><td>${esc(g.bank)}</td><td>${esc(g.type)}</td><td>${esc(g.gNo || '')}</td><td>${esc((tById(g.tenderId) || {}).title || g.beneficiary || '')}</td><td><b>${sar(g.amount)}</b></td><td>${g.cashMargin ? sar(g.cashMargin) : ''}</td><td>${fmtD(g.issueDate)}</td><td>${fmtD(g.expiryDate)}</td><td>${esc(g.status)}</td></tr>`).join('')}</tbody></table>`, true)); }
+function printGLetter(kind, g) {
+  const t = tById(g.tenderId), today = new Date(), ext = kind === 'ext';
+  const newDate = ext ? (g.expiryDate ? new Date(Date.UTC(+g.expiryDate.slice(0, 4), +g.expiryDate.slice(5, 7) - 1 + 3, +g.expiryDate.slice(8, 10))).toISOString().slice(0, 10) : '') : '';
+  const css = `@page{size:A4;margin:22mm 20mm}body{font-family:'IBM Plex Sans Arabic',Tahoma,sans-serif;color:#1E2B2A;font-size:14px;line-height:2}.lh{display:flex;align-items:center;gap:12px;border-bottom:3px solid #B08D3C;padding-bottom:10px;margin-bottom:24px}.lh .logo{width:52px;height:52px}.lh b{font-size:18px;font-family:'Noto Kufi Arabic',Tahoma}.lh .d{margin-right:auto;text-align:left;font-size:12px;color:#5F6B68;line-height:1.6}.sub{font-weight:800;text-decoration:underline;margin:18px 0}.sig{margin-top:60px;display:flex;justify-content:space-between}.sig div{text-align:center;min-width:200px}`;
+  const body = ext ? `<p>المحترمين،<br>السلام عليكم ورحمة الله وبركاته،</p><p>نفيدكم بأن خطاب الضمان ${esc(g.type)} رقم (<b>${esc(g.gNo || '........')}</b>) الصادر من مصرفكم بمبلغ (<b>${sar(g.amount)}</b>) ريال سعودي لصالح (<b>${esc(g.beneficiary || (t && t.entity) || '........')}</b>)${t ? ' والخاص بمنافسة (<b>' + esc(t.title) + '</b>)' + (t.refNo ? ' رقم (' + esc(t.refNo) + ')' : '') : ''}، ينتهي بتاريخ <b>${fmtD(g.expiryDate)}</b>م.</p><p>عليه نأمل التكرم بتمديد صلاحية الضمان المذكور حتى تاريخ <b>${fmtD(newDate)}</b>م، وخصم الرسوم المستحقة من حسابنا لديكم.</p>`
+    : `<p>المحترمين،<br>السلام عليكم ورحمة الله وبركاته،</p><p>إشارة إلى خطاب الضمان ${esc(g.type)} رقم (<b>${esc(g.gNo || '........')}</b>) بمبلغ (<b>${sar(g.amount)}</b>) ريال سعودي الصادر لصالحكم${t ? ' والخاص بمنافسة (<b>' + esc(t.title) + '</b>)' + (t.refNo ? ' رقم (' + esc(t.refNo) + ')' : '') : ''}${t && ['خاسر', 'معتذر / ملغاة'].indexOf(t.stage) >= 0 ? '، وحيث إنه لم تتم الترسية علينا' : t && t.stage === 'مرسى' ? '، وحيث تم استيفاء الالتزامات التعاقدية' : ''}.</p><p>نأمل التكرم بالإفراج عن الضمان المذكور وإعادة أصله إلينا أو إشعار البنك المُصدِر (<b>${esc(g.bank)}</b>) بإلغائه.</p>`;
+  openPrint(`<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><title>${ext ? 'طلب تمديد ضمان' : 'طلب إفراج عن ضمان'}</title><style>${css}</style></head><body><div class="lh">${LOGO}<div><b>${esc(S.d.settings.orgName)}</b></div><div class="d">التاريخ: ${hijri(today)}<br>الموافق: ${greg(today)}<br>الرقم: ............</div></div>
+    <p><b>السادة / ${esc(ext ? g.bank : (g.beneficiary || (t && t.entity) || '........'))}</b></p><p class="sub">الموضوع: ${ext ? 'طلب تمديد خطاب ضمان' : 'طلب الإفراج عن خطاب ضمان'} رقم (${esc(g.gNo || '........')})</p>${body}<p>وتقبلوا وافر التحية والتقدير،،،</p><div class="sig"><div>الختم</div><div><b>${esc(S.d.settings.orgName)}</b><br><br>التوقيع: ....................</div></div></body></html>`);
+}
+async function exportTenders(L) { loading(true); try { await loadLib(XLS_LIB); const wb = new ExcelJS.Workbook(), ws = wb.addWorksheet('المنافسات', { views: [{ rightToLeft: true, state: 'frozen', ySplit: 1 }] }); const cols = [['المنافسة', 34], ['الجهة', 22], ['المنصة', 12], ['الرقم', 14], ['المرحلة', 14], ['القيمة التقديرية', 15], ['آخر موعد للتقديم', 14], ['فتح المظاريف', 13], ['المتطلبات', 10], ['سعرنا', 13], ['الفائز', 18], ['سعر الفائز', 13], ['قيمة الترسية', 14], ['مدير العرض', 14]]; ws.columns = cols.map(c => ({ header: c[0], width: c[1] }));
+  ws.getRow(1).eachCell(c => { c.font = { bold: true, color: { argb: 'FFFFFFFF' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; }); L.forEach(t => { const [dd, tt] = reqProg(t); const r = ws.addRow([t.title, t.entity, t.platform, t.refNo, t.stage, Number(t.estValue) || '', t.submitDue, t.openDate, tt ? dd + '/' + tt : '', Number(t.ourPrice) || '', t.winnerName, Number(t.winnerPrice) || '', Number(t.awardValue) || '', t.manager]); r.getCell(5).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: t.stage === 'مرسى' ? 'FFE1F0EA' : t.stage === 'خاسر' ? 'FFF6E3E1' : 'FFF7F0D6' } }; });
+  const buf = await wb.xlsx.writeBuffer(), a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([buf])); a.download = 'المنافسات - ' + S.d.today + '.xlsx'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000); toast('تم تصدير ملف Excel'); } catch (e) { toast('تعذّر التصدير', 1); } finally { loading(false); } }
+async function exportGuars(L) { loading(true); try { await loadLib(XLS_LIB); const wb = new ExcelJS.Workbook(), ws = wb.addWorksheet('الضمانات', { views: [{ rightToLeft: true, state: 'frozen', ySplit: 1 }] }); const cols = [['البنك', 18], ['النوع', 12], ['رقم الضمان', 16], ['المنافسة', 30], ['المستفيد', 22], ['المبلغ', 14], ['النسبة %', 9], ['الهامش', 13], ['الإصدار', 12], ['الانتهاء', 12], ['الحالة', 13], ['العمولات', 12]]; ws.columns = cols.map(c => ({ header: c[0], width: c[1] }));
+  ws.getRow(1).eachCell(c => { c.font = { bold: true, color: { argb: 'FFFFFFFF' } }; c.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FF1E2B2A' } }; }); L.forEach(g => { const d = gDays(g), r = ws.addRow([g.bank, g.type, g.gNo, (tById(g.tenderId) || {}).title || '', g.beneficiary, Number(g.amount) || '', Number(g.percent) || '', Number(g.cashMargin) || '', g.issueDate, g.expiryDate, g.status, (Number(g.feeIssue) || 0) + (Number(g.feeExt) || 0) || '']); r.getCell(11).fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: !gOpen(g) ? 'FFE1F0EA' : d !== null && d < 30 ? 'FFF6E3E1' : 'FFF7F0D6' } }; });
+  const buf = await wb.xlsx.writeBuffer(), a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([buf])); a.download = 'الضمانات - ' + S.d.today + '.xlsx'; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000); toast('تم تصدير ملف Excel'); } catch (e) { toast('تعذّر التصدير', 1); } finally { loading(false); } }
+function xsysPanel() { const T = S.d.tenders || [], G = S.d.guarantees || []; if (!T.length && !G.length) return ''; const op = T.filter(tOpen), td = dn(S.d.today), sub = op.filter(t => t.submitDue && dn(t.submitDue) - td >= 0 && dn(t.submitDue) - td <= 7).length, gs = G.filter(g => gOpen(g) && gDays(g) !== null && gDays(g) <= 30).length;
+  return `<section class="panel vpanel xsys" data-xgo="tenders" style="cursor:pointer"><h3>${ic('tender')} المنافسات والضمانات <small>نظام مستقل — اضغط للانتقال</small></h3><div class="pb vp-g"><div><b>${op.length}</b><span>منافسة مفتوحة</span></div><div><b style="color:var(--amber)">${sub}</b><span>تقديم خلال 7 أيام</span></div><div><b style="color:var(--red)">${gs}</b><span>ضمان ينتهي خلال 30 يوماً</span></div><div class="vp-l"><span style="color:var(--muted)">${sarK(G.filter(g => gOpen(g) && g.status !== 'طلب إصدار').reduce((a, g) => a + (Number(g.amount) || 0), 0))} ر.س ضمانات قائمة</span></div></div></section>`; }
 function renderView() {
   const v = S.view, m = $('#main');
   setHash(v.indexOf('auth:') === 0 ? 'auth=' + encodeURIComponent(v.slice(5)) : 'v=' + encodeURIComponent(v));
@@ -2107,6 +2512,12 @@ function renderView() {
   if (v === 'mine') return m.innerHTML = mineView(), bindMine(), document.querySelectorAll('#main .dlist [data-id]').forEach(r => r.onclick = () => itemModal(r.dataset.id));
   if (v === 'calendar') return m.innerHTML = calView(), bindCal();
   if (v === 'viol') return m.innerHTML = violView(), bindViol();
+  if (v === 'tdash') return m.innerHTML = tdashView(), bindTdash();
+  if (v === 'tenders') return m.innerHTML = tendersView(), bindTenders();
+  if (v === 'guar') return m.innerHTML = guarView(), bindGuar();
+  if (v === 'banks') return m.innerHTML = banksView(), bindBanks();
+  if (v === 'tcal') return m.innerHTML = tcalView(), bindTcal();
+  if (v === 'treports') return m.innerHTML = treportsView(), document.querySelectorAll('#main [data-tid]').forEach(e => e.onclick = () => tenderModal(e.dataset.tid));
   if (v.indexOf('auth:') === 0) return m.innerHTML = authView(v.slice(5)), bindAuth(v.slice(5));
   if (v.indexOf('sec:') === 0) return m.innerHTML = secView(v.slice(4)), bindSec(v.slice(4));
   const map = { reports: reportsView, renewals: renewalsView, contacts: contactsView, users: usersView, alerts: alertsView, logs: logsView, settings: settingsView };
@@ -2171,7 +2582,7 @@ function dashView() {
       <div class="rl">${RL.map(b => `<div class="rl-col" style="--c:${b.c};--cl:${b.cl}"><div class="rl-h"><b>${b.x.length}</b><span>${b.l}<small>${b.sub}</small></span></div>
         ${b.x.length ? `<ul class="rl-list">${b.x.slice(0, 6).map(i => `<li><button class="rl-it" data-id="${i.id}" title="${esc(i.title)}"><span class="t">${priChip(i)}${i._start ? '<span class="chip-start" style="margin:0 0 0 4px">ابدأ</span>' : ''}${esc(i.title)}</span><span class="d">${i._days < 0 ? 'متأخر ' + (-i._days) + ' يوم' : i._days === 0 ? 'اليوم' : 'بعد ' + i._days + ' يوم'}</span><span class="s">${av(i.platform)}${esc(i.platform || i.section)} · ${fmtD(i._due.date)}${i.ownerName ? ' · ' + esc(i.ownerName) : ''}</span></button></li>`).join('')}</ul>` : `<div class="rl-empty">${b.e}</div>`}
         ${b.x.length > 6 ? `<button class="rl-more" data-rst="${b.st}">عرض الكل (+${b.x.length - 6})</button>` : ''}</div>`).join('')}</div></section>
-    ${readinessPanel(it)}${violPanel()}
+    ${readinessPanel(it)}${violPanel()}${xsysPanel()}
     <div class="strip">${strip.map(k => `<button data-st="${k[0]}" style="--c:${k[3]}"><div class="n">${k[1]}</div><div class="l">${k[2]}</div></button>`).join('')}</div>
     <section class="panel"><h3>الأرقام حسب الجهة <div class="seg" role="tablist">${S.d.sections.map(x => `<button data-mxt="${esc(x)}" class="${(S.mxSec || S.d.sections[0]) === x ? 'on' : ''}">${esc(x)}</button>`).join('')}</div></h3>${authMatrix(it, false, S.mxSec || S.d.sections[0])}</section>
     <div class="cols"><section class="panel"><h3>المواعيد الأقرب <small>المتأخر في الأعلى</small></h3>${up.length ? `<ul class="dlist">${up.map(i => `<li data-id="${i.id}" style="--c:${STC[i._st]}"><span class="t">${esc(i.title)}</span><span class="d">${badge(i)}</span><span class="s">${esc(i.platform || i.section)} — ${esc(i._due.kind)} ${fmtD(i._due.date)}${i.ownerName ? ' — ' + esc(i.ownerName) : ''}</span></li>`).join('')}</ul>` : '<div class="empty">لا توجد تواريخ انتهاء مسجّلة بعد. افتح أي قسم وأضف تاريخ الانتهاء للبنود لتظهر هنا.</div>'}</section>

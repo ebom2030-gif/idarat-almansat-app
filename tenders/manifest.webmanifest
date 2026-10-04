@@ -1,0 +1,39 @@
+{
+  "id": "/idarat-almansat-app/tenders/?app=tenders",
+  "name": "إدارة المنافسات والضمانات",
+  "short_name": "المنافسات والضمانات",
+  "description": "متابعة المنافسات ومواعيدها ومتطلباتها والضمانات البنكية وحدودها",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/idarat-almansat-app/tenders/",
+  "scope": "/idarat-almansat-app/tenders/",
+  "display": "standalone",
+  "background_color": "#1E2B2A",
+  "theme_color": "#0B6E4F",
+  "icons": [
+    {
+      "src": "../icons/t-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/t-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "../icons/t-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ebom2030-gif.github.io/idarat-almansat-app/tenders/manifest.webmanifest"
+    }
+  ]
+}
