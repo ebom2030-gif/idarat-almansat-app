@@ -182,7 +182,7 @@ html[data-theme=dark] :is(.ie:hover,.drop-z.on,.drop-z:hover,.sfc button){backgr
 .br-row{display:grid;grid-template-columns:2fr 1fr 1.2fr auto auto;gap:8px;align-items:center;margin-bottom:8px}.br-main{display:flex;gap:4px;align-items:center;font-size:12.5px;white-space:nowrap}.br-main input{width:auto}
 html[data-theme=dark] .mxc.soon{background:#2E2A16;color:#D9C46A}html[data-theme=dark] .bmx .mx-d{background:var(--paper)}
 @media (max-width:700px){.br-row{grid-template-columns:1fr 1fr}.bh-k{gap:14px}}
-.xlink{margin-top:10px!important;border:1px dashed rgba(233,221,191,.35)!important;border-radius:10px}.xlink small{margin-right:auto;font-size:10.5px;color:#B9C3BF}
+.xlink,.xsys,#rq_pick{display:none!important}.xlink{margin-top:10px!important;border:1px dashed rgba(233,221,191,.35)!important;border-radius:10px}.xlink small{margin-right:auto;font-size:10.5px;color:#B9C3BF}
 .kanban{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,1fr);gap:12px;overflow-x:auto;padding-bottom:10px;align-items:start}.kcol{background:var(--paper);border:1px solid var(--line);border-radius:12px;min-height:200px;display:flex;flex-direction:column}.kcol.closed{opacity:.85;background:var(--stone)}.kcol header{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line2);position:sticky;top:0}.kcol header b{font-size:13.5px}.kcol header span{background:var(--stone);border-radius:999px;padding:1px 9px;font-size:12px;font-weight:700}
 .kcol.over{outline:2px dashed var(--brass);outline-offset:-4px}.kbody{padding:8px;display:flex;flex-direction:column;gap:8px;flex:1}.kempty{color:var(--muted);font-size:12px;text-align:center;padding:20px 6px;border:1px dashed var(--line);border-radius:8px}
 .tcard{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 11px;cursor:pointer;display:flex;flex-direction:column;gap:5px;box-shadow:0 2px 6px -4px rgba(0,0,0,.2)}.tcard:hover{border-color:var(--brass)}.tcard.drag{opacity:.5}.tc-t{font-weight:700;font-size:13.5px;line-height:1.5}.tc-s{font-size:12px;color:var(--muted)}.tc-v{font-size:12.5px;font-weight:700}.tc-f{display:flex;justify-content:space-between;align-items:center}.tc-r{font-size:11.5px;background:var(--ok-l);color:var(--ok);border-radius:6px;padding:1px 7px;font-weight:700}.tc-r.bad{background:var(--red-l);color:var(--red)}
@@ -386,7 +386,7 @@ const P = { dash: 'M3 3h7v9H3zM14 3h7v5h-7zM14 12h7v9h-7zM3 16h7v5H3z', 'الت�
 const LOGO = '<svg class="logo" aria-hidden="true" viewBox="0 0 64 64"><polygon points="32.0,1.5 41.0,10.4 53.6,10.4 53.6,23.0 62.5,32.0 53.6,41.0 53.6,53.6 41.0,53.6 32.0,62.5 23.0,53.6 10.4,53.6 10.4,41.0 1.5,32.0 10.4,23.0 10.4,10.4 23.0,10.4" fill="#1E2B2A" stroke="#B08D3C" stroke-width="1.6" stroke-linejoin="round"/><circle cx="32" cy="32" r="18.6" fill="none" stroke="#B08D3C" stroke-opacity=".6" stroke-width=".9"/><circle cx="32" cy="32" r="15.4" fill="#0B6E4F"/><path d="M27 22.6h7l4.8 4.8v13a1.4 1.4 0 0 1-1.4 1.4H27a1.4 1.4 0 0 1-1.4-1.4V24a1.4 1.4 0 0 1 1.4-1.4z" fill="#fff"/><path d="M34 22.6v4.8h4.8" fill="none" stroke="#0B6E4F" stroke-width="1.2" stroke-linejoin="round"/><path d="M28.6 34.4l2.5 2.5 5.1-5.3" fill="none" stroke="#B08D3C" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const DEMO_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/demo/' + (window.DM_MODE === 'tenders' ? 'tenders/' : '');
 const INSTALL_URL = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/' + (window.DM_MODE === 'tenders' ? 'tenders/' : '') + 'install.html';
-const APP_VER = '20 · 04/10/2026';
+const APP_VER = '22 · 17/10/2026';
 const APP_MODE = window.DM_MODE === 'tenders' ? 'tenders' : 'platforms';
 const APP_TITLE = APP_MODE === 'tenders' ? 'إدارة المنافسات والضمانات' : 'إدارة المنصات والتأهيلات';
 const API_URL = 'https:' + '/' + '/script.google.com/macros/s/AKfycbzolbATMtd3yiYGoOjy54uAIBOzF1WxuftPXmJ_J55_qOp9FpKq9sErzyV5eEWxirRuPQ/exec';
@@ -405,6 +405,7 @@ function xlsxReady() {
 }
 function loading(on) { $('#loading').classList.toggle('hidden', !on); }
 function toast(m, bad) { const t = document.createElement('div'); t.className = 'toast' + (bad ? ' bad' : ''); t.textContent = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3800); }
+const XLINK = false;
 const APP_HOME = 'https:' + '/' + '/ebom2030-gif.github.io/idarat-almansat-app/';
 const LIBS = {};
 function loadLib(u) { if (LIBS[u]) return LIBS[u]; LIBS[u] = new Promise((ok, no) => { const t = document.createElement('script'); t.src = u; t.onload = ok; t.onerror = () => { delete LIBS[u]; no(); }; document.head.appendChild(t); }); return LIBS[u]; }
@@ -1054,7 +1055,7 @@ function tNext(t) { const td = dn(S.d.today); let best = null; TD_DATES.forEach(
 function dBadge(days, label) { if (days === null || days === undefined) return ''; const cls = days < 0 ? 'b-expired' : days <= 3 ? 'b-critical' : days <= 7 ? 'b-urgent' : days <= 30 ? 'b-soon' : 'b-ok'; return `<span class="badge ${cls}">${days < 0 ? '✕ فات منذ ' + (-days) + ' يوم' : days === 0 ? '⏱ اليوم' : '⏱ ' + days + ' يوم'}${label ? ' · ' + esc(label) : ''}</span>`; }
 function gDays(g) { return g.expiryDate ? dn(g.expiryDate) - dn(S.d.today) : null; }
 const tById = id => (S.d.tenders || []).find(t => t.id === id);
-function reqStatus(r) { if (!r.itemId) return null; const i = S.d.items.find(x => x.id === r.itemId); return i || 'gone'; }
+function reqStatus(r) { if (!XLINK || !r.itemId) return null; const i = S.d.items.find(x => x.id === r.itemId); return i || 'gone'; }
 function reqProg(t) { const R = jp(t.reqs, []); return [R.filter(r => r.done).length, R.length, R.filter(r => { const i = reqStatus(r); return i && i !== 'gone' && i._st === 'expired'; }).length]; }
 function winStats(L) { const w = L.filter(t => t.stage === 'مرسى').length, l = L.filter(t => t.stage === 'خاسر').length; return { w, l, rate: (w + l) ? Math.round(w / (w + l) * 100) : null }; }
 function banksList() { return jp((S.d.settings || {}).banks, []); }
@@ -1128,7 +1129,7 @@ function bindTenders() {
 }
 const STD_REQS = [['إداري', 'السجل التجاري', 'cr'], ['إداري', 'شهادة الزكاة والدخل', 'zakat'], ['إداري', 'شهادة التأمينات الاجتماعية', 'gosi'], ['إداري', 'شهادة السعودة (نطاقات)', 'nitaqat'], ['إداري', 'عضوية الغرفة التجارية', 'chamber'], ['إداري', 'شهادة ضريبة القيمة المضافة', 'vat'], ['إداري', 'شهادة تصنيف المكاتب الهندسية', 'class'], ['إداري', 'شهادة المحتوى المحلي', 'local'], ['إداري', 'خطاب التفويض بالتوقيع', ''],
   ['فني', 'العرض الفني والمنهجية', ''], ['فني', 'السير الذاتية لفريق العمل', ''], ['فني', 'سابقة الأعمال المشابهة', ''], ['فني', 'الهيكل التنظيمي وخطة العمل', ''], ['مالي', 'العرض المالي', ''], ['مالي', 'جدول الكميات المسعّر', ''], ['ضمان', 'الضمان الابتدائي', '']];
-function matchItem(name, key, t) {
+function matchItem(name, key, t) { if (!XLINK) return null;
   const n = normT(name).replace('شهاده ', ''), br = t.branch || ((branches().find(b => b.main) || {}).id) || '';
   const cands = S.d.items.filter(i => i._st !== 'off' && (key && i.docKey === key || normT(i.title).indexOf(n) >= 0 || n.indexOf(normT(i.title).replace('شهاده ', '')) >= 0));
   return cands.sort((a, b) => ((b.branch === br) - (a.branch === br)) || (RANK[a._st] - RANK[b._st]))[0];
